@@ -18,6 +18,6 @@ func(boot *Bootstrap) RegisterRouters(){
 	}
 
 	boot.E.GET("/", func(context echo.Context) error {
-		return context.JSON(http.StatusOK, "SIP")
+		return context.JSON(http.StatusOK, "Work")
 	})
 }
