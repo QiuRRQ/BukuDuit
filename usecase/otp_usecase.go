@@ -7,8 +7,6 @@ import (
 	"bukuduit-go/usecase/viewmodel"
 	"errors"
 	"fmt"
-	"math/rand"
-	"time"
 )
 
 type OtpUseCase struct {
@@ -21,14 +19,18 @@ func (uc OtpUseCase) RequestOtp(mobilePhoneNumber string) (res viewmodel.OtpVm, 
 	userUc := UserUseCase{UcContract: uc.UcContract}
 	isExist, err := userUc.IsMobilePhoneExist(mobilePhoneNumber)
 	if err != nil {
-		return res,err
+		return res, err
 	}
 	if isExist {
 		return res, errors.New(messages.DataAlreadyExist)
 	}
 
+	err = uc.GetFromRedis("otp"+mobilePhoneNumber,&res)
+	if err == nil {
+		uc.RemoveFromRedis("otp"+mobilePhoneNumber)
+	}
+
 	//generate otp save to redis
-	rand.Seed(time.Now().UTC().UnixNano())
 	res.MobilePhone = mobilePhoneNumber
 	res.Otp, err = uc.generateOtpCode(mobilePhoneNumber, res)
 	if err != nil {
@@ -78,4 +80,22 @@ func (uc OtpUseCase) addInvalidOtpCounter(mobilePhone string) (err error) {
 	}
 
 	return err
+}
+
+func (uc OtpUseCase) SubmitOtp(key string, otp string) (res viewmodel.OtpVm, err error) {
+	otpVm := viewmodel.OtpVm{}
+	fmt.Println(key)
+	err = uc.GetFromRedis(key, &otpVm)
+	if err != nil {
+		return res, errors.New(messages.ExpiredOtp)
+	}
+
+	if otpVm.Otp != otp {
+		err = uc.LimitRetryByKey("invalidOtp"+otpVm.MobilePhone, MaxOtpSubmitRetry)
+		if err != nil {
+			return res, err
+		}
+	}
+
+	return res, nil
 }

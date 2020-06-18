@@ -39,4 +39,12 @@ func(boot *Bootstrap) RegisterRouters(){
 		Handler:    handlerType,
 	}
 	authenticationRegistrar.RegisterRoute()
+
+	//businesscard route
+	shopRoute := apiRoute.Group("/shop")
+	shopRouteRegistrar := routes.ShopRoute{
+		RouteGroup: shopRoute,
+		Handler:    handlerType,
+	}
+	shopRouteRegistrar.RegisterRoute()
 }

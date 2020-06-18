@@ -61,15 +61,15 @@ func (uc UserUseCase) EditPin(ID, pin string) (err error) {
 	return nil
 }
 
-func (uc UserUseCase) Add(mobilePhone,pin string, tx *sql.Tx) (err error){
+func (uc UserUseCase) Add(mobilePhone,pin string, tx *sql.Tx) (res string,err error){
 	model := actions.NewUserModel(uc.DB)
 	now := time.Now().UTC()
 	isMobilePhoneExist, err := uc.IsMobilePhoneExist(mobilePhone)
 	if err != nil {
-		return err
+		return res,err
 	}
 	if isMobilePhoneExist {
-		return errors.New(messages.DataAlreadyExist)
+		return res,errors.New(messages.DataAlreadyExist)
 	}
 
 	body := viewmodel.UserVm{
@@ -77,12 +77,12 @@ func (uc UserUseCase) Add(mobilePhone,pin string, tx *sql.Tx) (err error){
 		CreatedAt:   now.Format(time.RFC3339),
 	}
 	hasPin,_ := hashing.HashAndSalt(pin)
-	_, err = model.Add(body,hasPin,tx)
+	res, err = model.Add(body,hasPin,tx)
 	if err != nil {
-		return err
+		return res,err
 	}
 
-	return nil
+	return res,err
 }
 
 func (uc UserUseCase) CountBy(column, value string) (res int, err error) {

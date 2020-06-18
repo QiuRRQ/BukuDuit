@@ -1,6 +1,7 @@
 package handlers
 
 import (
+	"bukuduit-go/helpers/messages"
 	request "bukuduit-go/server/requests"
 	"bukuduit-go/usecase"
 	"github.com/go-playground/validator/v10"
@@ -23,7 +24,27 @@ func (handler AuthenticationHandler) Register(ctx echo.Context) error {
 		return handler.SendResponseErrorValidation(ctx, err.(validator.ValidationErrors))
 	}
 	uc := usecase.AuthenticationUseCase{UcContract: handler.UseCaseContract}
-	err := uc.Register(input.MobilePhone, input.Pin)
+	err := uc.Register(input.MobilePhone, input.Pin, input.ShopName)
 
 	return handler.SendResponse(ctx, nil, nil, err)
+}
+
+func (handler AuthenticationHandler) GenerateTokenByOtp(ctx echo.Context) error {
+	input := new(request.OtpSubmitRequest)
+
+	if err := ctx.Bind(input); err != nil {
+		return handler.SendResponseBadRequest(ctx, http.StatusBadRequest, err.Error())
+	}
+
+	if err := handler.Validate.Struct(input); err != nil {
+		return handler.SendResponseErrorValidation(ctx, err.(validator.ValidationErrors))
+	}
+	uc := usecase.AuthenticationUseCase{UcContract: handler.UseCaseContract}
+	res, err := uc.GenerateTokenByOtp("otp"+input.MobilePhone, input.Otp)
+
+	if err != nil && err.Error() == messages.OtpNotMatch {
+		return handler.SendResponseUnauthorized(ctx, err)
+	}
+
+	return handler.SendResponse(ctx, res, nil, err)
 }

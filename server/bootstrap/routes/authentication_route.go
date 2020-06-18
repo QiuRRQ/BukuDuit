@@ -14,4 +14,6 @@ func (route AuthenticationRoute) RegisterRoute() {
 	handler := api.AuthenticationHandler{Handler:route.Handler}
 
 	route.RouteGroup.POST("/register",handler.Register)
+	route.RouteGroup.POST("/by-otp",handler.GenerateTokenByOtp)
+
 }

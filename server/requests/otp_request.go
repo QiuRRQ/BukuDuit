@@ -2,7 +2,6 @@ package request
 
 type OtpRequest struct {
 	MobilePhone string `json:"mobile_phone"`
-	Action      string `json:"action"`
 }
 
 type InviteUserRequest struct {

@@ -99,7 +99,7 @@ func (repository UserRepository) Delete(ID, updatedAt, deletedAt string) (res st
 
 func (repository UserRepository) CountBy(column, value string) (res int, err error) {
 	statement := `select count("id") from "users" where ` + column + `=$1 and "deleted_at" is null`
-	err = repository.DB.QueryRow(statement, value).Scan(&res, err)
+	err = repository.DB.QueryRow(statement, value).Scan(&res)
 	if err != nil {
 		return res, err
 	}
