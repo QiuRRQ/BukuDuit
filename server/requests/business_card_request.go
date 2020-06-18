@@ -8,5 +8,4 @@ type BusinessCardRequest struct {
 	Address     string         `json:"address"`
 	Email       string         `json:"email"`
 	Avatar      string         `json:"avatar"`
-	UserID      string         `json:"user_id"`
 }

@@ -47,4 +47,12 @@ func(boot *Bootstrap) RegisterRouters(){
 		Handler:    handlerType,
 	}
 	shopRouteRegistrar.RegisterRoute()
+
+	//usercustomer route
+	userCustomerRoute := apiRoute.Group("/user-customer")
+	userCustomerRouteRegistrar := routes.UserCustomerRoute{
+		RouteGroup: userCustomerRoute,
+		Handler:    handlerType,
+	}
+	userCustomerRouteRegistrar.RegisterRoute()
 }

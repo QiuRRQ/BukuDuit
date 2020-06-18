@@ -11,7 +11,7 @@ type IBusinessCardRepository interface {
 
 	Read(ID string) (data models.BusinessCards, err error)
 
-	Edit(body viewmodel.BusinessCardVm, userID string) (res string, err error)
+	Edit(body viewmodel.BusinessCardVm) (res string, err error)
 
 	Add(body viewmodel.BusinessCardVm, userID string, tx *sql.Tx) (res string, err error)
 

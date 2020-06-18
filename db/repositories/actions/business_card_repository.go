@@ -75,9 +75,19 @@ func (repository BusinessCardRepository) Read(ID string) (data models.BusinessCa
 	return data, err
 }
 
-func (repository BusinessCardRepository) Edit(body viewmodel.BusinessCardVm, userID string) (res string, err error) {
-	statement := `update "business_cards" set "full_name"=$1, "book_name"=$2, "mobile_phone"=$3, "tag_line"=$4, "address"=$5, "email"=$6, "avatar"=$7, "user_id"=$8, "updated_at"=$9 where "id"=$10 returning "id"`
-	err = repository.DB.QueryRow(statement, body.FullName, body.BookName, body.MobilePhone, body.TagLine, body.Address, body.Email, body.Avatar, userID, datetime.StrParseToTime(body.UpdatedAt, time.RFC3339), body.ID).Scan(&res)
+func (repository BusinessCardRepository) Edit(body viewmodel.BusinessCardVm) (res string, err error) {
+	statement := `update "business_cards" set "full_name"=$1, "book_name"=$2, "mobile_phone"=$3, "tag_line"=$4, "address"=$5, "email"=$6, "avatar"=$7, "updated_at"=$8 where "id"=$9 returning "id"`
+	err = repository.DB.QueryRow(
+		statement,
+		str.EmptyString(body.FullName),
+		body.BookName,
+		str.EmptyString(body.MobilePhone),
+		str.EmptyString(body.TagLine),
+		str.EmptyString(body.Address),
+		str.EmptyString(body.Email),
+		str.EmptyString(body.Avatar),
+		datetime.StrParseToTime(body.UpdatedAt, time.RFC3339),
+		body.ID).Scan(&res)
 	if err != nil {
 		return res, err
 	}
@@ -99,10 +109,10 @@ func (repository BusinessCardRepository) Add(body viewmodel.BusinessCardVm, user
 			str.EmptyString(body.Email),
 			str.EmptyString(body.Avatar),
 			userID,
-			datetime.StrParseToTime(body.CreatedAt,time.RFC3339),
-			datetime.StrParseToTime(body.UpdatedAt,time.RFC3339),
+			datetime.StrParseToTime(body.CreatedAt, time.RFC3339),
+			datetime.StrParseToTime(body.UpdatedAt, time.RFC3339),
 		)
-	}else{
+	} else {
 		err = repository.DB.QueryRow(
 			statement,
 			str.EmptyString(body.FullName),
@@ -113,30 +123,30 @@ func (repository BusinessCardRepository) Add(body viewmodel.BusinessCardVm, user
 			str.EmptyString(body.Email),
 			str.EmptyString(body.Avatar),
 			userID,
-			datetime.StrParseToTime(body.CreatedAt,time.RFC3339),
-			datetime.StrParseToTime(body.UpdatedAt,time.RFC3339),
-			).Scan(&res)
+			datetime.StrParseToTime(body.CreatedAt, time.RFC3339),
+			datetime.StrParseToTime(body.UpdatedAt, time.RFC3339),
+		).Scan(&res)
 	}
 	if err != nil {
-		return res,err
+		return res, err
 	}
 
-	return res,err
+	return res, err
 }
 
 func (repository BusinessCardRepository) Delete(ID, updatedAt, deletedAt string) (res string, err error) {
-	statement := `update "business_cards" set "updated_at"=$1, "deleted_at"=$2 where "id"=$3`
-	err = repository.DB.QueryRow(statement,datetime.StrParseToTime(updatedAt,time.RFC3339),datetime.StrParseToTime(deletedAt,time.RFC3339),ID).Scan(&res)
+	statement := `update "business_cards" set "updated_at"=$1, "deleted_at"=$2 where "id"=$3 returning  "id"`
+	err = repository.DB.QueryRow(statement, datetime.StrParseToTime(updatedAt, time.RFC3339), datetime.StrParseToTime(deletedAt, time.RFC3339), ID).Scan(&res)
 	if err != nil {
-		return res,err
+		return res, err
 	}
 
-	return res,err
+	return res, err
 }
 
 func (repository BusinessCardRepository) DeleteByUser(userID, updatedAt, deletedAt string, tx *sql.Tx) (err error) {
 	statement := `update "business_cards" set "updated_at"=$1, "deleted_at"=$2 where "user_id"=$3`
-	_,err = tx.Exec(statement,datetime.StrParseToTime(updatedAt,time.RFC3339),datetime.StrParseToTime(deletedAt,time.RFC3339),userID)
+	_, err = tx.Exec(statement, datetime.StrParseToTime(updatedAt, time.RFC3339), datetime.StrParseToTime(deletedAt, time.RFC3339), userID)
 	if err != nil {
 		return err
 	}
@@ -144,22 +154,22 @@ func (repository BusinessCardRepository) DeleteByUser(userID, updatedAt, deleted
 	return err
 }
 
-func (repository BusinessCardRepository) CountByPk(ID string) (res int,err error){
+func (repository BusinessCardRepository) CountByPk(ID string) (res int, err error) {
 	statement := `select count("id") from "business_cards" where "id"=$1 and "deleted_at" is null`
-	err = repository.DB.QueryRow(statement,ID).Scan(&res)
+	err = repository.DB.QueryRow(statement, ID).Scan(&res)
 	if err != nil {
-		return res,err
+		return res, err
 	}
 
-	return res,err
+	return res, err
 }
 
-func (repository BusinessCardRepository) CountBy(column,value string) (res int,err error){
-	statement := `select count("id") from "business_cards" where `+column+`=$1 and "deleted_at" is null`
-	err = repository.DB.QueryRow(statement,value).Scan(&res)
+func (repository BusinessCardRepository) CountBy(column, value string) (res int, err error) {
+	statement := `select count("id") from "business_cards" where ` + column + `=$1 and "deleted_at" is null`
+	err = repository.DB.QueryRow(statement, value).Scan(&res)
 	if err != nil {
-		return res,err
+		return res, err
 	}
 
-	return res,err
+	return res, err
 }

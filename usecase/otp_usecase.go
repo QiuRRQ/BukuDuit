@@ -15,16 +15,6 @@ type OtpUseCase struct {
 
 // RequestOtp ...
 func (uc OtpUseCase) RequestOtp(mobilePhoneNumber string) (res viewmodel.OtpVm, err error) {
-	// Cehck Phone uniqe
-	userUc := UserUseCase{UcContract: uc.UcContract}
-	isExist, err := userUc.IsMobilePhoneExist(mobilePhoneNumber)
-	if err != nil {
-		return res, err
-	}
-	if isExist {
-		return res, errors.New(messages.DataAlreadyExist)
-	}
-
 	err = uc.GetFromRedis("otp"+mobilePhoneNumber,&res)
 	if err == nil {
 		uc.RemoveFromRedis("otp"+mobilePhoneNumber)

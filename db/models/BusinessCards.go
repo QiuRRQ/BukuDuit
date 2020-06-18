@@ -4,13 +4,13 @@ import "database/sql"
 
 type BusinessCards struct {
 	ID          string         `db:"id"`
-	FullName    string         `db:"full_name"`
+	FullName    sql.NullString `db:"full_name"`
 	BookName    string         `db:"book_name"`
-	MobilePhone string         `db:"mobile_phone"`
-	TagLine     string         `db:"tag_line"`
-	Address     string         `db:"address"`
-	Email       string         `db:"email"`
-	Avatar      string         `db:"avatar"`
+	MobilePhone sql.NullString `db:"mobile_phone"`
+	TagLine     sql.NullString `db:"tag_line"`
+	Address     sql.NullString `db:"address"`
+	Email       sql.NullString `db:"email"`
+	Avatar      sql.NullString `db:"avatar"`
 	UserID      string         `db:"user_id"`
 	CreatedAt   string         `db:"created_at"`
 	UpdatedAt   sql.NullString `db:"updated_at"`

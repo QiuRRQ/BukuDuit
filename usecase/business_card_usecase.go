@@ -7,6 +7,7 @@ import (
 	"bukuduit-go/usecase/viewmodel"
 	"database/sql"
 	"errors"
+	"fmt"
 	"time"
 )
 
@@ -24,13 +25,13 @@ func (uc BusinessCardUseCase) BrowseByUser(userID string) (res []viewmodel.Busin
 	for _, businessCard := range businessCards {
 		res = append(res, viewmodel.BusinessCardVm{
 			ID:          businessCard.ID,
-			FullName:    businessCard.FullName,
+			FullName:    businessCard.FullName.String,
 			BookName:    businessCard.BookName,
-			MobilePhone: businessCard.MobilePhone,
-			TagLine:     businessCard.TagLine,
-			Address:     businessCard.Address,
-			Email:       businessCard.Email,
-			Avatar:      businessCard.Avatar,
+			MobilePhone: businessCard.MobilePhone.String,
+			TagLine:     businessCard.TagLine.String,
+			Address:     businessCard.Address.String,
+			Email:       businessCard.Email.String,
+			Avatar:      businessCard.Avatar.String,
 			CreatedAt:   businessCard.CreatedAt,
 			UpdatedAt:   businessCard.UpdatedAt.String,
 			DeletedAt:   businessCard.DeletedAt.String,
@@ -49,13 +50,13 @@ func (uc BusinessCardUseCase) Read(ID string) (res viewmodel.BusinessCardVm, err
 
 	res = viewmodel.BusinessCardVm{
 		ID:          businessCard.ID,
-		FullName:    businessCard.FullName,
+		FullName:    businessCard.FullName.String,
 		BookName:    businessCard.BookName,
-		MobilePhone: businessCard.MobilePhone,
-		TagLine:     businessCard.TagLine,
-		Address:     businessCard.Address,
-		Email:       businessCard.Email,
-		Avatar:      businessCard.Avatar,
+		MobilePhone: businessCard.MobilePhone.String,
+		TagLine:     businessCard.TagLine.String,
+		Address:     businessCard.Address.String,
+		Email:       businessCard.Email.String,
+		Avatar:      businessCard.Avatar.String,
 		CreatedAt:   businessCard.CreatedAt,
 		UpdatedAt:   businessCard.UpdatedAt.String,
 		DeletedAt:   businessCard.UpdatedAt.String,
@@ -86,7 +87,7 @@ func (uc BusinessCardUseCase) Edit(input *request.BusinessCardRequest, ID string
 		Avatar:      input.Avatar,
 		UpdatedAt:   now.Format(time.RFC3339),
 	}
-	_, err = model.Edit(body, input.UserID)
+	_, err = model.Edit(body)
 	if err != nil {
 		return err
 	}
@@ -94,7 +95,7 @@ func (uc BusinessCardUseCase) Edit(input *request.BusinessCardRequest, ID string
 	return nil
 }
 
-func (uc BusinessCardUseCase) Add(input *request.BusinessCardRequest) (err error) {
+func (uc BusinessCardUseCase) Add(input *request.BusinessCardRequest,userID string) (err error) {
 	model := actions.NewBusinessCardModel(uc.DB)
 	now := time.Now().UTC()
 
@@ -103,7 +104,7 @@ func (uc BusinessCardUseCase) Add(input *request.BusinessCardRequest) (err error
 		CreatedAt: now.Format(time.RFC3339),
 		UpdatedAt: now.Format(time.RFC3339),
 	}
-	_, err = model.Add(body, input.UserID, nil)
+	_, err = model.Add(body, userID, nil)
 	if err != nil {
 		return err
 	}
@@ -127,6 +128,7 @@ func (uc BusinessCardUseCase) Register(userID, bookName, createdAt, updatedAt st
 }
 
 func (uc BusinessCardUseCase) Delete(ID string) (err error){
+	fmt.Println(ID)
 	model := actions.NewBusinessCardModel(uc.DB)
 	now := time.Now().UTC()
 

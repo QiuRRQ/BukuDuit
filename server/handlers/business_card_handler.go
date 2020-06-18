@@ -1,6 +1,7 @@
 package handlers
 
 import (
+	"bukuduit-go/helpers/jwt"
 	request "bukuduit-go/server/requests"
 	"bukuduit-go/usecase"
 	"github.com/go-playground/validator/v10"
@@ -13,9 +14,9 @@ type BusinessCardHandler struct {
 }
 
 func (handler BusinessCardHandler) BrowseByUser(ctx echo.Context) error {
-	userID := ctx.QueryParam("userId")
+	claim := ctx.Get("user").(*jwt.CustomClaims)
 	uc := usecase.BusinessCardUseCase{UcContract: handler.UseCaseContract}
-	res, err := uc.BrowseByUser(userID)
+	res, err := uc.BrowseByUser(claim.Id)
 
 	return handler.SendResponse(ctx, res, nil, err)
 }
@@ -48,6 +49,7 @@ func (handler BusinessCardHandler) Edit(ctx echo.Context) error {
 
 func (handler BusinessCardHandler) Add(ctx echo.Context) error {
 	input := new(request.BusinessCardRequest)
+	claim := ctx.Get("user").(*jwt.CustomClaims)
 
 	if err := ctx.Bind(input); err != nil {
 		return handler.SendResponseBadRequest(ctx, http.StatusBadRequest, err.Error())
@@ -58,7 +60,7 @@ func (handler BusinessCardHandler) Add(ctx echo.Context) error {
 	}
 
 	uc := usecase.BusinessCardUseCase{UcContract: handler.UseCaseContract}
-	err := uc.Add(input)
+	err := uc.Add(input,claim.Id)
 
 	return handler.SendResponse(ctx, nil, nil, err)
 }
