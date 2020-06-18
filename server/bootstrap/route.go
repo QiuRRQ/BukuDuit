@@ -1,13 +1,14 @@
 package bootstrap
 
 import (
+	"bukuduit-go/server/bootstrap/routes"
 	api "bukuduit-go/server/handlers"
 	"github.com/labstack/echo"
 	"net/http"
 )
 
 func(boot *Bootstrap) RegisterRouters(){
-	_ = api.Handler{
+	handlerType := api.Handler{
 		E:               boot.E,
 		Db:              boot.Db,
 		UseCaseContract: &boot.UseCaseContract,
@@ -20,4 +21,22 @@ func(boot *Bootstrap) RegisterRouters(){
 	boot.E.GET("/", func(context echo.Context) error {
 		return context.JSON(http.StatusOK, "Work")
 	})
+
+	apiRoute := boot.E.Group("/api/v1")
+
+	//otp route
+	otpRoute := apiRoute.Group("/otp")
+	otpRouteRegistrar := routes.OtpRoutes{
+		RouteGroup: otpRoute,
+		Handler:    handlerType,
+	}
+	otpRouteRegistrar.RegisterRoute()
+
+	//authentication route
+	authenticationRoute := apiRoute.Group("/auth")
+	authenticationRegistrar := routes.AuthenticationRoute{
+		RouteGroup: authenticationRoute,
+		Handler:    handlerType,
+	}
+	authenticationRegistrar.RegisterRoute()
 }
