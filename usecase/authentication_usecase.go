@@ -2,9 +2,10 @@ package usecase
 
 import (
 	"bukuduit-go/usecase/viewmodel"
-	uuid "github.com/satori/go.uuid"
 	"os"
 	"time"
+
+	uuid "github.com/satori/go.uuid"
 )
 
 type AuthenticationUseCase struct {

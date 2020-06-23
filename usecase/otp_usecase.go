@@ -15,9 +15,9 @@ type OtpUseCase struct {
 
 // RequestOtp ...
 func (uc OtpUseCase) RequestOtp(mobilePhoneNumber string) (res viewmodel.OtpVm, err error) {
-	err = uc.GetFromRedis("otp"+mobilePhoneNumber,&res)
+	err = uc.GetFromRedis("otp"+mobilePhoneNumber, &res)
 	if err == nil {
-		uc.RemoveFromRedis("otp"+mobilePhoneNumber)
+		uc.RemoveFromRedis("otp" + mobilePhoneNumber)
 	}
 
 	//generate otp save to redis
