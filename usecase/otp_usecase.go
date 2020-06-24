@@ -50,7 +50,7 @@ func (uc OtpUseCase) RequestOtp(mobilePhoneNumber string) (res viewmodel.OtpVm, 
 }
 
 func (uc OtpUseCase) generateOtpCode(mobilePhone string, otpVm viewmodel.OtpVm) (res string, err error) {
-	res = str.RandomNumberString(4)
+	res = str.RandomNumberString(6)
 	otpVm.Otp = res
 	err = uc.StoreToRedistWithExpired("otp"+mobilePhone, otpVm, OtpLifeTime)
 	if err != nil {
