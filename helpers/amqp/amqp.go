@@ -13,17 +13,17 @@ type IQueue interface {
 
 const (
 	//otp exchange
-	OtpExchange = "otp.exchange"
+	OtpExchange = "bukuduit.otp.exchange"
 	// Otp ...
-	Otp = "otp.incoming.queue"
+	Otp = "bukuduit.otp.incoming.queue"
 	// OtpDeadLetter ...
-	OtpDeadLetter = "otp.deadletter.queue"
+	OtpDeadLetter = "bukuduit.otp.deadletter.queue"
 	//mail exchange
-	MailExchange = "mail.exchange"
+	MailExchange = "bukuduit.mail.exchange"
 	//mail incoming
-	MailIncoming = "mail.incoming.queue"
+	MailIncoming = "bukuduit.mail.incoming.queue"
 	//mail deadletter
-	MailDeadLetter = "mail.deadletter.queue"
+	MailDeadLetter = "bukuduit.mail.deadletter.queue"
 )
 
 // queue ...
