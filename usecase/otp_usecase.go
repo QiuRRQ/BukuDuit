@@ -14,7 +14,18 @@ type OtpUseCase struct {
 }
 
 // RequestOtp ...
-func (uc OtpUseCase) RequestOtp(mobilePhoneNumber string) (res viewmodel.OtpVm, err error) {
+func (uc OtpUseCase) RequestOtp(mobilePhoneNumber,action string) (res viewmodel.OtpVm, err error) {
+	if action == "register" {
+		userUc := UserUseCase{UcContract:uc.UcContract}
+		isExist,err := userUc.IsMobilePhoneExist(mobilePhoneNumber)
+		if err != nil {
+			return res,err
+		}
+		if isExist {
+			return res, errors.New(messages.PhoneAlreadyExist)
+		}
+	}
+
 	err = uc.GetFromRedis("otp"+mobilePhoneNumber,&res)
 	if err == nil {
 		uc.RemoveFromRedis("otp"+mobilePhoneNumber)
@@ -43,7 +54,7 @@ func (uc OtpUseCase) RequestOtp(mobilePhoneNumber string) (res viewmodel.OtpVm, 
 	}
 	err = uc.PushToQueue(queueBody, queue.Otp, queue.OtpDeadLetter)
 	if err != nil {
-		fmt.Println(err)
+		return res,err
 	}
 
 	return res, err
