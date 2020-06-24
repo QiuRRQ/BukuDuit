@@ -1,7 +1,9 @@
 package usecase
 
 import (
+	"bukuduit-go/helpers/messages"
 	"bukuduit-go/usecase/viewmodel"
+	"errors"
 	uuid "github.com/satori/go.uuid"
 	"os"
 	"time"
@@ -83,4 +85,41 @@ func (uc AuthenticationUseCase) Register(mobilePhone, pin, shopName string) (err
 	transaction.Commit()
 
 	return nil
+}
+
+func (uc AuthenticationUseCase) Login(mobilePhone, PIN string) (res viewmodel.UserJwtTokenVm, err error){
+	userUc := UserUseCase{UcContract:uc.UcContract}
+	isExist, err := userUc.IsMobilePhoneExist(mobilePhone)
+	if err != nil {
+		return res,err
+	}
+	if !isExist {
+		return res,errors.New(messages.PhoneNotFound)
+	}
+
+	user, err := userUc.ReadBy("mobile_phone",mobilePhone)
+	if err != nil {
+		return res,errors.New(messages.CredentialDoNotMatch)
+	}
+
+	isPINMatch,err := userUc.IsPINMatch(mobilePhone,PIN)
+	if err != nil {
+		return res,errors.New(messages.CredentialDoNotMatch)
+	}
+	if !isPINMatch {
+		return res,errors.New(messages.CredentialDoNotMatch)
+	}
+
+	jwePayload, _ := uc.Jwe.GenerateJwePayload(mobilePhone)
+	session, _ := uc.UpdateSessionLogin(user.ID)
+	token, refreshToken, tokenExpiredAt, refreshTokenExpiredAt, err := uc.GenerateJwtToken(jwePayload, mobilePhone, session)
+
+	res = viewmodel.UserJwtTokenVm{
+		Token:           token,
+		ExpTime:         tokenExpiredAt,
+		RefreshToken:    refreshToken,
+		ExpRefreshToken: refreshTokenExpiredAt,
+	}
+
+	return res, err
 }
