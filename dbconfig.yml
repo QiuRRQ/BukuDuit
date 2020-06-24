@@ -1,4 +1,0 @@
-development:
-  dialect: postgres
-  datasource: postgres://postgres:kiasu123@127.0.0.1:5432/bukuduit?sslmode=disable&TimeZone=UTC
-  dir: db/migrations

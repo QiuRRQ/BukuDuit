@@ -1,15 +1,13 @@
 package bootstrap
 
 import (
-	"bukuduit-go/server/bootstrap/routes"
 	api "bukuduit-go/server/handlers"
-	"net/http"
-
 	"github.com/labstack/echo"
+	"net/http"
 )
 
-func (boot *Bootstrap) RegisterRouters() {
-	handlerType := api.Handler{
+func(boot *Bootstrap) RegisterRouters(){
+	_ = api.Handler{
 		E:               boot.E,
 		Db:              boot.Db,
 		UseCaseContract: &boot.UseCaseContract,
@@ -20,48 +18,6 @@ func (boot *Bootstrap) RegisterRouters() {
 	}
 
 	boot.E.GET("/", func(context echo.Context) error {
-		return context.JSON(http.StatusOK, "Work")
+		return context.JSON(http.StatusOK, "SIP")
 	})
-
-	apiRoute := boot.E.Group("/api/v1")
-
-	//otp route
-	otpRoute := apiRoute.Group("/otp")
-	otpRouteRegistrar := routes.OtpRoutes{
-		RouteGroup: otpRoute,
-		Handler:    handlerType,
-	}
-	otpRouteRegistrar.RegisterRoute()
-
-	//authentication route
-	authenticationRoute := apiRoute.Group("/auth")
-	authenticationRegistrar := routes.AuthenticationRoute{
-		RouteGroup: authenticationRoute,
-		Handler:    handlerType,
-	}
-	authenticationRegistrar.RegisterRoute()
-
-	//businesscard route
-	shopRoute := apiRoute.Group("/shop")
-	shopRouteRegistrar := routes.ShopRoute{
-		RouteGroup: shopRoute,
-		Handler:    handlerType,
-	}
-	shopRouteRegistrar.RegisterRoute()
-
-	//usercustomer route
-	userCustomerRoute := apiRoute.Group("/user-customer")
-	userCustomerRouteRegistrar := routes.UserCustomerRoute{
-		RouteGroup: userCustomerRoute,
-		Handler:    handlerType,
-	}
-	userCustomerRouteRegistrar.RegisterRoute()
-
-	//transaction route
-	transactionRoute := apiRoute.Group("/transaction")
-	transactionRouteRegistrar := routes.TransactionRoute{
-		RouteGroup: transactionRoute,
-		Handler:    handlerType,
-	}
-	transactionRouteRegistrar.RegisterRoute()
 }
