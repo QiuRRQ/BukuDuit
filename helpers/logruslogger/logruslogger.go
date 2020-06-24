@@ -4,12 +4,13 @@ import (
 	"bytes"
 	"encoding/json"
 	"fmt"
-	"github.com/go-chi/chi/middleware"
-	"github.com/sirupsen/logrus"
 	"io/ioutil"
 	"net/http"
 	"os"
 	"time"
+
+	"github.com/go-chi/chi/middleware"
+	"github.com/sirupsen/logrus"
 )
 
 // NewStructuredLogger ...
