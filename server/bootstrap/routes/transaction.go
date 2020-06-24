@@ -21,4 +21,6 @@ func (route TransactionRoute) RegisterRoute() {
 	route.RouteGroup.GET("/:id", handler.Read)
 	route.RouteGroup.POST("", handler.Add)
 	route.RouteGroup.DELETE("/:id", handler.Delete)
+	route.RouteGroup.POST("/debt", handler.DebtPayment)
+	// route.RouteGroup.GET("/DebtList", handler)
 }

@@ -1,6 +1,7 @@
 package usecase
 
 import (
+	"strconv"
 	"bukuduit-go/db/repositories/actions"
 	"bukuduit-go/helpers/messages"
 	request "bukuduit-go/server/requests"
@@ -92,35 +93,35 @@ func (uc TransactionUseCase) Edit(input *request.TransactionRequest, ID string) 
 	return nil
 }
 
-func (uc TransactionUseCase) Add(input *request.TransactionRequest, customerID string) (err error) {
-	model := actions.NewTransactionModel(uc.DB)
-	now := time.Now().UTC()
+// func (uc TransactionUseCase) Add(input *request.TransactionRequest, customerID string) (err error) {
+// 	model := actions.NewTransactionModel(uc.DB)
+// 	now := time.Now().UTC()
 
-	body := viewmodel.TransactionVm{
-		Customer_Id:      input.Customer_Id,
-		Amount:           input.Amount,
-		Description:      input.Description,
-		Image:            input.Image,
-		Type:             input.Type,
-		Transaction_Date: input.Transaction_Date,
-		Update_at:        now.Format(time.RFC3339),
-		Created_at:       now.Format(time.RFC3339),
-	}
-	_, err = model.Add(body, customerID, nil)
-	if err != nil {
-		return err
-	}
+// 	body := viewmodel.TransactionVm{
+// 		Customer_Id:      input.Customer_Id,
+// 		Amount:           input.Amount,
+// 		Description:      input.Description,
+// 		Image:            input.Image,
+// 		Type:             input.Type,
+// 		Transaction_Date: input.Transaction_Date,
+// 		Update_at:        now.Format(time.RFC3339),
+// 		Created_at:       now.Format(time.RFC3339),
+// 	}
+// 	_, err = model.Add(body)
+// 	if err != nil {
+// 		return err
+// 	}
 
-	return nil
-}
+// 	return nil
+// }
 
-func (uc TransactionUseCase) Delete(ID string) (err error) {
+func (uc TransactionUseCase) Delete(ID string) (err error) { 
 	fmt.Println(ID)
 	model := actions.NewTransactionModel(uc.DB)
 	now := time.Now().UTC()
 
 	isExist, err := uc.IsTransactionExist(ID)
-	if err != nil {
+	if err != nil {      
 		return err
 	}
 	if !isExist {
@@ -133,6 +134,44 @@ func (uc TransactionUseCase) Delete(ID string) (err error) {
 	}
 
 	return nil
+}
+
+func (uc TransactionUseCase) DebtPayment(CustomerID, DebtType string, UserCustomerDebt, amount int) error{
+	TransactionModel := actions.NewTransactionModel(uc.DB)
+	userCustomerUc := UserCustomerUseCase{UcContract:uc.UcContract}
+	now := time.Now().UTC()
+	Transaction, err := uc.DB.Begin()
+	if err != nil {
+		return err
+	}
+	TransactionBody := viewmodel.TransactionVm{
+		Customer_Id: CustomerID,
+		Amount: strconv.Itoa(amount),
+		Type: DebtType,
+		Transaction_Date: now.Format(time.RFC3339),
+		Update_at: now.Format(time.RFC3339),
+		Created_at: now.Format(time.RFC3339),
+	}
+
+	if DebtType == "pay"{
+		UserCustomerDebt = UserCustomerDebt - amount
+	}else{
+		UserCustomerDebt = UserCustomerDebt + amount
+	}
+
+	_, errr := TransactionModel.Add(TransactionBody, Transaction)
+	if err != nil{
+		Transaction.Rollback()
+		return err
+	}
+
+	eror := userCustomerUc.EditDebt(CustomerID, int32(UserCustomerDebt), Transaction)
+	if eror != nil{
+		Transaction.Rollback()
+		return eror
+	}
+	Transaction.Commit()
+	return errr
 }
 
 func (uc TransactionUseCase) DeleteByCustomer(customerID string, tx *sql.Tx) (err error) {

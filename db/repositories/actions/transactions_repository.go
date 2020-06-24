@@ -89,8 +89,7 @@ func (repository TransactionRepository) Edit(body viewmodel.TransactionVm) (res 
 	return res, err
 }
 
-func (repository TransactionRepository) Add(body viewmodel.TransactionVm, userID string, tx *sql.Tx) (res string, err error) {
-	// fmt.Println(body.MobilePhone)
+func (repository TransactionRepository) Add(body viewmodel.TransactionVm, tx *sql.Tx) (res string, err error) {
 	statement := `insert into "transactions" ("customer_id","amount","description","image","type","transaction_date","created_at","updated_at") values($1,$2,$3,$4,$5,$6,$7,$8) returning "id"`
 	if tx != nil {
 		_, err = tx.Exec(
@@ -162,4 +161,10 @@ func (repository TransactionRepository) CountBy(column, value string) (res int, 
 	}
 
 	return res, err
+}
+
+func (repository TransactionRepository) DebtPayment(custome, DebtType string, UserCustomerDebt, amount int) (CustomerDebt int){
+
+
+	return UserCustomerDebt
 }

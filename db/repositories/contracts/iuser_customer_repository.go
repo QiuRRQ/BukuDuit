@@ -3,7 +3,7 @@ package contracts
 import (
 	"bukuduit-go/db/models"
 	"bukuduit-go/usecase/viewmodel"
-	"database/sql"
+	// "database/sql"
 )
 
 type IUserCustomerRepository interface {
@@ -11,7 +11,7 @@ type IUserCustomerRepository interface {
 
 	Read(ID string) (data models.UserCustomers, err error)
 
-	EditDebt(ID, updatedAt string, debt int32, tx *sql.Tx) (err error)
+	EditDebt(ID, updatedAt string, debt int32) (res string, err error)
 
 	Add(body viewmodel.UserCustomerVm, businessID string) (res string, err error)
 
