@@ -13,11 +13,6 @@ import (
 	"encoding/json"
 	"errors"
 	"fmt"
-	"math/rand"
-	"os"
-	"strings"
-	"time"
-
 	ut "github.com/go-playground/universal-translator"
 	validator "github.com/go-playground/validator/v10"
 	"github.com/go-redis/redis/v7"
@@ -25,15 +20,19 @@ import (
 	"github.com/labstack/echo/middleware"
 	"github.com/sfreiberg/gotwilio"
 	"github.com/streadway/amqp"
+	"math/rand"
+	"os"
+	"strings"
+	"time"
 )
 
 const (
-	defaultLimit      = 10
-	maxLimit          = 50
-	defaultOrderBy    = "id"
-	defaultSort       = "asc"
-	PasswordLength    = 6
-	defaultLastPage   = 0
+	defaultLimit    = 10
+	maxLimit        = 50
+	defaultOrderBy  = "id"
+	defaultSort     = "asc"
+	PasswordLength  = 6
+	defaultLastPage = 0
 	OtpLifeTime       = "3m"
 	MaxOtpSubmitRetry = 3
 )
@@ -131,22 +130,17 @@ func (uc UcContract) GetRandomString(length int) string {
 func (uc UcContract) StoreToRedistWithExpired(key string, val interface{}, duration string) error {
 	dur, err := time.ParseDuration(duration)
 	if err != nil {
-		fmt.Println("here atas")
 		return err
 	}
 
 	b, err := json.Marshal(val)
 	if err != nil {
-		fmt.Println("here")
 		fmt.Println(err.Error())
 		return err
 	}
 
-	fmt.Println(key)
-	fmt.Println(string(b))
-	fmt.Println(dur)
 	err = uc.Redis.Set(key, string(b), dur).Err()
-	fmt.Println(err)
+
 	return err
 }
 
