@@ -46,14 +46,21 @@ package main
 
 import (
 	"net/http"
+<<<<<<< HEAD
 
 	"github.com/go-chi/chi"
 	"github.com/go-chi/chi/middleware"
+=======
+	"github.com/go-chi/chi"
+>>>>>>> dev
 )
 
 func main() {
 	r := chi.NewRouter()
+<<<<<<< HEAD
 	r.Use(middleware.Logger)
+=======
+>>>>>>> dev
 	r.Get("/", func(w http.ResponseWriter, r *http.Request) {
 		w.Write([]byte("welcome"))
 	})
@@ -315,10 +322,16 @@ with `net/http` can be used with chi's mux.
 ### Core middlewares
 
 -----------------------------------------------------------------------------------------------------------
+<<<<<<< HEAD
 | chi/middleware Handler | description                                                                    |
 |:----------------------|:---------------------------------------------------------------------------------
 | AllowContentType      | Explicit whitelist of accepted request Content-Types                            |
 | BasicAuth             | Basic HTTP authentication                                                       |
+=======
+| chi/middleware Handler | description                                                                     |
+|:----------------------|:---------------------------------------------------------------------------------
+| AllowContentType      | Explicit whitelist of accepted request Content-Types                            |
+>>>>>>> dev
 | Compress              | Gzip compression for clients that accept compressed responses                   |
 | GetHead               | Automatically route undefined HEAD requests to GET handlers                     |
 | Heartbeat             | Monitoring endpoint to check the servers pulse                                  |
@@ -337,7 +350,11 @@ with `net/http` can be used with chi's mux.
 | WithValue             | Short-hand middleware to set a key/value on the request context                 |
 -----------------------------------------------------------------------------------------------------------
 
+<<<<<<< HEAD
 ### Extra middlewares & packages
+=======
+### Auxiliary middlewares & packages
+>>>>>>> dev
 
 Please see https://github.com/go-chi for additional packages.
 
@@ -348,11 +365,17 @@ Please see https://github.com/go-chi for additional packages.
 | [docgen](https://github.com/go-chi/docgen)         | Print chi.Router routes at runtime                          |
 | [jwtauth](https://github.com/go-chi/jwtauth)       | JWT authentication                                          |
 | [hostrouter](https://github.com/go-chi/hostrouter) | Domain/host based request routing                           |
+<<<<<<< HEAD
 | [httplog](https://github.com/go-chi/httplog)       | Small but powerful structured HTTP request logging          |
 | [httprate](https://github.com/go-chi/httprate)     | HTTP request rate limiter                                   |
 | [httptracer](https://github.com/go-chi/httptracer) | HTTP request performance tracing library                    |
 | [httpvcr](https://github.com/go-chi/httpvcr)       | Write deterministic tests for external sources              |
 | [stampede](https://github.com/go-chi/stampede)     | HTTP request coalescer                                      |
+=======
+| [httpcoala](https://github.com/go-chi/httpcoala)   | HTTP request coalescer                                      |
+| [chi-authz](https://github.com/casbin/chi-authz)   | Request ACL via https://github.com/hsluoyz/casbin           |
+| [phi](https://github.com/fate-lovely/phi)          | Port chi to [fasthttp](https://github.com/valyala/fasthttp) |
+>>>>>>> dev
 --------------------------------------------------------------------------------------------------------------------
 
 please [submit a PR](./CONTRIBUTING.md) if you'd like to include a link to a chi-compatible middleware

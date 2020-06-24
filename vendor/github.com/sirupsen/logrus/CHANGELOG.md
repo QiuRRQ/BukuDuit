@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # 1.6.0
 Fixes:
   * end of line cleanup
@@ -21,12 +22,18 @@ Feature:
   * add a `DisableHTMLEscape` option in the `JSONFormatter`
   * add `ForceQuote` and `PadLevelText` options in the `TextFormatter`
 
+=======
+>>>>>>> dev
 # 1.4.2
   * Fixes build break for plan9, nacl, solaris
 # 1.4.1
 This new release introduces:
   * Enhance TextFormatter to not print caller information when they are empty (#944)
+<<<<<<< HEAD
   * Remove dependency on golang.org/x/crypto (#932, #943)
+=======
+  * Remove dependency on golang.org/x/crypto (#932, #943) 
+>>>>>>> dev
 
 Fixes:
   * Fix Entry.WithContext method to return a copy of the initial entry (#941)
@@ -34,7 +41,11 @@ Fixes:
 # 1.4.0
 This new release introduces:
   * Add `DeferExitHandler`, similar to `RegisterExitHandler` but prepending the handler to the list of handlers (semantically like `defer`) (#848).
+<<<<<<< HEAD
   * Add `CallerPrettyfier` to `JSONFormatter` and `TextFormatter` (#909, #911)
+=======
+  * Add `CallerPrettyfier` to `JSONFormatter` and `TextFormatter (#909, #911)
+>>>>>>> dev
   * Add `Entry.WithContext()` and `Entry.Context`, to set a context on entries to be used e.g. in hooks (#919).
 
 Fixes:

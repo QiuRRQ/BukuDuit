@@ -103,3 +103,14 @@ func (uc UserUseCase) IsMobilePhoneExist(mobilePhone string) (res bool, err erro
 
 	return count > 0, err
 }
+
+func (uc UserUseCase) IsPINMatch(mobilePhone, PIN string) (res bool, err error){
+	model := actions.NewUserModel(uc.DB)
+	user,err := model.ReadBy("mobile_phone",mobilePhone)
+	if err != nil {
+		return res,err
+	}
+	res = hashing.CheckHashString(PIN,user.Pin)
+
+	return res,err
+}

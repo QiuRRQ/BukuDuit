@@ -40,14 +40,23 @@ func RealIP(h http.Handler) http.Handler {
 func realIP(r *http.Request) string {
 	var ip string
 
+<<<<<<< HEAD
 	if xrip := r.Header.Get(xRealIP); xrip != "" {
 		ip = xrip
 	} else if xff := r.Header.Get(xForwardedFor); xff != "" {
+=======
+	if xff := r.Header.Get(xForwardedFor); xff != "" {
+>>>>>>> dev
 		i := strings.Index(xff, ", ")
 		if i == -1 {
 			i = len(xff)
 		}
 		ip = xff[:i]
+<<<<<<< HEAD
+=======
+	} else if xrip := r.Header.Get(xRealIP); xrip != "" {
+		ip = xrip
+>>>>>>> dev
 	}
 
 	return ip

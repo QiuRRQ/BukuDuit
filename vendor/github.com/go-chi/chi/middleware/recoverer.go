@@ -4,13 +4,19 @@ package middleware
 // https://github.com/zenazn/goji/tree/master/web/middleware
 
 import (
+<<<<<<< HEAD
 	"bytes"
 	"errors"
+=======
+>>>>>>> dev
 	"fmt"
 	"net/http"
 	"os"
 	"runtime/debug"
+<<<<<<< HEAD
 	"strings"
+=======
+>>>>>>> dev
 )
 
 // Recoverer is a middleware that recovers from panics, logs the panic (and a
@@ -27,10 +33,18 @@ func Recoverer(next http.Handler) http.Handler {
 				if logEntry != nil {
 					logEntry.Panic(rvr, debug.Stack())
 				} else {
+<<<<<<< HEAD
 					PrintPrettyStack(rvr)
 				}
 
 				w.WriteHeader(http.StatusInternalServerError)
+=======
+					fmt.Fprintf(os.Stderr, "Panic: %+v\n", rvr)
+					debug.PrintStack()
+				}
+
+				http.Error(w, http.StatusText(http.StatusInternalServerError), http.StatusInternalServerError)
+>>>>>>> dev
 			}
 		}()
 
@@ -39,6 +53,7 @@ func Recoverer(next http.Handler) http.Handler {
 
 	return http.HandlerFunc(fn)
 }
+<<<<<<< HEAD
 
 func PrintPrettyStack(rvr interface{}) {
 	debugStack := debug.Stack()
@@ -190,3 +205,5 @@ func (s prettyStack) decorateSourceLine(line string, useColor bool, num int) (st
 
 	return buf.String(), nil
 }
+=======
+>>>>>>> dev

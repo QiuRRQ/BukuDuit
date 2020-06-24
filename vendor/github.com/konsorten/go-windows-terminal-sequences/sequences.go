@@ -4,6 +4,10 @@ package sequences
 
 import (
 	"syscall"
+<<<<<<< HEAD
+=======
+	"unsafe"
+>>>>>>> dev
 )
 
 var (
@@ -26,7 +30,11 @@ func EnableVirtualTerminalProcessing(stream syscall.Handle, enable bool) error {
 		mode &^= ENABLE_VIRTUAL_TERMINAL_PROCESSING
 	}
 
+<<<<<<< HEAD
 	ret, _, err := setConsoleMode.Call(uintptr(stream), uintptr(mode))
+=======
+	ret, _, err := setConsoleMode.Call(uintptr(unsafe.Pointer(stream)), uintptr(mode))
+>>>>>>> dev
 	if ret == 0 {
 		return err
 	}

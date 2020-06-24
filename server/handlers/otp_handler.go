@@ -26,7 +26,7 @@ func (handler OtpHandler) RequestOTP(ctx echo.Context) error {
 
 	otpUc := usecase.OtpUseCase{UcContract: handler.UseCaseContract}
 	otpUc.SetXRequestID(ctx)
-	_, err := otpUc.RequestOtp(input.MobilePhone)
+	_, err := otpUc.RequestOtp(input.MobilePhone,input.Action)
 
 	return handler.SendResponse(ctx, nil, nil, err)
 }

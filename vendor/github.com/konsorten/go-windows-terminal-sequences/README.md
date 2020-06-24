@@ -27,7 +27,10 @@ We thank all the authors who provided code to this library:
 
 * Felix Kollmann
 * Nicolas Perraut
+<<<<<<< HEAD
 * @dirty49374
+=======
+>>>>>>> dev
 
 ## License
 

@@ -53,8 +53,7 @@ func (repository UserRepository) ReadByPk(ID string) (data models.Users, err err
 }
 
 func (repository UserRepository) ReadBy(column, value string) (data models.Users, err error) {
-	where := `` + column + `=$1`
-	statement := `select * from "users" ` + where + ` and "deleted_at" is null`
+	statement := `select * from "users" where ` + column + `=$1 and "deleted_at" is null`
 	err = repository.DB.QueryRow(statement, value).Scan(&data.ID, &data.MobilePhone, &data.Pin, &data.CreatedAt, &data.UpdatedAt, &data.DeletedAt)
 	if err != nil {
 		return data, err

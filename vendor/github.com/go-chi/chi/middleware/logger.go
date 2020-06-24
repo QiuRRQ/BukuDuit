@@ -25,8 +25,13 @@ var (
 // print in color, otherwise it will print in black and white. Logger prints a
 // request ID if one is provided.
 //
+<<<<<<< HEAD
 // Alternatively, look at https://github.com/goware/httplog for a more in-depth
 // http logger with structured logging support.
+=======
+// Alternatively, look at https://github.com/pressly/lg and the `lg.RequestLogger`
+// middleware pkg.
+>>>>>>> dev
 func Logger(next http.Handler) http.Handler {
 	return DefaultLogger(next)
 }
@@ -40,7 +45,11 @@ func RequestLogger(f LogFormatter) func(next http.Handler) http.Handler {
 
 			t1 := time.Now()
 			defer func() {
+<<<<<<< HEAD
 				entry.Write(ww.Status(), ww.BytesWritten(), ww.Header(), time.Since(t1), nil)
+=======
+				entry.Write(ww.Status(), ww.BytesWritten(), time.Since(t1))
+>>>>>>> dev
 			}()
 
 			next.ServeHTTP(ww, WithLogEntry(r, entry))
@@ -58,7 +67,11 @@ type LogFormatter interface {
 // LogEntry records the final log when a request completes.
 // See defaultLogEntry for an example implementation.
 type LogEntry interface {
+<<<<<<< HEAD
 	Write(status, bytes int, header http.Header, elapsed time.Duration, extra interface{})
+=======
+	Write(status, bytes int, elapsed time.Duration)
+>>>>>>> dev
 	Panic(v interface{}, stack []byte)
 }
 
@@ -122,7 +135,11 @@ type defaultLogEntry struct {
 	useColor bool
 }
 
+<<<<<<< HEAD
 func (l *defaultLogEntry) Write(status, bytes int, header http.Header, elapsed time.Duration, extra interface{}) {
+=======
+func (l *defaultLogEntry) Write(status, bytes int, elapsed time.Duration) {
+>>>>>>> dev
 	switch {
 	case status < 200:
 		cW(l.buf, l.useColor, bBlue, "%03d", status)
@@ -151,5 +168,12 @@ func (l *defaultLogEntry) Write(status, bytes int, header http.Header, elapsed t
 }
 
 func (l *defaultLogEntry) Panic(v interface{}, stack []byte) {
+<<<<<<< HEAD
 	PrintPrettyStack(v)
+=======
+	panicEntry := l.NewLogEntry(l.request).(*defaultLogEntry)
+	cW(panicEntry.buf, l.useColor, bRed, "panic: %+v", v)
+	l.Logger.Print(panicEntry.buf.String())
+	l.Logger.Print(string(stack))
+>>>>>>> dev
 }

@@ -1,5 +1,6 @@
 # Changelog
 
+<<<<<<< HEAD
 ## v4.1.2 (2020-06-02)
 
 - fix that handles MethodNotAllowed with path variables, thank you @caseyhadden for your contribution
@@ -31,6 +32,8 @@
 - History of changes: see https://github.com/go-chi/chi/compare/v4.0.3...v4.0.4
 
 
+=======
+>>>>>>> dev
 ## v4.0.3 (2020-01-09)
 
 - core: fix regexp routing to include default value when param is not matched
