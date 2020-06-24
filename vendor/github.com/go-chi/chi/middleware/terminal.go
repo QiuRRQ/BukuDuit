@@ -32,7 +32,11 @@ var (
 	reset = []byte{'\033', '[', '0', 'm'}
 )
 
+<<<<<<< HEAD
+var IsTTY bool
+=======
 var isTTY bool
+>>>>>>> dev
 
 func init() {
 	// This is sort of cheating: if stdout is a character device, we assume
@@ -47,17 +51,29 @@ func init() {
 	fi, err := os.Stdout.Stat()
 	if err == nil {
 		m := os.ModeDevice | os.ModeCharDevice
+<<<<<<< HEAD
+		IsTTY = fi.Mode()&m == m
+=======
 		isTTY = fi.Mode()&m == m
+>>>>>>> dev
 	}
 }
 
 // colorWrite
 func cW(w io.Writer, useColor bool, color []byte, s string, args ...interface{}) {
+<<<<<<< HEAD
+	if IsTTY && useColor {
+		w.Write(color)
+	}
+	fmt.Fprintf(w, s, args...)
+	if IsTTY && useColor {
+=======
 	if isTTY && useColor {
 		w.Write(color)
 	}
 	fmt.Fprintf(w, s, args...)
 	if isTTY && useColor {
+>>>>>>> dev
 		w.Write(reset)
 	}
 }

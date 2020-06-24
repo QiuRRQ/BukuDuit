@@ -7,6 +7,57 @@ import (
 	"strings"
 )
 
+<<<<<<< HEAD
+// URLParam returns the url parameter from a http.Request object.
+func URLParam(r *http.Request, key string) string {
+	if rctx := RouteContext(r.Context()); rctx != nil {
+		return rctx.URLParam(key)
+	}
+	return ""
+}
+
+// URLParamFromCtx returns the url parameter from a http.Request Context.
+func URLParamFromCtx(ctx context.Context, key string) string {
+	if rctx := RouteContext(ctx); rctx != nil {
+		return rctx.URLParam(key)
+	}
+	return ""
+}
+
+// RouteContext returns chi's routing Context object from a
+// http.Request Context.
+func RouteContext(ctx context.Context) *Context {
+	val, _ := ctx.Value(RouteCtxKey).(*Context)
+	return val
+}
+
+// ServerBaseContext wraps an http.Handler to set the request context to the
+// `baseCtx`.
+func ServerBaseContext(baseCtx context.Context, h http.Handler) http.Handler {
+	fn := http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		ctx := r.Context()
+		baseCtx := baseCtx
+
+		// Copy over default net/http server context keys
+		if v, ok := ctx.Value(http.ServerContextKey).(*http.Server); ok {
+			baseCtx = context.WithValue(baseCtx, http.ServerContextKey, v)
+		}
+		if v, ok := ctx.Value(http.LocalAddrContextKey).(net.Addr); ok {
+			baseCtx = context.WithValue(baseCtx, http.LocalAddrContextKey, v)
+		}
+
+		h.ServeHTTP(w, r.WithContext(baseCtx))
+	})
+	return fn
+}
+
+// NewRouteContext returns a new routing Context object.
+func NewRouteContext() *Context {
+	return &Context{}
+}
+
+=======
+>>>>>>> dev
 var (
 	// RouteCtxKey is the context.Context key to store the request context.
 	RouteCtxKey = &contextKey{"RouteContext"}
@@ -46,11 +97,14 @@ type Context struct {
 	methodNotAllowed bool
 }
 
+<<<<<<< HEAD
+=======
 // NewRouteContext returns a new routing Context object.
 func NewRouteContext() *Context {
 	return &Context{}
 }
 
+>>>>>>> dev
 // Reset a routing context to its initial state.
 func (x *Context) Reset() {
 	x.Routes = nil
@@ -93,6 +147,19 @@ func (x *Context) URLParam(key string) string {
 //   }
 func (x *Context) RoutePattern() string {
 	routePattern := strings.Join(x.RoutePatterns, "")
+<<<<<<< HEAD
+	return replaceWildcards(routePattern)
+}
+
+// replaceWildcards takes a route pattern and recursively replaces all
+// occurrences of "/*/" to "/".
+func replaceWildcards(p string) string {
+	if strings.Contains(p, "/*/") {
+		return replaceWildcards(strings.Replace(p, "/*/", "/", -1))
+	}
+
+	return p
+=======
 	return strings.Replace(routePattern, "/*/", "/", -1)
 }
 
@@ -117,6 +184,7 @@ func URLParamFromCtx(ctx context.Context, key string) string {
 		return rctx.URLParam(key)
 	}
 	return ""
+>>>>>>> dev
 }
 
 // RouteParams is a structure to track URL routing parameters efficiently.
@@ -130,6 +198,8 @@ func (s *RouteParams) Add(key, value string) {
 	s.Values = append(s.Values, value)
 }
 
+<<<<<<< HEAD
+=======
 // ServerBaseContext wraps an http.Handler to set the request context to the
 // `baseCtx`.
 func ServerBaseContext(baseCtx context.Context, h http.Handler) http.Handler {
@@ -150,6 +220,7 @@ func ServerBaseContext(baseCtx context.Context, h http.Handler) http.Handler {
 	return fn
 }
 
+>>>>>>> dev
 // contextKey is a value for use with context.WithValue. It's used as
 // a pointer so it fits in an interface{} without allocation. This technique
 // for defining context keys was copied from Go 1.7's new use of context in net/http.

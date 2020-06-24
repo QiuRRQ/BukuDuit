@@ -3,11 +3,12 @@ package bootstrap
 import (
 	"bukuduit-go/server/bootstrap/routes"
 	api "bukuduit-go/server/handlers"
-	"github.com/labstack/echo"
 	"net/http"
+
+	"github.com/labstack/echo"
 )
 
-func(boot *Bootstrap) RegisterRouters(){
+func (boot *Bootstrap) RegisterRouters() {
 	handlerType := api.Handler{
 		E:               boot.E,
 		Db:              boot.Db,
@@ -55,4 +56,14 @@ func(boot *Bootstrap) RegisterRouters(){
 		Handler:    handlerType,
 	}
 	userCustomerRouteRegistrar.RegisterRoute()
+
+	//transaction route
+	transactionRoute := apiRoute.Group("/transaction")
+	transactionRouteRegistrar := routes.TransactionRoute{
+		RouteGroup: transactionRoute,
+		Handler:    handlerType,
+	}
+	transactionRouteRegistrar.RegisterRoute()
+
+	
 }

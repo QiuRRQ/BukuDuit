@@ -60,7 +60,7 @@ func (uc UserCustomerUseCase) EditDebt(ID string, debt int32, tx *sql.Tx) (err e
 	model := actions.NewUserCustomerModel(uc.DB)
 	now := time.Now().UTC()
 
-	err = model.EditDebt(ID, now.Format(time.RFC3339), debt, tx)
+	_,err = model.EditDebt(ID, now.Format(time.RFC3339), debt)
 	if err != nil {
 		return err
 	}

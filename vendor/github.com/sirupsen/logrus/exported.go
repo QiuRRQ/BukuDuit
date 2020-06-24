@@ -80,7 +80,11 @@ func WithFields(fields Fields) *Entry {
 	return std.WithFields(fields)
 }
 
+<<<<<<< HEAD
+// WithTime creates an entry from the standard logger and overrides the time of
+=======
 // WithTime creats an entry from the standard logger and overrides the time of
+>>>>>>> dev
 // logs generated with it.
 //
 // Note that it doesn't log until you call Debug, Print, Info, Warn, Fatal

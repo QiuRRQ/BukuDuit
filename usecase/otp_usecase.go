@@ -14,6 +14,7 @@ type OtpUseCase struct {
 }
 
 // RequestOtp ...
+
 func (uc OtpUseCase) RequestOtp(mobilePhoneNumber,action string) (res viewmodel.OtpVm, err error) {
 	if action == "register" {
 		userUc := UserUseCase{UcContract:uc.UcContract}
@@ -28,7 +29,7 @@ func (uc OtpUseCase) RequestOtp(mobilePhoneNumber,action string) (res viewmodel.
 
 	err = uc.GetFromRedis("otp"+mobilePhoneNumber,&res)
 	if err == nil {
-		uc.RemoveFromRedis("otp"+mobilePhoneNumber)
+		uc.RemoveFromRedis("otp" + mobilePhoneNumber)
 	}
 
 	//generate otp save to redis

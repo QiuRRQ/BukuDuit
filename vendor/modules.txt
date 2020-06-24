@@ -51,7 +51,11 @@ github.com/dgrijalva/jwt-go
 # github.com/globalsign/mgo v0.0.0-20181015135952-eeefdecb41b8
 github.com/globalsign/mgo/bson
 github.com/globalsign/mgo/internal/json
+<<<<<<< HEAD
+# github.com/go-chi/chi v4.1.2+incompatible
+=======
 # github.com/go-chi/chi v4.0.3+incompatible
+>>>>>>> dev
 github.com/go-chi/chi
 github.com/go-chi/chi/middleware
 # github.com/go-playground/locales v0.13.0
@@ -81,7 +85,11 @@ github.com/gorilla/schema
 github.com/jmespath/go-jmespath
 # github.com/joho/godotenv v1.3.0
 github.com/joho/godotenv
+<<<<<<< HEAD
+# github.com/konsorten/go-windows-terminal-sequences v1.0.3
+=======
 # github.com/konsorten/go-windows-terminal-sequences v1.0.2
+>>>>>>> dev
 github.com/konsorten/go-windows-terminal-sequences
 # github.com/labstack/echo v3.3.10+incompatible
 github.com/labstack/echo
@@ -116,11 +124,17 @@ github.com/mattn/go-colorable
 github.com/mattn/go-isatty
 # github.com/pkg/errors v0.9.1
 github.com/pkg/errors
+<<<<<<< HEAD
+# github.com/sfreiberg/gotwilio v0.0.0-20200424172909-47a95c1c632a
+github.com/sfreiberg/gotwilio
+# github.com/sirupsen/logrus v1.6.0
+=======
 # github.com/satori/go.uuid v1.2.0
 github.com/satori/go.uuid
 # github.com/sfreiberg/gotwilio v0.0.0-20200424172909-47a95c1c632a
 github.com/sfreiberg/gotwilio
 # github.com/sirupsen/logrus v1.4.2
+>>>>>>> dev
 github.com/sirupsen/logrus
 # github.com/streadway/amqp v1.0.0
 github.com/streadway/amqp

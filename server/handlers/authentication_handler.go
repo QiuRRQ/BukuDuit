@@ -4,9 +4,10 @@ import (
 	"bukuduit-go/helpers/messages"
 	request "bukuduit-go/server/requests"
 	"bukuduit-go/usecase"
+	"net/http"
+
 	"github.com/go-playground/validator/v10"
 	"github.com/labstack/echo"
-	"net/http"
 )
 
 type AuthenticationHandler struct {
@@ -14,7 +15,7 @@ type AuthenticationHandler struct {
 }
 
 func (handler AuthenticationHandler) Register(ctx echo.Context) error {
-	input := new(request.RegisterRequest)
+	input := new(request.RegisterRequest) //i add a new filed called fullName since its requred on DB
 
 	if err := ctx.Bind(input); err != nil {
 		return handler.SendResponseBadRequest(ctx, http.StatusBadRequest, err.Error())
