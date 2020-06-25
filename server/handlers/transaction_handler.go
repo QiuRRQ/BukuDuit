@@ -55,7 +55,7 @@ func (handler TransactionHandler) Delete(ctx echo.Context) error {
 
 //untuk pembayaran hutang
 func (handler TransactionHandler) DebtPayment(ctx echo.Context) error {
-	input := new(request.UtangRequest)
+	input := new(request.TransactionRequest)
 
 	if err := ctx.Bind(input); err != nil {
 		return handler.SendResponseBadRequest(ctx, http.StatusBadRequest, err.Error())
@@ -66,7 +66,7 @@ func (handler TransactionHandler) DebtPayment(ctx echo.Context) error {
 	}
 
 	uc := usecase.TransactionUseCase{UcContract: handler.UseCaseContract}
-	err := uc.DebtPayment(input.Reference_id, input.DebtType, input.Shop_id, input.Amount)
+	err := uc.DebtPayment(input.ReferenceID, input.TransactionType, input.ShopID, input.TransactionDate, input.Amount)
 
 	return handler.SendResponse(ctx, nil, nil, err)
 }

@@ -77,12 +77,12 @@ func (repository TransactionRepository) Edit(body viewmodel.TransactionVm) (res 
 	statement := `update "transactions" set "amount"=$1, "description"=$2, "image"=$3, "type"=$4, "transaction_date"=$5, "updated_at"=$6 where "id"=$7 returning "id"`
 	err = repository.DB.QueryRow(
 		statement,
-		str.EmptyString(body.Amount),
+		body.Amount,
 		str.EmptyString(body.Description),
 		str.EmptyString(body.Image),
 		str.EmptyString(body.Type),
-		str.EmptyString(body.Transaction_Date),
-		datetime.StrParseToTime(body.Update_at, time.RFC3339),
+		str.EmptyString(body.TransactionDate),
+		datetime.StrParseToTime(body.UpdatedAt, time.RFC3339),
 		body.ID).Scan(&res)
 	if err != nil {
 		return res, err
@@ -92,32 +92,30 @@ func (repository TransactionRepository) Edit(body viewmodel.TransactionVm) (res 
 }
 
 func (repository TransactionRepository) Add(body viewmodel.TransactionVm, tx *sql.Tx) (res string, err error) {
-	statement := `insert into "transactions" ("reference_id", "shop_id", "amount","description","image","type","transaction_date","created_at","updated_at") values($1,$2,$3,$4,$5,$6,$7,$8) returning "id"`
+	statement := `insert into "transactions" ("reference_id", "shop_id", "amount","description","type","transaction_date","created_at","updated_at") values($1,$2,$3,$4,$5,$6,$7,$8) returning "id"`
 	if tx != nil {
 		_, err = tx.Exec(
 			statement,
-			str.EmptyString(body.Reference_Id),
-			str.EmptyString(body.Shop_Id),
-			str.EmptyString(body.Amount),
+			str.EmptyString(body.ReferenceID),
+			str.EmptyString(body.ShopID),
+			body.Amount,
 			str.EmptyString(body.Description),
-			str.EmptyString(body.Image),
 			str.EmptyString(body.Type),
-			datetime.StrParseToTime(body.Transaction_Date, time.RFC3339),
-			datetime.StrParseToTime(body.Created_at, time.RFC3339),
-			datetime.StrParseToTime(body.Update_at, time.RFC3339),
+			datetime.StrParseToTime(body.TransactionDate, time.RFC3339),
+			datetime.StrParseToTime(body.CreatedAt, time.RFC3339),
+			datetime.StrParseToTime(body.UpdatedAt, time.RFC3339),
 		)
 	} else {
 		err = repository.DB.QueryRow(
 			statement,
-			str.EmptyString(body.Reference_Id),
-			str.EmptyString(body.Shop_Id),
-			str.EmptyString(body.Amount),
+			str.EmptyString(body.ReferenceID),
+			str.EmptyString(body.ShopID),
+			body.Amount,
 			str.EmptyString(body.Description),
-			str.EmptyString(body.Image),
 			str.EmptyString(body.Type),
-			datetime.StrParseToTime(body.Transaction_Date, time.RFC3339),
-			datetime.StrParseToTime(body.Created_at, time.RFC3339),
-			datetime.StrParseToTime(body.Update_at, time.RFC3339),
+			datetime.StrParseToTime(body.TransactionDate, time.RFC3339),
+			datetime.StrParseToTime(body.CreatedAt, time.RFC3339),
+			datetime.StrParseToTime(body.UpdatedAt, time.RFC3339),
 		).Scan(&res)
 	}
 	if err != nil {
@@ -137,9 +135,9 @@ func (repository TransactionRepository) Delete(ID, updatedAt, deletedAt string) 
 	return res, err
 }
 
-func (repository TransactionRepository) DeleteByCustomer(userID, updatedAt, deletedAt string, tx *sql.Tx) (err error) {
-	statement := `update "transactions" set "updated_at"=$1, "deleted_at"=$2 where "user_id"=$3`
-	_, err = tx.Exec(statement, datetime.StrParseToTime(updatedAt, time.RFC3339), datetime.StrParseToTime(deletedAt, time.RFC3339), userID)
+func (repository TransactionRepository) DeleteByCustomer(referenceID, updatedAt, deletedAt string, tx *sql.Tx) (err error) {
+	statement := `update "transactions" set "updated_at"=$1, "deleted_at"=$2 where "reference_id"=$3`
+	_, err = tx.Exec(statement, datetime.StrParseToTime(updatedAt, time.RFC3339), datetime.StrParseToTime(deletedAt, time.RFC3339), referenceID)
 	if err != nil {
 		return err
 	}

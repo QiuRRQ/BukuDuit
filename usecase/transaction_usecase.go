@@ -34,7 +34,7 @@ func (uc TransactionUseCase) BrowseByCustomer(customerID string) (res []viewmode
 			TransactionDate: Transaction.TransactionDate.String,
 			CreatedAt:       Transaction.CreatedAt,
 			UpdatedAt:       Transaction.UpdatedAt.String,
-			DeletedAt:      Transaction.DeletedAt.String,
+			DeletedAt:       Transaction.DeletedAt.String,
 		})
 	}
 
@@ -58,7 +58,7 @@ func (uc TransactionUseCase) Read(ID string) (res viewmodel.TransactionVm, err e
 		TransactionDate: Transaction.TransactionDate.String,
 		CreatedAt:       Transaction.CreatedAt,
 		UpdatedAt:       Transaction.UpdatedAt.String,
-		DeletedAt:      Transaction.DeletedAt.String,
+		DeletedAt:       Transaction.DeletedAt.String,
 	}
 
 	return res, err
@@ -76,12 +76,11 @@ func (uc TransactionUseCase) Edit(input *request.TransactionRequest, ID string) 
 	}
 
 	body := viewmodel.TransactionVm{
-		ID:              ID,
-		ReferenceID:     input.CustomerID,
-		Amount:          input.Amount,
-		Description:     input.Description,
-		Image:           input.Image,
-		Type:            input.Type,
+		ID:          ID,
+		ReferenceID: input.ReferenceID,
+		Amount:      input.Amount,
+		//Description:     input.Description,
+		Type:            input.TransactionType,
 		TransactionDate: input.TransactionDate,
 		UpdatedAt:       now.Format(time.RFC3339),
 	}
@@ -114,7 +113,7 @@ func (uc TransactionUseCase) Delete(ID string) (err error) {
 	return nil
 }
 
-func (uc TransactionUseCase) DebtPayment(referenceID, DebtType, shopID string, amount int32) (err error) {
+func (uc TransactionUseCase) DebtPayment(referenceID, transactionType, shopID, transactionDate string, amount int32) (err error) {
 	model := actions.NewTransactionModel(uc.DB)
 	userCustomerUc := UserCustomerUseCase{UcContract: uc.UcContract}
 	now := time.Now().UTC()
@@ -128,13 +127,13 @@ func (uc TransactionUseCase) DebtPayment(referenceID, DebtType, shopID string, a
 		ReferenceID:     referenceID,
 		ShopID:          shopID,
 		Amount:          amount,
-		Type:            DebtType,
-		TransactionDate: now.Format(time.RFC3339),
+		Type:            transactionType,
+		TransactionDate: transactionDate,
 		UpdatedAt:       now.Format(time.RFC3339),
 		CreatedAt:       now.Format(time.RFC3339),
 	}
 
-	if DebtType == enums.Debt {
+	if transactionType == enums.Debet {
 		userDebtAmount = userDebtAmount - amount
 	} else {
 		userDebtAmount = userDebtAmount + amount

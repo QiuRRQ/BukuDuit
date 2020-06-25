@@ -48,7 +48,7 @@ func (repository UserCustomerRepository) Read(ID string) (data models.UserCustom
 }
 
 func (repository UserCustomerRepository) EditDebt(ID, updatedAt string, debt int32) (res string, err error) {
-	statement := `update "user_customers" set "debt"=$1, "updated_at"=$2 where "id"=$3`
+	statement := `update "user_customers" set "debt"=$1, "updated_at"=$2 where "id"=$3 returning "id"`
 	err = repository.DB.QueryRow(
 		statement,
 		debt, datetime.StrParseToTime(updatedAt, time.RFC3339), ID,
