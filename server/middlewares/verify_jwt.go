@@ -59,7 +59,6 @@ func (jwtVerify JwtVerify) JWTWithConfig(next echo.HandlerFunc) echo.HandlerFunc
 
 		sessionData := viewmodel.UserSessionVm{}
 		jwtVerify.UcContract.GetFromRedis("session-"+claims.Id, &sessionData)
-		fmt.Println(sessionData.Session)
 		if sessionData.Session != claims.Session {
 			return apiHandler.SendResponseUnauthorized(ctx, errors.New(messages.InvalidSession))
 		}
