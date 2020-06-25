@@ -417,11 +417,8 @@ func (n *node) findRoute(rctx *Context, method methodTyp, path string) *node {
 				continue
 			}
 
-<<<<<<< HEAD
-=======
 			found := false
 
->>>>>>> dev
 			// serially loop through each node grouped by the tail delimiter
 			for idx := 0; idx < len(nds); idx++ {
 				xn = nds[idx]
@@ -446,38 +443,6 @@ func (n *node) findRoute(rctx *Context, method methodTyp, path string) *node {
 					continue
 				}
 
-<<<<<<< HEAD
-				prevlen := len(rctx.routeParams.Values)
-				rctx.routeParams.Values = append(rctx.routeParams.Values, xsearch[:p])
-				xsearch = xsearch[p:]
-
-				if len(xsearch) == 0 {
-					if xn.isLeaf() {
-						h := xn.endpoints[method]
-						if h != nil && h.handler != nil {
-							rctx.routeParams.Keys = append(rctx.routeParams.Keys, h.paramKeys...)
-							return xn
-						}
-
-						// flag that the routing context found a route, but not a corresponding
-						// supported method
-						rctx.methodNotAllowed = true
-					}
-				}
-
-				// recursively find the next node on this branch
-				fin := xn.findRoute(rctx, method, xsearch)
-				if fin != nil {
-					return fin
-				}
-
-				// not found on this branch, reset vars
-				rctx.routeParams.Values = rctx.routeParams.Values[:prevlen]
-				xsearch = search
-			}
-
-			rctx.routeParams.Values = append(rctx.routeParams.Values, "")
-=======
 				rctx.routeParams.Values = append(rctx.routeParams.Values, xsearch[:p])
 				xsearch = xsearch[p:]
 				found = true
@@ -487,7 +452,6 @@ func (n *node) findRoute(rctx *Context, method methodTyp, path string) *node {
 			if !found {
 				rctx.routeParams.Values = append(rctx.routeParams.Values, "")
 			}
->>>>>>> dev
 
 		default:
 			// catch-all nodes
@@ -561,8 +525,6 @@ func (n *node) findEdge(ntyp nodeTyp, label byte) *node {
 	}
 }
 
-<<<<<<< HEAD
-=======
 func (n *node) isEmpty() bool {
 	for _, nds := range n.children {
 		if len(nds) > 0 {
@@ -572,7 +534,6 @@ func (n *node) isEmpty() bool {
 	return true
 }
 
->>>>>>> dev
 func (n *node) isLeaf() bool {
 	return n.endpoints != nil
 }
@@ -876,10 +837,6 @@ func walk(r Routes, walkFn WalkFunc, parentRoute string, parentMw ...func(http.H
 			}
 
 			fullRoute := parentRoute + route.Pattern
-<<<<<<< HEAD
-			fullRoute = strings.Replace(fullRoute, "/*/", "/", -1)
-=======
->>>>>>> dev
 
 			if chain, ok := handler.(*ChainHandler); ok {
 				if err := walkFn(method, fullRoute, chain.Endpoint, append(mws, chain.Middlewares...)...); err != nil {

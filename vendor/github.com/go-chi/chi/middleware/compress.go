@@ -5,10 +5,6 @@ import (
 	"compress/flate"
 	"compress/gzip"
 	"errors"
-<<<<<<< HEAD
-	"fmt"
-=======
->>>>>>> dev
 	"io"
 	"io/ioutil"
 	"net"
@@ -30,27 +26,9 @@ var defaultCompressibleContentTypes = []string{
 	"image/svg+xml",
 }
 
-<<<<<<< HEAD
-// Compress is a middleware that compresses response
-// body of a given content types to a data format based
-// on Accept-Encoding request header. It uses a given
-// compression level.
-//
-// NOTE: make sure to set the Content-Type header on your response
-// otherwise this middleware will not compress the response body. For ex, in
-// your handler you should set w.Header().Set("Content-Type", http.DetectContentType(yourBody))
-// or set it manually.
-//
-// Passing a compression level of 5 is sensible value
-func Compress(level int, types ...string) func(next http.Handler) http.Handler {
-	compressor := NewCompressor(level, types...)
-	return compressor.Handler
-}
-=======
 // A default compressor that allows for the old API to use the new code.
 // DEPRECATED
 var defaultCompressor *Compressor
->>>>>>> dev
 
 // Compressor represents a set of encoding configurations.
 type Compressor struct {
@@ -60,12 +38,7 @@ type Compressor struct {
 	// The mapping of pooled encoders to pools.
 	pooledEncoders map[string]*sync.Pool
 	// The set of content types allowed to be compressed.
-<<<<<<< HEAD
-	allowedTypes     map[string]struct{}
-	allowedWildcards map[string]struct{}
-=======
 	allowedTypes map[string]bool
->>>>>>> dev
 	// The list of encoders in order of decreasing precedence.
 	encodingPrecedence []string
 }
@@ -77,24 +50,6 @@ type Compressor struct {
 func NewCompressor(level int, types ...string) *Compressor {
 	// If types are provided, set those as the allowed types. If none are
 	// provided, use the default list.
-<<<<<<< HEAD
-	allowedTypes := make(map[string]struct{})
-	allowedWildcards := make(map[string]struct{})
-	if len(types) > 0 {
-		for _, t := range types {
-			if strings.Contains(strings.TrimSuffix(t, "/*"), "*") {
-				panic(fmt.Sprintf("middleware/compress: Unsupported content-type wildcard pattern '%s'. Only '/*' supported", t))
-			}
-			if strings.HasSuffix(t, "/*") {
-				allowedWildcards[strings.TrimSuffix(t, "/*")] = struct{}{}
-			} else {
-				allowedTypes[t] = struct{}{}
-			}
-		}
-	} else {
-		for _, t := range defaultCompressibleContentTypes {
-			allowedTypes[t] = struct{}{}
-=======
 	allowedTypes := make(map[string]bool)
 	if len(types) > 0 {
 		for _, t := range types {
@@ -103,23 +58,14 @@ func NewCompressor(level int, types ...string) *Compressor {
 	} else {
 		for _, t := range defaultCompressibleContentTypes {
 			allowedTypes[t] = true
->>>>>>> dev
 		}
 	}
 
 	c := &Compressor{
-<<<<<<< HEAD
-		level:            level,
-		encoders:         make(map[string]EncoderFunc),
-		pooledEncoders:   make(map[string]*sync.Pool),
-		allowedTypes:     allowedTypes,
-		allowedWildcards: allowedWildcards,
-=======
 		level:          level,
 		encoders:       make(map[string]EncoderFunc),
 		pooledEncoders: make(map[string]*sync.Pool),
 		allowedTypes:   allowedTypes,
->>>>>>> dev
 	}
 
 	// Set the default encoders.  The precedence order uses the reverse
@@ -222,29 +168,6 @@ func (c *Compressor) SetEncoder(encoding string, fn EncoderFunc) {
 
 // Handler returns a new middleware that will compress the response based on the
 // current Compressor.
-<<<<<<< HEAD
-func (c *Compressor) Handler(next http.Handler) http.Handler {
-	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-		encoder, encoding, cleanup := c.selectEncoder(r.Header, w)
-
-		cw := &compressResponseWriter{
-			ResponseWriter:   w,
-			w:                w,
-			contentTypes:     c.allowedTypes,
-			contentWildcards: c.allowedWildcards,
-			encoding:         encoding,
-			compressable:     false, // determined in post-handler
-		}
-		if encoder != nil {
-			cw.w = encoder
-		}
-		// Re-add the encoder to the pool if applicable.
-		defer cleanup()
-		defer cw.Close()
-
-		next.ServeHTTP(cw, r)
-	})
-=======
 func (c *Compressor) Handler() func(next http.Handler) http.Handler {
 	return func(next http.Handler) http.Handler {
 		fn := func(w http.ResponseWriter, r *http.Request) {
@@ -270,7 +193,6 @@ func (c *Compressor) Handler() func(next http.Handler) http.Handler {
 		return http.HandlerFunc(fn)
 	}
 
->>>>>>> dev
 }
 
 // selectEncoder returns the encoder, the name of the encoder, and a closer function.
@@ -324,8 +246,6 @@ type ioResetterWriter interface {
 	Reset(w io.Writer)
 }
 
-<<<<<<< HEAD
-=======
 // SetEncoder can be used to set the implementation of a compression algorithm.
 //
 // The encoding should be a standardised identifier. See:
@@ -374,45 +294,16 @@ func Compress(level int, types ...string) func(next http.Handler) http.Handler {
 	return defaultCompressor.Handler()
 }
 
->>>>>>> dev
 type compressResponseWriter struct {
 	http.ResponseWriter
 
 	// The streaming encoder writer to be used if there is one. Otherwise,
 	// this is just the normal writer.
-<<<<<<< HEAD
-	w                io.Writer
-	encoding         string
-	contentTypes     map[string]struct{}
-	contentWildcards map[string]struct{}
-	wroteHeader      bool
-	compressable     bool
-}
-
-func (cw *compressResponseWriter) isCompressable() bool {
-	// Parse the first part of the Content-Type response header.
-	contentType := cw.Header().Get("Content-Type")
-	if idx := strings.Index(contentType, ";"); idx >= 0 {
-		contentType = contentType[0:idx]
-	}
-
-	// Is the content type compressable?
-	if _, ok := cw.contentTypes[contentType]; ok {
-		return true
-	}
-	if idx := strings.Index(contentType, "/"); idx > 0 {
-		contentType = contentType[0:idx]
-		_, ok := cw.contentWildcards[contentType]
-		return ok
-	}
-	return false
-=======
 	w            io.Writer
 	encoding     string
 	contentTypes map[string]bool
 	wroteHeader  bool
 	compressable bool
->>>>>>> dev
 }
 
 func (cw *compressResponseWriter) WriteHeader(code int) {
@@ -428,9 +319,6 @@ func (cw *compressResponseWriter) WriteHeader(code int) {
 		return
 	}
 
-<<<<<<< HEAD
-	if !cw.isCompressable() {
-=======
 	// Parse the first part of the Content-Type response header.
 	contentType := cw.Header().Get("Content-Type")
 	if idx := strings.Index(contentType, ";"); idx >= 0 {
@@ -439,7 +327,6 @@ func (cw *compressResponseWriter) WriteHeader(code int) {
 
 	// Is the content type compressable?
 	if _, ok := cw.contentTypes[contentType]; !ok {
->>>>>>> dev
 		cw.compressable = false
 		return
 	}
@@ -470,30 +357,10 @@ func (cw *compressResponseWriter) writer() io.Writer {
 	}
 }
 
-<<<<<<< HEAD
-type compressFlusher interface {
-	Flush() error
-}
-
-=======
->>>>>>> dev
 func (cw *compressResponseWriter) Flush() {
 	if f, ok := cw.writer().(http.Flusher); ok {
 		f.Flush()
 	}
-<<<<<<< HEAD
-	// If the underlying writer has a compression flush signature,
-	// call this Flush() method instead
-	if f, ok := cw.writer().(compressFlusher); ok {
-		f.Flush()
-
-		// Also flush the underlying response writer
-		if f, ok := cw.ResponseWriter.(http.Flusher); ok {
-			f.Flush()
-		}
-	}
-=======
->>>>>>> dev
 }
 
 func (cw *compressResponseWriter) Hijack() (net.Conn, *bufio.ReadWriter, error) {

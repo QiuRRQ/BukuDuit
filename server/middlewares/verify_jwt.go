@@ -8,17 +8,16 @@ import (
 	"bukuduit-go/usecase/viewmodel"
 	"errors"
 	"fmt"
-	"github.com/dgrijalva/jwt-go"
-	"github.com/labstack/echo"
 	"strings"
 	"time"
+
+	"github.com/dgrijalva/jwt-go"
+	"github.com/labstack/echo"
 )
 
 type JwtVerify struct {
 	*usecase.UcContract
 }
-
-
 
 func (jwtVerify JwtVerify) JWTWithConfig(next echo.HandlerFunc) echo.HandlerFunc {
 	return func(ctx echo.Context) (err error) {
@@ -49,22 +48,22 @@ func (jwtVerify JwtVerify) JWTWithConfig(next echo.HandlerFunc) echo.HandlerFunc
 
 		jweRes, err := jwtVerify.Jwe.Rollback(claims.Id)
 		if err != nil {
+			fmt.Println(1)
 			return apiHandler.SendResponseUnauthorized(ctx, errors.New(messages.FailedLoadPayload))
 		}
 		if jweRes == nil {
-			//fmt.Println(err)
+			fmt.Println(2)
 			return apiHandler.SendResponseUnauthorized(ctx, errors.New(messages.FailedLoadPayload))
 		}
-		claims.Id = fmt.Sprintf("%v",jweRes["id"])
+		claims.Id = fmt.Sprintf("%v", jweRes["id"])
 
 		sessionData := viewmodel.UserSessionVm{}
 		jwtVerify.UcContract.GetFromRedis("session-"+claims.Id, &sessionData)
 		if sessionData.Session != claims.Session {
 			return apiHandler.SendResponseUnauthorized(ctx, errors.New(messages.InvalidSession))
 		}
-		ctx.Set("user",claims)
+		ctx.Set("user", claims)
 
 		return next(ctx)
 	}
 }
-

@@ -17,9 +17,7 @@ func (route TransactionRoute) RegisterRoute() {
 	jwtMiddleware := middleware.JwtVerify{UcContract: route.Handler.UseCaseContract}
 
 	route.RouteGroup.Use(jwtMiddleware.JWTWithConfig)
-	route.RouteGroup.GET("/", handler.BrowseByCustomer)
 	route.RouteGroup.GET("/:id", handler.Read)
-	route.RouteGroup.POST("", handler.Add)
 	route.RouteGroup.DELETE("/:id", handler.Delete)
 	route.RouteGroup.POST("/debt", handler.DebtPayment)
 	// route.RouteGroup.GET("/DebtList", handler)

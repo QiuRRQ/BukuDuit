@@ -1,7 +1,6 @@
 package usecase
 
 import (
-	"strconv"
 	"bukuduit-go/db/repositories/actions"
 	"bukuduit-go/helpers/messages"
 	request "bukuduit-go/server/requests"
@@ -9,6 +8,7 @@ import (
 	"database/sql"
 	"errors"
 	"fmt"
+	"strconv"
 	"time"
 )
 
@@ -115,13 +115,13 @@ func (uc TransactionUseCase) Edit(input *request.TransactionRequest, ID string) 
 // 	return nil
 // }
 
-func (uc TransactionUseCase) Delete(ID string) (err error) { 
+func (uc TransactionUseCase) Delete(ID string) (err error) {
 	fmt.Println(ID)
 	model := actions.NewTransactionModel(uc.DB)
 	now := time.Now().UTC()
 
 	isExist, err := uc.IsTransactionExist(ID)
-	if err != nil {      
+	if err != nil {
 		return err
 	}
 	if !isExist {
@@ -136,37 +136,37 @@ func (uc TransactionUseCase) Delete(ID string) (err error) {
 	return nil
 }
 
-func (uc TransactionUseCase) DebtPayment(CustomerID, DebtType string, UserCustomerDebt, amount int) error{
+func (uc TransactionUseCase) DebtPayment(CustomerID, DebtType string, UserCustomerDebt, amount int) error {
 	TransactionModel := actions.NewTransactionModel(uc.DB)
-	userCustomerUc := UserCustomerUseCase{UcContract:uc.UcContract}
+	userCustomerUc := UserCustomerUseCase{UcContract: uc.UcContract}
 	now := time.Now().UTC()
 	Transaction, err := uc.DB.Begin()
 	if err != nil {
 		return err
 	}
 	TransactionBody := viewmodel.TransactionVm{
-		Customer_Id: CustomerID,
-		Amount: strconv.Itoa(amount),
-		Type: DebtType,
+		Customer_Id:      CustomerID,
+		Amount:           strconv.Itoa(amount),
+		Type:             DebtType,
 		Transaction_Date: now.Format(time.RFC3339),
-		Update_at: now.Format(time.RFC3339),
-		Created_at: now.Format(time.RFC3339),
+		Update_at:        now.Format(time.RFC3339),
+		Created_at:       now.Format(time.RFC3339),
 	}
 
-	if DebtType == "pay"{
+	if DebtType == "pay" {
 		UserCustomerDebt = UserCustomerDebt - amount
-	}else{
+	} else {
 		UserCustomerDebt = UserCustomerDebt + amount
 	}
 
 	_, errr := TransactionModel.Add(TransactionBody, Transaction)
-	if err != nil{
+	if err != nil {
 		Transaction.Rollback()
 		return err
 	}
 
 	eror := userCustomerUc.EditDebt(CustomerID, int32(UserCustomerDebt), Transaction)
-	if eror != nil{
+	if eror != nil {
 		Transaction.Rollback()
 		return eror
 	}

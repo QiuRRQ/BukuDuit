@@ -51,11 +51,7 @@ func (level *Level) UnmarshalText(text []byte) error {
 		return err
 	}
 
-<<<<<<< HEAD
-	*level = l
-=======
 	*level = Level(l)
->>>>>>> dev
 
 	return nil
 }

@@ -163,8 +163,7 @@ func (repository TransactionRepository) CountBy(column, value string) (res int, 
 	return res, err
 }
 
-func (repository TransactionRepository) DebtPayment(custome, DebtType string, UserCustomerDebt, amount int) (CustomerDebt int){
-
+func (repository TransactionRepository) DebtPayment(custome, DebtType string, UserCustomerDebt, amount int) (CustomerDebt int) {
 
 	return UserCustomerDebt
 }
