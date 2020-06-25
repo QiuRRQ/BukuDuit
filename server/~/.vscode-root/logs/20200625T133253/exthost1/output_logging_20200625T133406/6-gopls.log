@@ -1,0 +1,1434 @@
+[Info  - 1:34:07 PM] 2020/06/25 13:34:07 Build info
+----------
+golang.org/x/tools/gopls 0.4.1
+    golang.org/x/tools/gopls@v0.4.1 h1:0e3BPxGV4B3cd0zdMuccwW72SgmHp92lAjOyxX/ScAw=
+    github.com/BurntSushi/toml@v0.3.1 h1:WXkYYl6Yr3qBf1K79EBnL4mak0OimBfB0XUf9Vl28OQ=
+    github.com/sergi/go-diff@v1.1.0 h1:we8PVUC3FE2uYfodKH/nBHMSetSfHDR6scGdBi+erh0=
+    golang.org/x/mod@v0.2.0 h1:KU7oHjnv3XNWfa5COkzUifxZmxp1TyI7ImMXqFxLwvQ=
+    golang.org/x/sync@v0.0.0-20190911185100-cd5d95a43a6e h1:vcxGaoTs7kV8m5Np9uUNQin4BrLOthgV7252N8V+FwY=
+    golang.org/x/tools@v0.0.0-20200513154647-78b527d18275 h1:e7nYe9s94RHunFJ7b+mmPxiQMOKMVSqYASToWb1EcHs=
+    golang.org/x/xerrors@v0.0.0-20191204190536-9bdfabe68543 h1:E7g+9GITq07hpfrRu66IVDexMakfv52eLZ2CXBWiKr4=
+    honnef.co/go/tools@v0.0.1-2020.1.3 h1:sXmLre5bzIR6ypkjXCDI3jHPssRhc8KD/Ome589sc3U=
+    mvdan.cc/xurls/v2@v2.1.0 h1:KaMb5GLhlcSX+e+qhbRJODnUUBvlw01jt4yrjFIHAuA=
+
+Go info
+-------
+go version go1.13.8 linux/amd64
+
+
+
+[Info  - 1:34:08 PM] 2020/06/25 13:34:08 go env for /home/aziz/works/newBukuduit/bukuduit-go
+(valid build configuration = true)
+(build flags: [])
+GO111MODULE=""
+GOARCH="amd64"
+GOBIN=""
+GOCACHE="/root/.cache/go-build"
+GOENV="/root/.config/go/env"
+GOEXE=""
+GOFLAGS=""
+GOHOSTARCH="amd64"
+GOHOSTOS="linux"
+GONOPROXY=""
+GONOSUMDB=""
+GOOS="linux"
+GOPATH="/root/go"
+GOPRIVATE=""
+GOPROXY="https://proxy.golang.org,direct"
+GOROOT="/usr/lib/go-1.13"
+GOSUMDB="sum.golang.org"
+GOTMPDIR=""
+GOTOOLDIR="/usr/lib/go-1.13/pkg/tool/linux_amd64"
+GCCGO="gccgo"
+AR="ar"
+CC="gcc"
+CXX="g++"
+CGO_ENABLED="1"
+GOMOD="/home/aziz/works/newBukuduit/bukuduit-go/go.mod"
+CGO_CFLAGS="-g -O2"
+CGO_CPPFLAGS=""
+CGO_CXXFLAGS="-g -O2"
+CGO_FFLAGS="-g -O2"
+CGO_LDFLAGS="-g -O2"
+PKG_CONFIG="pkg-config"
+GOGCCFLAGS="-fPIC -m64 -pthread -fmessage-length=0 -fdebug-prefix-map=/tmp/go-build303085515=/tmp/go-build -gno-record-gcc-switches"
+
+
+[Info  - 1:34:14 PM] 2020/06/25 13:34:14 go/packages.Load
+	snapshot=0
+	directory=/home/aziz/works/newBukuduit/bukuduit-go
+	query=[./... builtin]
+	packages=34
+
+[Error - 1:34:14 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: no parsed file for file:///home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go
+  Code: 0 
+[Info  - 1:34:44 PM] 2020/06/25 13:34:44 background imports cache refresh starting
+
+[Info  - 1:35:01 PM] 2020/06/25 13:35:01 background refresh finished after 16.882735139s
+
+[Error - 1:35:44 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:30:35: expected selector or type assertion, found ',' (and 131 more errors)
+  Code: 0 
+[Error - 1:37:58 PM] Request textDocument/definition failed.
+  Message: no identifier found
+  Code: 0 
+[Error - 1:38:45 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:198:1: expected declaration, found 'package'
+  Code: 0 
+[Error - 1:38:55 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:198:1: expected declaration, found 'package'
+  Code: 0 
+[Error - 1:38:57 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:198:1: expected declaration, found 'package'
+  Code: 0 
+[Error - 1:38:58 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:198:1: expected declaration, found 'package'
+  Code: 0 
+[Error - 1:38:58 PM] Request textDocument/formatting failed.
+  Message: 198:1: expected declaration, found 'package'
+  Code: 0 
+[Error - 1:39:10 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:198:1: expected declaration, found 'package'
+  Code: 0 
+[Error - 1:39:14 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:198:1: expected declaration, found 'package'
+  Code: 0 
+[Error - 1:39:14 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:198:1: expected declaration, found 'package'
+  Code: 0 
+[Error - 1:39:21 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:198:1: expected declaration, found 'package'
+  Code: 0 
+[Error - 1:39:23 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:198:1: expected declaration, found 'package'
+  Code: 0 
+[Error - 1:39:24 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:198:1: expected declaration, found 'package'
+  Code: 0 
+[Error - 1:39:27 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:197:2: expected ';', found 'package'
+  Code: 0 
+[Error - 1:39:28 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:197:2: expected ';', found 'package'
+  Code: 0 
+[Error - 1:39:28 PM] Request textDocument/formatting failed.
+  Message: 197:2: expected ';', found 'package'
+  Code: 0 
+[Error - 1:39:29 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:197:2: expected ';', found 'package'
+  Code: 0 
+[Error - 1:39:30 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:197:2: expected ';', found 'package'
+  Code: 0 
+[Error - 1:39:34 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:197:3: expected declaration, found 'package'
+  Code: 0 
+[Error - 1:39:34 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:197:3: expected declaration, found 'package'
+  Code: 0 
+[Error - 1:39:34 PM] Request textDocument/formatting failed.
+  Message: 197:3: expected declaration, found 'package'
+  Code: 0 
+[Error - 1:39:35 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:197:3: expected declaration, found 'package'
+  Code: 0 
+[Error - 1:39:37 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:197:2: expected ';', found 'package'
+  Code: 0 
+[Error - 1:39:38 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:197:2: expected ';', found 'package'
+  Code: 0 
+[Error - 1:39:38 PM] Request textDocument/formatting failed.
+  Message: 197:2: expected ';', found 'package'
+  Code: 0 
+[Error - 1:39:39 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:197:2: expected ';', found 'package'
+  Code: 0 
+[Error - 1:39:39 PM] Request textDocument/formatting failed.
+  Message: 197:2: expected ';', found 'package'
+  Code: 0 
+[Error - 1:39:39 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:197:2: expected ';', found 'package'
+  Code: 0 
+[Error - 1:39:39 PM] Request textDocument/formatting failed.
+  Message: 197:2: expected ';', found 'package'
+  Code: 0 
+[Error - 1:39:41 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:197:3: expected declaration, found 'package'
+  Code: 0 
+[Info  - 1:49:21 PM] 2020/06/25 13:49:21 background imports cache refresh starting
+
+[Info  - 1:49:21 PM] 2020/06/25 13:49:21 background refresh finished after 15.603266ms
+
+[Info  - 2:03:26 PM] 2020/06/25 14:03:26 background imports cache refresh starting
+
+[Info  - 2:03:26 PM] 2020/06/25 14:03:26 background refresh finished after 27.156919ms
+
+[Info  - 2:04:30 PM] 2020/06/25 14:04:30 go/packages.Load
+	snapshot=34
+	directory=/home/aziz/works/newBukuduit/bukuduit-go
+	query=[bukuduit-go/amqp_listener_otp bukuduit-go/helpers/amqpconsumer bukuduit-go/server bukuduit-go/server/bootstrap bukuduit-go/server/bootstrap/routes bukuduit-go/server/handlers bukuduit-go/server/middlewares bukuduit-go/usecase]
+	packages=8
+
+[Info  - 2:04:30 PM] 2020/06/25 14:04:30 go/packages.Load
+	snapshot=34
+	package_path="bukuduit-go/helpers/amqpconsumer"
+	files=[/home/aziz/works/newBukuduit/bukuduit-go/helpers/amqpconsumer/amqpconsumer.go]
+
+[Info  - 2:04:30 PM] 2020/06/25 14:04:30 go/packages.Load
+	snapshot=34
+	package_path="bukuduit-go/usecase"
+	files=[/home/aziz/works/newBukuduit/bukuduit-go/usecase/authentication_usecase.go /home/aziz/works/newBukuduit/bukuduit-go/usecase/business_card_usecase.go /home/aziz/works/newBukuduit/bukuduit-go/usecase/contract.go /home/aziz/works/newBukuduit/bukuduit-go/usecase/otp_usecase.go /home/aziz/works/newBukuduit/bukuduit-go/usecase/sms_usecase.go /home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go /home/aziz/works/newBukuduit/bukuduit-go/usecase/user_customer_usecase.go /home/aziz/works/newBukuduit/bukuduit-go/usecase/user_usecase.go /home/aziz/works/newBukuduit/bukuduit-go/usecase/utang_usecase.go]
+
+[Info  - 2:04:30 PM] 2020/06/25 14:04:30 go/packages.Load
+	snapshot=34
+	package_path="bukuduit-go/server/handlers"
+	files=[/home/aziz/works/newBukuduit/bukuduit-go/server/handlers/authentication_handler.go /home/aziz/works/newBukuduit/bukuduit-go/server/handlers/business_card_handler.go /home/aziz/works/newBukuduit/bukuduit-go/server/handlers/handler.go /home/aziz/works/newBukuduit/bukuduit-go/server/handlers/otp_handler.go /home/aziz/works/newBukuduit/bukuduit-go/server/handlers/transaction_handler.go /home/aziz/works/newBukuduit/bukuduit-go/server/handlers/user_customer_handler.go /home/aziz/works/newBukuduit/bukuduit-go/server/handlers/utang_handler.go]
+
+[Info  - 2:04:30 PM] 2020/06/25 14:04:30 go/packages.Load
+	snapshot=34
+	package_path="bukuduit-go/amqp_listener_otp"
+	files=[/home/aziz/works/newBukuduit/bukuduit-go/amqp_listener_otp/main.go]
+
+[Info  - 2:04:30 PM] 2020/06/25 14:04:30 go/packages.Load
+	snapshot=34
+	package_path="bukuduit-go/server/bootstrap/routes"
+	files=[/home/aziz/works/newBukuduit/bukuduit-go/server/bootstrap/routes/authentication_route.go /home/aziz/works/newBukuduit/bukuduit-go/server/bootstrap/routes/otp_routes.go /home/aziz/works/newBukuduit/bukuduit-go/server/bootstrap/routes/shop_route.go /home/aziz/works/newBukuduit/bukuduit-go/server/bootstrap/routes/transaction_route.go /home/aziz/works/newBukuduit/bukuduit-go/server/bootstrap/routes/user_customer_route.go /home/aziz/works/newBukuduit/bukuduit-go/server/bootstrap/routes/utang_routes.go]
+
+[Info  - 2:04:30 PM] 2020/06/25 14:04:30 go/packages.Load
+	snapshot=34
+	package_path="bukuduit-go/server/middlewares"
+	files=[/home/aziz/works/newBukuduit/bukuduit-go/server/middlewares/header_x_request_id.go /home/aziz/works/newBukuduit/bukuduit-go/server/middlewares/logmiddleware.go /home/aziz/works/newBukuduit/bukuduit-go/server/middlewares/verify_jwt.go /home/aziz/works/newBukuduit/bukuduit-go/server/middlewares/xapi_key.go]
+
+[Info  - 2:04:30 PM] 2020/06/25 14:04:30 go/packages.Load
+	snapshot=34
+	package_path="bukuduit-go/server/bootstrap"
+	files=[/home/aziz/works/newBukuduit/bukuduit-go/server/bootstrap/boot.go /home/aziz/works/newBukuduit/bukuduit-go/server/bootstrap/route.go]
+
+[Info  - 2:04:30 PM] 2020/06/25 14:04:30 go/packages.Load
+	snapshot=34
+	package_path="bukuduit-go/server"
+	files=[/home/aziz/works/newBukuduit/bukuduit-go/server/main.go]
+
+[Info  - 2:04:31 PM] 2020/06/25 14:04:31 go/packages.Load
+	snapshot=35
+	directory=/home/aziz/works/newBukuduit/bukuduit-go
+	query=[file=/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go]
+	packages=1
+
+[Info  - 2:04:31 PM] 2020/06/25 14:04:31 go/packages.Load
+	snapshot=35
+	package_path="bukuduit-go/usecase"
+	files=[/home/aziz/works/newBukuduit/bukuduit-go/usecase/authentication_usecase.go /home/aziz/works/newBukuduit/bukuduit-go/usecase/business_card_usecase.go /home/aziz/works/newBukuduit/bukuduit-go/usecase/contract.go /home/aziz/works/newBukuduit/bukuduit-go/usecase/otp_usecase.go /home/aziz/works/newBukuduit/bukuduit-go/usecase/sms_usecase.go /home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go /home/aziz/works/newBukuduit/bukuduit-go/usecase/user_customer_usecase.go /home/aziz/works/newBukuduit/bukuduit-go/usecase/user_usecase.go /home/aziz/works/newBukuduit/bukuduit-go/usecase/utang_usecase.go]
+
+[Info  - 2:04:31 PM] 2020/06/25 14:04:31 go/packages.Load
+	snapshot=35
+	directory=/home/aziz/works/newBukuduit/bukuduit-go
+	query=[bukuduit-go/amqp_listener_otp bukuduit-go/helpers/amqpconsumer bukuduit-go/server bukuduit-go/server/bootstrap bukuduit-go/server/bootstrap/routes bukuduit-go/server/handlers bukuduit-go/server/middlewares bukuduit-go/server/requests bukuduit-go/usecase]
+	packages=9
+
+[Info  - 2:04:31 PM] 2020/06/25 14:04:31 go/packages.Load
+	snapshot=35
+	package_path="bukuduit-go/usecase"
+	files=[/home/aziz/works/newBukuduit/bukuduit-go/usecase/authentication_usecase.go /home/aziz/works/newBukuduit/bukuduit-go/usecase/business_card_usecase.go /home/aziz/works/newBukuduit/bukuduit-go/usecase/contract.go /home/aziz/works/newBukuduit/bukuduit-go/usecase/otp_usecase.go /home/aziz/works/newBukuduit/bukuduit-go/usecase/sms_usecase.go /home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go /home/aziz/works/newBukuduit/bukuduit-go/usecase/user_customer_usecase.go /home/aziz/works/newBukuduit/bukuduit-go/usecase/user_usecase.go /home/aziz/works/newBukuduit/bukuduit-go/usecase/utang_usecase.go]
+
+[Info  - 2:04:31 PM] 2020/06/25 14:04:31 go/packages.Load
+	snapshot=35
+	package_path="bukuduit-go/helpers/amqpconsumer"
+	files=[/home/aziz/works/newBukuduit/bukuduit-go/helpers/amqpconsumer/amqpconsumer.go]
+
+[Info  - 2:04:31 PM] 2020/06/25 14:04:31 go/packages.Load
+	snapshot=35
+	package_path="bukuduit-go/amqp_listener_otp"
+	files=[/home/aziz/works/newBukuduit/bukuduit-go/amqp_listener_otp/main.go]
+
+[Info  - 2:04:31 PM] 2020/06/25 14:04:31 go/packages.Load
+	snapshot=35
+	package_path="bukuduit-go/server/requests"
+	files=[/home/aziz/works/newBukuduit/bukuduit-go/server/requests/business_card_request.go /home/aziz/works/newBukuduit/bukuduit-go/server/requests/login_request.go /home/aziz/works/newBukuduit/bukuduit-go/server/requests/otp_request.go /home/aziz/works/newBukuduit/bukuduit-go/server/requests/register_request.go /home/aziz/works/newBukuduit/bukuduit-go/server/requests/transction_request.go /home/aziz/works/newBukuduit/bukuduit-go/server/requests/user_customer_request.go]
+
+[Info  - 2:04:31 PM] 2020/06/25 14:04:31 go/packages.Load
+	snapshot=35
+	package_path="bukuduit-go/server/handlers"
+	files=[/home/aziz/works/newBukuduit/bukuduit-go/server/handlers/authentication_handler.go /home/aziz/works/newBukuduit/bukuduit-go/server/handlers/business_card_handler.go /home/aziz/works/newBukuduit/bukuduit-go/server/handlers/handler.go /home/aziz/works/newBukuduit/bukuduit-go/server/handlers/otp_handler.go /home/aziz/works/newBukuduit/bukuduit-go/server/handlers/transaction_handler.go /home/aziz/works/newBukuduit/bukuduit-go/server/handlers/user_customer_handler.go /home/aziz/works/newBukuduit/bukuduit-go/server/handlers/utang_handler.go]
+
+[Info  - 2:04:31 PM] 2020/06/25 14:04:31 go/packages.Load
+	snapshot=35
+	package_path="bukuduit-go/server/middlewares"
+	files=[/home/aziz/works/newBukuduit/bukuduit-go/server/middlewares/header_x_request_id.go /home/aziz/works/newBukuduit/bukuduit-go/server/middlewares/logmiddleware.go /home/aziz/works/newBukuduit/bukuduit-go/server/middlewares/verify_jwt.go /home/aziz/works/newBukuduit/bukuduit-go/server/middlewares/xapi_key.go]
+
+[Info  - 2:04:31 PM] 2020/06/25 14:04:31 go/packages.Load
+	snapshot=35
+	package_path="bukuduit-go/server/bootstrap/routes"
+	files=[/home/aziz/works/newBukuduit/bukuduit-go/server/bootstrap/routes/authentication_route.go /home/aziz/works/newBukuduit/bukuduit-go/server/bootstrap/routes/otp_routes.go /home/aziz/works/newBukuduit/bukuduit-go/server/bootstrap/routes/shop_route.go /home/aziz/works/newBukuduit/bukuduit-go/server/bootstrap/routes/transaction_route.go /home/aziz/works/newBukuduit/bukuduit-go/server/bootstrap/routes/user_customer_route.go /home/aziz/works/newBukuduit/bukuduit-go/server/bootstrap/routes/utang_routes.go]
+
+[Info  - 2:04:31 PM] 2020/06/25 14:04:31 go/packages.Load
+	snapshot=35
+	package_path="bukuduit-go/server/bootstrap"
+	files=[/home/aziz/works/newBukuduit/bukuduit-go/server/bootstrap/boot.go /home/aziz/works/newBukuduit/bukuduit-go/server/bootstrap/route.go]
+
+[Info  - 2:04:31 PM] 2020/06/25 14:04:31 go/packages.Load
+	snapshot=35
+	package_path="bukuduit-go/server"
+	files=[/home/aziz/works/newBukuduit/bukuduit-go/server/main.go]
+
+[Info  - 2:06:18 PM] 2020/06/25 14:06:18 background imports cache refresh starting
+
+[Info  - 2:06:18 PM] 2020/06/25 14:06:18 background refresh finished after 29.809341ms
+
+[Info  - 2:07:11 PM] 2020/06/25 14:07:11 background imports cache refresh starting
+
+[Info  - 2:07:11 PM] 2020/06/25 14:07:11 background refresh finished after 46.323977ms
+
+[Info  - 2:08:13 PM] 2020/06/25 14:08:13 background imports cache refresh starting
+
+[Info  - 2:08:13 PM] 2020/06/25 14:08:13 background refresh finished after 15.688764ms
+
+[Info  - 2:08:43 PM] 2020/06/25 14:08:43 background imports cache refresh starting
+
+[Info  - 2:08:43 PM] 2020/06/25 14:08:43 background refresh finished after 15.417573ms
+
+[Info  - 2:09:14 PM] 2020/06/25 14:09:14 background imports cache refresh starting
+
+[Info  - 2:09:14 PM] 2020/06/25 14:09:14 background refresh finished after 15.969869ms
+
+[Info  - 2:10:08 PM] 2020/06/25 14:10:08 background imports cache refresh starting
+
+[Info  - 2:10:08 PM] 2020/06/25 14:10:08 background refresh finished after 45.724365ms
+
+[Info  - 2:10:40 PM] 2020/06/25 14:10:40 background imports cache refresh starting
+
+[Info  - 2:10:40 PM] 2020/06/25 14:10:40 background refresh finished after 12.503883ms
+
+[Error - 2:10:45 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/newBukuduit/bukuduit-go/server/bootstrap/routes/transaction_route.go:23:39: expected selector or type assertion, found ')' (and 7 more errors)
+  Code: 0 
+[Error - 2:10:58 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/newBukuduit/bukuduit-go/server/bootstrap/routes/transaction_route.go:23:39: expected selector or type assertion, found ')' (and 7 more errors)
+  Code: 0 
+[Error - 2:11:02 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/newBukuduit/bukuduit-go/server/bootstrap/routes/transaction_route.go:23:39: expected selector or type assertion, found ')' (and 7 more errors)
+  Code: 0 
+[Error - 2:11:09 PM] Request textDocument/definition failed.
+  Message: no identifier found
+  Code: 0 
+[Info  - 2:11:10 PM] 2020/06/25 14:11:10 background imports cache refresh starting
+
+[Info  - 2:11:10 PM] 2020/06/25 14:11:10 background refresh finished after 45.724839ms
+
+[Info  - 2:11:44 PM] 2020/06/25 14:11:44 background imports cache refresh starting
+
+[Info  - 2:11:45 PM] 2020/06/25 14:11:45 background refresh finished after 47.346588ms
+
+[Error - 2:11:55 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/newBukuduit/bukuduit-go/server/handlers/transaction_handler.go:19:16: expected selector or type assertion, found '{' (and 1 more errors)
+  Code: 0 
+[Error - 2:11:56 PM] 2020/06/25 14:11:56 no signature help: cannot find an enclosing function
+	position={18 33}
+
+[Error - 2:12:12 PM] 2020/06/25 14:12:12 no signature help: cannot get type for Fun *ast.SelectorExpr (&{uc BrowseByShop})
+	position={19 39}
+
+[Info  - 2:12:16 PM] 2020/06/25 14:12:16 background imports cache refresh starting
+
+[Info  - 2:12:16 PM] 2020/06/25 14:12:16 background refresh finished after 36.932134ms
+
+[Error - 2:12:18 PM] Request textDocument/definition failed.
+  Message: no object for ident BrowseByShop
+  Code: 0 
+[Info  - 2:12:47 PM] 2020/06/25 14:12:47 background imports cache refresh starting
+
+[Info  - 2:12:47 PM] 2020/06/25 14:12:47 background refresh finished after 41.052883ms
+
+[Info  - 2:13:17 PM] 2020/06/25 14:13:17 background imports cache refresh starting
+
+[Info  - 2:13:17 PM] 2020/06/25 14:13:17 background refresh finished after 15.698467ms
+
+[Info  - 2:13:48 PM] 2020/06/25 14:13:48 background imports cache refresh starting
+
+[Info  - 2:13:48 PM] 2020/06/25 14:13:48 background refresh finished after 13.563691ms
+
+[Info  - 2:14:20 PM] 2020/06/25 14:14:20 background imports cache refresh starting
+
+[Info  - 2:14:20 PM] 2020/06/25 14:14:20 background refresh finished after 46.864887ms
+
+[Error - 2:14:37 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/newBukuduit/bukuduit-go/server/bootstrap/routes/transaction_route.go:23:39: expected selector or type assertion, found ')' (and 7 more errors)
+  Code: 0 
+[Error - 2:14:37 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/newBukuduit/bukuduit-go/server/bootstrap/routes/transaction_route.go:23:39: expected selector or type assertion, found ')' (and 7 more errors)
+  Code: 0 
+[Error - 2:14:39 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/newBukuduit/bukuduit-go/server/bootstrap/routes/transaction_route.go:23:39: expected selector or type assertion, found ')' (and 7 more errors)
+  Code: 0 
+[Error - 2:14:46 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/newBukuduit/bukuduit-go/server/bootstrap/routes/transaction_route.go:23:39: expected selector or type assertion, found ')' (and 7 more errors)
+  Code: 0 
+[Error - 2:14:46 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/newBukuduit/bukuduit-go/server/bootstrap/routes/transaction_route.go:23:39: expected selector or type assertion, found ')' (and 7 more errors)
+  Code: 0 
+[Info  - 2:14:53 PM] 2020/06/25 14:14:53 background imports cache refresh starting
+
+[Info  - 2:14:53 PM] 2020/06/25 14:14:53 background refresh finished after 16.009936ms
+
+[Error - 2:15:02 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/newBukuduit/bukuduit-go/server/bootstrap/routes/transaction_route.go:23:39: expected selector or type assertion, found ')' (and 7 more errors)
+  Code: 0 
+[Error - 2:15:03 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/newBukuduit/bukuduit-go/server/bootstrap/routes/transaction_route.go:23:39: expected selector or type assertion, found ')' (and 7 more errors)
+  Code: 0 
+[Error - 2:15:05 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/newBukuduit/bukuduit-go/server/bootstrap/routes/transaction_route.go:23:39: expected selector or type assertion, found ')' (and 7 more errors)
+  Code: 0 
+[Info  - 2:15:24 PM] 2020/06/25 14:15:24 background imports cache refresh starting
+
+[Info  - 2:15:24 PM] 2020/06/25 14:15:24 background refresh finished after 15.906596ms
+
+[Info  - 2:15:56 PM] 2020/06/25 14:15:56 background imports cache refresh starting
+
+[Info  - 2:15:56 PM] 2020/06/25 14:15:56 background refresh finished after 13.158215ms
+
+[Info  - 2:17:11 PM] 2020/06/25 14:17:11 background imports cache refresh starting
+
+[Info  - 2:17:11 PM] 2020/06/25 14:17:11 background refresh finished after 38.720323ms
+
+[Info  - 2:17:41 PM] 2020/06/25 14:17:41 background imports cache refresh starting
+
+[Info  - 2:17:41 PM] 2020/06/25 14:17:41 background refresh finished after 16.06297ms
+
+[Info  - 2:18:12 PM] 2020/06/25 14:18:12 background imports cache refresh starting
+
+[Info  - 2:18:12 PM] 2020/06/25 14:18:12 background refresh finished after 13.114767ms
+
+[Info  - 2:18:58 PM] 2020/06/25 14:18:58 background imports cache refresh starting
+
+[Info  - 2:18:58 PM] 2020/06/25 14:18:58 background refresh finished after 41.431229ms
+
+[Error - 2:28:33 PM] 2020/06/25 14:28:33 no signature help: cannot find an enclosing function
+	position={21 6}
+
+[Error - 2:28:35 PM] 2020/06/25 14:28:35 no signature help: cannot find an enclosing function
+	position={21 17}
+
+[Info  - 2:28:35 PM] 2020/06/25 14:28:35 background imports cache refresh starting
+
+[Info  - 2:28:35 PM] 2020/06/25 14:28:35 background refresh finished after 46.314279ms
+
+[Info  - 2:29:06 PM] 2020/06/25 14:29:06 background imports cache refresh starting
+
+[Info  - 2:29:06 PM] 2020/06/25 14:29:06 background refresh finished after 43.779661ms
+
+[Error - 2:29:08 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/newBukuduit/bukuduit-go/server/bootstrap/routes/transaction_route.go:22:48: expected selector or type assertion, found ')' (and 9 more errors)
+  Code: 0 
+[Error - 2:29:13 PM] 2020/06/25 14:29:13 no signature help: cannot find an enclosing function
+	position={21 59}
+
+[Info  - 2:29:37 PM] 2020/06/25 14:29:37 background imports cache refresh starting
+
+[Info  - 2:29:38 PM] 2020/06/25 14:29:38 background refresh finished after 15.676424ms
+
+[Info  - 2:30:28 PM] 2020/06/25 14:30:28 background imports cache refresh starting
+
+[Info  - 2:30:28 PM] 2020/06/25 14:30:28 background refresh finished after 15.19072ms
+
+[Info  - 2:31:04 PM] 2020/06/25 14:31:04 background imports cache refresh starting
+
+[Info  - 2:31:04 PM] 2020/06/25 14:31:04 background refresh finished after 44.136201ms
+
+[Info  - 2:31:34 PM] 2020/06/25 14:31:34 background imports cache refresh starting
+
+[Info  - 2:31:34 PM] 2020/06/25 14:31:34 background refresh finished after 32.457409ms
+
+[Info  - 2:32:05 PM] 2020/06/25 14:32:05 background imports cache refresh starting
+
+[Info  - 2:32:05 PM] 2020/06/25 14:32:05 background refresh finished after 15.900087ms
+
+[Info  - 2:33:50 PM] 2020/06/25 14:33:50 background imports cache refresh starting
+
+[Info  - 2:33:50 PM] 2020/06/25 14:33:50 background refresh finished after 12.383736ms
+
+[Error - 2:33:52 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/newBukuduit/bukuduit-go/server/handlers/transaction_handler.go:77:5: expected '(', found 'EOF' (and 4 more errors)
+  Code: 0 
+[Error - 2:33:52 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/newBukuduit/bukuduit-go/server/handlers/transaction_handler.go:77:10: expected 'IDENT', found '{' (and 4 more errors)
+  Code: 0 
+[Error - 2:33:52 PM] 2020/06/25 14:33:52 DocumentSymbols failed: invalid pos
+	URI=file:///home/aziz/works/newBukuduit/bukuduit-go/server/handlers/transaction_handler.go
+
+[Error - 2:33:54 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/newBukuduit/bukuduit-go/server/handlers/transaction_handler.go:77:10: expected 'IDENT', found '{' (and 4 more errors)
+  Code: 0 
+[Error - 2:33:54 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/newBukuduit/bukuduit-go/server/handlers/transaction_handler.go:77:10: expected 'IDENT', found '{' (and 4 more errors)
+  Code: 0 
+[Error - 2:33:55 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/newBukuduit/bukuduit-go/server/handlers/transaction_handler.go:77:10: expected 'IDENT', found '{' (and 4 more errors)
+  Code: 0 
+[Error - 2:33:55 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/newBukuduit/bukuduit-go/server/handlers/transaction_handler.go:77:10: expected 'IDENT', found '{' (and 4 more errors)
+  Code: 0 
+[Error - 2:33:57 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/newBukuduit/bukuduit-go/server/handlers/transaction_handler.go:77:17: expected 'IDENT', found '{' (and 4 more errors)
+  Code: 0 
+[Error - 2:33:57 PM] 2020/06/25 14:33:57 DocumentSymbols failed: invalid pos
+	URI=file:///home/aziz/works/newBukuduit/bukuduit-go/server/handlers/transaction_handler.go
+
+[Error - 2:33:58 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/newBukuduit/bukuduit-go/server/handlers/transaction_handler.go:77:18: expected 'IDENT', found '{' (and 4 more errors)
+  Code: 0 
+[Error - 2:33:58 PM] 2020/06/25 14:33:58 DocumentSymbols failed: invalid pos
+	URI=file:///home/aziz/works/newBukuduit/bukuduit-go/server/handlers/transaction_handler.go
+
+[Error - 2:33:59 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/newBukuduit/bukuduit-go/server/handlers/transaction_handler.go:77:22: expected 'IDENT', found '{' (and 4 more errors)
+  Code: 0 
+[Error - 2:33:59 PM] 2020/06/25 14:33:59 DocumentSymbols failed: invalid pos
+	URI=file:///home/aziz/works/newBukuduit/bukuduit-go/server/handlers/transaction_handler.go
+
+[Error - 2:34:00 PM] 2020/06/25 14:34:00 no signature help: cannot find an enclosing function
+	position={76 32}
+
+[Error - 2:34:00 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/newBukuduit/bukuduit-go/server/handlers/transaction_handler.go:77:36: expected 'IDENT', found '{' (and 4 more errors)
+  Code: 0 
+[Error - 2:34:00 PM] 2020/06/25 14:34:00 DocumentSymbols failed: invalid pos
+	URI=file:///home/aziz/works/newBukuduit/bukuduit-go/server/handlers/transaction_handler.go
+
+[Error - 2:34:00 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/newBukuduit/bukuduit-go/server/handlers/transaction_handler.go:77:36: expected 'IDENT', found '{' (and 4 more errors)
+  Code: 0 
+[Error - 2:34:03 PM] 2020/06/25 14:34:03 no completions found: this is a definition of func (TransactionHandler).A(invalid type)
+	position={76 35}
+
+[Error - 2:34:03 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/newBukuduit/bukuduit-go/server/handlers/transaction_handler.go:77:37: expected '(', found '{' (and 3 more errors)
+  Code: 0 
+[Error - 2:34:03 PM] 2020/06/25 14:34:03 no completions found: this is a definition of func (TransactionHandler).Ad(invalid type)
+	position={76 36}
+
+[Error - 2:34:03 PM] 2020/06/25 14:34:03 no completions found: this is a definition of func (TransactionHandler).Add(invalid type)
+	position={76 37}
+
+[Error - 2:34:04 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/newBukuduit/bukuduit-go/server/handlers/transaction_handler.go:77:39: expected '(', found '{' (and 3 more errors)
+  Code: 0 
+[Error - 2:34:04 PM] 2020/06/25 14:34:04 DocumentSymbols failed: invalid pos
+	URI=file:///home/aziz/works/newBukuduit/bukuduit-go/server/handlers/transaction_handler.go
+
+[Error - 2:34:04 PM] 2020/06/25 14:34:04 no completions found: this is a definition of func (TransactionHandler).AddT(invalid type)
+	position={76 38}
+
+[Error - 2:34:04 PM] 2020/06/25 14:34:04 no completions found: this is a definition of func (TransactionHandler).AddTr(invalid type)
+	position={76 39}
+
+[Error - 2:34:04 PM] 2020/06/25 14:34:04 no completions found: this is a definition of func (TransactionHandler).AddTra(invalid type)
+	position={76 40}
+
+[Error - 2:34:05 PM] 2020/06/25 14:34:05 no completions found: this is a definition of func (TransactionHandler).AddTran(invalid type)
+	position={76 41}
+
+[Error - 2:34:05 PM] 2020/06/25 14:34:05 no completions found: this is a definition of func (TransactionHandler).AddTrans(invalid type)
+	position={76 42}
+
+[Error - 2:34:05 PM] 2020/06/25 14:34:05 no completions found: this is a definition of func (TransactionHandler).AddTransa(invalid type)
+	position={76 43}
+
+[Error - 2:34:05 PM] 2020/06/25 14:34:05 no completions found: this is a definition of func (TransactionHandler).AddTransac(invalid type)
+	position={76 44}
+
+[Error - 2:34:05 PM] 2020/06/25 14:34:05 no completions found: this is a definition of func (TransactionHandler).AddTransact(invalid type)
+	position={76 45}
+
+[Error - 2:34:05 PM] 2020/06/25 14:34:05 no completions found: this is a definition of func (TransactionHandler).AddTransacti(invalid type)
+	position={76 46}
+
+[Error - 2:34:05 PM] 2020/06/25 14:34:05 no completions found: this is a definition of func (TransactionHandler).AddTransactio(invalid type)
+	position={76 47}
+
+[Error - 2:34:06 PM] 2020/06/25 14:34:06 no completions found: this is a definition of func (TransactionHandler).AddTransaction(invalid type)
+	position={76 48}
+
+[Error - 2:34:06 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/newBukuduit/bukuduit-go/server/handlers/transaction_handler.go:77:50: expected '(', found '{' (and 3 more errors)
+  Code: 0 
+[Error - 2:34:06 PM] 2020/06/25 14:34:06 DocumentSymbols failed: invalid pos
+	URI=file:///home/aziz/works/newBukuduit/bukuduit-go/server/handlers/transaction_handler.go
+
+[Error - 2:34:07 PM] 2020/06/25 14:34:07 no signature help: cannot find an enclosing function
+	position={76 49}
+
+[Error - 2:34:12 PM] 2020/06/25 14:34:12 no signature help: cannot find an enclosing function
+	position={76 65}
+
+[Error - 2:34:14 PM] 2020/06/25 14:34:14 no signature help: cannot find an enclosing function
+	position={76 72}
+
+[Error - 2:34:24 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/newBukuduit/bukuduit-go/server/bootstrap/routes/transaction_route.go:22:48: expected selector or type assertion, found ')' (and 10 more errors)
+  Code: 0 
+[Info  - 2:34:26 PM] 2020/06/25 14:34:26 background imports cache refresh starting
+
+[Info  - 2:34:26 PM] 2020/06/25 14:34:26 background refresh finished after 13.65092ms
+
+[Error - 2:34:31 PM] 2020/06/25 14:34:31 DocumentSymbols failed: invalid pos
+	URI=file:///home/aziz/works/newBukuduit/bukuduit-go/server/handlers/transaction_handler.go
+
+[Error - 2:34:37 PM] 2020/06/25 14:34:37 no signature help: cannot find an enclosing function
+	position={77 15}
+
+[Error - 2:34:41 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/newBukuduit/bukuduit-go/server/handlers/transaction_handler.go:78:23: expected selector or type assertion, found ')' (and 7 more errors)
+  Code: 0 
+[Error - 2:34:44 PM] 2020/06/25 14:34:44 no signature help: cannot find an enclosing function
+	position={77 41}
+
+[Info  - 2:34:57 PM] 2020/06/25 14:34:57 background imports cache refresh starting
+
+[Info  - 2:34:57 PM] 2020/06/25 14:34:57 background refresh finished after 44.567545ms
+
+[Error - 2:35:18 PM] Request textDocument/foldingRange failed.
+  Message: invalid pos
+  Code: 0 
+[Error - 2:35:18 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/newBukuduit/bukuduit-go/server/handlers/transaction_handler.go:81:1: expected operand, found '}' (and 7 more errors)
+  Code: 0 
+[Error - 2:35:18 PM] 2020/06/25 14:35:18 DocumentSymbols failed: invalid pos
+	URI=file:///home/aziz/works/newBukuduit/bukuduit-go/server/handlers/transaction_handler.go
+
+[Error - 2:35:25 PM] Request textDocument/foldingRange failed.
+  Message: invalid pos
+  Code: 0 
+[Error - 2:35:25 PM] 2020/06/25 14:35:25 DocumentSymbols failed: invalid pos
+	URI=file:///home/aziz/works/newBukuduit/bukuduit-go/server/handlers/transaction_handler.go
+
+[Error - 2:35:27 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/newBukuduit/bukuduit-go/server/handlers/transaction_handler.go:80:6: expected boolean expression, found assignment (missing parentheses around composite literal?)
+  Code: 0 
+[Info  - 2:35:28 PM] 2020/06/25 14:35:28 background imports cache refresh starting
+
+[Error - 2:35:28 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/newBukuduit/bukuduit-go/server/handlers/transaction_handler.go:80:18: expected selector or type assertion, found '{' (and 7 more errors)
+  Code: 0 
+[Info  - 2:35:28 PM] 2020/06/25 14:35:28 background refresh finished after 15.644612ms
+
+[Error - 2:35:28 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/newBukuduit/bukuduit-go/server/handlers/transaction_handler.go:80:6: expected boolean expression, found assignment (missing parentheses around composite literal?)
+  Code: 0 
+[Error - 2:35:29 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/newBukuduit/bukuduit-go/server/handlers/transaction_handler.go:80:6: expected boolean expression, found assignment (missing parentheses around composite literal?)
+  Code: 0 
+[Error - 2:35:31 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/newBukuduit/bukuduit-go/server/handlers/transaction_handler.go:80:6: expected boolean expression, found assignment (missing parentheses around composite literal?)
+  Code: 0 
+[Error - 2:35:32 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/newBukuduit/bukuduit-go/server/handlers/transaction_handler.go:80:6: expected boolean expression, found assignment (missing parentheses around composite literal?)
+  Code: 0 
+[Error - 2:35:33 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/newBukuduit/bukuduit-go/server/handlers/transaction_handler.go:80:6: expected boolean expression, found assignment (missing parentheses around composite literal?)
+  Code: 0 
+[Error - 2:35:33 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/newBukuduit/bukuduit-go/server/handlers/transaction_handler.go:80:6: expected boolean expression, found assignment (missing parentheses around composite literal?)
+  Code: 0 
+[Error - 2:35:34 PM] 2020/06/25 14:35:34 no signature help: cannot find an enclosing function
+	position={79 27}
+
+[Error - 2:35:34 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/newBukuduit/bukuduit-go/server/handlers/transaction_handler.go:80:6: expected boolean expression, found assignment (missing parentheses around composite literal?)
+  Code: 0 
+[Error - 2:35:35 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/newBukuduit/bukuduit-go/server/handlers/transaction_handler.go:80:28: missing condition in if statement
+  Code: 0 
+[Error - 2:35:40 PM] Request textDocument/foldingRange failed.
+  Message: invalid pos
+  Code: 0 
+[Error - 2:35:40 PM] 2020/06/25 14:35:40 DocumentSymbols failed: invalid pos
+	URI=file:///home/aziz/works/newBukuduit/bukuduit-go/server/handlers/transaction_handler.go
+
+[Error - 2:35:58 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/newBukuduit/bukuduit-go/server/handlers/transaction_handler.go:81:51: expected selector or type assertion, found ')' (and 9 more errors)
+  Code: 0 
+[Info  - 2:36:07 PM] 2020/06/25 14:36:07 background imports cache refresh starting
+
+[Info  - 2:36:07 PM] 2020/06/25 14:36:07 background refresh finished after 16.629922ms
+
+[Error - 2:36:08 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/newBukuduit/bukuduit-go/server/handlers/transaction_handler.go:81:73: expected selector or type assertion, found ')' (and 9 more errors)
+  Code: 0 
+[Error - 2:36:10 PM] 2020/06/25 14:36:10 no signature help: no file for pos in package bukuduit-go/server/handlers
+	position={80 78}
+
+[Error - 2:36:16 PM] Request textDocument/foldingRange failed.
+  Message: invalid pos
+  Code: 0 
+[Error - 2:36:16 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/newBukuduit/bukuduit-go/server/handlers/transaction_handler.go:85:1: expected operand, found '}' (and 7 more errors)
+  Code: 0 
+[Error - 2:36:16 PM] 2020/06/25 14:36:16 DocumentSymbols failed: invalid pos
+	URI=file:///home/aziz/works/newBukuduit/bukuduit-go/server/handlers/transaction_handler.go
+
+[Error - 2:36:16 PM] Request textDocument/foldingRange failed.
+  Message: invalid pos
+  Code: 0 
+[Error - 2:36:16 PM] 2020/06/25 14:36:16 DocumentSymbols failed: invalid pos
+	URI=file:///home/aziz/works/newBukuduit/bukuduit-go/server/handlers/transaction_handler.go
+
+[Error - 2:36:17 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/newBukuduit/bukuduit-go/server/handlers/transaction_handler.go:85:1: expected operand, found '}' (and 5 more errors)
+  Code: 0 
+[Error - 2:36:18 PM] Request textDocument/foldingRange failed.
+  Message: invalid pos
+  Code: 0 
+[Error - 2:36:18 PM] Request textDocument/foldingRange failed.
+  Message: invalid pos
+  Code: 0 
+[Error - 2:36:18 PM] 2020/06/25 14:36:18 DocumentSymbols failed: invalid pos
+	URI=file:///home/aziz/works/newBukuduit/bukuduit-go/server/handlers/transaction_handler.go
+
+[Error - 2:36:21 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/newBukuduit/bukuduit-go/server/handlers/transaction_handler.go:85:1: expected operand, found '}' (and 5 more errors)
+  Code: 0 
+[Error - 2:36:22 PM] 2020/06/25 14:36:22 no signature help: cannot find an enclosing function
+	position={83 18}
+
+[Error - 2:36:22 PM] Request textDocument/foldingRange failed.
+  Message: invalid pos
+  Code: 0 
+[Error - 2:36:22 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/newBukuduit/bukuduit-go/server/handlers/transaction_handler.go:85:1: expected selector or type assertion, found '}' (and 6 more errors)
+  Code: 0 
+[Error - 2:36:22 PM] 2020/06/25 14:36:22 DocumentSymbols failed: invalid pos
+	URI=file:///home/aziz/works/newBukuduit/bukuduit-go/server/handlers/transaction_handler.go
+
+[Error - 2:36:24 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/newBukuduit/bukuduit-go/server/handlers/transaction_handler.go:85:1: expected operand, found '}' (and 5 more errors)
+  Code: 0 
+[Error - 2:36:25 PM] 2020/06/25 14:36:25 no signature help: cannot find an enclosing function
+	position={83 27}
+
+[Error - 2:36:25 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/newBukuduit/bukuduit-go/server/handlers/transaction_handler.go:85:1: expected operand, found '}' (and 5 more errors)
+  Code: 0 
+[Error - 2:36:26 PM] Request textDocument/foldingRange failed.
+  Message: invalid pos
+  Code: 0 
+[Error - 2:36:28 PM] Request textDocument/foldingRange failed.
+  Message: invalid pos
+  Code: 0 
+[Error - 2:36:28 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/newBukuduit/bukuduit-go/server/handlers/transaction_handler.go:85:1: expected operand, found '}' (and 5 more errors)
+  Code: 0 
+[Error - 2:36:28 PM] 2020/06/25 14:36:28 DocumentSymbols failed: invalid pos
+	URI=file:///home/aziz/works/newBukuduit/bukuduit-go/server/handlers/transaction_handler.go
+
+[Error - 2:36:30 PM] Request textDocument/foldingRange failed.
+  Message: invalid pos
+  Code: 0 
+[Error - 2:36:30 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/newBukuduit/bukuduit-go/server/handlers/transaction_handler.go:85:1: expected operand, found '}' (and 5 more errors)
+  Code: 0 
+[Error - 2:36:30 PM] Request textDocument/foldingRange failed.
+  Message: invalid pos
+  Code: 0 
+[Error - 2:36:30 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/newBukuduit/bukuduit-go/server/handlers/transaction_handler.go:85:1: expected operand, found '}' (and 5 more errors)
+  Code: 0 
+[Error - 2:36:30 PM] 2020/06/25 14:36:30 DocumentSymbols failed: invalid pos
+	URI=file:///home/aziz/works/newBukuduit/bukuduit-go/server/handlers/transaction_handler.go
+
+[Error - 2:36:31 PM] Request textDocument/foldingRange failed.
+  Message: invalid pos
+  Code: 0 
+[Error - 2:36:31 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/newBukuduit/bukuduit-go/server/handlers/transaction_handler.go:85:1: expected operand, found '}' (and 5 more errors)
+  Code: 0 
+[Error - 2:36:31 PM] 2020/06/25 14:36:31 DocumentSymbols failed: invalid pos
+	URI=file:///home/aziz/works/newBukuduit/bukuduit-go/server/handlers/transaction_handler.go
+
+[Error - 2:36:32 PM] Request textDocument/foldingRange failed.
+  Message: invalid pos
+  Code: 0 
+[Error - 2:36:32 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/newBukuduit/bukuduit-go/server/handlers/transaction_handler.go:85:1: expected operand, found '}' (and 5 more errors)
+  Code: 0 
+[Error - 2:36:32 PM] 2020/06/25 14:36:32 DocumentSymbols failed: invalid pos
+	URI=file:///home/aziz/works/newBukuduit/bukuduit-go/server/handlers/transaction_handler.go
+
+[Error - 2:36:32 PM] Request textDocument/foldingRange failed.
+  Message: invalid pos
+  Code: 0 
+[Error - 2:36:33 PM] Request textDocument/foldingRange failed.
+  Message: invalid pos
+  Code: 0 
+[Error - 2:36:33 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/newBukuduit/bukuduit-go/server/handlers/transaction_handler.go:85:1: expected operand, found '}' (and 5 more errors)
+  Code: 0 
+[Error - 2:36:33 PM] 2020/06/25 14:36:33 DocumentSymbols failed: invalid pos
+	URI=file:///home/aziz/works/newBukuduit/bukuduit-go/server/handlers/transaction_handler.go
+
+[Error - 2:36:33 PM] Request textDocument/foldingRange failed.
+  Message: invalid pos
+  Code: 0 
+[Error - 2:36:33 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/newBukuduit/bukuduit-go/server/handlers/transaction_handler.go:85:1: expected operand, found '}' (and 5 more errors)
+  Code: 0 
+[Error - 2:36:34 PM] Request textDocument/foldingRange failed.
+  Message: invalid pos
+  Code: 0 
+[Error - 2:36:34 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/newBukuduit/bukuduit-go/server/handlers/transaction_handler.go:85:1: expected operand, found '}' (and 5 more errors)
+  Code: 0 
+[Error - 2:36:34 PM] 2020/06/25 14:36:34 DocumentSymbols failed: invalid pos
+	URI=file:///home/aziz/works/newBukuduit/bukuduit-go/server/handlers/transaction_handler.go
+
+[Error - 2:36:35 PM] 2020/06/25 14:36:35 no signature help: cannot find an enclosing function
+	position={83 41}
+
+[Error - 2:36:35 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/newBukuduit/bukuduit-go/server/handlers/transaction_handler.go:85:1: expected operand, found '}' (and 5 more errors)
+  Code: 0 
+[Error - 2:36:36 PM] Request textDocument/foldingRange failed.
+  Message: invalid pos
+  Code: 0 
+[Error - 2:36:36 PM] 2020/06/25 14:36:36 DocumentSymbols failed: invalid pos
+	URI=file:///home/aziz/works/newBukuduit/bukuduit-go/server/handlers/transaction_handler.go
+
+[Info  - 2:36:38 PM] 2020/06/25 14:36:38 background imports cache refresh starting
+
+[Error - 2:36:38 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/newBukuduit/bukuduit-go/server/handlers/transaction_handler.go:84:47: expected '{', found newline (and 2 more errors)
+  Code: 0 
+[Info  - 2:36:38 PM] 2020/06/25 14:36:38 background refresh finished after 47.402049ms
+
+[Error - 2:36:38 PM] 2020/06/25 14:36:38 no signature help: cannot find an enclosing function
+	position={83 46}
+
+[Error - 2:36:40 PM] Request textDocument/foldingRange failed.
+  Message: invalid pos
+  Code: 0 
+[Error - 2:36:40 PM] 2020/06/25 14:36:40 DocumentSymbols failed: invalid pos
+	URI=file:///home/aziz/works/newBukuduit/bukuduit-go/server/handlers/transaction_handler.go
+
+[Error - 2:36:41 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/newBukuduit/bukuduit-go/server/handlers/transaction_handler.go:84:53: expected '{', found newline (and 2 more errors)
+  Code: 0 
+[Error - 2:36:41 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/newBukuduit/bukuduit-go/server/handlers/transaction_handler.go:84:54: expected '{', found newline (and 2 more errors)
+  Code: 0 
+[Error - 2:36:41 PM] 2020/06/25 14:36:41 no signature help: cannot find an enclosing function
+	position={83 53}
+
+[Error - 2:37:01 PM] 2020/06/25 14:37:01 no signature help: cannot find an enclosing function
+	position={84 16}
+
+[Error - 2:37:02 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/newBukuduit/bukuduit-go/server/handlers/transaction_handler.go:86:2: expected selector or type assertion, found '}' (and 2 more errors)
+  Code: 0 
+[Info  - 2:37:10 PM] 2020/06/25 14:37:10 background imports cache refresh starting
+
+[Info  - 2:37:10 PM] 2020/06/25 14:37:10 background refresh finished after 15.742361ms
+
+[Error - 2:37:13 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/newBukuduit/bukuduit-go/server/handlers/transaction_handler.go:85:55: expected selector or type assertion, found ')' (and 9 more errors)
+  Code: 0 
+[Error - 2:37:14 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/newBukuduit/bukuduit-go/server/handlers/transaction_handler.go:85:56: expected type, found ')'
+  Code: 0 
+[Error - 2:37:18 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/newBukuduit/bukuduit-go/server/handlers/transaction_handler.go:85:66: expected 'IDENT', found ')' (and 9 more errors)
+  Code: 0 
+[Error - 2:37:21 PM] 2020/06/25 14:37:21 no signature help: cannot find an enclosing function
+	position={84 83}
+
+[Error - 2:37:27 PM] 2020/06/25 14:37:27 DocumentSymbols failed: invalid pos
+	URI=file:///home/aziz/works/newBukuduit/bukuduit-go/server/handlers/transaction_handler.go
+
+[Error - 2:37:29 PM] 2020/06/25 14:37:29 no signature help: cannot find an enclosing function
+	position={87 14}
+
+[Error - 2:37:30 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/newBukuduit/bukuduit-go/server/handlers/transaction_handler.go:89:1: expected selector or type assertion, found '}' (and 2 more errors)
+  Code: 0 
+[Error - 2:37:33 PM] 2020/06/25 14:37:33 no signature help: cannot find an enclosing function
+	position={87 33}
+
+[Error - 2:37:37 PM] 2020/06/25 14:37:37 no signature help: cannot find an enclosing function
+	position={87 46}
+
+[Error - 2:37:37 PM] Request textDocument/foldingRange failed.
+  Message: invalid pos
+  Code: 0 
+[Error - 2:37:37 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/newBukuduit/bukuduit-go/server/handlers/transaction_handler.go:88:47: expected operand, found '}' (and 5 more errors)
+  Code: 0 
+[Error - 2:37:37 PM] 2020/06/25 14:37:37 DocumentSymbols failed: invalid pos
+	URI=file:///home/aziz/works/newBukuduit/bukuduit-go/server/handlers/transaction_handler.go
+
+[Info  - 2:37:41 PM] 2020/06/25 14:37:41 background imports cache refresh starting
+
+[Info  - 2:37:41 PM] 2020/06/25 14:37:41 background refresh finished after 46.558354ms
+
+[Error - 2:37:42 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/newBukuduit/bukuduit-go/server/handlers/transaction_handler.go:88:55: expected selector or type assertion, found '}' (and 3 more errors)
+  Code: 0 
+[Error - 2:37:43 PM] 2020/06/25 14:37:43 no signature help: cannot find an enclosing function
+	position={87 69}
+
+[Error - 2:37:52 PM] 2020/06/25 14:37:52 DocumentSymbols failed: invalid pos
+	URI=file:///home/aziz/works/newBukuduit/bukuduit-go/server/handlers/transaction_handler.go
+
+[Error - 2:37:56 PM] 2020/06/25 14:37:56 no signature help: cannot find an enclosing function
+	position={88 10}
+
+[Error - 2:37:58 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/newBukuduit/bukuduit-go/server/handlers/transaction_handler.go:90:1: expected selector or type assertion, found '}' (and 2 more errors)
+  Code: 0 
+[Error - 2:38:01 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/newBukuduit/bukuduit-go/server/handlers/transaction_handler.go:90:1: expected selector or type assertion, found '}' (and 2 more errors)
+  Code: 0 
+[Error - 2:38:05 PM] 2020/06/25 14:38:05 DocumentSymbols failed: invalid pos
+	URI=file:///home/aziz/works/newBukuduit/bukuduit-go/server/handlers/transaction_handler.go
+
+[Error - 2:38:06 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/newBukuduit/bukuduit-go/server/handlers/transaction_handler.go:90:1: expected selector or type assertion, found '}' (and 2 more errors)
+  Code: 0 
+[Info  - 2:38:12 PM] 2020/06/25 14:38:12 background imports cache refresh starting
+
+[Info  - 2:38:12 PM] 2020/06/25 14:38:12 background refresh finished after 12.895985ms
+
+[Error - 2:38:29 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/newBukuduit/bukuduit-go/server/handlers/transaction_handler.go:90:1: expected selector or type assertion, found '}' (and 2 more errors)
+  Code: 0 
+[Error - 2:38:30 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/newBukuduit/bukuduit-go/server/handlers/transaction_handler.go:90:1: expected selector or type assertion, found '}' (and 2 more errors)
+  Code: 0 
+[Error - 2:38:32 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/newBukuduit/bukuduit-go/server/handlers/transaction_handler.go:90:1: expected selector or type assertion, found '}' (and 2 more errors)
+  Code: 0 
+[Error - 2:38:40 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/newBukuduit/bukuduit-go/server/handlers/transaction_handler.go:89:30: expected selector or type assertion, found ')' (and 7 more errors)
+  Code: 0 
+[Error - 2:38:44 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/newBukuduit/bukuduit-go/server/handlers/transaction_handler.go:89:49: expected selector or type assertion, found ')' (and 7 more errors)
+  Code: 0 
+[Error - 2:38:50 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/newBukuduit/bukuduit-go/server/handlers/transaction_handler.go:89:72: expected selector or type assertion, found ')' (and 7 more errors)
+  Code: 0 
+[Info  - 2:38:51 PM] 2020/06/25 14:38:51 background imports cache refresh starting
+
+[Info  - 2:38:51 PM] 2020/06/25 14:38:51 background refresh finished after 16.029476ms
+
+[Error - 2:38:54 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/newBukuduit/bukuduit-go/server/handlers/transaction_handler.go:89:79: expected selector or type assertion, found ')' (and 7 more errors)
+  Code: 0 
+[Error - 2:38:57 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/newBukuduit/bukuduit-go/server/handlers/transaction_handler.go:89:86: expected selector or type assertion, found ')' (and 7 more errors)
+  Code: 0 
+[Error - 2:39:03 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/newBukuduit/bukuduit-go/server/handlers/transaction_handler.go:89:109: expected selector or type assertion, found ')' (and 7 more errors)
+  Code: 0 
+[Error - 2:39:06 PM] 2020/06/25 14:39:06 no signature help: cannot find an enclosing function
+	position={88 115}
+
+[Error - 2:39:12 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/newBukuduit/bukuduit-go/server/handlers/transaction_handler.go:92:1: expected selector or type assertion, found '}' (and 2 more errors)
+  Code: 0 
+[Error - 2:39:22 PM] 2020/06/25 14:39:22 no signature help: cannot find an enclosing function
+	position={89 0}
+
+[Info  - 2:39:23 PM] 2020/06/25 14:39:23 background imports cache refresh starting
+
+[Info  - 2:39:23 PM] 2020/06/25 14:39:23 background refresh finished after 15.136035ms
+
+[Info  - 2:39:53 PM] 2020/06/25 14:39:53 background imports cache refresh starting
+
+[Info  - 2:39:53 PM] 2020/06/25 14:39:53 background refresh finished after 15.582843ms
+
+[Info  - 2:40:27 PM] 2020/06/25 14:40:27 background imports cache refresh starting
+
+[Info  - 2:40:27 PM] 2020/06/25 14:40:27 background refresh finished after 15.844188ms
+
+[Error - 2:41:18 PM] 2020/06/25 14:41:18 no signature help: cannot find an enclosing function
+	position={26 21}
+
+[Info  - 2:41:24 PM] 2020/06/25 14:41:24 background imports cache refresh starting
+
+[Info  - 2:41:24 PM] 2020/06/25 14:41:24 background refresh finished after 15.172453ms
+
+[Error - 2:41:27 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/newBukuduit/bukuduit-go/server/bootstrap/routes/transaction_route.go:23:47: expected selector or type assertion, found ')' (and 9 more errors)
+  Code: 0 
+[Error - 2:41:29 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/newBukuduit/bukuduit-go/server/bootstrap/routes/transaction_route.go:23:47: expected selector or type assertion, found ')' (and 9 more errors)
+  Code: 0 
+[Error - 2:41:40 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/newBukuduit/bukuduit-go/server/bootstrap/routes/transaction_route.go:20:40: expected selector or type assertion, found ')' (and 12 more errors)
+  Code: 0 
+[Error - 2:41:41 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/newBukuduit/bukuduit-go/server/bootstrap/routes/transaction_route.go:20:40: expected selector or type assertion, found ')' (and 12 more errors)
+  Code: 0 
+[Error - 2:41:41 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/newBukuduit/bukuduit-go/server/bootstrap/routes/transaction_route.go:20:40: expected selector or type assertion, found ')' (and 12 more errors)
+  Code: 0 
+[Error - 2:41:41 PM] Request textDocument/formatting failed.
+  Message: 20:40: expected selector or type assertion, found ')' (and 6 more errors)
+  Code: 0 
+[Error - 2:41:44 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/newBukuduit/bukuduit-go/server/bootstrap/routes/transaction_route.go:20:40: expected selector or type assertion, found ')' (and 12 more errors)
+  Code: 0 
+[Error - 2:41:45 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/newBukuduit/bukuduit-go/server/bootstrap/routes/transaction_route.go:20:40: expected selector or type assertion, found ')' (and 12 more errors)
+  Code: 0 
+[Error - 2:41:46 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/newBukuduit/bukuduit-go/server/bootstrap/routes/transaction_route.go:20:40: expected selector or type assertion, found ')' (and 12 more errors)
+  Code: 0 
+[Error - 2:41:46 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/newBukuduit/bukuduit-go/server/bootstrap/routes/transaction_route.go:20:40: expected selector or type assertion, found ')' (and 12 more errors)
+  Code: 0 
+[Error - 2:41:48 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/newBukuduit/bukuduit-go/server/bootstrap/routes/transaction_route.go:20:40: expected selector or type assertion, found ')' (and 12 more errors)
+  Code: 0 
+[Error - 2:41:49 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/newBukuduit/bukuduit-go/server/bootstrap/routes/transaction_route.go:20:40: expected selector or type assertion, found ')' (and 12 more errors)
+  Code: 0 
+[Error - 2:41:50 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/newBukuduit/bukuduit-go/server/bootstrap/routes/transaction_route.go:20:40: expected selector or type assertion, found ')' (and 12 more errors)
+  Code: 0 
+[Error - 2:41:50 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/newBukuduit/bukuduit-go/server/bootstrap/routes/transaction_route.go:20:40: expected selector or type assertion, found ')' (and 12 more errors)
+  Code: 0 
+[Error - 2:41:50 PM] Request textDocument/formatting failed.
+  Message: 20:40: expected selector or type assertion, found ')' (and 6 more errors)
+  Code: 0 
+[Info  - 2:41:57 PM] 2020/06/25 14:41:57 background imports cache refresh starting
+
+[Info  - 2:41:57 PM] 2020/06/25 14:41:57 background refresh finished after 15.102479ms
+
+[Info  - 2:42:31 PM] 2020/06/25 14:42:31 background imports cache refresh starting
+
+[Info  - 2:42:31 PM] 2020/06/25 14:42:31 background refresh finished after 42.161453ms
+
+[Error - 2:42:37 PM] Request textDocument/definition failed.
+  Message: no identifier found
+  Code: 0 
+[Info  - 2:43:02 PM] 2020/06/25 14:43:02 background imports cache refresh starting
+
+[Info  - 2:43:02 PM] 2020/06/25 14:43:02 background refresh finished after 16.448153ms
+
+[Error - 2:43:15 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/newBukuduit/bukuduit-go/db/repositories/actions/transactions_repository.go:54:1: expected 'IDENT', found 'func' (and 2 more errors)
+  Code: 0 
+[Error - 2:43:16 PM] 2020/06/25 14:43:16 no signature help: cannot find an enclosing function
+	position={52 4}
+
+[Error - 2:43:17 PM] 2020/06/25 14:43:17 no signature help: cannot find an enclosing function
+	position={52 6}
+
+[Error - 2:43:17 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/newBukuduit/bukuduit-go/db/repositories/actions/transactions_repository.go:53:8: expected 'IDENT', found newline (and 4 more errors)
+  Code: 0 
+[Error - 2:43:18 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/newBukuduit/bukuduit-go/db/repositories/actions/transactions_repository.go:53:13: expected 'IDENT', found newline (and 4 more errors)
+  Code: 0 
+[Error - 2:43:19 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/newBukuduit/bukuduit-go/db/repositories/actions/transactions_repository.go:53:14: expected 'IDENT', found newline (and 4 more errors)
+  Code: 0 
+[Error - 2:43:20 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/newBukuduit/bukuduit-go/db/repositories/actions/transactions_repository.go:53:17: expected 'IDENT', found newline (and 4 more errors)
+  Code: 0 
+[Error - 2:43:21 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/newBukuduit/bukuduit-go/db/repositories/actions/transactions_repository.go:53:14: expected 'IDENT', found newline (and 4 more errors)
+  Code: 0 
+[Error - 2:43:21 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/newBukuduit/bukuduit-go/db/repositories/actions/transactions_repository.go:53:13: expected 'IDENT', found newline (and 4 more errors)
+  Code: 0 
+[Error - 2:43:23 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/newBukuduit/bukuduit-go/db/repositories/actions/transactions_repository.go:53:18: expected 'IDENT', found newline (and 4 more errors)
+  Code: 0 
+[Error - 2:43:23 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/newBukuduit/bukuduit-go/db/repositories/actions/transactions_repository.go:53:19: expected 'IDENT', found newline (and 4 more errors)
+  Code: 0 
+[Error - 2:43:25 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/newBukuduit/bukuduit-go/db/repositories/actions/transactions_repository.go:53:23: expected 'IDENT', found newline (and 4 more errors)
+  Code: 0 
+[Error - 2:43:25 PM] 2020/06/25 14:43:25 no signature help: cannot find an enclosing function
+	position={52 38}
+
+[Error - 2:43:25 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/newBukuduit/bukuduit-go/db/repositories/actions/transactions_repository.go:53:40: expected 'IDENT', found newline (and 4 more errors)
+  Code: 0 
+[Error - 2:43:26 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/newBukuduit/bukuduit-go/db/repositories/actions/transactions_repository.go:53:40: expected 'IDENT', found newline (and 4 more errors)
+  Code: 0 
+[Error - 2:43:28 PM] 2020/06/25 14:43:28 no completions found: this is a definition of func (TransactionRepository).B(_ invalid type) (data bukuduit-go/db/models.Transactions, err error)
+	position={52 41}
+
+[Error - 2:43:28 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/newBukuduit/bukuduit-go/db/repositories/actions/transactions_repository.go:53:42: expected '(', found newline (and 2 more errors)
+  Code: 0 
+[Error - 2:43:28 PM] 2020/06/25 14:43:28 no completions found: this is a definition of func (TransactionRepository).Bro(_ invalid type) (data bukuduit-go/db/models.Transactions, err error)
+	position={52 43}
+
+[Error - 2:43:29 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/newBukuduit/bukuduit-go/db/repositories/actions/transactions_repository.go:53:47: expected '(', found newline (and 2 more errors)
+  Code: 0 
+[Error - 2:43:31 PM] 2020/06/25 14:43:31 no signature help: cannot find an enclosing function
+	position={52 47}
+
+[Info  - 2:43:34 PM] 2020/06/25 14:43:34 background imports cache refresh starting
+
+[Info  - 2:43:34 PM] 2020/06/25 14:43:34 background refresh finished after 13.563208ms
+
+[Error - 2:43:34 PM] 2020/06/25 14:43:34 no signature help: cannot find an enclosing function
+	position={52 50}
+
+[Info  - 2:43:37 PM] 2020/06/25 14:43:37 go/packages.Load
+	snapshot=915
+	directory=/home/aziz/works/newBukuduit/bukuduit-go
+	query=[file=/home/aziz/works/newBukuduit/bukuduit-go/db/repositories/actions/transactions_repository.go]
+	packages=1
+
+[Info  - 2:43:37 PM] 2020/06/25 14:43:37 go/packages.Load
+	snapshot=915
+	package_path="bukuduit-go/db/repositories/actions"
+	files=[/home/aziz/works/newBukuduit/bukuduit-go/db/repositories/actions/business_card_repository.go /home/aziz/works/newBukuduit/bukuduit-go/db/repositories/actions/transactions_repository.go /home/aziz/works/newBukuduit/bukuduit-go/db/repositories/actions/user_customer_repository.go /home/aziz/works/newBukuduit/bukuduit-go/db/repositories/actions/user_repository.go /home/aziz/works/newBukuduit/bukuduit-go/db/repositories/actions/utang_repository.go]
+
+[Error - 2:43:37 PM] 2020/06/25 14:43:37 no signature help: cannot find an enclosing function
+	position={53 87}
+
+[Info  - 2:43:37 PM] 2020/06/25 14:43:37 go/packages.Load
+	snapshot=915
+	directory=/home/aziz/works/newBukuduit/bukuduit-go
+	query=[bukuduit-go/amqp_listener_otp bukuduit-go/db/repositories/actions bukuduit-go/helpers/amqpconsumer bukuduit-go/server bukuduit-go/server/bootstrap bukuduit-go/server/bootstrap/routes bukuduit-go/server/handlers bukuduit-go/server/middlewares bukuduit-go/usecase]
+	packages=9
+
+[Info  - 2:43:37 PM] 2020/06/25 14:43:37 go/packages.Load
+	snapshot=915
+	package_path="bukuduit-go/db/repositories/actions"
+	files=[/home/aziz/works/newBukuduit/bukuduit-go/db/repositories/actions/business_card_repository.go /home/aziz/works/newBukuduit/bukuduit-go/db/repositories/actions/transactions_repository.go /home/aziz/works/newBukuduit/bukuduit-go/db/repositories/actions/user_customer_repository.go /home/aziz/works/newBukuduit/bukuduit-go/db/repositories/actions/user_repository.go /home/aziz/works/newBukuduit/bukuduit-go/db/repositories/actions/utang_repository.go]
+
+[Info  - 2:43:37 PM] 2020/06/25 14:43:37 go/packages.Load
+	snapshot=915
+	package_path="bukuduit-go/usecase"
+	files=[/home/aziz/works/newBukuduit/bukuduit-go/usecase/authentication_usecase.go /home/aziz/works/newBukuduit/bukuduit-go/usecase/business_card_usecase.go /home/aziz/works/newBukuduit/bukuduit-go/usecase/contract.go /home/aziz/works/newBukuduit/bukuduit-go/usecase/otp_usecase.go /home/aziz/works/newBukuduit/bukuduit-go/usecase/sms_usecase.go /home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go /home/aziz/works/newBukuduit/bukuduit-go/usecase/user_customer_usecase.go /home/aziz/works/newBukuduit/bukuduit-go/usecase/user_usecase.go /home/aziz/works/newBukuduit/bukuduit-go/usecase/utang_usecase.go]
+
+[Info  - 2:43:37 PM] 2020/06/25 14:43:37 go/packages.Load
+	snapshot=915
+	package_path="bukuduit-go/server/handlers"
+	files=[/home/aziz/works/newBukuduit/bukuduit-go/server/handlers/authentication_handler.go /home/aziz/works/newBukuduit/bukuduit-go/server/handlers/business_card_handler.go /home/aziz/works/newBukuduit/bukuduit-go/server/handlers/handler.go /home/aziz/works/newBukuduit/bukuduit-go/server/handlers/otp_handler.go /home/aziz/works/newBukuduit/bukuduit-go/server/handlers/transaction_handler.go /home/aziz/works/newBukuduit/bukuduit-go/server/handlers/user_customer_handler.go /home/aziz/works/newBukuduit/bukuduit-go/server/handlers/utang_handler.go]
+
+[Info  - 2:43:37 PM] 2020/06/25 14:43:37 go/packages.Load
+	snapshot=915
+	package_path="bukuduit-go/helpers/amqpconsumer"
+	files=[/home/aziz/works/newBukuduit/bukuduit-go/helpers/amqpconsumer/amqpconsumer.go]
+
+[Info  - 2:43:37 PM] 2020/06/25 14:43:37 go/packages.Load
+	snapshot=915
+	package_path="bukuduit-go/amqp_listener_otp"
+	files=[/home/aziz/works/newBukuduit/bukuduit-go/amqp_listener_otp/main.go]
+
+[Info  - 2:43:37 PM] 2020/06/25 14:43:37 go/packages.Load
+	snapshot=915
+	package_path="bukuduit-go/server/middlewares"
+	files=[/home/aziz/works/newBukuduit/bukuduit-go/server/middlewares/header_x_request_id.go /home/aziz/works/newBukuduit/bukuduit-go/server/middlewares/logmiddleware.go /home/aziz/works/newBukuduit/bukuduit-go/server/middlewares/verify_jwt.go /home/aziz/works/newBukuduit/bukuduit-go/server/middlewares/xapi_key.go]
+
+[Info  - 2:43:37 PM] 2020/06/25 14:43:37 go/packages.Load
+	snapshot=915
+	package_path="bukuduit-go/server/bootstrap/routes"
+	files=[/home/aziz/works/newBukuduit/bukuduit-go/server/bootstrap/routes/authentication_route.go /home/aziz/works/newBukuduit/bukuduit-go/server/bootstrap/routes/otp_routes.go /home/aziz/works/newBukuduit/bukuduit-go/server/bootstrap/routes/shop_route.go /home/aziz/works/newBukuduit/bukuduit-go/server/bootstrap/routes/transaction_route.go /home/aziz/works/newBukuduit/bukuduit-go/server/bootstrap/routes/user_customer_route.go /home/aziz/works/newBukuduit/bukuduit-go/server/bootstrap/routes/utang_routes.go]
+
+[Info  - 2:43:37 PM] 2020/06/25 14:43:37 go/packages.Load
+	snapshot=915
+	package_path="bukuduit-go/server"
+	files=[/home/aziz/works/newBukuduit/bukuduit-go/server/main.go]
+
+[Info  - 2:43:37 PM] 2020/06/25 14:43:37 go/packages.Load
+	snapshot=915
+	package_path="bukuduit-go/server/bootstrap"
+	files=[/home/aziz/works/newBukuduit/bukuduit-go/server/bootstrap/boot.go /home/aziz/works/newBukuduit/bukuduit-go/server/bootstrap/route.go]
+
+[Error - 2:43:43 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/newBukuduit/bukuduit-go/db/repositories/actions/transactions_repository.go:54:63: expected 'IDENT', found ')' (and 5 more errors)
+  Code: 0 
+[Error - 2:43:47 PM] 2020/06/25 14:43:47 no signature help: cannot find an enclosing function
+	position={53 74}
+
+[Error - 2:43:48 PM] 2020/06/25 14:43:48 no signature help: cannot find an enclosing function
+	position={53 76}
+
+[Error - 2:43:48 PM] 2020/06/25 14:43:48 no completions found: this is a definition of var e invalid type
+	position={53 77}
+
+[Error - 2:43:49 PM] 2020/06/25 14:43:49 no completions found: this is a definition of var err invalid type
+	position={53 79}
+
+[Error - 2:43:49 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/newBukuduit/bukuduit-go/db/repositories/actions/transactions_repository.go:54:80: expected type, found ')' (and 5 more errors)
+  Code: 0 
+[Error - 2:43:50 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/newBukuduit/bukuduit-go/db/repositories/actions/transactions_repository.go:54:81: expected type, found ')' (and 5 more errors)
+  Code: 0 
+[Error - 2:43:50 PM] 2020/06/25 14:43:50 no signature help: cannot find an enclosing function
+	position={53 85}
+
+[Info  - 2:44:04 PM] 2020/06/25 14:44:04 background imports cache refresh starting
+
+[Info  - 2:44:04 PM] 2020/06/25 14:44:04 background refresh finished after 34.783453ms
+
+[Info  - 2:44:35 PM] 2020/06/25 14:44:35 background imports cache refresh starting
+
+[Info  - 2:44:35 PM] 2020/06/25 14:44:35 background refresh finished after 11.384071ms
+
+[Info  - 2:45:05 PM] 2020/06/25 14:45:05 background imports cache refresh starting
+
+[Info  - 2:45:05 PM] 2020/06/25 14:45:05 background refresh finished after 13.806805ms
+
+[Error - 2:45:10 PM] 2020/06/25 14:45:10 no signature help: cannot find an enclosing function
+	position={53 60}
+
+[Info  - 2:45:36 PM] 2020/06/25 14:45:36 background imports cache refresh starting
+
+[Info  - 2:45:36 PM] 2020/06/25 14:45:36 background refresh finished after 45.565425ms
+
+[Error - 2:45:40 PM] 2020/06/25 14:45:40 no signature help: cannot find an enclosing function
+	position={55 17}
+
+[Error - 2:45:42 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/newBukuduit/bukuduit-go/db/repositories/actions/transactions_repository.go:57:1: expected selector or type assertion, found '}' (and 76 more errors)
+  Code: 0 
+[Error - 2:45:44 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/newBukuduit/bukuduit-go/db/repositories/actions/transactions_repository.go:57:1: expected selector or type assertion, found '}' (and 76 more errors)
+  Code: 0 
+[Error - 2:45:49 PM] 2020/06/25 14:45:49 no signature help: cannot get type for Fun *ast.SelectorExpr (&{0xc0048c3380 QueryR})
+	position={55 27}
+
+[Error - 2:45:57 PM] 2020/06/25 14:45:57 no signature help: cannot find an enclosing function
+	position={55 48}
+
+[Error - 2:45:58 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/newBukuduit/bukuduit-go/db/repositories/actions/transactions_repository.go:57:1: expected selector or type assertion, found '}' (and 76 more errors)
+  Code: 0 
+[Error - 2:46:04 PM] Request textDocument/foldingRange failed.
+  Message: invalid pos
+  Code: 0 
+[Error - 2:46:04 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/newBukuduit/bukuduit-go/db/repositories/actions/transactions_repository.go:58:2: expected operand, found ')' (and 73 more errors)
+  Code: 0 
+[Error - 2:46:05 PM] 2020/06/25 14:46:05 DocumentSymbols failed: invalid pos
+	URI=file:///home/aziz/works/newBukuduit/bukuduit-go/db/repositories/actions/transactions_repository.go
+
+[Error - 2:46:06 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/newBukuduit/bukuduit-go/db/repositories/actions/transactions_repository.go:57:8: missing ',' before newline in argument list
+  Code: 0 
+[Error - 2:46:07 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/newBukuduit/bukuduit-go/db/repositories/actions/transactions_repository.go:58:2: expected selector or type assertion, found ')' (and 75 more errors)
+  Code: 0 
+[Info  - 2:46:08 PM] 2020/06/25 14:46:08 background imports cache refresh starting
+
+[Info  - 2:46:08 PM] 2020/06/25 14:46:08 background refresh finished after 15.455319ms
+
+[Info  - 2:46:42 PM] 2020/06/25 14:46:42 background imports cache refresh starting
+
+[Info  - 2:46:42 PM] 2020/06/25 14:46:42 background refresh finished after 38.214759ms
+
+[Info  - 2:47:13 PM] 2020/06/25 14:47:13 background imports cache refresh starting
+
+[Info  - 2:47:13 PM] 2020/06/25 14:47:13 background refresh finished after 15.951849ms
+
+[Error - 2:47:32 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/newBukuduit/bukuduit-go/server/bootstrap/routes/transaction_route.go:20:40: expected selector or type assertion, found ')' (and 12 more errors)
+  Code: 0 
+[Error - 2:47:32 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/newBukuduit/bukuduit-go/server/bootstrap/routes/transaction_route.go:20:40: expected selector or type assertion, found ')' (and 12 more errors)
+  Code: 0 
+[Error - 2:47:39 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/newBukuduit/bukuduit-go/server/bootstrap/routes/transaction_route.go:20:40: expected selector or type assertion, found ')' (and 12 more errors)
+  Code: 0 
+[Error - 2:47:39 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/newBukuduit/bukuduit-go/server/bootstrap/routes/transaction_route.go:20:40: expected selector or type assertion, found ')' (and 12 more errors)
+  Code: 0 
+[Info  - 2:47:44 PM] 2020/06/25 14:47:44 background imports cache refresh starting
+
+[Info  - 2:47:44 PM] 2020/06/25 14:47:44 background refresh finished after 47.102783ms
+
+[Error - 2:47:45 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/newBukuduit/bukuduit-go/server/bootstrap/routes/transaction_route.go:20:40: expected selector or type assertion, found ')' (and 12 more errors)
+  Code: 0 
+[Error - 2:47:45 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/newBukuduit/bukuduit-go/server/bootstrap/routes/transaction_route.go:20:40: expected selector or type assertion, found ')' (and 12 more errors)
+  Code: 0 
+[Error - 2:47:48 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/newBukuduit/bukuduit-go/server/bootstrap/routes/transaction_route.go:20:40: expected selector or type assertion, found ')' (and 12 more errors)
+  Code: 0 
+[Error - 2:48:08 PM] 2020/06/25 14:48:08 no signature help: cannot find an enclosing function
+	position={24 6}
+
+[Error - 2:48:08 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/newBukuduit/bukuduit-go/server/handlers/transaction_handler.go:25:8: expected 'IDENT', found newline (and 4 more errors)
+  Code: 0 
+[Error - 2:48:09 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/newBukuduit/bukuduit-go/server/handlers/transaction_handler.go:25:13: expected 'IDENT', found newline (and 4 more errors)
+  Code: 0 
+[Error - 2:48:10 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/newBukuduit/bukuduit-go/server/handlers/transaction_handler.go:25:11: expected 'IDENT', found newline (and 4 more errors)
+  Code: 0 
+[Error - 2:48:10 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/newBukuduit/bukuduit-go/server/handlers/transaction_handler.go:25:10: expected 'IDENT', found newline (and 4 more errors)
+  Code: 0 
+[Error - 2:48:11 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/newBukuduit/bukuduit-go/server/handlers/transaction_handler.go:25:13: expected 'IDENT', found newline (and 4 more errors)
+  Code: 0 
+[Error - 2:48:12 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/newBukuduit/bukuduit-go/server/handlers/transaction_handler.go:25:14: expected 'IDENT', found newline (and 4 more errors)
+  Code: 0 
+[Error - 2:48:12 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/newBukuduit/bukuduit-go/server/handlers/transaction_handler.go:25:13: expected 'IDENT', found newline (and 4 more errors)
+  Code: 0 
+[Error - 2:48:12 PM] 2020/06/25 14:48:12 no signature help: cannot find an enclosing function
+	position={24 13}
+
+[Error - 2:48:13 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/newBukuduit/bukuduit-go/server/handlers/transaction_handler.go:25:15: expected 'IDENT', found newline (and 4 more errors)
+  Code: 0 
+[Error - 2:48:14 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/newBukuduit/bukuduit-go/server/handlers/transaction_handler.go:25:15: expected 'IDENT', found newline (and 4 more errors)
+  Code: 0 
+[Error - 2:48:14 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/newBukuduit/bukuduit-go/server/handlers/transaction_handler.go:25:14: expected 'IDENT', found newline (and 4 more errors)
+  Code: 0 
+[Error - 2:48:15 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/newBukuduit/bukuduit-go/server/handlers/transaction_handler.go:25:15: expected 'IDENT', found newline (and 4 more errors)
+  Code: 0 
+[Error - 2:48:15 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/newBukuduit/bukuduit-go/server/handlers/transaction_handler.go:25:15: expected 'IDENT', found newline (and 4 more errors)
+  Code: 0 
+[Error - 2:48:16 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/newBukuduit/bukuduit-go/server/handlers/transaction_handler.go:25:16: expected 'IDENT', found newline (and 4 more errors)
+  Code: 0 
+[Error - 2:48:17 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/newBukuduit/bukuduit-go/server/handlers/transaction_handler.go:25:19: expected 'IDENT', found newline (and 4 more errors)
+  Code: 0 
+[Error - 2:48:17 PM] 2020/06/25 14:48:17 no signature help: cannot find an enclosing function
+	position={24 32}
+
+[Info  - 2:48:17 PM] 2020/06/25 14:48:17 background imports cache refresh starting
+
+[Info  - 2:48:17 PM] 2020/06/25 14:48:17 background refresh finished after 48.210476ms
+
+[Error - 2:48:17 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/newBukuduit/bukuduit-go/server/handlers/transaction_handler.go:25:34: expected 'IDENT', found newline (and 4 more errors)
+  Code: 0 
+[Error - 2:48:18 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/newBukuduit/bukuduit-go/server/handlers/transaction_handler.go:25:34: expected 'IDENT', found newline (and 4 more errors)
+  Code: 0 
+[Error - 2:48:19 PM] 2020/06/25 14:48:19 no completions found: this is a definition of func (TransactionHandler).B(_ invalid type, Context invalid type, _ invalid type, ctx invalid type, _ invalid type)
+	position={24 35}
+
+[Error - 2:48:19 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/newBukuduit/bukuduit-go/server/handlers/transaction_handler.go:25:36: expected '(', found newline (and 12 more errors)
+  Code: 0 
+[Error - 2:48:20 PM] 2020/06/25 14:48:20 no completions found: this is a definition of func (TransactionHandler).Bro(_ invalid type, Context invalid type, _ invalid type, ctx invalid type, _ invalid type)
+	position={24 37}
+
+[Error - 2:48:21 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/newBukuduit/bukuduit-go/server/handlers/transaction_handler.go:25:38: expected '(', found newline (and 12 more errors)
+  Code: 0 
+[Error - 2:48:21 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/newBukuduit/bukuduit-go/server/handlers/transaction_handler.go:25:39: expected '(', found newline (and 12 more errors)
+  Code: 0 
+[Error - 2:48:22 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/newBukuduit/bukuduit-go/server/handlers/transaction_handler.go:25:41: expected '(', found newline (and 12 more errors)
+  Code: 0 
+[Error - 2:48:23 PM] 2020/06/25 14:48:23 no signature help: cannot find an enclosing function
+	position={24 41}
+
+[Error - 2:48:27 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/newBukuduit/bukuduit-go/server/handlers/transaction_handler.go:25:46: expected 'IDENT', found ')' (and 3 more errors)
+  Code: 0 
+[Error - 2:48:30 PM] 2020/06/25 14:48:30 no signature help: cannot find an enclosing function
+	position={24 54}
+
+[Error - 2:48:33 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/newBukuduit/bukuduit-go/server/handlers/transaction_handler.go:25:51: expected 'IDENT', found ')' (and 5 more errors)
+  Code: 0 
+[Error - 2:48:34 PM] 2020/06/25 14:48:34 no signature help: cannot find an enclosing function
+	position={24 57}
+
+[Error - 2:48:36 PM] 2020/06/25 14:48:36 no signature help: cannot find an enclosing function
+	position={24 64}
+
+[Info  - 2:48:53 PM] 2020/06/25 14:48:53 background imports cache refresh starting
+
+[Info  - 2:48:53 PM] 2020/06/25 14:48:53 background refresh finished after 11.976683ms
+
+[Error - 2:49:03 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/newBukuduit/bukuduit-go/server/bootstrap/routes/transaction_route.go:20:40: expected selector or type assertion, found ')' (and 12 more errors)
+  Code: 0 
+[Error - 2:49:03 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/newBukuduit/bukuduit-go/server/bootstrap/routes/transaction_route.go:20:40: expected selector or type assertion, found ')' (and 12 more errors)
+  Code: 0 
+[Error - 2:49:06 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/newBukuduit/bukuduit-go/server/bootstrap/routes/transaction_route.go:20:40: expected selector or type assertion, found ')' (and 12 more errors)
+  Code: 0 
+[Info  - 2:49:23 PM] 2020/06/25 14:49:23 background imports cache refresh starting
+
+[Info  - 2:49:23 PM] 2020/06/25 14:49:23 background refresh finished after 11.575316ms
+
+[Info  - 2:49:54 PM] 2020/06/25 14:49:54 background imports cache refresh starting
+
+[Info  - 2:49:54 PM] 2020/06/25 14:49:54 background refresh finished after 15.666554ms
+
+[Info  - 2:50:25 PM] 2020/06/25 14:50:25 background imports cache refresh starting
+
+[Info  - 2:50:25 PM] 2020/06/25 14:50:25 background refresh finished after 30.372932ms
+
+[Error - 2:50:32 PM] Request textDocument/definition failed.
+  Message: no identifier found
+  Code: 0 
+[Error - 2:50:37 PM] 2020/06/25 14:50:37 no completions found: this is a definition of func (TransactionUseCase).B(ID string) (res bukuduit-go/usecase/viewmodel.TransactionVm, err error)
+	position={39 30}
+
+[Error - 2:50:37 PM] 2020/06/25 14:50:37 no completions found: this is a definition of func (TransactionUseCase).Bro(ID string) (res bukuduit-go/usecase/viewmodel.TransactionVm, err error)
+	position={39 32}
+
+[Error - 2:50:47 PM] 2020/06/25 14:50:47 no signature help: cannot find an enclosing function
+	position={42 16}
+
+[Info  - 2:51:01 PM] 2020/06/25 14:51:01 background imports cache refresh starting
+
+[Info  - 2:51:01 PM] 2020/06/25 14:51:01 background refresh finished after 15.60517ms
+
+[Info  - 2:51:33 PM] 2020/06/25 14:51:33 background imports cache refresh starting
+
+[Info  - 2:51:33 PM] 2020/06/25 14:51:33 background refresh finished after 30.453663ms
+
+[Info  - 2:52:06 PM] 2020/06/25 14:52:06 background imports cache refresh starting
+
+[Info  - 2:52:06 PM] 2020/06/25 14:52:06 background refresh finished after 37.482646ms
+
+[Error - 2:52:32 PM] 2020/06/25 14:52:32 no signature help: cannot find signature for Fun *ast.CallExpr (&{0xc00525cf60 20854854 [] 0 20854855})
+	position={41 35}
+
+[Error - 2:52:35 PM] Request textDocument/foldingRange failed.
+  Message: invalid pos
+  Code: 0 
+[Error - 2:52:35 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:43:2: expected operand, found 'if' (and 136 more errors)
+  Code: 0 
+[Error - 2:52:35 PM] 2020/06/25 14:52:35 DocumentSymbols failed: invalid pos
+	URI=file:///home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go
+
+[Info  - 2:52:38 PM] 2020/06/25 14:52:38 background imports cache refresh starting
+
+[Info  - 2:52:38 PM] 2020/06/25 14:52:38 background refresh finished after 37.325223ms
+
+[Info  - 2:53:09 PM] 2020/06/25 14:53:09 background imports cache refresh starting
+
+[Info  - 2:53:09 PM] 2020/06/25 14:53:09 background refresh finished after 15.461089ms
+
+[Info  - 2:55:00 PM] 2020/06/25 14:55:00 background imports cache refresh starting
+
+[Info  - 2:55:00 PM] 2020/06/25 14:55:00 background refresh finished after 14.975317ms
+

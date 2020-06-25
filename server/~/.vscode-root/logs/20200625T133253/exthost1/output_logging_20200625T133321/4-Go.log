@@ -1,0 +1,13 @@
+go.toolsGopath setting is not set. Using GOPATH /root/go
+Installing 1 tool at /root/go/bin in module mode.
+  gopls
+
+Installing golang.org/x/tools/gopls SUCCEEDED
+
+Reload VS Code window to use the Go language server
+All tools successfully installed. You are ready to Go :).
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+go.toolsGopath setting is not set. Using GOPATH /root/go
+Installing 1 tool at /root/go/bin in module mode.
+  goreturns
+
