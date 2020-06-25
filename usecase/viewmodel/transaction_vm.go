@@ -2,7 +2,8 @@ package viewmodel
 
 type TransactionVm struct {
 	ID               string `json:"id"`
-	Customer_Id      string `json:"customer_id"`
+	Reference_Id     string `json:"reference_id"`
+	Shop_Id          string `json:"shop_id"`
 	Amount           string `json:"amount"`
 	Description      string `json:"description"`
 	Image            string `json:"image"`

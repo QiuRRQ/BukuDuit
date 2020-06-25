@@ -2,6 +2,7 @@ package usecase
 
 import (
 	"bukuduit-go/db/repositories/actions"
+	"bukuduit-go/helpers/enums"
 	"bukuduit-go/helpers/messages"
 	request "bukuduit-go/server/requests"
 	"bukuduit-go/usecase/viewmodel"
@@ -136,7 +137,7 @@ func (uc TransactionUseCase) Delete(ID string) (err error) {
 	return nil
 }
 
-func (uc TransactionUseCase) DebtPayment(CustomerID, DebtType string, UserCustomerDebt, amount int) error {
+func (uc TransactionUseCase) DebtPayment(referencID, DebtType, shopID string, amount int) error {
 	TransactionModel := actions.NewTransactionModel(uc.DB)
 	userCustomerUc := UserCustomerUseCase{UcContract: uc.UcContract}
 	now := time.Now().UTC()
@@ -144,8 +145,11 @@ func (uc TransactionUseCase) DebtPayment(CustomerID, DebtType string, UserCustom
 	if err != nil {
 		return err
 	}
+	CustomerData, err := userCustomerUc.Read(referencID)
+	userDebtAmount := CustomerData.Debt
 	TransactionBody := viewmodel.TransactionVm{
-		Customer_Id:      CustomerID,
+		Reference_Id:      referencID,
+		Shop_Id: 			shopID,
 		Amount:           strconv.Itoa(amount),
 		Type:             DebtType,
 		Transaction_Date: now.Format(time.RFC3339),
@@ -153,10 +157,10 @@ func (uc TransactionUseCase) DebtPayment(CustomerID, DebtType string, UserCustom
 		Created_at:       now.Format(time.RFC3339),
 	}
 
-	if DebtType == "pay" {
-		UserCustomerDebt = UserCustomerDebt - amount
+	if DebtType == enums.Debt {
+		userDebtAmount = userDebtAmount - amount
 	} else {
-		UserCustomerDebt = UserCustomerDebt + amount
+		userDebtAmount = userDebtAmount + amount
 	}
 
 	_, errr := TransactionModel.Add(TransactionBody, Transaction)
@@ -165,11 +169,11 @@ func (uc TransactionUseCase) DebtPayment(CustomerID, DebtType string, UserCustom
 		return err
 	}
 
-	eror := userCustomerUc.EditDebt(CustomerID, int32(UserCustomerDebt), Transaction)
+	eror := userCustomerUc.EditDebt(CustomerID, int32(userDebtAmount), Transaction)
 	if eror != nil {
 		Transaction.Rollback()
 		return eror
-	}
+	}d
 	Transaction.Commit()
 	return errr
 }

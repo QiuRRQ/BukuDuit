@@ -19,7 +19,7 @@ func NewTransactionModel(DB *sql.DB) contracts.ITransactionRepository {
 }
 
 func (repository TransactionRepository) BrowseByCustomer(customerID string) (data []models.Transactions, err error) {
-	statement := `select * from "transactions" where "customer_id"=$1 and "deleted_at" is null`
+	statement := `select * from "transactions" where "reference_id"=$1 and "deleted_at" is null`
 	rows, err := repository.DB.Query(statement, customerID)
 	if err != nil {
 		return data, err
@@ -31,7 +31,8 @@ func (repository TransactionRepository) BrowseByCustomer(customerID string) (dat
 		err = rows.Scan(
 			&dataTemp.ID,
 			&dataTemp.Amount,
-			&dataTemp.Customer_Id,
+			&dataTemp.Reference_Id,
+			&dataTemp.IDShop,
 			&dataTemp.Description,
 			&dataTemp.Image,
 			&dataTemp.Transaction_Date,
@@ -53,7 +54,8 @@ func (repository TransactionRepository) Read(ID string) (data models.Transaction
 	statement := `select * from "transactions" where "id"=$1 and "deleted_at" is null`
 	err = repository.DB.QueryRow(statement, ID).Scan(
 		&data.ID,
-		&data.Customer_Id,
+		&data.Reference_Id,
+		&data.IDShop,
 		&data.Description,
 		&data.Amount,
 		&data.Created_at,
@@ -90,11 +92,12 @@ func (repository TransactionRepository) Edit(body viewmodel.TransactionVm) (res 
 }
 
 func (repository TransactionRepository) Add(body viewmodel.TransactionVm, tx *sql.Tx) (res string, err error) {
-	statement := `insert into "transactions" ("customer_id","amount","description","image","type","transaction_date","created_at","updated_at") values($1,$2,$3,$4,$5,$6,$7,$8) returning "id"`
+	statement := `insert into "transactions" ("reference_id", "shop_id", "amount","description","image","type","transaction_date","created_at","updated_at") values($1,$2,$3,$4,$5,$6,$7,$8) returning "id"`
 	if tx != nil {
 		_, err = tx.Exec(
 			statement,
-			str.EmptyString(body.Customer_Id),
+			str.EmptyString(body.Reference_Id),
+			str.EmptyString(body.Shop_Id),
 			str.EmptyString(body.Amount),
 			str.EmptyString(body.Description),
 			str.EmptyString(body.Image),
@@ -106,7 +109,8 @@ func (repository TransactionRepository) Add(body viewmodel.TransactionVm, tx *sq
 	} else {
 		err = repository.DB.QueryRow(
 			statement,
-			str.EmptyString(body.Customer_Id),
+			str.EmptyString(body.Reference_Id),
+			str.EmptyString(body.Shop_Id),
 			str.EmptyString(body.Amount),
 			str.EmptyString(body.Description),
 			str.EmptyString(body.Image),
