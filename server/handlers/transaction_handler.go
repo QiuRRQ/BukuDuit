@@ -13,14 +13,24 @@ type TransactionHandler struct {
 	Handler
 }
 
-// func (handler TransactionHandler) BrowseByCustomer(ctx echo.Context) error {
-// 	uc := usecase.TransactionUseCase{UcContract: handler.UseCaseContract}
+func (handler TransactionHandler) BrowseByCustomer(ctx echo.Context) error {
+	customerId := ctx.QueryParam("customerId")
 
-// 	return handler.SendResponse(ctx, res, nil, err)
-// }
+	uc := usecase.TransactionUseCase{UcContract: handler.UseCaseContract}
+	res, err := uc.BrowseByCustomer(customerId)
 
+	return handler.SendResponse(ctx, res, nil, err)
+}
+
+func (handler TransactionHandler) Browse(ctx echo.Context) error {
+	ID := ctx.QueryParam("userID")
+	uc := usecase.TransactionUseCase{UcContract: handler.UseCaseContract}
+	res, err := uc.Browse(ID)
+
+	return handler.SendResponse(ctx, res, nil, err)
+}
 func (handler TransactionHandler) Read(ctx echo.Context) error {
-	ID := ctx.Param("id")
+	ID := ctx.QueryParam("id")
 	uc := usecase.TransactionUseCase{UcContract: handler.UseCaseContract}
 	res, err := uc.Read(ID)
 
@@ -56,6 +66,23 @@ func (handler TransactionHandler) Delete(ctx echo.Context) error {
 //untuk pembayaran hutang
 func (handler TransactionHandler) DebtPayment(ctx echo.Context) error {
 	input := new(request.TransactionRequest)
+
+	if err := ctx.Bind(input); err != nil {
+		return handler.SendResponseBadRequest(ctx, http.StatusBadRequest, err.Error())
+	}
+
+	if err := handler.Validate.Struct(input); err != nil {
+		return handler.SendResponseErrorValidation(ctx, err.(validator.ValidationErrors))
+	}
+
+	uc := usecase.TransactionUseCase{UcContract: handler.UseCaseContract}
+	err := uc.DebtPayment(input.ReferenceID, input.TransactionType, input.ShopID, input.TransactionDate, input.Amount)
+
+	return handler.SendResponse(ctx, nil, nil, err)
+}
+
+func (handler TransactionHandler) AddTransaction(ctx echo.Context) error {
+	input := new(request.TransactionRequest) //id using users ID not UserCustomerID
 
 	if err := ctx.Bind(input); err != nil {
 		return handler.SendResponseBadRequest(ctx, http.StatusBadRequest, err.Error())
