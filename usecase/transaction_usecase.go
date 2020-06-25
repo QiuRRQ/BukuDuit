@@ -9,7 +9,6 @@ import (
 	"database/sql"
 	"errors"
 	"fmt"
-	"strconv"
 	"time"
 )
 
@@ -26,16 +25,16 @@ func (uc TransactionUseCase) BrowseByCustomer(customerID string) (res []viewmode
 
 	for _, Transaction := range Transactions {
 		res = append(res, viewmodel.TransactionVm{
-			ID:               Transaction.ID,
-			Customer_Id:      Transaction.Customer_Id,
-			Amount:           fmt.Sprint(Transaction.Amount),
-			Description:      Transaction.Description,
-			Image:            Transaction.Image,
-			Type:             Transaction.Type,
-			Transaction_Date: Transaction.Transaction_Date.String,
-			Created_at:       Transaction.Created_at,
-			Update_at:        Transaction.Update_at.String,
-			Deleted_at:       Transaction.Deleted_at.String,
+			ID:              Transaction.ID,
+			ReferenceID:     Transaction.ReferenceID,
+			Amount:          Transaction.Amount.Int32,
+			Description:     Transaction.Description,
+			Image:           Transaction.Image,
+			Type:            Transaction.Type,
+			TransactionDate: Transaction.TransactionDate.String,
+			CreatedAt:       Transaction.CreatedAt,
+			UpdatedAt:       Transaction.UpdatedAt.String,
+			DeletedAt:      Transaction.DeletedAt.String,
 		})
 	}
 
@@ -50,16 +49,16 @@ func (uc TransactionUseCase) Read(ID string) (res viewmodel.TransactionVm, err e
 	}
 
 	res = viewmodel.TransactionVm{
-		ID:               Transaction.ID,
-		Customer_Id:      Transaction.Customer_Id,
-		Amount:           fmt.Sprint(Transaction.Amount),
-		Description:      Transaction.Description,
-		Image:            Transaction.Image,
-		Type:             Transaction.Type,
-		Transaction_Date: Transaction.Transaction_Date.String,
-		Created_at:       Transaction.Created_at,
-		Update_at:        Transaction.Update_at.String,
-		Deleted_at:       Transaction.Deleted_at.String,
+		ID:              Transaction.ID,
+		ReferenceID:     Transaction.ReferenceID,
+		Amount:          Transaction.Amount.Int32,
+		Description:     Transaction.Description,
+		Image:           Transaction.Image,
+		Type:            Transaction.Type,
+		TransactionDate: Transaction.TransactionDate.String,
+		CreatedAt:       Transaction.CreatedAt,
+		UpdatedAt:       Transaction.UpdatedAt.String,
+		DeletedAt:      Transaction.DeletedAt.String,
 	}
 
 	return res, err
@@ -77,14 +76,14 @@ func (uc TransactionUseCase) Edit(input *request.TransactionRequest, ID string) 
 	}
 
 	body := viewmodel.TransactionVm{
-		ID:               ID,
-		Customer_Id:      input.Customer_Id,
-		Amount:           input.Amount,
-		Description:      input.Description,
-		Image:            input.Image,
-		Type:             input.Type,
-		Transaction_Date: input.Transaction_Date,
-		Update_at:        now.Format(time.RFC3339),
+		ID:              ID,
+		ReferenceID:     input.CustomerID,
+		Amount:          input.Amount,
+		Description:     input.Description,
+		Image:           input.Image,
+		Type:            input.Type,
+		TransactionDate: input.TransactionDate,
+		UpdatedAt:       now.Format(time.RFC3339),
 	}
 	_, err = model.Edit(body)
 	if err != nil {
@@ -93,28 +92,6 @@ func (uc TransactionUseCase) Edit(input *request.TransactionRequest, ID string) 
 
 	return nil
 }
-
-// func (uc TransactionUseCase) Add(input *request.TransactionRequest, customerID string) (err error) {
-// 	model := actions.NewTransactionModel(uc.DB)
-// 	now := time.Now().UTC()
-
-// 	body := viewmodel.TransactionVm{
-// 		Customer_Id:      input.Customer_Id,
-// 		Amount:           input.Amount,
-// 		Description:      input.Description,
-// 		Image:            input.Image,
-// 		Type:             input.Type,
-// 		Transaction_Date: input.Transaction_Date,
-// 		Update_at:        now.Format(time.RFC3339),
-// 		Created_at:       now.Format(time.RFC3339),
-// 	}
-// 	_, err = model.Add(body)
-// 	if err != nil {
-// 		return err
-// 	}
-
-// 	return nil
-// }
 
 func (uc TransactionUseCase) Delete(ID string) (err error) {
 	fmt.Println(ID)
@@ -137,24 +114,24 @@ func (uc TransactionUseCase) Delete(ID string) (err error) {
 	return nil
 }
 
-func (uc TransactionUseCase) DebtPayment(referencID, DebtType, shopID string, amount int) error {
-	TransactionModel := actions.NewTransactionModel(uc.DB)
+func (uc TransactionUseCase) DebtPayment(referenceID, DebtType, shopID string, amount int32) (err error) {
+	model := actions.NewTransactionModel(uc.DB)
 	userCustomerUc := UserCustomerUseCase{UcContract: uc.UcContract}
 	now := time.Now().UTC()
-	Transaction, err := uc.DB.Begin()
+
+	customerData, err := userCustomerUc.Read(referenceID)
 	if err != nil {
 		return err
 	}
-	CustomerData, err := userCustomerUc.Read(referencID)
-	userDebtAmount := CustomerData.Debt
+	userDebtAmount := customerData.Debt
 	TransactionBody := viewmodel.TransactionVm{
-		Reference_Id:      referencID,
-		Shop_Id: 			shopID,
-		Amount:           strconv.Itoa(amount),
-		Type:             DebtType,
-		Transaction_Date: now.Format(time.RFC3339),
-		Update_at:        now.Format(time.RFC3339),
-		Created_at:       now.Format(time.RFC3339),
+		ReferenceID:     referenceID,
+		ShopID:          shopID,
+		Amount:          amount,
+		Type:            DebtType,
+		TransactionDate: now.Format(time.RFC3339),
+		UpdatedAt:       now.Format(time.RFC3339),
+		CreatedAt:       now.Format(time.RFC3339),
 	}
 
 	if DebtType == enums.Debt {
@@ -163,19 +140,24 @@ func (uc TransactionUseCase) DebtPayment(referencID, DebtType, shopID string, am
 		userDebtAmount = userDebtAmount + amount
 	}
 
-	_, errr := TransactionModel.Add(TransactionBody, Transaction)
+	transaction, err := uc.DB.Begin()
 	if err != nil {
-		Transaction.Rollback()
+		return err
+	}
+	_, err = model.Add(TransactionBody, transaction)
+	if err != nil {
+		transaction.Rollback()
 		return err
 	}
 
-	eror := userCustomerUc.EditDebt(CustomerID, int32(userDebtAmount), Transaction)
-	if eror != nil {
-		Transaction.Rollback()
-		return eror
-	}d
-	Transaction.Commit()
-	return errr
+	err = userCustomerUc.EditDebt(referenceID, userDebtAmount, transaction)
+	if err != nil {
+		transaction.Rollback()
+		return err
+	}
+	transaction.Commit()
+
+	return nil
 }
 
 func (uc TransactionUseCase) DeleteByCustomer(customerID string, tx *sql.Tx) (err error) {

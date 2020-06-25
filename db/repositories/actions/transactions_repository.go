@@ -31,15 +31,15 @@ func (repository TransactionRepository) BrowseByCustomer(customerID string) (dat
 		err = rows.Scan(
 			&dataTemp.ID,
 			&dataTemp.Amount,
-			&dataTemp.Reference_Id,
+			&dataTemp.ReferenceID,
 			&dataTemp.IDShop,
 			&dataTemp.Description,
 			&dataTemp.Image,
-			&dataTemp.Transaction_Date,
+			&dataTemp.TransactionDate,
 			&dataTemp.Type,
-			&dataTemp.Created_at,
-			&dataTemp.Update_at,
-			&dataTemp.Deleted_at,
+			&dataTemp.CreatedAt,
+			&dataTemp.UpdatedAt,
+			&dataTemp.DeletedAt,
 		)
 		if err != nil {
 			return data, err
@@ -54,17 +54,17 @@ func (repository TransactionRepository) Read(ID string) (data models.Transaction
 	statement := `select * from "transactions" where "id"=$1 and "deleted_at" is null`
 	err = repository.DB.QueryRow(statement, ID).Scan(
 		&data.ID,
-		&data.Reference_Id,
+		&data.ReferenceID,
 		&data.IDShop,
 		&data.Description,
 		&data.Amount,
-		&data.Created_at,
-		&data.Deleted_at,
+		&data.CreatedAt,
+		&data.DeletedAt,
 		&data.Image,
-		&data.Transaction_Date,
+		&data.TransactionDate,
 		&data.Type,
-		&data.Update_at,
-		&data.Deleted_at,
+		&data.UpdatedAt,
+		&data.DeletedAt,
 	)
 	if err != nil {
 		return data, err
