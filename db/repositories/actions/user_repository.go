@@ -78,7 +78,7 @@ func (repository UserRepository) EditPin(ID, pin, updatedAt string) (res string,
 
 func (repository UserRepository) Add(input viewmodel.UserVm, pin string, tx *sql.Tx) (res string, err error) {
 	statement := `insert into "users" ("mobile_phone","pin","created_at") values($1,$2,$3)`
-	_, err = tx.Exec(statement, input.MobilePhone, pin, datetime.StrParseToTime(input.CreatedAt, time.RFC3339))
+	err = tx.QueryRow(statement, input.MobilePhone, pin, datetime.StrParseToTime(input.CreatedAt, time.RFC3339)).Scan(&res)
 	if err != nil {
 		return res, err
 	}
