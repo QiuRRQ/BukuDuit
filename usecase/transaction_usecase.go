@@ -2,6 +2,7 @@ package usecase
 
 import (
 	"bukuduit-go/db/repositories/actions"
+	"bukuduit-go/helpers/enums"
 	"bukuduit-go/helpers/messages"
 	request "bukuduit-go/server/requests"
 	"bukuduit-go/usecase/viewmodel"
@@ -139,6 +140,7 @@ func (uc TransactionUseCase) Delete(ID string) (err error) {
 func (uc TransactionUseCase) DebtPayment(CustomerID, DebtType string, UserCustomerDebt, amount int) error {
 	TransactionModel := actions.NewTransactionModel(uc.DB)
 	userCustomerUc := UserCustomerUseCase{UcContract: uc.UcContract}
+	userCustomer, err := userCustomerUc.Read(CustomerID)
 	now := time.Now().UTC()
 	Transaction, err := uc.DB.Begin()
 	if err != nil {
@@ -153,7 +155,7 @@ func (uc TransactionUseCase) DebtPayment(CustomerID, DebtType string, UserCustom
 		Created_at:       now.Format(time.RFC3339),
 	}
 
-	if DebtType == "pay" {
+	if DebtType == enums.Debet {
 		UserCustomerDebt = UserCustomerDebt - amount
 	} else {
 		UserCustomerDebt = UserCustomerDebt + amount
