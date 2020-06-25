@@ -110,7 +110,7 @@ func (uc AuthenticationUseCase) Login(mobilePhone, PIN string) (res viewmodel.Us
 		return res,errors.New(messages.CredentialDoNotMatch)
 	}
 
-	jwePayload, _ := uc.Jwe.GenerateJwePayload(mobilePhone)
+	jwePayload, _ := uc.Jwe.GenerateJwePayload(user.ID)
 	session, _ := uc.UpdateSessionLogin(user.ID)
 	token, refreshToken, tokenExpiredAt, refreshTokenExpiredAt, err := uc.GenerateJwtToken(jwePayload, mobilePhone, session)
 
