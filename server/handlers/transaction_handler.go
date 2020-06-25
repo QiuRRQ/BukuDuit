@@ -25,7 +25,7 @@ func (handler TransactionHandler) BrowseByCustomer(ctx echo.Context) error {
 func (handler TransactionHandler) Browse(ctx echo.Context) error {
 	ID := ctx.QueryParam("userID")
 	uc := usecase.TransactionUseCase{UcContract: handler.UseCaseContract}
-	res, err := uc.Browse(ID)
+	res, err := uc.BrowseByCustomer(ID)
 
 	return handler.SendResponse(ctx, res, nil, err)
 }
