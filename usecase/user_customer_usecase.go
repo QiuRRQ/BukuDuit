@@ -71,7 +71,7 @@ func (uc UserCustomerUseCase) EditDebt(ID string, debt int32, tx *sql.Tx) (err e
 func (uc UserCustomerUseCase) Add(input *request.UserCustomerRequest) (res string, err error) {
 	model := actions.NewUserCustomerModel(uc.DB)
 	now := time.Now().UTC()
-	isExist,err := uc.IsUserCustomerExist("mobile_phone",input.MobilePhone)
+	isExist,err := uc.isExist("mobile_phone",input.MobilePhone)
 	if err != nil {
 		return res,err
 	}
@@ -98,7 +98,7 @@ func (uc UserCustomerUseCase) Delete(ID string) (err error) {
 	model := actions.NewUserCustomerModel(uc.DB)
 	now := time.Now().UTC()
 
-	isExist, err := uc.IsUserCustomerExist("id",ID)
+	isExist, err := uc.isExist("id",ID)
 	if err != nil {
 		return err
 	}
@@ -124,7 +124,7 @@ func (uc UserCustomerUseCase) CountBy(column,value string) (res int, err error) 
 	return res, nil
 }
 
-func (uc UserCustomerUseCase) IsUserCustomerExist(column,value string) (res bool, err error) {
+func (uc UserCustomerUseCase) isExist(column,value string) (res bool, err error) {
 	count, err := uc.CountBy(column,value)
 	if err != nil {
 		return res, err
