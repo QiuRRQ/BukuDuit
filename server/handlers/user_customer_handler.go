@@ -42,9 +42,9 @@ func (handler UserCustomerHandler) Add(ctx echo.Context) error {
 	}
 
 	uc := usecase.UserCustomerUseCase{UcContract: handler.UseCaseContract}
-	err := uc.Add(input)
+	res,err := uc.Add(input)
 
-	return handler.SendResponse(ctx, nil, nil, err)
+	return handler.SendResponse(ctx, res, nil, err)
 }
 
 func (handler UserCustomerHandler) Delete(ctx echo.Context) error {

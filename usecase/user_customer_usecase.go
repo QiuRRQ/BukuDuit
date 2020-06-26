@@ -60,7 +60,7 @@ func (uc UserCustomerUseCase) EditDebt(ID string, debt int32, tx *sql.Tx) (err e
 	model := actions.NewUserCustomerModel(uc.DB)
 	now := time.Now().UTC()
 
-	_,err = model.EditDebt(ID, now.Format(time.RFC3339), debt)
+	_, err = model.EditDebt(ID, now.Format(time.RFC3339), debt)
 	if err != nil {
 		return err
 	}
@@ -68,7 +68,7 @@ func (uc UserCustomerUseCase) EditDebt(ID string, debt int32, tx *sql.Tx) (err e
 	return nil
 }
 
-func (uc UserCustomerUseCase) Add(input *request.UserCustomerRequest) (err error) {
+func (uc UserCustomerUseCase) Add(input *request.UserCustomerRequest) (res string, err error) {
 	model := actions.NewUserCustomerModel(uc.DB)
 	now := time.Now().UTC()
 
@@ -79,12 +79,12 @@ func (uc UserCustomerUseCase) Add(input *request.UserCustomerRequest) (err error
 		CreatedAt:   now.Format(time.RFC3339),
 		UpdatedAt:   now.Format(time.RFC3339),
 	}
-	_, err = model.Add(body, input.ShopID)
+	res, err = model.Add(body, input.ShopID)
 	if err != nil {
-		return err
+		return res, err
 	}
 
-	return nil
+	return res, nil
 }
 
 func (uc UserCustomerUseCase) Delete(ID string) (err error) {
