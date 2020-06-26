@@ -98,7 +98,7 @@ func (uc UserCustomerUseCase) Delete(ID string) (err error) {
 	model := actions.NewUserCustomerModel(uc.DB)
 	now := time.Now().UTC()
 
-	isExist, err := uc.IsUserCustomerExist(ID)
+	isExist, err := uc.IsUserCustomerExist("id",ID)
 	if err != nil {
 		return err
 	}
