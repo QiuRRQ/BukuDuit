@@ -18,4 +18,6 @@ type IUserCustomerRepository interface {
 	Delete(ID, updatedAt, deletedAt string) (res string, err error)
 
 	CountByPk(ID string) (res int, err error)
+
+	CountBy(column,value string) (res int,err error)
 }

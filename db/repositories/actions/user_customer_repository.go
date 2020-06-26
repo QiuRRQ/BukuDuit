@@ -89,3 +89,13 @@ func (repository UserCustomerRepository) CountByPk(ID string) (res int, err erro
 
 	return res, nil
 }
+
+func (repository UserCustomerRepository) CountBy(column,value string) (res int, err error) {
+	statement := `select count("id") from "user_customers" where `+column+`=$1 and "deleted_at" is null`
+	err = repository.DB.QueryRow(statement, value).Scan(&res)
+	if err != nil {
+		return res, err
+	}
+
+	return res, nil
+}

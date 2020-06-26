@@ -71,6 +71,13 @@ func (uc UserCustomerUseCase) EditDebt(ID string, debt int32, tx *sql.Tx) (err e
 func (uc UserCustomerUseCase) Add(input *request.UserCustomerRequest) (res string, err error) {
 	model := actions.NewUserCustomerModel(uc.DB)
 	now := time.Now().UTC()
+	isExist,err := uc.IsUserCustomerExist("mobile_phone",input.MobilePhone)
+	if err != nil {
+		return res,err
+	}
+	if isExist {
+		return res,errors.New(messages.PhoneAlreadyExist)
+	}
 
 	body := viewmodel.UserCustomerVm{
 		FullName:    input.FullName,
@@ -107,9 +114,9 @@ func (uc UserCustomerUseCase) Delete(ID string) (err error) {
 	return nil
 }
 
-func (uc UserCustomerUseCase) CountByPk(ID string) (res int, err error) {
+func (uc UserCustomerUseCase) CountBy(column,value string) (res int, err error) {
 	model := actions.NewUserCustomerModel(uc.DB)
-	res, err = model.CountByPk(ID)
+	res, err = model.CountBy(column,value)
 	if err != nil {
 		return res, err
 	}
@@ -117,8 +124,8 @@ func (uc UserCustomerUseCase) CountByPk(ID string) (res int, err error) {
 	return res, nil
 }
 
-func (uc UserCustomerUseCase) IsUserCustomerExist(ID string) (res bool, err error) {
-	count, err := uc.CountByPk(ID)
+func (uc UserCustomerUseCase) IsUserCustomerExist(column,value string) (res bool, err error) {
+	count, err := uc.CountBy(column,value)
 	if err != nil {
 		return res, err
 	}

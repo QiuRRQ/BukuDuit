@@ -6,7 +6,7 @@ var (
 	AddFailed              = "add data failed"
 	EditFailed             = "edit data failed"
 	DataAlreadyExist       = "data already exist"
-	PhoneAlreadyExist      = "phone already exist"
+	PhoneAlreadyExist      = "nomor handphone sudah ada"
 	EmailAlreadyExist      = "email already exist"
 	AddUserFailed          = "add user failed"
 	UserNotFound           = "user not found"
