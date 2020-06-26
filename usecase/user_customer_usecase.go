@@ -7,6 +7,7 @@ import (
 	"bukuduit-go/usecase/viewmodel"
 	"database/sql"
 	"errors"
+	"fmt"
 	"time"
 )
 
@@ -18,6 +19,7 @@ func (uc UserCustomerUseCase) BrowseByShop(shopId string) (res []viewmodel.UserC
 	model := actions.NewUserCustomerModel(uc.DB)
 	userCustomers, err := model.BrowseByBusiness(shopId)
 	if err != nil {
+		fmt.Println(2)
 		return res, err
 	}
 
@@ -71,12 +73,12 @@ func (uc UserCustomerUseCase) EditDebt(ID string, debt int32, tx *sql.Tx) (err e
 func (uc UserCustomerUseCase) Add(input *request.UserCustomerRequest) (res string, err error) {
 	model := actions.NewUserCustomerModel(uc.DB)
 	now := time.Now().UTC()
-	isExist,err := uc.isExist("mobile_phone",input.MobilePhone)
+	isExist, err := uc.isExist("mobile_phone", input.MobilePhone)
 	if err != nil {
-		return res,err
+		return res, err
 	}
 	if isExist {
-		return res,errors.New(messages.PhoneAlreadyExist)
+		return res, errors.New(messages.PhoneAlreadyExist)
 	}
 
 	body := viewmodel.UserCustomerVm{
@@ -98,7 +100,7 @@ func (uc UserCustomerUseCase) Delete(ID string) (err error) {
 	model := actions.NewUserCustomerModel(uc.DB)
 	now := time.Now().UTC()
 
-	isExist, err := uc.isExist("id",ID)
+	isExist, err := uc.isExist("id", ID)
 	if err != nil {
 		return err
 	}
@@ -114,9 +116,9 @@ func (uc UserCustomerUseCase) Delete(ID string) (err error) {
 	return nil
 }
 
-func (uc UserCustomerUseCase) CountBy(column,value string) (res int, err error) {
+func (uc UserCustomerUseCase) CountBy(column, value string) (res int, err error) {
 	model := actions.NewUserCustomerModel(uc.DB)
-	res, err = model.CountBy(column,value)
+	res, err = model.CountBy(column, value)
 	if err != nil {
 		return res, err
 	}
@@ -124,8 +126,8 @@ func (uc UserCustomerUseCase) CountBy(column,value string) (res int, err error) 
 	return res, nil
 }
 
-func (uc UserCustomerUseCase) isExist(column,value string) (res bool, err error) {
-	count, err := uc.CountBy(column,value)
+func (uc UserCustomerUseCase) isExist(column, value string) (res bool, err error) {
+	count, err := uc.CountBy(column, value)
 	if err != nil {
 		return res, err
 	}

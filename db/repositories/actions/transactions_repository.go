@@ -19,7 +19,7 @@ func NewTransactionModel(DB *sql.DB) contracts.ITransactionRepository {
 }
 
 func (repository TransactionRepository) BrowseByShop(shopID string) (data []models.Transactions, err error) {
-	statement := `select * from "transactions" where "shop_id"=$1 and "deleted_at" is null`
+	statement := `select t.id, t.amount, t.reference_id, t.shop_id, t.description, t.image, t.transaction_date, t.type, t.created_at, t.updated_at, t.deleted_at from "transactions" as t where "shop_id"=$1 and "deleted_at" is null`
 
 	rows, err := repository.DB.Query(statement, shopID)
 	if err != nil {

@@ -52,26 +52,27 @@ func (uc BusinessCardUseCase) Read(ID string) (res viewmodel.BusinessCardVm, err
 
 	dataTransaction, err := transactionUC.BrowseByShop(ID)
 	if err != nil {
-		return res,err
+		return res, err
 	}
 	dataUserCustomer, err := userCustomerUC.BrowseByShop(ID)
 	if err != nil {
-		return res,err
+		return res, err
 	}
 
 	for _, k := range dataUserCustomer {
-		creditTotal =creditTotal + int(k.Debt)
+		creditTotal = creditTotal + int(k.Debt)
 	}
 
 	for _, v := range dataTransaction {
 
 		if v.Type == enums.Debet {
-			debtTotal =debtTotal + int(v.Amount)
+			debtTotal = debtTotal + int(v.Amount)
 		}
 	}
 
 	businessCard, err := model.Read(ID)
 	if err != nil {
+		fmt.Println(3)
 		return res, err
 	}
 
@@ -84,8 +85,8 @@ func (uc BusinessCardUseCase) Read(ID string) (res viewmodel.BusinessCardVm, err
 		Address:             businessCard.Address.String,
 		Email:               businessCard.Email.String,
 		UserCustomers:       dataUserCustomer,
-		TotalCustomerCredit: int32(debtTotal),
-		TotalOwnerCredit:    int32(creditTotal),
+		TotalCustomerCredit: int32(creditTotal),
+		TotalOwnerCredit:    int32(debtTotal),
 		CreatedAt:           businessCard.CreatedAt,
 		UpdatedAt:           businessCard.UpdatedAt.String,
 		DeletedAt:           businessCard.UpdatedAt.String,

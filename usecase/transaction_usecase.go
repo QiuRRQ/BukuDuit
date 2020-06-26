@@ -20,6 +20,7 @@ func (uc TransactionUseCase) BrowseByShop(shopID string) (res []viewmodel.Transa
 	model := actions.NewTransactionModel(uc.DB)
 	Transaction, err := model.BrowseByShop(shopID)
 	if err != nil {
+		fmt.Println(1)
 		return res, err
 	}
 
@@ -28,8 +29,8 @@ func (uc TransactionUseCase) BrowseByShop(shopID string) (res []viewmodel.Transa
 			ID:              Transaction.ID,
 			ReferenceID:     Transaction.ReferenceID,
 			Amount:          Transaction.Amount.Int32,
-			Description:     Transaction.Description,
-			Image:           Transaction.Image,
+			Description:     Transaction.Description.String,
+			Image:           Transaction.Image.String,
 			Type:            Transaction.Type,
 			TransactionDate: Transaction.TransactionDate.String,
 			CreatedAt:       Transaction.CreatedAt,
@@ -54,8 +55,8 @@ func (uc TransactionUseCase) BrowseByCustomer(customerID string) (res []viewmode
 			ID:              Transaction.ID,
 			ReferenceID:     Transaction.ReferenceID,
 			Amount:          Transaction.Amount.Int32,
-			Description:     Transaction.Description,
-			Image:           Transaction.Image,
+			Description:     Transaction.Description.String,
+			Image:           Transaction.Image.String,
 			Type:            Transaction.Type,
 			TransactionDate: Transaction.TransactionDate.String,
 			CreatedAt:       Transaction.CreatedAt,
@@ -78,8 +79,8 @@ func (uc TransactionUseCase) Read(ID string) (res viewmodel.TransactionVm, err e
 		ID:              Transaction.ID,
 		ReferenceID:     Transaction.ReferenceID,
 		Amount:          Transaction.Amount.Int32,
-		Description:     Transaction.Description,
-		Image:           Transaction.Image,
+		Description:     Transaction.Description.String,
+		Image:           Transaction.Image.String,
 		Type:            Transaction.Type,
 		TransactionDate: Transaction.TransactionDate.String,
 		CreatedAt:       Transaction.CreatedAt,

@@ -9,8 +9,8 @@ type BusinessCardVm struct {
 	Address             string           `json:"address"`
 	Email               string           `json:"email"`
 	Avatar              string           `json:"avatar"`
-	TotalCustomerCredit int32            `json:"total_credit"`
-	TotalOwnerCredit    int32            `json:"total_owner_credit"`
+	TotalCustomerCredit int32            `json:"total_utang_pelanggan"` //utang pelanggan
+	TotalOwnerCredit    int32            `json:"total_utang_saya"`      //utang saya
 	UserCustomers       []UserCustomerVm `json:"user_customers"`
 	CreatedAt           string           `json:"created_at"`
 	UpdatedAt           string           `json:"updated_at"`
