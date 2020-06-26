@@ -5,6 +5,6 @@ type TransactionRequest struct {
 	TransactionType string `json:"transaction_type" validate:"required"` //pay = customer bayar hutang, debt = customer minta hutang
 	ShopID          string `json:"shop_id" validate:"required"`
 	Amount          int32  `json:"amount" validate:"required,numeric"`
-	Description     string `json:"description" validate:"required"`
+	Description     string `json:"description"`
 	TransactionDate string `json:"transaction_date" validate:"required"`
 }
