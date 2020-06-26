@@ -1,6 +1,7 @@
 package viewmodel
 
 type CustomerDebtVm struct {
+
 	Debt  CustomerDebtDetailVm `json:"debt"`
 	Total int32                `json:"total"`
 }
