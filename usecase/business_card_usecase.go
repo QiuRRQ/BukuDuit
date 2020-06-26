@@ -2,7 +2,6 @@ package usecase
 
 import (
 	"bukuduit-go/db/repositories/actions"
-	"bukuduit-go/helpers/enums"
 	"bukuduit-go/helpers/messages"
 	request "bukuduit-go/server/requests"
 	"bukuduit-go/usecase/viewmodel"
@@ -76,14 +75,16 @@ func (uc BusinessCardUseCase) Read(ID, lunas string) (res viewmodel.BusinessCard
 	for _, k := range dataUserCustomer {
 		if k.Debt > 0 {
 			creditTotal = creditTotal + int(k.Debt)
+		} else {
+			debtTotal = debtTotal + (int(k.Debt) * -1)
 		}
 	}
 
-	for _, v := range dataTransaction {
-		if v.Type == enums.Debet {
-			debtTotal = debtTotal + int(v.Amount)
-		}
-	}
+	// for _, v := range dataTransaction {
+	// 	if v.Type == enums.Debet {
+	// 		debtTotal = debtTotal + int(v.Amount)
+	// 	}
+	// }
 
 	businessCard, err := model.Read(ID)
 	if err != nil {
