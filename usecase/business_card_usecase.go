@@ -60,7 +60,6 @@ func (uc BusinessCardUseCase) Read(ID, lunas string) (res viewmodel.BusinessCard
 	for _, data := range tempDataUserCustomer {
 		if lunas == "1" {
 			if int(data.Debt) == 0 {
-				fmt.Println("here")
 				dataUserCustomer = append(dataUserCustomer, data)
 			}
 		} else {
