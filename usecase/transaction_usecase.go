@@ -43,25 +43,53 @@ func (uc TransactionUseCase) BrowseByShop(shopID string) (res []viewmodel.Transa
 
 }
 
-func (uc TransactionUseCase) BrowseByCustomer(customerID string) (res []viewmodel.TransactionVm, err error) {
+func (uc TransactionUseCase) BrowseByCustomer(customerID string) (res []viewmodel.DetailsHutangVm, err error) {
 	model := actions.NewTransactionModel(uc.DB)
 	Transactions, err := model.BrowseByCustomer(customerID)
+	resultCount, err := model.CountDistinct(customerID)
+
 	if err != nil {
 		return res, err
 	}
 
-	for _, Transaction := range Transactions {
-		res = append(res, viewmodel.TransactionVm{
-			ID:              Transaction.ID,
-			ReferenceID:     Transaction.ReferenceID,
-			Amount:          Transaction.Amount.Int32,
-			Description:     Transaction.Description.String,
-			Image:           Transaction.Image.String,
-			Type:            Transaction.Type,
-			TransactionDate: Transaction.TransactionDate.String,
-			CreatedAt:       Transaction.CreatedAt,
-			UpdatedAt:       Transaction.UpdatedAt.String,
-			DeletedAt:       Transaction.DeletedAt.String,
+	var debtTotal int
+	var creditTotal int
+
+	var transactionDate []viewmodel.DebtList
+	var transactionDetails []viewmodel.Detail
+	for _, k := range Transactions {
+		creditTotal = creditTotal + int(k.Amount.Int32)
+
+		if k.Type == enums.Debet {
+			debtTotal = debtTotal + int(k.Amount.Int32)
+		}
+	}
+
+	for _, details := range Transactions {
+		transactionDetails = append(transactionDetails, viewmodel.Detail{
+			Description: details.Description.String,
+			Amount:      details.Amount.Int32,
+			Type:        details.Type,
+		})
+	}
+	for _, date := range Transactions {
+		transactionDate = append(transactionDate, viewmodel.DebtList{
+			TransactionDate: date.TransactionDate.String,
+			Details:         transactionDetails,
+		})
+	}
+
+	for i := 0; i < resultCount; i++ {
+		res = append(res, viewmodel.DetailsHutangVm{
+			ID:          Transactions[i].ID,
+			ReferenceID: Transactions[i].ReferenceID,
+			Name:        Transactions[i].Name,
+			TotalCredit: creditTotal,
+			TotalDebit:  debtTotal,
+			ListData:    transactionDate,
+			CreatedAt:   Transactions[i].CreatedAt,
+			UpdatedAt:   Transactions[i].UpdatedAt.String,
+			DeletedAt:   Transactions[i].DeletedAt.String,
 		})
 	}
 

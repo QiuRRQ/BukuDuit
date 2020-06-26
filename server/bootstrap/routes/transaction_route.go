@@ -22,5 +22,5 @@ func (route TransactionRoute) RegisterRoute() {
 	route.RouteGroup.POST("/transaction", handler.AddTransaction) //done
 	route.RouteGroup.GET("/details/:id", handler.Read)            //done ini jadi satu utang dan transaksi
 	route.RouteGroup.POST("/debt", handler.DebtPayment)
-	route.RouteGroup.GET("/debt/:customerId", handler.BrowseByCustomer) //list detail utang
+	route.RouteGroup.GET("/debt", handler.BrowseByCustomer) //list detail utang
 }

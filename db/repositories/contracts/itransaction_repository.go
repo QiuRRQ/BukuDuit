@@ -23,7 +23,6 @@ type ITransactionRepository interface {
 
 	CountByPk(ID string) (res int, err error)
 
-	DebtPayment(customerID, DebtType string, UserCustomerDebt, amount int) (CustomerDebt int)
-
 	CountBy(column, value string) (res int, err error)
+	CountDistinct(ID string) (res int, err error)
 }
