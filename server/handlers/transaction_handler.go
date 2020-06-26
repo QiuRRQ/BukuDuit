@@ -22,7 +22,7 @@ func (handler TransactionHandler) BrowseByCustomer(ctx echo.Context) error {
 	return handler.SendResponse(ctx, res, nil, err)
 }
 
-func (handler TransactionHandler) Browse(ctx echo.Context) error {
+func (handler TransactionHandler) BrowseUser(ctx echo.Context) error {
 	ID := ctx.QueryParam("userID")
 	uc := usecase.TransactionUseCase{UcContract: handler.UseCaseContract}
 	res, err := uc.BrowseByCustomer(ID)

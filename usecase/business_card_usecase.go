@@ -2,8 +2,10 @@ package usecase
 
 import (
 	"bukuduit-go/db/repositories/actions"
+	"bukuduit-go/helpers/enums"
 	"bukuduit-go/helpers/messages"
 	request "bukuduit-go/server/requests"
+	"bukuduit-go/usecase"
 	"bukuduit-go/usecase/viewmodel"
 	"database/sql"
 	"errors"
@@ -41,25 +43,50 @@ func (uc BusinessCardUseCase) BrowseByUser(userID string) (res []viewmodel.Busin
 	return res, err
 }
 
+//fucntion for hutang list
 func (uc BusinessCardUseCase) Read(ID string) (res viewmodel.BusinessCardVm, err error) {
 	model := actions.NewBusinessCardModel(uc.DB)
+	userCustomerUC := usecase.UserCustomerUseCase{UcContract: uc.UcContract}
+	transactionUC := usecase.TransactionUseCase{UcContract: uc.UcContract}
+
+	dataTransaction, res := transactionUC.BrowseByShop(ID)
+
+	dataUserCustomer, res := userCustomerUC.BrowseByShop(ID)
+
+	var debtTotal int = 0
+	var creditTotal int = 0
+
+	for _, k := range dataUserCustomer {
+		creditTotal += k.Debt
+	}
+
+	for _, v := range dataTransaction {
+
+		if v.Type == enums.Debet {
+			debtTotal += v.Amount
+		}
+
+	}
+
 	businessCard, err := model.Read(ID)
 	if err != nil {
 		return res, err
 	}
 
 	res = viewmodel.BusinessCardVm{
-		ID:          businessCard.ID,
-		FullName:    businessCard.FullName.String,
-		BookName:    businessCard.BookName,
-		MobilePhone: businessCard.MobilePhone.String,
-		TagLine:     businessCard.TagLine.String,
-		Address:     businessCard.Address.String,
-		Email:       businessCard.Email.String,
-		Avatar:      businessCard.Avatar.String,
-		CreatedAt:   businessCard.CreatedAt,
-		UpdatedAt:   businessCard.UpdatedAt.String,
-		DeletedAt:   businessCard.UpdatedAt.String,
+		ID:                  businessCard.ID,
+		FullName:            businessCard.FullName.String,
+		BookName:            businessCard.BookName,
+		MobilePhone:         businessCard.MobilePhone.String,
+		TagLine:             businessCard.TagLine.String,
+		Address:             businessCard.Address.String,
+		Email:               businessCard.Email.String,
+		UserCustomers:       dataUserCustomer,
+		TotalCustomerCredit: int32(debtTotal),
+		TotalOwnerCredit:    int32(creditTotal),
+		CreatedAt:           businessCard.CreatedAt,
+		UpdatedAt:           businessCard.UpdatedAt.String,
+		DeletedAt:           businessCard.UpdatedAt.String,
 	}
 
 	return res, err
@@ -95,7 +122,7 @@ func (uc BusinessCardUseCase) Edit(input *request.BusinessCardRequest, ID string
 	return nil
 }
 
-func (uc BusinessCardUseCase) Add(input *request.BusinessCardRequest,userID string) (err error) {
+func (uc BusinessCardUseCase) Add(input *request.BusinessCardRequest, userID string) (err error) {
 	model := actions.NewBusinessCardModel(uc.DB)
 	now := time.Now().UTC()
 
@@ -119,7 +146,7 @@ func (uc BusinessCardUseCase) Register(userID, bookName, createdAt, updatedAt st
 		CreatedAt: createdAt,
 		UpdatedAt: updatedAt,
 	}
-	_, err = model.Add(body,userID,tx)
+	_, err = model.Add(body, userID, tx)
 	if err != nil {
 		return err
 	}
@@ -127,20 +154,20 @@ func (uc BusinessCardUseCase) Register(userID, bookName, createdAt, updatedAt st
 	return nil
 }
 
-func (uc BusinessCardUseCase) Delete(ID string) (err error){
+func (uc BusinessCardUseCase) Delete(ID string) (err error) {
 	fmt.Println(ID)
 	model := actions.NewBusinessCardModel(uc.DB)
 	now := time.Now().UTC()
 
-	isExist,err := uc.IsBusinessCardExist(ID)
-	if err != nil{
+	isExist, err := uc.IsBusinessCardExist(ID)
+	if err != nil {
 		return err
 	}
 	if !isExist {
 		return errors.New(messages.DataNotFound)
 	}
 
-	_, err = model.Delete(ID,now.Format(time.RFC3339),now.Format(time.RFC3339))
+	_, err = model.Delete(ID, now.Format(time.RFC3339), now.Format(time.RFC3339))
 	if err != nil {
 		return err
 	}
@@ -148,11 +175,11 @@ func (uc BusinessCardUseCase) Delete(ID string) (err error){
 	return nil
 }
 
-func (uc BusinessCardUseCase) DeleteByUser(userID string,tx *sql.Tx) (err error){
+func (uc BusinessCardUseCase) DeleteByUser(userID string, tx *sql.Tx) (err error) {
 	model := actions.NewBusinessCardModel(uc.DB)
 	now := time.Now().UTC()
 
-	err = model.DeleteByUser(userID,now.Format(time.RFC3339),now.Format(time.RFC3339),tx)
+	err = model.DeleteByUser(userID, now.Format(time.RFC3339), now.Format(time.RFC3339), tx)
 	if err != nil {
 		return err
 	}

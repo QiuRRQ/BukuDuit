@@ -16,6 +16,32 @@ type TransactionUseCase struct {
 	*UcContract
 }
 
+func (uc TransactionUseCase) BrowseByShop(shopID string) (res []viewmodel.TransactionVm, err error) {
+	model := actions.NewTransactionModel(uc.DB)
+	Transaction, err := model.BrowseByShop(shopID)
+	if err != nil {
+		return res, err
+	}
+
+	for _, Transaction := range Transaction {
+		res = append(res, viewmodel.TransactionVm{
+			ID:              Transaction.ID,
+			ReferenceID:     Transaction.ReferenceID,
+			Amount:          Transaction.Amount.Int32,
+			Description:     Transaction.Description,
+			Image:           Transaction.Image,
+			Type:            Transaction.Type,
+			TransactionDate: Transaction.TransactionDate.String,
+			CreatedAt:       Transaction.CreatedAt,
+			UpdatedAt:       Transaction.UpdatedAt.String,
+			DeletedAt:       Transaction.DeletedAt.String,
+		})
+	}
+
+	return res, err
+
+}
+
 func (uc TransactionUseCase) BrowseByCustomer(customerID string) (res []viewmodel.TransactionVm, err error) {
 	model := actions.NewTransactionModel(uc.DB)
 	Transactions, err := model.BrowseByCustomer(customerID)
@@ -145,6 +171,7 @@ func (uc TransactionUseCase) DebtPayment(referenceID, transactionType, shopID, t
 	}
 	_, err = model.Add(TransactionBody, transaction)
 	if err != nil {
+		fmt.Println(1)
 		transaction.Rollback()
 		return err
 	}

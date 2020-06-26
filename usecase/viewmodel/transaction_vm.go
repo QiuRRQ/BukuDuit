@@ -10,6 +10,6 @@ type TransactionVm struct {
 	Type            string `json:"type"`
 	TransactionDate string `json:"transaction_date"`
 	CreatedAt       string `json:"created_at"`
-	UpdatedAt        string `json:"update_at"`
+	UpdatedAt       string `json:"update_at"`
 	DeletedAt       string `json:"deleted_at"`
 }

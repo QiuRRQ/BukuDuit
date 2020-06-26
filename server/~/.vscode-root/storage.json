@@ -2,6 +2,7 @@
     "telemetry.machineId": "1708345375f8a64368a1b84180384d939d51e2c7bc99967dea259ed42517f22a",
     "openedPathsList": {
         "workspaces3": [
+            "file:///home/aziz/works/dokterapp/dokterapps-backend",
             "file:///home/aziz/works/newBukuduit/bukuduit-go"
         ],
         "files2": []
@@ -49,7 +50,18 @@
                                     "id": "openRecentFolder",
                                     "uri": {
                                         "$mid": 1,
-                                        "fsPath": "/home/aziz/works/newBukuduit/bukuduit-go",
+                                        "fsPath": "/home/aziz/works/dokterapp/dokterapps-backend",
+                                        "external": "file:///home/aziz/works/dokterapp/dokterapps-backend",
+                                        "path": "/home/aziz/works/dokterapp/dokterapps-backend",
+                                        "scheme": "file"
+                                    },
+                                    "enabled": true,
+                                    "label": "/home/aziz/works/dokterapp/dokterapps-backend"
+                                },
+                                {
+                                    "id": "openRecentFolder",
+                                    "uri": {
+                                        "$mid": 1,
                                         "external": "file:///home/aziz/works/newBukuduit/bukuduit-go",
                                         "path": "/home/aziz/works/newBukuduit/bukuduit-go",
                                         "scheme": "file"
@@ -1449,11 +1461,11 @@
     "themeBackground": "#1e1e1e",
     "windowsState": {
         "lastActiveWindow": {
-            "folder": "file:///home/aziz/works/newBukuduit/bukuduit-go",
-            "backupPath": "/home/aziz/works/newBukuduit/bukuduit-go/server/~/.vscode-root/Backups/1f84669a09c8fb290d3ff7d24ed5af4e",
+            "folder": "file:///home/aziz/works/dokterapp/dokterapps-backend",
+            "backupPath": "/home/aziz/works/newBukuduit/bukuduit-go/server/~/.vscode-root/Backups/cc97cfe5983f372dc7a2b7dbb80f0df9",
             "uiState": {
                 "mode": 0,
-                "x": 317,
+                "x": 432,
                 "y": 64,
                 "width": 1024,
                 "height": 768
@@ -1461,5 +1473,5 @@
         },
         "openedWindows": []
     },
-    "pickerWorkingDir": "/home/aziz/works/newBukuduit"
+    "pickerWorkingDir": "/home/aziz/works/dokterapp"
 }

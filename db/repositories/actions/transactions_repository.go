@@ -18,6 +18,34 @@ func NewTransactionModel(DB *sql.DB) contracts.ITransactionRepository {
 	return TransactionRepository{DB: DB}
 }
 
+func (repository TransactionRepository) BrowseByShop(shopID string) (data []models.Transactions, err error) {
+	statement := `select * from "transactions" where "shop_id"=$1 and "deleted_at" is null`
+
+	rows, err := repository.DB.Query(statement, shopID)
+	if err != nil {
+		return data, err
+	}
+
+	for rows.Next() {
+		dataTemp := models.Transactions{}
+
+		err = rows.Scan(
+			&dataTemp.ID,
+			&dataTemp.Amount,
+			&dataTemp.ReferenceID,
+			&dataTemp.IDShop,
+			&dataTemp.Description,
+			&dataTemp.Image,
+			&dataTemp.TransactionDate,
+			&dataTemp.Type,
+			&dataTemp.CreatedAt,
+			&dataTemp.UpdatedAt,
+			&dataTemp.DeletedAt,
+		)
+	}
+	return data, err
+}
+
 func (repository TransactionRepository) BrowseByCustomer(customerID string) (data []models.Transactions, err error) {
 	statement := `select * from "transactions" where "reference_id"=$1 and "deleted_at" is null`
 	rows, err := repository.DB.Query(statement, customerID)
@@ -96,8 +124,8 @@ func (repository TransactionRepository) Add(body viewmodel.TransactionVm, tx *sq
 	if tx != nil {
 		_, err = tx.Exec(
 			statement,
-			str.EmptyString(body.ReferenceID),
-			str.EmptyString(body.ShopID),
+			body.ReferenceID,
+			body.ShopID,
 			body.Amount,
 			str.EmptyString(body.Description),
 			str.EmptyString(body.Type),
@@ -108,8 +136,8 @@ func (repository TransactionRepository) Add(body viewmodel.TransactionVm, tx *sq
 	} else {
 		err = repository.DB.QueryRow(
 			statement,
-			str.EmptyString(body.ReferenceID),
-			str.EmptyString(body.ShopID),
+			body.ReferenceID,
+			body.ShopID,
 			body.Amount,
 			str.EmptyString(body.Description),
 			str.EmptyString(body.Type),

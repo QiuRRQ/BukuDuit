@@ -1,0 +1,467 @@
+Looking for git in: git
+Using git 2.25.1 from git
+> git rev-parse --show-toplevel
+> git rev-parse --git-dir
+Open repository: /home/aziz/works/dokterapp/dokterapps-backend
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse dev
+> git rev-parse --symbolic-full-name dev@{u}
+> git rev-list --left-right dev...refs/remotes/origin/dev
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git check-ignore -v -z --stdin
+> git check-ignore -v -z --stdin
+> git check-ignore -v -z --stdin
+> git show :helpers/logruslogger/logruslogger.go
+> git ls-files --stage -- /home/aziz/works/dokterapp/dokterapps-backend/helpers/logruslogger/logruslogger.go
+> git cat-file -s 22ab1a0eeafc8ef816cc3744bc42a2534440596e
+> git show :.env
+> git ls-files --stage -- /home/aziz/works/dokterapp/dokterapps-backend/.env
+> git show :helpers/logruslogger/logruslogger.go
+> git ls-files --stage -- /home/aziz/works/dokterapp/dokterapps-backend/helpers/logruslogger/logruslogger.go
+> git cat-file -s 22ab1a0eeafc8ef816cc3744bc42a2534440596e
+> git check-ignore -v -z --stdin
+> git check-ignore -v -z --stdin
+> git check-ignore -v -z --stdin
+> git check-ignore -v -z --stdin
+> git check-ignore -v -z --stdin
+> git show :server/bootstrap/routes/authentication_route.go
+> git ls-files --stage -- /home/aziz/works/dokterapp/dokterapps-backend/server/bootstrap/routes/authentication_route.go
+> git cat-file -s 8be0ef00ad58b4933bbfffe11550c3009f9f6453
+> git show :server/bootstrap/routes/roles_route.go
+> git ls-files --stage -- /home/aziz/works/dokterapp/dokterapps-backend/server/bootstrap/routes/roles_route.go
+> git cat-file -s 2da933557aced525cff011fc075dd81c75ff91e8
+> git show :server/bootstrap/routes/authentication_route.go
+> git ls-files --stage -- /home/aziz/works/dokterapp/dokterapps-backend/server/bootstrap/routes/authentication_route.go
+> git cat-file -s 8be0ef00ad58b4933bbfffe11550c3009f9f6453
+> git show :server/bootstrap/routes/roles_route.go
+> git ls-files --stage -- /home/aziz/works/dokterapp/dokterapps-backend/server/bootstrap/routes/roles_route.go
+> git cat-file -s 2da933557aced525cff011fc075dd81c75ff91e8
+> git show :server/bootstrap/boot.go
+> git ls-files --stage -- /home/aziz/works/dokterapp/dokterapps-backend/server/bootstrap/boot.go
+> git cat-file -s 8e90689da1e2f42335c799e8f61a24ac8461b158
+> git show :server/bootstrap/route.go
+> git ls-files --stage -- /home/aziz/works/dokterapp/dokterapps-backend/server/bootstrap/route.go
+> git cat-file -s 0a2b7ac8dfe557dc87d150c9a8c82758937a90cb
+> git show :server/bootstrap/routes/authentication_route.go
+> git ls-files --stage -- /home/aziz/works/dokterapp/dokterapps-backend/server/bootstrap/routes/authentication_route.go
+> git cat-file -s 8be0ef00ad58b4933bbfffe11550c3009f9f6453
+> git show :server/bootstrap/routes/roles_route.go
+> git ls-files --stage -- /home/aziz/works/dokterapp/dokterapps-backend/server/bootstrap/routes/roles_route.go
+> git cat-file -s 2da933557aced525cff011fc075dd81c75ff91e8
+> git check-ignore -v -z --stdin
+> git show :server/handlers/authentication_handler.go
+> git ls-files --stage -- /home/aziz/works/dokterapp/dokterapps-backend/server/handlers/authentication_handler.go
+> git cat-file -s 7107da04c1cadc05c0e43542b47a09761f389933
+> git show :server/handlers/handler.go
+> git ls-files --stage -- /home/aziz/works/dokterapp/dokterapps-backend/server/handlers/handler.go
+> git cat-file -s 6a453b7603b355888adb9e61eaa4b9ee873995c8
+> git show :server/handlers/roles_handler.go
+> git ls-files --stage -- /home/aziz/works/dokterapp/dokterapps-backend/server/handlers/roles_handler.go
+> git cat-file -s 84dc2d454c508ae386644a06701d282298255045
+> git show :server/handlers/authentication_handler.go
+> git ls-files --stage -- /home/aziz/works/dokterapp/dokterapps-backend/server/handlers/authentication_handler.go
+> git cat-file -s 7107da04c1cadc05c0e43542b47a09761f389933
+> git show :server/bootstrap/routes/authentication_route.go
+> git ls-files --stage -- /home/aziz/works/dokterapp/dokterapps-backend/server/bootstrap/routes/authentication_route.go
+> git cat-file -s 8be0ef00ad58b4933bbfffe11550c3009f9f6453
+> git show :server/bootstrap/routes/roles_route.go
+> git ls-files --stage -- /home/aziz/works/dokterapp/dokterapps-backend/server/bootstrap/routes/roles_route.go
+> git cat-file -s 2da933557aced525cff011fc075dd81c75ff91e8
+> git show :server/bootstrap/boot.go
+> git ls-files --stage -- /home/aziz/works/dokterapp/dokterapps-backend/server/bootstrap/boot.go
+> git cat-file -s 8e90689da1e2f42335c799e8f61a24ac8461b158
+> git show :server/bootstrap/route.go
+> git ls-files --stage -- /home/aziz/works/dokterapp/dokterapps-backend/server/bootstrap/route.go
+> git cat-file -s 0a2b7ac8dfe557dc87d150c9a8c82758937a90cb
+> git show :server/handlers/authentication_handler.go
+> git ls-files --stage -- /home/aziz/works/dokterapp/dokterapps-backend/server/handlers/authentication_handler.go
+> git cat-file -s 7107da04c1cadc05c0e43542b47a09761f389933
+> git show :server/handlers/handler.go
+> git ls-files --stage -- /home/aziz/works/dokterapp/dokterapps-backend/server/handlers/handler.go
+> git cat-file -s 6a453b7603b355888adb9e61eaa4b9ee873995c8
+> git show :server/handlers/roles_handler.go
+> git ls-files --stage -- /home/aziz/works/dokterapp/dokterapps-backend/server/handlers/roles_handler.go
+> git cat-file -s 84dc2d454c508ae386644a06701d282298255045
+> git show :server/bootstrap/routes/roles_route.go
+> git ls-files --stage -- /home/aziz/works/dokterapp/dokterapps-backend/server/bootstrap/routes/roles_route.go
+> git cat-file -s 2da933557aced525cff011fc075dd81c75ff91e8
+> git show :server/bootstrap/routes/authentication_route.go
+> git ls-files --stage -- /home/aziz/works/dokterapp/dokterapps-backend/server/bootstrap/routes/authentication_route.go
+> git cat-file -s 8be0ef00ad58b4933bbfffe11550c3009f9f6453
+> git show :server/handlers/roles_handler.go
+> git ls-files --stage -- /home/aziz/works/dokterapp/dokterapps-backend/server/handlers/roles_handler.go
+> git cat-file -s 84dc2d454c508ae386644a06701d282298255045
+> git show :server/handlers/authentication_handler.go
+> git ls-files --stage -- /home/aziz/works/dokterapp/dokterapps-backend/server/handlers/authentication_handler.go
+> git cat-file -s 7107da04c1cadc05c0e43542b47a09761f389933
+> git show :server/request/auth_request.go
+> git ls-files --stage -- /home/aziz/works/dokterapp/dokterapps-backend/server/request/auth_request.go
+> git cat-file -s 3a93e62257424857d5153e5ef018d45366d9bdea
+> git show :server/request/user_request.go
+> git ls-files --stage -- /home/aziz/works/dokterapp/dokterapps-backend/server/request/user_request.go
+> git cat-file -s d8257145592c533476ad5efd1629e58afcb6e1da
+> git show :server/request/roles_request.go
+> git ls-files --stage -- /home/aziz/works/dokterapp/dokterapps-backend/server/request/roles_request.go
+> git cat-file -s 54bf536a16b496e880eab6bb759e424ad721304c
+> git check-ignore -v -z --stdin
+> git show :usecase/authentication_usecase.go
+> git ls-files --stage -- /home/aziz/works/dokterapp/dokterapps-backend/usecase/authentication_usecase.go
+> git cat-file -s c0039bbb45fb418e4c1aee44f537cbfb6eb95bfe
+> git show :server/bootstrap/routes/authentication_route.go
+> git ls-files --stage -- /home/aziz/works/dokterapp/dokterapps-backend/server/bootstrap/routes/authentication_route.go
+> git cat-file -s 8be0ef00ad58b4933bbfffe11550c3009f9f6453
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse dev
+> git rev-parse --symbolic-full-name dev@{u}
+> git rev-list --left-right dev...refs/remotes/origin/dev
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git show :server/handlers/authentication_handler.go
+> git ls-files --stage -- /home/aziz/works/dokterapp/dokterapps-backend/server/handlers/authentication_handler.go
+> git cat-file -s 7107da04c1cadc05c0e43542b47a09761f389933
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse dev
+> git rev-parse --symbolic-full-name dev@{u}
+> git rev-list --left-right dev...refs/remotes/origin/dev
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse dev
+> git rev-parse --symbolic-full-name dev@{u}
+> git rev-list --left-right dev...refs/remotes/origin/dev
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse dev
+> git rev-parse --symbolic-full-name dev@{u}
+> git rev-list --left-right dev...refs/remotes/origin/dev
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse dev
+> git rev-parse --symbolic-full-name dev@{u}
+> git rev-list --left-right dev...refs/remotes/origin/dev
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git show :usecase/authentication_usecase.go
+> git ls-files --stage -- /home/aziz/works/dokterapp/dokterapps-backend/usecase/authentication_usecase.go
+> git cat-file -s c0039bbb45fb418e4c1aee44f537cbfb6eb95bfe
+> git show :server/handlers/authentication_handler.go
+> git ls-files --stage -- /home/aziz/works/dokterapp/dokterapps-backend/server/handlers/authentication_handler.go
+> git cat-file -s 7107da04c1cadc05c0e43542b47a09761f389933
+> git show :usecase/authentication_usecase.go
+> git ls-files --stage -- /home/aziz/works/dokterapp/dokterapps-backend/usecase/authentication_usecase.go
+> git cat-file -s c0039bbb45fb418e4c1aee44f537cbfb6eb95bfe
+> git show :server/handlers/authentication_handler.go
+> git ls-files --stage -- /home/aziz/works/dokterapp/dokterapps-backend/server/handlers/authentication_handler.go
+> git cat-file -s 7107da04c1cadc05c0e43542b47a09761f389933
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse dev
+> git rev-parse --symbolic-full-name dev@{u}
+> git rev-list --left-right dev...refs/remotes/origin/dev
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git show :server/request/auth_request.go
+> git ls-files --stage -- /home/aziz/works/dokterapp/dokterapps-backend/server/request/auth_request.go
+> git cat-file -s 3a93e62257424857d5153e5ef018d45366d9bdea
+> git show :server/handlers/authentication_handler.go
+> git ls-files --stage -- /home/aziz/works/dokterapp/dokterapps-backend/server/handlers/authentication_handler.go
+> git cat-file -s 7107da04c1cadc05c0e43542b47a09761f389933
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse dev
+> git rev-parse --symbolic-full-name dev@{u}
+> git rev-list --left-right dev...refs/remotes/origin/dev
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git check-ignore -v -z --stdin
+> git show :helpers/enums/enum.go
+> git ls-files --stage -- /home/aziz/works/dokterapp/dokterapps-backend/helpers/enums/enum.go
+> git cat-file -s 56c9eb625bf24b7beb81ed6edf466d1d6a0e46a0
+> git show :server/handlers/authentication_handler.go
+> git ls-files --stage -- /home/aziz/works/dokterapp/dokterapps-backend/server/handlers/authentication_handler.go
+> git cat-file -s 7107da04c1cadc05c0e43542b47a09761f389933
+> git show :usecase/authentication_usecase.go
+> git ls-files --stage -- /home/aziz/works/dokterapp/dokterapps-backend/usecase/authentication_usecase.go
+> git cat-file -s c0039bbb45fb418e4c1aee44f537cbfb6eb95bfe
+> git show :server/handlers/authentication_handler.go
+> git ls-files --stage -- /home/aziz/works/dokterapp/dokterapps-backend/server/handlers/authentication_handler.go
+> git cat-file -s 7107da04c1cadc05c0e43542b47a09761f389933
+> git show :usecase/authentication_usecase.go
+> git ls-files --stage -- /home/aziz/works/dokterapp/dokterapps-backend/usecase/authentication_usecase.go
+> git cat-file -s c0039bbb45fb418e4c1aee44f537cbfb6eb95bfe
+> git status -z -u
+> git show :server/handlers/authentication_handler.go
+> git ls-files --stage -- /home/aziz/works/dokterapp/dokterapps-backend/server/handlers/authentication_handler.go
+> git symbolic-ref --short HEAD
+> git rev-parse dev
+> git cat-file -s 7107da04c1cadc05c0e43542b47a09761f389933
+> git rev-parse --symbolic-full-name dev@{u}
+> git rev-list --left-right dev...refs/remotes/origin/dev
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse dev
+> git rev-parse --symbolic-full-name dev@{u}
+> git rev-list --left-right dev...refs/remotes/origin/dev
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git show :usecase/authentication_usecase.go
+> git ls-files --stage -- /home/aziz/works/dokterapp/dokterapps-backend/usecase/authentication_usecase.go
+> git cat-file -s c0039bbb45fb418e4c1aee44f537cbfb6eb95bfe
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse dev
+> git rev-parse --symbolic-full-name dev@{u}
+> git rev-list --left-right dev...refs/remotes/origin/dev
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse dev
+> git rev-parse --symbolic-full-name dev@{u}
+> git rev-list --left-right dev...refs/remotes/origin/dev
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git show :server/handlers/authentication_handler.go
+> git ls-files --stage -- /home/aziz/works/dokterapp/dokterapps-backend/server/handlers/authentication_handler.go
+> git cat-file -s 7107da04c1cadc05c0e43542b47a09761f389933
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse dev
+> git rev-parse --symbolic-full-name dev@{u}
+> git rev-list --left-right dev...refs/remotes/origin/dev
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse dev
+> git rev-parse --symbolic-full-name dev@{u}
+> git rev-list --left-right dev...refs/remotes/origin/dev
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse dev
+> git rev-parse --symbolic-full-name dev@{u}
+> git rev-list --left-right dev...refs/remotes/origin/dev
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse dev
+> git rev-parse --symbolic-full-name dev@{u}
+> git rev-list --left-right dev...refs/remotes/origin/dev
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse dev
+> git rev-parse --symbolic-full-name dev@{u}
+> git rev-list --left-right dev...refs/remotes/origin/dev
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git show :usecase/authentication_usecase.go
+> git ls-files --stage -- /home/aziz/works/dokterapp/dokterapps-backend/usecase/authentication_usecase.go
+> git cat-file -s c0039bbb45fb418e4c1aee44f537cbfb6eb95bfe
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse dev
+> git rev-parse --symbolic-full-name dev@{u}
+> git rev-list --left-right dev...refs/remotes/origin/dev
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git show :db/repositories/actions/UserRepository.go
+> git ls-files --stage -- /home/aziz/works/dokterapp/dokterapps-backend/db/repositories/actions/UserRepository.go
+> git cat-file -s aa07974f253fbd2f063d80cad9e687d3b110ee0a
+> git check-ignore -v -z --stdin
+> git show :usecase/authentication_usecase.go
+> git ls-files --stage -- /home/aziz/works/dokterapp/dokterapps-backend/usecase/authentication_usecase.go
+> git cat-file -s c0039bbb45fb418e4c1aee44f537cbfb6eb95bfe
+> git show :db/repositories/actions/UserRepository.go
+> git ls-files --stage -- /home/aziz/works/dokterapp/dokterapps-backend/db/repositories/actions/UserRepository.go
+> git cat-file -s aa07974f253fbd2f063d80cad9e687d3b110ee0a
+> git show :usecase/authentication_usecase.go
+> git ls-files --stage -- /home/aziz/works/dokterapp/dokterapps-backend/usecase/authentication_usecase.go
+> git cat-file -s c0039bbb45fb418e4c1aee44f537cbfb6eb95bfe
+> git show :usecase/user_usecase.go
+> git ls-files --stage -- /home/aziz/works/dokterapp/dokterapps-backend/usecase/user_usecase.go
+> git cat-file -s e248cbe9173f1aa98280236737950733b6a53a05
+> git show :usecase/authentication_usecase.go
+> git ls-files --stage -- /home/aziz/works/dokterapp/dokterapps-backend/usecase/authentication_usecase.go
+> git cat-file -s c0039bbb45fb418e4c1aee44f537cbfb6eb95bfe
+> git show :usecase/roles_usecase.go
+> git ls-files --stage -- /home/aziz/works/dokterapp/dokterapps-backend/usecase/roles_usecase.go
+> git cat-file -s a38e075927d4000155db6dd019f0913d2c26e127
+> git show :usecase/authentication_usecase.go
+> git ls-files --stage -- /home/aziz/works/dokterapp/dokterapps-backend/usecase/authentication_usecase.go
+> git cat-file -s c0039bbb45fb418e4c1aee44f537cbfb6eb95bfe
+> git show :db/repositories/actions/RoleRepository.go
+> git ls-files --stage -- /home/aziz/works/dokterapp/dokterapps-backend/db/repositories/actions/RoleRepository.go
+> git cat-file -s aa86d709bd1b810c8e570f83a929d56b8f6d04ac
+> git show :usecase/authentication_usecase.go
+> git ls-files --stage -- /home/aziz/works/dokterapp/dokterapps-backend/usecase/authentication_usecase.go
+> git cat-file -s c0039bbb45fb418e4c1aee44f537cbfb6eb95bfe
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse dev
+> git rev-parse --symbolic-full-name dev@{u}
+> git rev-list --left-right dev...refs/remotes/origin/dev
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse dev
+> git rev-parse --symbolic-full-name dev@{u}
+> git rev-list --left-right dev...refs/remotes/origin/dev
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git show :db/repositories/actions/UserRepository.go
+> git ls-files --stage -- /home/aziz/works/dokterapp/dokterapps-backend/db/repositories/actions/UserRepository.go
+> git cat-file -s aa07974f253fbd2f063d80cad9e687d3b110ee0a
+> git show :usecase/authentication_usecase.go
+> git ls-files --stage -- /home/aziz/works/dokterapp/dokterapps-backend/usecase/authentication_usecase.go
+> git cat-file -s c0039bbb45fb418e4c1aee44f537cbfb6eb95bfe
+> git show :db/repositories/contracts/i_user_repository.go
+> git ls-files --stage -- /home/aziz/works/dokterapp/dokterapps-backend/db/repositories/contracts/i_user_repository.go
+> git cat-file -s 308d5bc511a3f7b3d7f2178d4fa672da04013127
+> git check-ignore -v -z --stdin
+> git show :usecase/authentication_usecase.go
+> git ls-files --stage -- /home/aziz/works/dokterapp/dokterapps-backend/usecase/authentication_usecase.go
+> git cat-file -s c0039bbb45fb418e4c1aee44f537cbfb6eb95bfe
+> git show :db/repositories/actions/UserRepository.go
+> git ls-files --stage -- /home/aziz/works/dokterapp/dokterapps-backend/db/repositories/actions/UserRepository.go
+> git cat-file -s aa07974f253fbd2f063d80cad9e687d3b110ee0a
+> git show :usecase/authentication_usecase.go
+> git ls-files --stage -- /home/aziz/works/dokterapp/dokterapps-backend/usecase/authentication_usecase.go
+> git cat-file -s c0039bbb45fb418e4c1aee44f537cbfb6eb95bfe
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse dev
+> git rev-parse --symbolic-full-name dev@{u}
+> git rev-list --left-right dev...refs/remotes/origin/dev
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse dev
+> git rev-parse --symbolic-full-name dev@{u}
+> git rev-list --left-right dev...refs/remotes/origin/dev
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse dev
+> git rev-parse --symbolic-full-name dev@{u}
+> git rev-list --left-right dev...refs/remotes/origin/dev
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse dev
+> git rev-parse --symbolic-full-name dev@{u}
+> git rev-list --left-right dev...refs/remotes/origin/dev
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse dev
+> git rev-parse --symbolic-full-name dev@{u}
+> git rev-list --left-right dev...refs/remotes/origin/dev
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse dev
+> git rev-parse --symbolic-full-name dev@{u}
+> git rev-list --left-right dev...refs/remotes/origin/dev
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git ls-files --stage -- /home/aziz/works/dokterapp/dokterapps-backend/usecase/authentication_usecase.go
+> git symbolic-ref --short HEAD
+> git cat-file -s c0039bbb45fb418e4c1aee44f537cbfb6eb95bfe
+> git rev-parse registrasi
+> git rev-parse --symbolic-full-name registrasi@{u}
+> git show :usecase/authentication_usecase.go
+fatal: no upstream configured for branch 'registrasi'
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse registrasi
+> git rev-parse --symbolic-full-name registrasi@{u}
+fatal: no upstream configured for branch 'registrasi'
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git show :db/repositories/contracts/i_user_repository.go
+> git ls-files --stage -- /home/aziz/works/dokterapp/dokterapps-backend/db/repositories/contracts/i_user_repository.go
+> git cat-file -s 308d5bc511a3f7b3d7f2178d4fa672da04013127
+> git show :server/handlers/authentication_handler.go
+> git ls-files --stage -- /home/aziz/works/dokterapp/dokterapps-backend/server/handlers/authentication_handler.go
+> git cat-file -s 7107da04c1cadc05c0e43542b47a09761f389933
+> git show :usecase/authentication_usecase.go
+> git ls-files --stage -- /home/aziz/works/dokterapp/dokterapps-backend/usecase/authentication_usecase.go
+> git cat-file -s c0039bbb45fb418e4c1aee44f537cbfb6eb95bfe
+> git show :server/handlers/authentication_handler.go
+> git ls-files --stage -- /home/aziz/works/dokterapp/dokterapps-backend/server/handlers/authentication_handler.go
+> git cat-file -s 7107da04c1cadc05c0e43542b47a09761f389933
+> git show :server/bootstrap/routes/authentication_route.go
+> git ls-files --stage -- /home/aziz/works/dokterapp/dokterapps-backend/server/bootstrap/routes/authentication_route.go
+> git cat-file -s 8be0ef00ad58b4933bbfffe11550c3009f9f6453
+> git status -z -u
+> git ls-files --stage -- /home/aziz/works/dokterapp/dokterapps-backend/server/bootstrap/routes/authentication_route.go
+> git symbolic-ref --short HEAD
+> git cat-file -s 4805f6c735e963b03bac1b3c4771760518eec998
+> git rev-parse registrasi
+> git rev-parse --symbolic-full-name registrasi@{u}
+> git show :server/bootstrap/routes/authentication_route.go
+> git rev-list --left-right registrasi...refs/remotes/origin/registrasi
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse registrasi
+> git rev-parse --symbolic-full-name registrasi@{u}
+> git rev-list --left-right registrasi...refs/remotes/origin/registrasi
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template

@@ -4,9 +4,10 @@ import (
 	"bukuduit-go/helpers/jwt"
 	request "bukuduit-go/server/requests"
 	"bukuduit-go/usecase"
+	"net/http"
+
 	"github.com/go-playground/validator/v10"
 	"github.com/labstack/echo"
-	"net/http"
 )
 
 type BusinessCardHandler struct {
@@ -60,7 +61,7 @@ func (handler BusinessCardHandler) Add(ctx echo.Context) error {
 	}
 
 	uc := usecase.BusinessCardUseCase{UcContract: handler.UseCaseContract}
-	err := uc.Add(input,claim.Id)
+	err := uc.Add(input, claim.Id)
 
 	return handler.SendResponse(ctx, nil, nil, err)
 }
