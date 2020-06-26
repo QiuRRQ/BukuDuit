@@ -5,7 +5,6 @@ import (
 	"bukuduit-go/helpers/enums"
 	"bukuduit-go/helpers/messages"
 	request "bukuduit-go/server/requests"
-	"bukuduit-go/usecase"
 	"bukuduit-go/usecase/viewmodel"
 	"database/sql"
 	"errors"
@@ -46,26 +45,29 @@ func (uc BusinessCardUseCase) BrowseByUser(userID string) (res []viewmodel.Busin
 //fucntion for hutang list
 func (uc BusinessCardUseCase) Read(ID string) (res viewmodel.BusinessCardVm, err error) {
 	model := actions.NewBusinessCardModel(uc.DB)
-	userCustomerUC := usecase.UserCustomerUseCase{UcContract: uc.UcContract}
-	transactionUC := usecase.TransactionUseCase{UcContract: uc.UcContract}
+	userCustomerUC := UserCustomerUseCase{UcContract: uc.UcContract}
+	transactionUC := TransactionUseCase{UcContract: uc.UcContract}
+	var debtTotal int
+	var creditTotal int
 
-	dataTransaction, res := transactionUC.BrowseByShop(ID)
-
-	dataUserCustomer, res := userCustomerUC.BrowseByShop(ID)
-
-	var debtTotal int = 0
-	var creditTotal int = 0
+	dataTransaction, err := transactionUC.BrowseByShop(ID)
+	if err != nil {
+		return res,err
+	}
+	dataUserCustomer, err := userCustomerUC.BrowseByShop(ID)
+	if err != nil {
+		return res,err
+	}
 
 	for _, k := range dataUserCustomer {
-		creditTotal += k.Debt
+		creditTotal =creditTotal + int(k.Debt)
 	}
 
 	for _, v := range dataTransaction {
 
 		if v.Type == enums.Debet {
-			debtTotal += v.Amount
+			debtTotal =debtTotal + int(v.Amount)
 		}
-
 	}
 
 	businessCard, err := model.Read(ID)
