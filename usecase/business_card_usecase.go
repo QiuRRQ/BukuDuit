@@ -75,11 +75,12 @@ func (uc BusinessCardUseCase) Read(ID, lunas string) (res viewmodel.BusinessCard
 	}
 
 	for _, k := range dataUserCustomer {
-		creditTotal = creditTotal + int(k.Debt)
+		if k.Debt > 0 {
+			creditTotal = creditTotal + int(k.Debt)
+		}
 	}
 
 	for _, v := range dataTransaction {
-
 		if v.Type == enums.Debet {
 			debtTotal = debtTotal + int(v.Amount)
 		}
