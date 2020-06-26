@@ -131,22 +131,16 @@ func (uc UcContract) GetRandomString(length int) string {
 func (uc UcContract) StoreToRedistWithExpired(key string, val interface{}, duration string) error {
 	dur, err := time.ParseDuration(duration)
 	if err != nil {
-		fmt.Println("here atas")
 		return err
 	}
 
 	b, err := json.Marshal(val)
 	if err != nil {
-		fmt.Println("here")
-		fmt.Println(err.Error())
 		return err
 	}
 
-	fmt.Println(key)
-	fmt.Println(string(b))
-	fmt.Println(dur)
 	err = uc.Redis.Set(key, string(b), dur).Err()
-	fmt.Println(err)
+
 	return err
 }
 

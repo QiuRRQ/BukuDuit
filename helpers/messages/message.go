@@ -12,7 +12,7 @@ var (
 	UserNotFound           = "user not found"
 	UserIsNotActive        = "user has not been activated"
 	UserIsBlocked          = "user has been blocked"
-	CredentialDoNotMatch   = "credential not match"
+	CredentialDoNotMatch   = "kredensial tidak sesuai"
 	PasswordNotMatch       = "password not match"
 	OtpStoreToRedis        = "otp failed store to redis"
 	InvalidOtpStoreToRedis = "invalid otp failed store to redis"
