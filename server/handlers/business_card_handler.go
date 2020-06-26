@@ -24,8 +24,9 @@ func (handler BusinessCardHandler) BrowseByUser(ctx echo.Context) error {
 
 func (handler BusinessCardHandler) Read(ctx echo.Context) error {
 	ID := ctx.Param("id")
+	status := ctx.QueryParam("lunas")
 	uc := usecase.BusinessCardUseCase{UcContract: handler.UseCaseContract}
-	res, err := uc.Read(ID)
+	res, err := uc.Read(ID, status)
 
 	return handler.SendResponse(ctx, res, nil, err)
 }

@@ -42,8 +42,8 @@ func (uc BusinessCardUseCase) BrowseByUser(userID string) (res []viewmodel.Busin
 	return res, err
 }
 
-//fucntion for hutang list
-func (uc BusinessCardUseCase) Read(ID string) (res viewmodel.BusinessCardVm, err error) {
+//fucntion for hutang list lunas
+func (uc BusinessCardUseCase) Read(ID, lunas string) (res viewmodel.BusinessCardVm, err error) { //lunas = 1
 	model := actions.NewBusinessCardModel(uc.DB)
 	userCustomerUC := UserCustomerUseCase{UcContract: uc.UcContract}
 	transactionUC := TransactionUseCase{UcContract: uc.UcContract}
@@ -54,7 +54,22 @@ func (uc BusinessCardUseCase) Read(ID string) (res viewmodel.BusinessCardVm, err
 	if err != nil {
 		return res, err
 	}
-	dataUserCustomer, err := userCustomerUC.BrowseByShop(ID)
+	tempDataUserCustomer, err := userCustomerUC.BrowseByShop(ID)
+
+	var dataUserCustomer []viewmodel.UserCustomerVm
+	for _, data := range tempDataUserCustomer {
+		if lunas == "1" {
+			if int(data.Debt) == 0 {
+				fmt.Println("here")
+				dataUserCustomer = append(dataUserCustomer, data)
+			}
+		} else {
+			if int(data.Debt) != 0 {
+				dataUserCustomer = append(dataUserCustomer, data)
+			}
+		}
+	}
+
 	if err != nil {
 		return res, err
 	}
