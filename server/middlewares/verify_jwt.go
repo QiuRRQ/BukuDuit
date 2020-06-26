@@ -5,7 +5,6 @@ import (
 	"bukuduit-go/helpers/messages"
 	"bukuduit-go/server/handlers"
 	"bukuduit-go/usecase"
-	"bukuduit-go/usecase/viewmodel"
 	"errors"
 	"fmt"
 	"strings"
@@ -57,11 +56,11 @@ func (jwtVerify JwtVerify) JWTWithConfig(next echo.HandlerFunc) echo.HandlerFunc
 		}
 		claims.Id = fmt.Sprintf("%v", jweRes["id"])
 
-		sessionData := viewmodel.UserSessionVm{}
-		jwtVerify.UcContract.GetFromRedis("session-"+claims.Id, &sessionData)
-		if sessionData.Session != claims.Session {
-			return apiHandler.SendResponseUnauthorized(ctx, errors.New(messages.InvalidSession))
-		}
+		//sessionData := viewmodel.UserSessionVm{}
+		//jwtVerify.UcContract.GetFromRedis("session-"+claims.Id, &sessionData)
+		//if sessionData.Session != claims.Session {
+		//	return apiHandler.SendResponseUnauthorized(ctx, errors.New(messages.InvalidSession))
+		//}
 		ctx.Set("user", claims)
 
 		return next(ctx)
