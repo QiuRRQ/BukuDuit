@@ -268,30 +268,32 @@ func (uc TransactionUseCase) Delete(ID string) (err error) {
 	return nil
 }
 
-func (uc TransactionUseCase) DebtPayment(referenceID, transactionType, shopID, transactionDate string, amount int32) (err error) {
+func (uc TransactionUseCase) DebtPayment(input request.TransactionRequest) (err error) {
 	model := actions.NewTransactionModel(uc.DB)
 	userCustomerUc := UserCustomerUseCase{UcContract: uc.UcContract}
 	now := time.Now().UTC()
 
-	customerData, err := userCustomerUc.Read(referenceID)
+	customerData, err := userCustomerUc.Read(input.ReferenceID)
 	if err != nil {
 		return err
 	}
 	userDebtAmount := customerData.Debt
 	TransactionBody := viewmodel.TransactionVm{
-		ReferenceID:     referenceID,
-		ShopID:          shopID,
-		Amount:          amount,
-		Type:            transactionType,
-		TransactionDate: transactionDate,
+		ReferenceID:     input.ReferenceID,
+		ShopID:          input.ShopID,
+		Amount:          input.Amount,
+		Description:     input.Description,
+		Type:            input.TransactionType,
+		CustomerID:      input.CustomerID,
+		TransactionDate: input.TransactionDate,
 		UpdatedAt:       now.Format(time.RFC3339),
 		CreatedAt:       now.Format(time.RFC3339),
 	}
 
-	if transactionType == enums.Debet {
-		userDebtAmount = userDebtAmount - amount
+	if input.TransactionType == enums.Debet {
+		userDebtAmount = userDebtAmount - input.Amount
 	} else {
-		userDebtAmount = userDebtAmount + amount
+		userDebtAmount = userDebtAmount + input.Amount
 	}
 
 	transaction, err := uc.DB.Begin()
@@ -305,7 +307,7 @@ func (uc TransactionUseCase) DebtPayment(referenceID, transactionType, shopID, t
 		return err
 	}
 
-	err = userCustomerUc.EditDebt(referenceID, userDebtAmount, transaction)
+	err = userCustomerUc.EditDebt(input.ReferenceID, userDebtAmount, transaction)
 	if err != nil {
 		transaction.Rollback()
 		return err

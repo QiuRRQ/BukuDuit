@@ -132,8 +132,8 @@ func (repository TransactionRepository) Edit(body viewmodel.TransactionVm) (res 
 }
 
 func (repository TransactionRepository) Add(body viewmodel.TransactionVm, tx *sql.Tx) (res string, err error) {
-	statement := `insert into "transactions" ("reference_id", "shop_id", "amount","description","type","transaction_date","created_at","updated_at") 
-	values($1,$2,$3,$4,$5,to_date($6, 'YYYY-MM-DD'),$7,$8) returning "id"`
+	statement := `insert into "transactions" ("reference_id", "shop_id", "amount","description","type","transaction_date","created_at","updated_at","customer_id") 
+	values($1,$2,$3,$4,$5,to_date($6, 'YYYY-MM-DD'),$7,$8, $9) returning "id"`
 
 	if tx != nil {
 		_, err = tx.Exec(
@@ -146,6 +146,7 @@ func (repository TransactionRepository) Add(body viewmodel.TransactionVm, tx *sq
 			body.TransactionDate,
 			datetime.StrParseToTime(body.CreatedAt, time.RFC3339),
 			datetime.StrParseToTime(body.UpdatedAt, time.RFC3339),
+			str.EmptyString(body.CustomerID),
 		)
 	} else {
 		err = repository.DB.QueryRow(
@@ -158,6 +159,7 @@ func (repository TransactionRepository) Add(body viewmodel.TransactionVm, tx *sq
 			body.TransactionDate,
 			datetime.StrParseToTime(body.CreatedAt, time.RFC3339),
 			datetime.StrParseToTime(body.UpdatedAt, time.RFC3339),
+			str.EmptyString(body.CustomerID),
 		).Scan(&res)
 	}
 	if err != nil {

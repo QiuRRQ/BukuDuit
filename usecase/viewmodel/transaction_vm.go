@@ -5,6 +5,7 @@ type TransactionVm struct {
 	ReferenceID     string `json:"reference_id"`
 	Name            string `json:"full_name"`
 	ShopID          string `json:"shop_id"`
+	CustomerID      string `json:"customer_id"`
 	Amount          int32  `json:"amount"`
 	Description     string `json:"description"`
 	Image           string `json:"image"`

@@ -6,5 +6,6 @@ type TransactionRequest struct {
 	ShopID          string `json:"shop_id" validate:"required"`
 	Amount          int32  `json:"amount" validate:"required,numeric"`
 	Description     string `json:"description"`
+	CustomerID      string `json:"customer_id"`
 	TransactionDate string `json:"transaction_date" validate:"required"`
 }

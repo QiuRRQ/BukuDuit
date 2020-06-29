@@ -14,6 +14,7 @@ type Transactions struct {
 	Image           sql.NullString `db:"image"`
 	Type            string         `db:"type"`
 	TransactionDate sql.NullString `db:"transaction_date"`
+	CustomerID      sql.NullString `db:"customer_id"`
 	CreatedAt       string         `db:"created_at"`
 	UpdatedAt       sql.NullString `db:"update_at"`
 	DeletedAt       sql.NullString `db:"deleted_at"`

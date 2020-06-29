@@ -53,7 +53,8 @@ func (uc BusinessCardUseCase) Read(ID, lunas string) (res viewmodel.BusinessCard
 
 	tempDataUserCustomer, err := userCustomerUC.BrowseByShop(ID)
 
-	var dataUserCustomer []viewmodel.UserCustomerVm
+	var elems int
+	var dataUserCustomer = make([]viewmodel.UserCustomerVm, elems)
 	for _, data := range tempDataUserCustomer {
 		if lunas == "1" {
 			if int(data.Debt) == 0 {

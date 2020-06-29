@@ -85,7 +85,7 @@ func (handler TransactionHandler) DebtPayment(ctx echo.Context) error {
 	}
 
 	uc := usecase.TransactionUseCase{UcContract: handler.UseCaseContract}
-	err := uc.DebtPayment(input.ReferenceID, input.TransactionType, input.ShopID, input.TransactionDate, input.Amount)
+	err := uc.DebtPayment(*input)
 
 	return handler.SendResponse(ctx, nil, nil, err)
 }
@@ -102,7 +102,7 @@ func (handler TransactionHandler) AddTransaction(ctx echo.Context) error {
 	}
 
 	uc := usecase.TransactionUseCase{UcContract: handler.UseCaseContract}
-	err := uc.DebtPayment(input.ReferenceID, input.TransactionType, input.ShopID, input.TransactionDate, input.Amount)
+	err := uc.DebtPayment(*input)
 
 	return handler.SendResponse(ctx, nil, nil, err)
 }
