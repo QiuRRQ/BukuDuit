@@ -45,7 +45,8 @@ func (uc TransactionUseCase) BrowseByShop(shopID string) (res []viewmodel.Transa
 
 func (uc TransactionUseCase) BrowseByCustomer(customerID string) (res []viewmodel.DetailsHutangVm, err error) {
 	model := actions.NewTransactionModel(uc.DB)
-	Transactions, err := model.BrowseByCustomer(customerID)
+	Transactions, err := model.BrowseByCustomer(customerID) //only use it for details
+
 	resultCount, err := model.CountDistinct(customerID)
 
 	if err != nil {
@@ -57,26 +58,61 @@ func (uc TransactionUseCase) BrowseByCustomer(customerID string) (res []viewmode
 
 	var transactionDate []viewmodel.DebtList
 	var transactionDetails []viewmodel.Detail
-	for _, k := range Transactions {
-		creditTotal = creditTotal + int(k.Amount.Int32)
 
-		if k.Type == enums.Debet {
-			debtTotal = debtTotal + int(k.Amount.Int32)
+	for i := 0; i < len(Transactions); i++ {
+
+		tempDate, err := time.Parse(time.RFC3339, Transactions[i].TransactionDate.String)
+		if err != nil {
+			fmt.Println(err.Error())
 		}
-	}
+		if Transactions[i].Type == enums.Debet {
+			debtTotal = debtTotal + int(Transactions[i].Amount.Int32)
+		} else {
+			creditTotal = creditTotal + int(Transactions[i].Amount.Int32)
+		}
 
-	for _, details := range Transactions {
-		transactionDetails = append(transactionDetails, viewmodel.Detail{
-			Description: details.Description.String,
-			Amount:      details.Amount.Int32,
-			Type:        details.Type,
-		})
-	}
-	for _, date := range Transactions {
-		transactionDate = append(transactionDate, viewmodel.DebtList{
-			TransactionDate: date.TransactionDate.String,
-			Details:         transactionDetails,
-		})
+		var nextDate time.Time
+		if i < len(Transactions)-1 {
+			nextDate, err = time.Parse(time.RFC3339, Transactions[i+1].TransactionDate.String)
+			if err != nil {
+				fmt.Println(err.Error())
+			}
+			if tempDate == nextDate {
+				transactionDetails = append(transactionDetails, viewmodel.Detail{
+					Description: Transactions[i].Description.String,
+					Amount:      Transactions[i].Amount.Int32,
+					Type:        Transactions[i].Type,
+				})
+				fmt.Println(transactionDetails)
+			} else {
+				transactionDetails = append(transactionDetails, viewmodel.Detail{
+					Description: Transactions[i].Description.String,
+					Amount:      Transactions[i].Amount.Int32,
+					Type:        Transactions[i].Type,
+				})
+				transactionDate = append(transactionDate, viewmodel.DebtList{
+					TransactionDate: Transactions[i].TransactionDate.String,
+					Details:         transactionDetails,
+				})
+
+				transactionDetails = nil
+				tempDate = nextDate
+			}
+		} else {
+			transactionDetails = append(transactionDetails, viewmodel.Detail{
+				Description: Transactions[i].Description.String,
+				Amount:      Transactions[i].Amount.Int32,
+				Type:        Transactions[i].Type,
+			})
+			transactionDate = append(transactionDate, viewmodel.DebtList{
+				TransactionDate: Transactions[i].TransactionDate.String,
+				Details:         transactionDetails,
+			})
+
+			transactionDetails = nil
+			tempDate = nextDate
+		}
+
 	}
 
 	for i := 0; i < resultCount; i++ {

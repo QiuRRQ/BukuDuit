@@ -51,8 +51,7 @@ func (repository TransactionRepository) BrowseByCustomer(customerID string) (dat
 	statement := `select t."id", uc."full_name", t."amount", t."reference_id", t."shop_id", t."description", t."image", t."transaction_date", t."type", t."created_at", t."updated_at", t."deleted_at" 
 	from "transactions" t  join "user_customers" uc 
 	on t."reference_id" = uc."id" 
-	where t."reference_id" = $1 and t."deleted_at" is null 
-	group by t."transaction_date", t."id", uc."full_name" order by t."transaction_date" desc `
+	where t."reference_id" = $1 and t."deleted_at" is null order by t."transaction_date" desc `
 	rows, err := repository.DB.Query(statement, customerID)
 	if err != nil {
 		return data, err
