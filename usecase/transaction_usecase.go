@@ -16,26 +16,90 @@ type TransactionUseCase struct {
 	*UcContract
 }
 
-func (uc TransactionUseCase) BrowseByShop(shopID string) (res []viewmodel.TransactionVm, err error) {
+func (uc TransactionUseCase) BrowseByShop(shopID string) (res []viewmodel.ReportHutangVm, err error) {
 	model := actions.NewTransactionModel(uc.DB)
-	Transaction, err := model.BrowseByShop(shopID)
+	Transactions, err := model.BrowseByShop(shopID)
+	resultCount, err := model.CountDistinctBy("shop_id", shopID)
 	if err != nil {
 		fmt.Println(1)
 		return res, err
 	}
 
-	for _, Transaction := range Transaction {
-		res = append(res, viewmodel.TransactionVm{
-			ID:              Transaction.ID,
-			ReferenceID:     Transaction.ReferenceID,
-			Amount:          Transaction.Amount.Int32,
-			Description:     Transaction.Description.String,
-			Image:           Transaction.Image.String,
-			Type:            Transaction.Type,
-			TransactionDate: Transaction.TransactionDate.String,
-			CreatedAt:       Transaction.CreatedAt,
-			UpdatedAt:       Transaction.UpdatedAt.String,
-			DeletedAt:       Transaction.DeletedAt.String,
+	var debtTotal int
+	var creditTotal int
+
+	var debtDate []viewmodel.DebtReport
+	var debtDetails []viewmodel.DebtDetail
+
+	for i := 0; i < len(Transactions); i++ {
+
+		tempDate, err := time.Parse(time.RFC3339, Transactions[i].TransactionDate.String)
+		if err != nil {
+			fmt.Println(err.Error())
+		}
+		if Transactions[i].Type == enums.Debet {
+			debtTotal = debtTotal + int(Transactions[i].Amount.Int32)
+		} else {
+			creditTotal = creditTotal + int(Transactions[i].Amount.Int32)
+		}
+
+		var nextDate time.Time
+		if i < len(Transactions)-1 {
+			nextDate, err = time.Parse(time.RFC3339, Transactions[i+1].TransactionDate.String)
+			if err != nil {
+				fmt.Println(err.Error())
+			}
+			if tempDate == nextDate {
+				debtDetails = append(debtDetails, viewmodel.DebtDetail{
+					Name:        Transactions[i].Name,
+					Description: Transactions[i].Description.String,
+					Amount:      Transactions[i].Amount.Int32,
+					Type:        Transactions[i].Type,
+				})
+
+			} else {
+				debtDetails = append(debtDetails, viewmodel.DebtDetail{
+					Name:        Transactions[i].Name,
+					Description: Transactions[i].Description.String,
+					Amount:      Transactions[i].Amount.Int32,
+					Type:        Transactions[i].Type,
+				})
+				debtDate = append(debtDate, viewmodel.DebtReport{
+					TransactionDate: tempDate.String(),
+					Details:         debtDetails,
+				})
+
+				debtDetails = nil
+				tempDate = nextDate
+			}
+		} else {
+			debtDetails = append(debtDetails, viewmodel.DebtDetail{
+				Name:        Transactions[i].Name,
+				Description: Transactions[i].Description.String,
+				Amount:      Transactions[i].Amount.Int32,
+				Type:        Transactions[i].Type,
+			})
+			debtDate = append(debtDate, viewmodel.DebtReport{
+				TransactionDate: tempDate.String(),
+				Details:         debtDetails,
+			})
+
+			debtDetails = nil
+			tempDate = nextDate
+		}
+
+	}
+
+	for i := 0; i < resultCount; i++ {
+		res = append(res, viewmodel.ReportHutangVm{
+			ID:          Transactions[i].ID,
+			ReferenceID: Transactions[i].ReferenceID,
+			TotalCredit: creditTotal,
+			TotalDebit:  debtTotal,
+			ListData:    debtDate,
+			CreatedAt:   Transactions[i].CreatedAt,
+			UpdatedAt:   Transactions[i].UpdatedAt.String,
+			DeletedAt:   Transactions[i].DeletedAt.String,
 		})
 	}
 
@@ -47,7 +111,7 @@ func (uc TransactionUseCase) BrowseByCustomer(customerID string) (res []viewmode
 	model := actions.NewTransactionModel(uc.DB)
 	Transactions, err := model.BrowseByCustomer(customerID) //only use it for details
 
-	resultCount, err := model.CountDistinct(customerID)
+	resultCount, err := model.CountDistinctBy("reference_id", customerID)
 
 	if err != nil {
 		return res, err
@@ -83,7 +147,7 @@ func (uc TransactionUseCase) BrowseByCustomer(customerID string) (res []viewmode
 					Amount:      Transactions[i].Amount.Int32,
 					Type:        Transactions[i].Type,
 				})
-				fmt.Println(transactionDetails)
+
 			} else {
 				transactionDetails = append(transactionDetails, viewmodel.Detail{
 					Description: Transactions[i].Description.String,

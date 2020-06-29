@@ -19,7 +19,10 @@ func NewTransactionModel(DB *sql.DB) contracts.ITransactionRepository {
 }
 
 func (repository TransactionRepository) BrowseByShop(shopID string) (data []models.Transactions, err error) {
-	statement := `select t.id, uc.full_name, t.amount, t.reference_id, t.shop_id, t.description, t.image, t.transaction_date, t.type, t.created_at, t.updated_at, t.deleted_at from "transactions" t  join "user_customers" uc on t."reference_id" = uc."id" where t."shop_id"=$1 and t."deleted_at" is null`
+	statement := `select t."id", uc."full_name", t."amount", t."reference_id", t."shop_id", t."description", t."image", t."transaction_date", t."type", t."created_at", t."updated_at", t."deleted_at" 
+	from "transactions" t  join "user_customers" uc 
+	on t."reference_id" = uc."id" 
+	where t."shop_id" = $1 and t."deleted_at" is null order by t."transaction_date" desc `
 
 	rows, err := repository.DB.Query(statement, shopID)
 	if err != nil {
@@ -43,6 +46,10 @@ func (repository TransactionRepository) BrowseByShop(shopID string) (data []mode
 			&dataTemp.UpdatedAt,
 			&dataTemp.DeletedAt,
 		)
+		if err != nil {
+			return data, err
+		}
+		data = append(data, dataTemp)
 	}
 	return data, err
 }
@@ -125,7 +132,9 @@ func (repository TransactionRepository) Edit(body viewmodel.TransactionVm) (res 
 }
 
 func (repository TransactionRepository) Add(body viewmodel.TransactionVm, tx *sql.Tx) (res string, err error) {
-	statement := `insert into "transactions" ("reference_id", "shop_id", "amount","description","type","transaction_date","created_at","updated_at") values($1,$2,$3,$4,$5,$6,$7,$8) returning "id"`
+	statement := `insert into "transactions" ("reference_id", "shop_id", "amount","description","type","transaction_date","created_at","updated_at") 
+	values($1,$2,$3,$4,$5,to_date($6, 'YYYY-MM-DD'),$7,$8) returning "id"`
+
 	if tx != nil {
 		_, err = tx.Exec(
 			statement,
@@ -134,7 +143,7 @@ func (repository TransactionRepository) Add(body viewmodel.TransactionVm, tx *sq
 			body.Amount,
 			str.EmptyString(body.Description),
 			str.EmptyString(body.Type),
-			datetime.StrParseToTime(body.TransactionDate, time.RFC3339),
+			body.TransactionDate,
 			datetime.StrParseToTime(body.CreatedAt, time.RFC3339),
 			datetime.StrParseToTime(body.UpdatedAt, time.RFC3339),
 		)
@@ -146,7 +155,7 @@ func (repository TransactionRepository) Add(body viewmodel.TransactionVm, tx *sq
 			body.Amount,
 			str.EmptyString(body.Description),
 			str.EmptyString(body.Type),
-			datetime.StrParseToTime(body.TransactionDate, time.RFC3339),
+			body.TransactionDate,
 			datetime.StrParseToTime(body.CreatedAt, time.RFC3339),
 			datetime.StrParseToTime(body.UpdatedAt, time.RFC3339),
 		).Scan(&res)
@@ -188,8 +197,8 @@ func (repository TransactionRepository) CountByPk(ID string) (res int, err error
 	return res, err
 }
 
-func (repository TransactionRepository) CountDistinct(ID string) (res int, err error) {
-	statement := `select count(distinct (reference_id)) from "transactions" where reference_id =$1 and "deleted_at" is null`
+func (repository TransactionRepository) CountDistinctBy(column, ID string) (res int, err error) {
+	statement := `select count(distinct (reference_id)) from "transactions" where ` + column + `=$1 and "deleted_at" is null`
 	err = repository.DB.QueryRow(statement, ID).Scan(&res)
 	if err != nil {
 		return res, err

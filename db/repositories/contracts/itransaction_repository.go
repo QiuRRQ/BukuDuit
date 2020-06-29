@@ -24,5 +24,5 @@ type ITransactionRepository interface {
 	CountByPk(ID string) (res int, err error)
 
 	CountBy(column, value string) (res int, err error)
-	CountDistinct(ID string) (res int, err error)
+	CountDistinctBy(column, ID string) (res int, err error)
 }

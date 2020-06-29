@@ -22,6 +22,15 @@ func (handler TransactionHandler) BrowseByCustomer(ctx echo.Context) error {
 	return handler.SendResponse(ctx, res, nil, err)
 }
 
+func (handler TransactionHandler) BrowseByShop(ctx echo.Context) error {
+	shopID := ctx.QueryParam("shopid")
+
+	uc := usecase.TransactionUseCase{UcContract: handler.UseCaseContract}
+
+	res, err := uc.BrowseByShop(shopID)
+
+	return handler.SendResponse(ctx, res, nil, err)
+}
 func (handler TransactionHandler) BrowseUser(ctx echo.Context) error {
 	ID := ctx.QueryParam("userID")
 	uc := usecase.TransactionUseCase{UcContract: handler.UseCaseContract}
