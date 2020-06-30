@@ -5,9 +5,10 @@ import (
 	"bukuduit-go/usecase/viewmodel"
 	"errors"
 	"fmt"
-	uuid "github.com/satori/go.uuid"
 	"os"
 	"time"
+
+	uuid "github.com/satori/go.uuid"
 )
 
 type AuthenticationUseCase struct {
@@ -88,31 +89,31 @@ func (uc AuthenticationUseCase) Register(mobilePhone, pin, shopName string) (err
 	return nil
 }
 
-func (uc AuthenticationUseCase) Login(mobilePhone, PIN string) (res viewmodel.UserJwtTokenVm, err error){
-	userUc := UserUseCase{UcContract:uc.UcContract}
+func (uc AuthenticationUseCase) Login(mobilePhone, PIN string) (res viewmodel.UserJwtTokenVm, err error) {
+	userUc := UserUseCase{UcContract: uc.UcContract}
 	isExist, err := userUc.IsMobilePhoneExist(mobilePhone)
 	if err != nil {
-		return res,err
+		return res, err
 	}
 	if !isExist {
-		return res,errors.New(messages.PhoneNotFound)
+		return res, errors.New(messages.PhoneNotFound)
 	}
 
-	user, err := userUc.ReadBy("mobile_phone",mobilePhone)
+	user, err := userUc.ReadBy("mobile_phone", mobilePhone)
 	fmt.Println(mobilePhone)
 	if err != nil {
 		fmt.Println(mobilePhone)
-		return res,errors.New(messages.CredentialDoNotMatch)
+		return res, errors.New(messages.CredentialDoNotMatch)
 	}
 
-	isPINMatch,err := userUc.IsPINMatch(mobilePhone,PIN)
+	isPINMatch, err := userUc.IsPINMatch(mobilePhone, PIN)
 	if err != nil {
 		fmt.Println("error pin match")
-		return res,errors.New(messages.CredentialDoNotMatch)
+		return res, errors.New(messages.CredentialDoNotMatch)
 	}
 	if !isPINMatch {
 		fmt.Println("error pin tidak sama")
-		return res,errors.New(messages.CredentialDoNotMatch)
+		return res, errors.New(messages.CredentialDoNotMatch)
 	}
 
 	jwePayload, _ := uc.Jwe.GenerateJwePayload(user.ID)
@@ -124,6 +125,7 @@ func (uc AuthenticationUseCase) Login(mobilePhone, PIN string) (res viewmodel.Us
 		ExpTime:         tokenExpiredAt,
 		RefreshToken:    refreshToken,
 		ExpRefreshToken: refreshTokenExpiredAt,
+		UserID:          user.ID,
 	}
 
 	return res, err

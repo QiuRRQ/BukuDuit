@@ -13,6 +13,15 @@ type TransactionHandler struct {
 	Handler
 }
 
+func (handler TransactionHandler) TransactionList(ctx echo.Context) error {
+	shopID := ctx.QueryParam("shopid")
+
+	uc := usecase.TransactionUseCase{UcContract: handler.UseCaseContract}
+
+	res, err := uc.TransactionList(shopID)
+
+	return handler.SendResponse(ctx, res, nil, err)
+}
 func (handler TransactionHandler) BrowseByCustomer(ctx echo.Context) error {
 	customerId := ctx.QueryParam("customerId")
 
@@ -90,6 +99,7 @@ func (handler TransactionHandler) DebtPayment(ctx echo.Context) error {
 	return handler.SendResponse(ctx, nil, nil, err)
 }
 
+//untuk add transaksi
 func (handler TransactionHandler) AddTransaction(ctx echo.Context) error {
 	input := new(request.TransactionRequest) //id using users ID not UserCustomerID
 
@@ -102,7 +112,7 @@ func (handler TransactionHandler) AddTransaction(ctx echo.Context) error {
 	}
 
 	uc := usecase.TransactionUseCase{UcContract: handler.UseCaseContract}
-	err := uc.DebtPayment(*input)
+	err := uc.AddTransaksi(*input)
 
 	return handler.SendResponse(ctx, nil, nil, err)
 }

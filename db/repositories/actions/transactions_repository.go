@@ -18,11 +18,12 @@ func NewTransactionModel(DB *sql.DB) contracts.ITransactionRepository {
 	return TransactionRepository{DB: DB}
 }
 
-func (repository TransactionRepository) BrowseByShop(shopID string) (data []models.Transactions, err error) {
+//ini untuk list transaksi
+func (repository TransactionRepository) TransactionBrowsByShop(shopID string) (data []models.Transactions, err error) {
 	statement := `select t."id", uc."full_name", t."amount", t."reference_id", t."shop_id", t."description", t."image", t."transaction_date", t."type", t."created_at", t."updated_at", t."deleted_at" 
 	from "transactions" t  join "user_customers" uc 
-	on t."reference_id" = uc."id" 
-	where t."shop_id" = $1 and t."deleted_at" is null order by t."transaction_date" desc `
+	on t."customer_id" = uc."id" 
+	where t."shop_id" = $1 and t."deleted_at" is null and t."customer_id" is not null order by t."transaction_date" desc `
 
 	rows, err := repository.DB.Query(statement, shopID)
 	if err != nil {
@@ -54,11 +55,49 @@ func (repository TransactionRepository) BrowseByShop(shopID string) (data []mode
 	return data, err
 }
 
+//ini untuk laporan utang
+func (repository TransactionRepository) BrowseByShop(shopID string) (data []models.Transactions, err error) {
+	statement := `select t."id", uc."full_name", t."amount", t."reference_id", t."shop_id", t."description", t."image", t."transaction_date", t."type", t."created_at", t."updated_at", t."deleted_at" 
+	from "transactions" t  join "user_customers" uc 
+	on t."reference_id" = uc."id" 
+	where t."shop_id" = $1 and t."deleted_at" is null and t."customer_id" is null order by t."transaction_date" desc `
+
+	rows, err := repository.DB.Query(statement, shopID)
+	if err != nil {
+		return data, err
+	}
+
+	for rows.Next() {
+		dataTemp := models.Transactions{}
+
+		err = rows.Scan(
+			&dataTemp.ID,
+			&dataTemp.Name,
+			&dataTemp.Amount,
+			&dataTemp.ReferenceID,
+			&dataTemp.IDShop,
+			&dataTemp.Description,
+			&dataTemp.Image,
+			&dataTemp.TransactionDate,
+			&dataTemp.Type,
+			&dataTemp.CreatedAt,
+			&dataTemp.UpdatedAt,
+			&dataTemp.DeletedAt,
+		)
+		if err != nil {
+			return data, err
+		}
+		data = append(data, dataTemp)
+	}
+	return data, err
+}
+
+//ini untuk detail utang
 func (repository TransactionRepository) BrowseByCustomer(customerID string) (data []models.Transactions, err error) {
 	statement := `select t."id", uc."full_name", t."amount", t."reference_id", t."shop_id", t."description", t."image", t."transaction_date", t."type", t."created_at", t."updated_at", t."deleted_at" 
 	from "transactions" t  join "user_customers" uc 
 	on t."reference_id" = uc."id" 
-	where t."reference_id" = $1 and t."deleted_at" is null order by t."transaction_date" desc `
+	where t."reference_id" = $1 and t."deleted_at" is null and t."customer_id" is null order by t."transaction_date" desc `
 	rows, err := repository.DB.Query(statement, customerID)
 	if err != nil {
 		return data, err
@@ -200,7 +239,7 @@ func (repository TransactionRepository) CountByPk(ID string) (res int, err error
 }
 
 func (repository TransactionRepository) CountDistinctBy(column, ID string) (res int, err error) {
-	statement := `select count(distinct (reference_id)) from "transactions" where ` + column + `=$1 and "deleted_at" is null`
+	statement := `select count(distinct (` + column + `)) from "transactions" where ` + column + `=$1 and "deleted_at" is null`
 	err = repository.DB.QueryRow(statement, ID).Scan(&res)
 	if err != nil {
 		return res, err

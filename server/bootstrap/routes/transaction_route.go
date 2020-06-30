@@ -17,7 +17,7 @@ func (route TransactionRoute) RegisterRoute() {
 	jwtMiddleware := middleware.JwtVerify{UcContract: route.Handler.UseCaseContract}
 
 	route.RouteGroup.Use(jwtMiddleware.JWTWithConfig)
-	route.RouteGroup.GET("/list/:userID", handler.BrowseUser) // list transaksi done
+	route.RouteGroup.GET("/list", handler.TransactionList) // list transaksi done
 	route.RouteGroup.DELETE("/:id", handler.Delete)
 	route.RouteGroup.POST("/transaction", handler.AddTransaction) //done
 	route.RouteGroup.GET("/details/:id", handler.Read)            //done ini jadi satu utang dan transaksi
