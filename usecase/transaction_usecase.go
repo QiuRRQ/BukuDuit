@@ -17,7 +17,7 @@ type TransactionUseCase struct {
 }
 
 //list transaksi
-func (uc TransactionUseCase) TransactionList(shopID string) (res []viewmodel.TransactionListVm, err error) {
+func (uc TransactionUseCase) TransactionList(shopID string) (res viewmodel.TransactionListVm, err error) {
 	model := actions.NewTransactionModel(uc.DB)
 	Transactions, err := model.TransactionBrowsByShop(shopID)
 	resultCount, err := model.CountDistinctBy("shop_id", shopID)
@@ -110,7 +110,7 @@ func (uc TransactionUseCase) TransactionList(shopID string) (res []viewmodel.Tra
 	}
 
 	for i := 0; i < resultCount; i++ {
-		res = append(res, viewmodel.TransactionListVm{
+		res = viewmodel.TransactionListVm{
 			ID:          Transactions[i].ID,
 			ReferenceID: Transactions[i].ReferenceID,
 			TotalCredit: creditTotal,
@@ -119,14 +119,14 @@ func (uc TransactionUseCase) TransactionList(shopID string) (res []viewmodel.Tra
 			CreatedAt:   Transactions[i].CreatedAt,
 			UpdatedAt:   Transactions[i].UpdatedAt.String,
 			DeletedAt:   Transactions[i].DeletedAt.String,
-		})
+		}
 	}
 
 	return res, err
 }
 
 //laporan hutang
-func (uc TransactionUseCase) BrowseByShop(shopID string) (res []viewmodel.ReportHutangVm, err error) {
+func (uc TransactionUseCase) BrowseByShop(shopID string) (res viewmodel.ReportHutangVm, err error) {
 	model := actions.NewTransactionModel(uc.DB)
 	Transactions, err := model.BrowseByShop(shopID)
 	resultCount, err := model.CountDistinctBy("shop_id", shopID)
@@ -200,28 +200,24 @@ func (uc TransactionUseCase) BrowseByShop(shopID string) (res []viewmodel.Report
 
 	}
 
-	for i := 0; i < resultCount; i++ {
-		res = append(res, viewmodel.ReportHutangVm{
-			ID:          Transactions[i].ID,
-			ReferenceID: Transactions[i].ReferenceID,
-			TotalCredit: creditTotal,
-			TotalDebit:  debtTotal,
-			ListData:    debtDate,
-			CreatedAt:   Transactions[i].CreatedAt,
-			UpdatedAt:   Transactions[i].UpdatedAt.String,
-			DeletedAt:   Transactions[i].DeletedAt.String,
-		})
+	res = viewmodel.ReportHutangVm{
+		ID:          Transactions[0].ID,
+		ReferenceID: Transactions[0].ReferenceID,
+		TotalCredit: creditTotal,
+		TotalDebit:  debtTotal,
+		ListData:    debtDate,
+		CreatedAt:   Transactions[0].CreatedAt,
+		UpdatedAt:   Transactions[0].UpdatedAt.String,
+		DeletedAt:   Transactions[0].DeletedAt.String,
 	}
 
 	return res, err
 
 }
 
-func (uc TransactionUseCase) BrowseByCustomer(customerID string) (res []viewmodel.DetailsHutangVm, err error) {
+func (uc TransactionUseCase) BrowseByCustomer(customerID string) (res viewmodel.DetailsHutangVm, err error) {
 	model := actions.NewTransactionModel(uc.DB)
 	Transactions, err := model.BrowseByCustomer(customerID) //only use it for details
-
-	resultCount, err := model.CountDistinctBy("reference_id", customerID)
 
 	if err != nil {
 		return res, err
@@ -289,18 +285,16 @@ func (uc TransactionUseCase) BrowseByCustomer(customerID string) (res []viewmode
 
 	}
 
-	for i := 0; i < resultCount; i++ {
-		res = append(res, viewmodel.DetailsHutangVm{
-			ID:          Transactions[i].ID,
-			ReferenceID: Transactions[i].ReferenceID,
-			Name:        Transactions[i].Name,
-			TotalCredit: creditTotal,
-			TotalDebit:  debtTotal,
-			ListData:    transactionDate,
-			CreatedAt:   Transactions[i].CreatedAt,
-			UpdatedAt:   Transactions[i].UpdatedAt.String,
-			DeletedAt:   Transactions[i].DeletedAt.String,
-		})
+	res = viewmodel.DetailsHutangVm{
+		ID:          Transactions[0].ID,
+		ReferenceID: Transactions[0].ReferenceID,
+		Name:        Transactions[0].Name,
+		TotalCredit: creditTotal,
+		TotalDebit:  debtTotal,
+		ListData:    transactionDate,
+		CreatedAt:   Transactions[0].CreatedAt,
+		UpdatedAt:   Transactions[0].UpdatedAt.String,
+		DeletedAt:   Transactions[0].DeletedAt.String,
 	}
 
 	return res, err
