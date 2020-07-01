@@ -1,7 +1,6 @@
 package handlers
 
 import (
-	"bukuduit-go/helpers/jwt"
 	request "bukuduit-go/server/requests"
 	"bukuduit-go/usecase"
 	"net/http"
@@ -15,9 +14,9 @@ type PaymentAccountHandler struct {
 }
 
 func (handler PaymentAccountHandler) BrowseByShop(ctx echo.Context) error {
-	claim := ctx.Get("user").(*jwt.CustomClaims)
-	uc := usecase.BusinessCardUseCase{UcContract: handler.UseCaseContract}
-	res, err := uc.BrowseByUser(claim.Id)
+	input := ctx.QueryParam("shopid")
+	uc := usecase.PaymentAccountUseCase{UcContract: handler.UseCaseContract}
+	res, err := uc.BrowseByShop(input)
 
 	return handler.SendResponse(ctx, res, nil, err)
 }
@@ -25,7 +24,7 @@ func (handler PaymentAccountHandler) BrowseByShop(ctx echo.Context) error {
 func (handler PaymentAccountHandler) Read(ctx echo.Context) error {
 	ID := ctx.Param("id")
 	status := ctx.QueryParam("lunas")
-	uc := usecase.BusinessCardUseCase{UcContract: handler.UseCaseContract}
+	uc := usecase.PaymentAccountUseCase{UcContract: handler.UseCaseContract}
 	res, err := uc.Read(ID, status)
 
 	return handler.SendResponse(ctx, res, nil, err)
@@ -33,7 +32,7 @@ func (handler PaymentAccountHandler) Read(ctx echo.Context) error {
 
 func (handler PaymentAccountHandler) Edit(ctx echo.Context) error {
 	ID := ctx.Param("id")
-	input := new(request.BusinessCardRequest)
+	input := new(request.PaymentAccountRequest)
 
 	if err := ctx.Bind(input); err != nil {
 		return handler.SendResponseBadRequest(ctx, http.StatusBadRequest, err.Error())
@@ -43,15 +42,14 @@ func (handler PaymentAccountHandler) Edit(ctx echo.Context) error {
 		return handler.SendResponseErrorValidation(ctx, err.(validator.ValidationErrors))
 	}
 
-	uc := usecase.BusinessCardUseCase{UcContract: handler.UseCaseContract}
+	uc := usecase.PaymentAccountUseCase{UcContract: handler.UseCaseContract}
 	err := uc.Edit(input, ID)
 
 	return handler.SendResponse(ctx, nil, nil, err)
 }
 
 func (handler PaymentAccountHandler) Add(ctx echo.Context) error {
-	input := new(request.BusinessCardRequest)
-	claim := ctx.Get("user").(*jwt.CustomClaims)
+	input := new(request.PaymentAccountRequest)
 
 	if err := ctx.Bind(input); err != nil {
 		return handler.SendResponseBadRequest(ctx, http.StatusBadRequest, err.Error())
@@ -61,15 +59,15 @@ func (handler PaymentAccountHandler) Add(ctx echo.Context) error {
 		return handler.SendResponseErrorValidation(ctx, err.(validator.ValidationErrors))
 	}
 
-	uc := usecase.BusinessCardUseCase{UcContract: handler.UseCaseContract}
-	err := uc.Add(input, claim.Id)
+	uc := usecase.PaymentAccountUseCase{UcContract: handler.UseCaseContract}
+	err := uc.Add(input)
 
 	return handler.SendResponse(ctx, nil, nil, err)
 }
 
 func (handler PaymentAccountHandler) Delete(ctx echo.Context) error {
 	ID := ctx.Param("id")
-	uc := usecase.BusinessCardUseCase{UcContract: handler.UseCaseContract}
+	uc := usecase.PaymentAccountUseCase{UcContract: handler.UseCaseContract}
 	err := uc.Delete(ID)
 
 	return handler.SendResponse(ctx, nil, nil, err)

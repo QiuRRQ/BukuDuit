@@ -18,4 +18,6 @@ func (route UserRoute) RegisterRoute() {
 
 	route.RouteGroup.Use(jwtMiddleware.JWTWithConfig)
 	route.RouteGroup.GET("/:id", handler.ReadAccountDetail)
+	route.RouteGroup.POST("/:id", handler.Edit)
+	route.RouteGroup.POST("/forgot", handler.ForgotPin)
 }

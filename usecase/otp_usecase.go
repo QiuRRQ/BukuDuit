@@ -15,19 +15,19 @@ type OtpUseCase struct {
 
 // RequestOtp ...
 
-func (uc OtpUseCase) RequestOtp(mobilePhoneNumber,action string) (res viewmodel.OtpVm, err error) {
+func (uc OtpUseCase) RequestOtp(mobilePhoneNumber, action string) (res viewmodel.OtpVm, err error) {
 	if action == "register" {
-		userUc := UserUseCase{UcContract:uc.UcContract}
-		isExist,err := userUc.IsMobilePhoneExist(mobilePhoneNumber)
+		userUc := UserUseCase{UcContract: uc.UcContract}
+		isExist, err := userUc.IsMobilePhoneExist(mobilePhoneNumber)
 		if err != nil {
-			return res,err
+			return res, err
 		}
 		if isExist {
 			return res, errors.New(messages.PhoneAlreadyExist)
 		}
 	}
 
-	err = uc.GetFromRedis("otp"+mobilePhoneNumber,&res)
+	err = uc.GetFromRedis("otp"+mobilePhoneNumber, &res)
 	if err == nil {
 		uc.RemoveFromRedis("otp" + mobilePhoneNumber)
 	}
@@ -49,13 +49,13 @@ func (uc OtpUseCase) RequestOtp(mobilePhoneNumber,action string) (res viewmodel.
 	queueBody := map[string]interface{}{
 		"qid":     xRequestID,
 		"phone":   mobilePhoneNumber,
-		"message": res.Otp,
+		"message": `Hai sobat! OTP untuk BukuDuit.com anda adalah ` + res.Otp,
 		"type":    "sms",
 		"id":      requestID,
 	}
 	err = uc.PushToQueue(queueBody, queue.Otp, queue.OtpDeadLetter)
 	if err != nil {
-		return res,err
+		return res, err
 	}
 
 	return res, err

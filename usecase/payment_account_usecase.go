@@ -24,8 +24,8 @@ func (uc PaymentAccountUseCase) BrowseByShop(shopID string) (res []viewmodel.Pay
 	for _, paymentAccount := range paymentAccounts {
 		res = append(res, viewmodel.PaymentAccountVm{
 			ID:            paymentAccount.ID,
-			ShopID:        paymentAccount.ShopID,
 			Name:          paymentAccount.Name,
+			ShopID:        paymentAccount.ShopID,
 			PaymentNumber: paymentAccount.PaymentNumber,
 			CreatedAt:     paymentAccount.CreatedAt,
 			UpdatedAt:     paymentAccount.UpdatedAt.String,
@@ -81,7 +81,7 @@ func (uc PaymentAccountUseCase) Edit(input *request.PaymentAccountRequest, ID st
 	return nil
 }
 
-func (uc PaymentAccountUseCase) Add(input *request.PaymentAccountRequest, userID string) (err error) {
+func (uc PaymentAccountUseCase) Add(input *request.PaymentAccountRequest) (err error) {
 	model := actions.NewPaymentAccountModel(uc.DB)
 	now := time.Now().UTC()
 
@@ -94,6 +94,9 @@ func (uc PaymentAccountUseCase) Add(input *request.PaymentAccountRequest, userID
 	}
 	_, err = model.Add(Body)
 
+	if err != nil {
+		return err
+	}
 	return nil
 }
 

@@ -30,8 +30,8 @@ func (repository PaymentAccountRepository) BrowseByShop(shopID string) (data []m
 
 		err = rows.Scan(
 			&dataTemp.ID,
-			&dataTemp.Name,
 			&dataTemp.ShopID,
+			&dataTemp.Name,
 			&dataTemp.PaymentNumber,
 			&dataTemp.CreatedAt,
 			&dataTemp.UpdatedAt,
@@ -81,7 +81,7 @@ func (repository PaymentAccountRepository) Edit(body viewmodel.PaymentAccountVm)
 }
 
 func (repository PaymentAccountRepository) Add(body viewmodel.PaymentAccountVm) (res string, err error) {
-	statement := `insert into "payment_accounts" ("shopi_id","name","payment_number","created_at","updated_at") values($1,$2,$3,$4,$5) returning "id"`
+	statement := `insert into "payment_accounts" ("shop_id","name","payment_number","created_at","updated_at") values($1,$2,$3,$4,$5) returning "id"`
 	err = repository.DB.QueryRow(
 		statement,
 		body.ShopID,

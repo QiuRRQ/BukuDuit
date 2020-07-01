@@ -44,7 +44,7 @@ func (repository UserRepository) Browse(search, order, sort string, limit, offse
 
 func (repository UserRepository) ReadByPk(ID string) (data models.Users, err error) {
 	statement := `select * from "users" where "id"=$1 and "deleted_at" is null`
-	err = repository.DB.QueryRow(statement, ID).Scan(&data.ID, &data.MobilePhone, &data.Pin, &data.CreatedAt, &data.UpdatedAt, &data.DeletedAt)
+	err = repository.DB.QueryRow(statement, ID).Scan(&data.ID, &data.MobilePhone, &data.Pin, &data.Name, &data.CreatedAt, &data.UpdatedAt, &data.DeletedAt)
 	if err != nil {
 		return data, err
 	}
@@ -63,13 +63,23 @@ func (repository UserRepository) ReadBy(column, value string) (data models.Users
 }
 
 func (repository UserRepository) Edit(input viewmodel.UserVm) (res string, err error) {
-	panic("implement me")
+	statement := `update "users" set "full_name"=$1, "updated_at"=$2 where "id"=$3 returning "id"`
+
+	if input.Name != "" {
+		err = repository.DB.QueryRow(statement, input.Name, datetime.StrParseToTime(input.UpdatedAt, time.RFC3339), input.ID).Scan(&res)
+		if err != nil {
+			return res, err
+		}
+	}
+
+	return res, err
 }
 
 func (repository UserRepository) EditPin(ID, pin, updatedAt string) (res string, err error) {
-	statement := `update "users" set "pin"=$1, "updated_at"=$2 where "id"=$1 returning "id"`
+	statement := `update "users" set "pin"=$1, "updated_at"=$2 where "id"=$3 returning "id"`
 	err = repository.DB.QueryRow(statement, pin, datetime.StrParseToTime(updatedAt, time.RFC3339), ID).Scan(&res)
 	if err != nil {
+
 		return res, err
 	}
 
