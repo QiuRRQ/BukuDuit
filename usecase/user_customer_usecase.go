@@ -7,7 +7,6 @@ import (
 	"bukuduit-go/usecase/viewmodel"
 	"database/sql"
 	"errors"
-	"fmt"
 	"time"
 )
 
@@ -19,7 +18,6 @@ func (uc UserCustomerUseCase) BrowseByShop(shopId string) (res []viewmodel.UserC
 	model := actions.NewUserCustomerModel(uc.DB)
 	userCustomers, err := model.BrowseByBusiness(shopId)
 	if err != nil {
-		fmt.Println(2)
 		return res, err
 	}
 
@@ -28,7 +26,6 @@ func (uc UserCustomerUseCase) BrowseByShop(shopId string) (res []viewmodel.UserC
 			ID:          userCustomer.ID,
 			FullName:    userCustomer.FullName,
 			MobilePhone: userCustomer.MobilePhone,
-			Debt:        userCustomer.Debt.Int32,
 			CreatedAt:   userCustomer.CreatedAt,
 			UpdatedAt:   userCustomer.UpdatedAt.String,
 			DeletedAt:   userCustomer.DeletedAt.String,
@@ -49,7 +46,6 @@ func (uc UserCustomerUseCase) Read(ID string) (res viewmodel.UserCustomerVm, err
 		ID:          userCustomer.ID,
 		FullName:    userCustomer.FullName,
 		MobilePhone: userCustomer.MobilePhone,
-		Debt:        userCustomer.Debt.Int32,
 		CreatedAt:   userCustomer.CreatedAt,
 		UpdatedAt:   userCustomer.UpdatedAt.String,
 		DeletedAt:   userCustomer.DeletedAt.String,
@@ -78,13 +74,17 @@ func (uc UserCustomerUseCase) Add(input *request.UserCustomerRequest) (res strin
 		return res, err
 	}
 	if isExist {
-		return res, errors.New(messages.PhoneAlreadyExist)
+		cutomer, err := model.ReadByPhone(input.MobilePhone)
+		if err != nil {
+			return res, err
+		}
+
+		return cutomer.ID, errors.New(messages.PhoneAlreadyExist)
 	}
 
 	body := viewmodel.UserCustomerVm{
 		FullName:    input.FullName,
 		MobilePhone: input.MobilePhone,
-		Debt:        0,
 		CreatedAt:   now.Format(time.RFC3339),
 		UpdatedAt:   now.Format(time.RFC3339),
 	}

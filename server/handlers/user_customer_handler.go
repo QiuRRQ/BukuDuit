@@ -3,9 +3,10 @@ package handlers
 import (
 	request "bukuduit-go/server/requests"
 	"bukuduit-go/usecase"
+	"net/http"
+
 	"github.com/go-playground/validator/v10"
 	"github.com/labstack/echo"
-	"net/http"
 )
 
 type UserCustomerHandler struct {
@@ -42,7 +43,11 @@ func (handler UserCustomerHandler) Add(ctx echo.Context) error {
 	}
 
 	uc := usecase.UserCustomerUseCase{UcContract: handler.UseCaseContract}
-	res,err := uc.Add(input)
+	res, err := uc.Add(input)
+
+	if res != "" {
+		return handler.SendResponse(ctx, res, nil, nil)
+	}
 
 	return handler.SendResponse(ctx, res, nil, err)
 }

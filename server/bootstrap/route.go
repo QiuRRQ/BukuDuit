@@ -65,4 +65,10 @@ func (boot *Bootstrap) RegisterRouters() {
 	}
 	transactionRouteRegistrar.RegisterRoute()
 
+	userRoute := apiRoute.Group("/user")
+	userRouteRegister := routes.UserRoute{
+		RouteGroup: userRoute,
+		Handler:    handlerType,
+	}
+	userRouteRegister.RegisterRoute()
 }

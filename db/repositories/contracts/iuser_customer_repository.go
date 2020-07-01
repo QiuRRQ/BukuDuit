@@ -19,5 +19,7 @@ type IUserCustomerRepository interface {
 
 	CountByPk(ID string) (res int, err error)
 
-	CountBy(column,value string) (res int,err error)
+	CountBy(column, value string) (res int, err error)
+
+	ReadByPhone(phone string) (data models.UserCustomers, err error)
 }

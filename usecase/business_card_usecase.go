@@ -82,7 +82,6 @@ func (uc BusinessCardUseCase) Read(ID, lunas string) (res viewmodel.BusinessCard
 
 	businessCard, err := model.Read(ID)
 	if err != nil {
-		fmt.Println(3)
 		return res, err
 	}
 
