@@ -45,13 +45,14 @@ func (uc BusinessCardUseCase) BrowseByUser(userID string) (res []viewmodel.Busin
 func (uc BusinessCardUseCase) Read(ID, lunas string) (res viewmodel.BusinessCardVm, err error) { //lunas = 1
 	model := actions.NewBusinessCardModel(uc.DB)
 	userCustomerUC := UserCustomerUseCase{UcContract: uc.UcContract}
-	transactionUC := TransactionUseCase{UcContract: uc.UcContract}
 	var debtTotal int
 	var creditTotal int
 
-	_, _ = transactionUC.BrowseByShop(ID)
-
 	tempDataUserCustomer, err := userCustomerUC.BrowseByShop(ID)
+
+	if err != nil {
+		return res, err
+	}
 
 	var elems int
 	var dataUserCustomer = make([]viewmodel.UserCustomerVm, elems)
@@ -78,12 +79,6 @@ func (uc BusinessCardUseCase) Read(ID, lunas string) (res viewmodel.BusinessCard
 			debtTotal = debtTotal + (int(k.Debt) * -1)
 		}
 	}
-
-	// for _, v := range dataTransaction {
-	// 	if v.Type == enums.Debet {
-	// 		debtTotal = debtTotal + int(v.Amount)
-	// 	}
-	// }
 
 	businessCard, err := model.Read(ID)
 	if err != nil {

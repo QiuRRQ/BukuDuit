@@ -1,7 +1,6 @@
 package viewmodel
 
 type DetailsHutangVm struct {
-	ID          string     `json:"id"`
 	ReferenceID string     `json:"reference_id"`
 	Name        string     `json:"full_name"`
 	ShopID      string     `json:"shop_id"`
@@ -19,6 +18,7 @@ type DebtList struct {
 }
 
 type Detail struct {
+	ID          string `json:"id"`
 	Description string `json:"description"`
 	Amount      int32  `json:"amount"`
 	Type        string `json:"type"`

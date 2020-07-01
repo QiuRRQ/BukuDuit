@@ -249,6 +249,7 @@ func (uc TransactionUseCase) BrowseByCustomer(customerID string) (res viewmodel.
 			}
 			if tempDate == nextDate {
 				transactionDetails = append(transactionDetails, viewmodel.Detail{
+					ID:          Transactions[i].ID,
 					Description: Transactions[i].Description.String,
 					Amount:      Transactions[i].Amount.Int32,
 					Type:        Transactions[i].Type,
@@ -256,6 +257,7 @@ func (uc TransactionUseCase) BrowseByCustomer(customerID string) (res viewmodel.
 
 			} else {
 				transactionDetails = append(transactionDetails, viewmodel.Detail{
+					ID:          Transactions[i].ID,
 					Description: Transactions[i].Description.String,
 					Amount:      Transactions[i].Amount.Int32,
 					Type:        Transactions[i].Type,
@@ -270,6 +272,7 @@ func (uc TransactionUseCase) BrowseByCustomer(customerID string) (res viewmodel.
 			}
 		} else {
 			transactionDetails = append(transactionDetails, viewmodel.Detail{
+				ID:          Transactions[i].ID,
 				Description: Transactions[i].Description.String,
 				Amount:      Transactions[i].Amount.Int32,
 				Type:        Transactions[i].Type,
@@ -286,7 +289,6 @@ func (uc TransactionUseCase) BrowseByCustomer(customerID string) (res viewmodel.
 	}
 
 	res = viewmodel.DetailsHutangVm{
-		ID:          Transactions[0].ID,
 		ReferenceID: Transactions[0].ReferenceID,
 		Name:        Transactions[0].Name,
 		TotalCredit: creditTotal,
@@ -452,13 +454,16 @@ func (uc TransactionUseCase) DebtPayment(input request.TransactionRequest) (err 
 	if err != nil {
 		return err
 	}
+	//if ID transaksi exist ganti edit
 	_, err = model.Add(TransactionBody, transaction)
 	if err != nil {
-		fmt.Println(1)
+
 		transaction.Rollback()
 		return err
 	}
 
+	//if tipe credit; input.amount < current.debt maka current.debt - (current.debt - input.amount); input.amount > current.debt maka current.debt + (input.amount - current.debt)
+	//if tipe debet;
 	err = userCustomerUc.EditDebt(input.ReferenceID, userDebtAmount, transaction)
 	if err != nil {
 		transaction.Rollback()
