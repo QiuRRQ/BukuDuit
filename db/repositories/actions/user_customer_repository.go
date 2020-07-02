@@ -26,7 +26,7 @@ func (repository UserCustomerRepository) BrowseByBusiness(businessID string) (da
 
 	for rows.Next() {
 		dataTemp := models.UserCustomers{}
-		err = rows.Scan(&dataTemp.ID, &dataTemp.FullName, &dataTemp.MobilePhone, &dataTemp.BusinessID, &dataTemp.Debt, &dataTemp.PaymentDate, &dataTemp.CreatedAt, &dataTemp.UpdatedAt, &dataTemp.DeletedAt)
+		err = rows.Scan(&dataTemp.ID, &dataTemp.FullName, &dataTemp.MobilePhone, &dataTemp.BusinessID, &dataTemp.PaymentDate, &dataTemp.CreatedAt, &dataTemp.UpdatedAt, &dataTemp.DeletedAt)
 		if err != nil {
 			return data, err
 		}
@@ -39,7 +39,17 @@ func (repository UserCustomerRepository) BrowseByBusiness(businessID string) (da
 
 func (repository UserCustomerRepository) Read(ID string) (data models.UserCustomers, err error) {
 	statement := `select * from "user_customers" where "id"=$1 and "deleted_at" is null`
-	err = repository.DB.QueryRow(statement, ID).Scan(&data.ID, &data.FullName, &data.MobilePhone, &data.BusinessID, &data.Debt, &data.PaymentDate, &data.CreatedAt, &data.UpdatedAt, &data.DeletedAt)
+	err = repository.DB.QueryRow(statement, ID).Scan(&data.ID, &data.FullName, &data.MobilePhone, &data.BusinessID, &data.PaymentDate, &data.CreatedAt, &data.UpdatedAt, &data.DeletedAt)
+	if err != nil {
+		return data, err
+	}
+
+	return data, err
+}
+
+func (repository UserCustomerRepository) ReadByPhone(phone string) (data models.UserCustomers, err error) {
+	statement := `select * from "user_customers" where "mobile_phone"=$1 and "deleted_at" is null`
+	err = repository.DB.QueryRow(statement, phone).Scan(&data.ID, &data.FullName, &data.MobilePhone, &data.BusinessID, &data.PaymentDate, &data.CreatedAt, &data.UpdatedAt, &data.DeletedAt)
 	if err != nil {
 		return data, err
 	}
@@ -61,8 +71,8 @@ func (repository UserCustomerRepository) EditDebt(ID, updatedAt string, debt int
 }
 
 func (repository UserCustomerRepository) Add(body viewmodel.UserCustomerVm, businessID string) (res string, err error) {
-	statement := `insert into "user_customers" ("full_name","mobile_phone","business_id","debt","created_at","updated_at") values($1,$2,$3,$4,$5,$6) returning "id"`
-	err = repository.DB.QueryRow(statement, body.FullName, body.MobilePhone, businessID, body.Debt, datetime.StrParseToTime(body.CreatedAt, time.RFC3339), datetime.StrParseToTime(body.DeletedAt, time.RFC3339)).Scan(&res)
+	statement := `insert into "user_customers" ("full_name","mobile_phone","business_id","created_at","updated_at") values($1,$2,$3,$4,$5) returning "id"`
+	err = repository.DB.QueryRow(statement, body.FullName, body.MobilePhone, businessID, datetime.StrParseToTime(body.CreatedAt, time.RFC3339), datetime.StrParseToTime(body.DeletedAt, time.RFC3339)).Scan(&res)
 	if err != nil {
 		return res, err
 	}
@@ -90,8 +100,8 @@ func (repository UserCustomerRepository) CountByPk(ID string) (res int, err erro
 	return res, nil
 }
 
-func (repository UserCustomerRepository) CountBy(column,value string) (res int, err error) {
-	statement := `select count("id") from "user_customers" where `+column+`=$1 and "deleted_at" is null`
+func (repository UserCustomerRepository) CountBy(column, value string) (res int, err error) {
+	statement := `select count("id") from "user_customers" where ` + column + `=$1 and "deleted_at" is null`
 	err = repository.DB.QueryRow(statement, value).Scan(&res)
 	if err != nil {
 		return res, err

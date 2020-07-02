@@ -7,7 +7,6 @@ type UserCustomers struct {
 	FullName    string         `db:"full_name"`
 	MobilePhone string         `db:"mobile_phone"`
 	BusinessID  string         `db:"business_id"`
-	Debt        sql.NullInt32  `db:"debt"`
 	PaymentDate sql.NullString `db:"payment_date"`
 	CreatedAt   string         `db:"created_at"`
 	UpdatedAt   sql.NullString `db:"updated_at"`

@@ -7,6 +7,7 @@ import (
 	"bukuduit-go/helpers/str"
 	"bukuduit-go/usecase/viewmodel"
 	"database/sql"
+	"fmt"
 	"time"
 )
 
@@ -35,7 +36,6 @@ func (repository TransactionRepository) TransactionBrowsByShop(shopID string) (d
 
 		err = rows.Scan(
 			&dataTemp.ID,
-			&dataTemp.Name,
 			&dataTemp.Amount,
 			&dataTemp.ReferenceID,
 			&dataTemp.IDShop,
@@ -134,14 +134,17 @@ func (repository TransactionRepository) Read(ID string) (data models.Transaction
 	err = repository.DB.QueryRow(statement, ID).Scan(
 		&data.ID,
 		&data.ReferenceID,
+		&data.CustomerID,
+		&data.Status,
 		&data.IDShop,
-		&data.Description,
+		&data.BooksDeptID,
+		&data.BooksTransID,
 		&data.Amount,
-		&data.CreatedAt,
-		&data.DeletedAt,
+		&data.Description,
 		&data.Image,
-		&data.TransactionDate,
 		&data.Type,
+		&data.TransactionDate,
+		&data.CreatedAt,
 		&data.UpdatedAt,
 		&data.DeletedAt,
 	)
@@ -152,9 +155,10 @@ func (repository TransactionRepository) Read(ID string) (data models.Transaction
 	return data, err
 }
 
-func (repository TransactionRepository) Edit(body viewmodel.TransactionVm) (res string, err error) {
+func (repository TransactionRepository) Edit(body viewmodel.TransactionVm, tx *sql.Tx) (res string, err error) {
+	fmt.Println(body.ID)
 	statement := `update "transactions" set "amount"=$1, "description"=$2, "image"=$3, "type"=$4, "transaction_date"=$5, "updated_at"=$6 where "id"=$7 returning "id"`
-	err = repository.DB.QueryRow(
+	err = tx.QueryRow(
 		statement,
 		body.Amount,
 		str.EmptyString(body.Description),
@@ -171,8 +175,8 @@ func (repository TransactionRepository) Edit(body viewmodel.TransactionVm) (res 
 }
 
 func (repository TransactionRepository) Add(body viewmodel.TransactionVm, tx *sql.Tx) (res string, err error) {
-	statement := `insert into "transactions" ("reference_id", "shop_id", "amount","description","type","transaction_date","created_at","updated_at","customer_id") 
-	values($1,$2,$3,$4,$5,to_date($6, 'YYYY-MM-DD'),$7,$8, $9) returning "id"`
+	statement := `insert into "transactions" ("reference_id", "shop_id", "amount","description","type","transaction_date","created_at","updated_at","customer_id", "books_debt_id", "books_transactions_id") 
+	values($1,$2,$3,$4,$5,to_date($6, 'YYYY-MM-DD'),$7,$8, $9, $10, $11) returning "id"`
 
 	if tx != nil {
 		_, err = tx.Exec(
@@ -182,10 +186,12 @@ func (repository TransactionRepository) Add(body viewmodel.TransactionVm, tx *sq
 			body.Amount,
 			str.EmptyString(body.Description),
 			str.EmptyString(body.Type),
-			body.TransactionDate,
+			datetime.StrParseToTime(body.TransactionDate, time.RFC3339),
 			datetime.StrParseToTime(body.CreatedAt, time.RFC3339),
 			datetime.StrParseToTime(body.UpdatedAt, time.RFC3339),
 			str.EmptyString(body.CustomerID),
+			str.EmptyString(body.BooksDebtID),
+			str.EmptyString(body.BooksTransID),
 		)
 	} else {
 		err = repository.DB.QueryRow(
@@ -195,10 +201,12 @@ func (repository TransactionRepository) Add(body viewmodel.TransactionVm, tx *sq
 			body.Amount,
 			str.EmptyString(body.Description),
 			str.EmptyString(body.Type),
-			body.TransactionDate,
+			datetime.StrParseToTime(body.TransactionDate, time.RFC3339),
 			datetime.StrParseToTime(body.CreatedAt, time.RFC3339),
 			datetime.StrParseToTime(body.UpdatedAt, time.RFC3339),
 			str.EmptyString(body.CustomerID),
+			str.EmptyString(body.BooksDebtID),
+			str.EmptyString(body.BooksTransID),
 		).Scan(&res)
 	}
 	if err != nil {
@@ -239,6 +247,8 @@ func (repository TransactionRepository) CountByPk(ID string) (res int, err error
 }
 
 func (repository TransactionRepository) CountDistinctBy(column, ID string) (res int, err error) {
+	fmt.Println(ID)
+	fmt.Println(column)
 	statement := `select count(distinct (` + column + `)) from "transactions" where ` + column + `=$1 and "deleted_at" is null`
 	err = repository.DB.QueryRow(statement, ID).Scan(&res)
 	if err != nil {

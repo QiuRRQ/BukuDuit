@@ -2,11 +2,11 @@ package models
 
 import "database/sql"
 
-type Users struct {
+type BooksTransaction struct {
 	ID          string         `db:"id"`
-	MobilePhone string         `db:"mobile_phone"`
-	Pin         string         `db:"pin"`
-	Name        sql.NullString `db:"full_name"`
+	ShopID      sql.NullString `db:"shop_id"`
+	DebtTotal   int            `db:"debt_total"`
+	CreditTotal int            `db:"credit_total"`
 	CreatedAt   string         `db:"created_at"`
 	UpdatedAt   sql.NullString `db:"updated_at"`
 	DeletedAt   sql.NullString `db:"deleted_at"`

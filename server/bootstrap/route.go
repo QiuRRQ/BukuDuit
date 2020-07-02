@@ -65,4 +65,17 @@ func (boot *Bootstrap) RegisterRouters() {
 	}
 	transactionRouteRegistrar.RegisterRoute()
 
+	userRoute := apiRoute.Group("/user")
+	userRouteRegister := routes.UserRoute{
+		RouteGroup: userRoute,
+		Handler:    handlerType,
+	}
+	userRouteRegister.RegisterRoute()
+
+	payAccRoute := apiRoute.Group("/payacc")
+	payAccRouteRegister := routes.PaymentAccountRoute{
+		RouteGroup: payAccRoute,
+		Handler:    handlerType,
+	}
+	payAccRouteRegister.RegisterRoute()
 }

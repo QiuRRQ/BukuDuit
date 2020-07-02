@@ -102,6 +102,7 @@ func (uc AuthenticationUseCase) Login(mobilePhone, PIN string) (res viewmodel.Us
 	user, err := userUc.ReadBy("mobile_phone", mobilePhone)
 	fmt.Println(mobilePhone)
 	if err != nil {
+		fmt.Println(err)
 		fmt.Println(mobilePhone)
 		return res, errors.New(messages.CredentialDoNotMatch)
 	}
