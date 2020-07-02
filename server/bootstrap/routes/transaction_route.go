@@ -19,9 +19,11 @@ func (route TransactionRoute) RegisterRoute() {
 	route.RouteGroup.Use(jwtMiddleware.JWTWithConfig)
 	route.RouteGroup.GET("/list", handler.TransactionList) // list transaksi done
 	route.RouteGroup.DELETE("/:id", handler.Delete)
-	route.RouteGroup.POST("/transaction", handler.AddTransaction) //done
-	route.RouteGroup.GET("/details/:id", handler.Read)            //done ini jadi satu utang dan transaksi
+	route.RouteGroup.POST("/transaction", handler.AddTransaction)     //done
+	route.RouteGroup.POST("/transactionedit", handler.AddTransaction) //change to edit
+	route.RouteGroup.GET("/details/:id", handler.Read)                //done ini jadi satu utang dan transaksi
 	route.RouteGroup.POST("/debt", handler.DebtPayment)
+	route.RouteGroup.POST("/debtedit", handler.Edit)        //edit hutang
 	route.RouteGroup.GET("/debt", handler.BrowseByCustomer) //list detail utang
 	route.RouteGroup.GET("/debtreport", handler.BrowseByShop)
 }

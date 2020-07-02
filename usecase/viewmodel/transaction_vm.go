@@ -10,6 +10,8 @@ type TransactionVm struct {
 	Description     string `json:"description"`
 	Image           string `json:"image"`
 	Type            string `json:"type"`
+	BooksDebtID     string `json:"books_debt_id"`
+	BooksTransID    string `json:"books_transaction_id"`
 	TransactionDate string `json:"transaction_date"`
 	CreatedAt       string `json:"created_at"`
 	UpdatedAt       string `json:"update_at"`

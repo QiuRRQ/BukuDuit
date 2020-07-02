@@ -109,12 +109,10 @@ func (uc AuthenticationUseCase) Login(mobilePhone, PIN string) (res viewmodel.Us
 
 	isPINMatch, err := userUc.IsPINMatch(mobilePhone, PIN)
 	if err != nil {
-		fmt.Println(2)
 		fmt.Println("error pin match")
 		return res, errors.New(messages.CredentialDoNotMatch)
 	}
 	if !isPINMatch {
-		fmt.Println(3)
 		fmt.Println("error pin tidak sama")
 		return res, errors.New(messages.CredentialDoNotMatch)
 	}

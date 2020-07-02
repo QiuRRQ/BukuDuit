@@ -7,8 +7,10 @@ import (
 type Transactions struct {
 	ID              string         `db:"id"`
 	ReferenceID     string         `db:"reference_id"`
-	Name            string         `db:"full_name"`
 	IDShop          string         `db:"shop_id"`
+	Name            string         `db:"full_name"`
+	BooksDeptID     sql.NullString `db:"books_debt_id"`
+	BooksTransID    sql.NullString `db:"books_transaction_id"`
 	Amount          sql.NullInt32  `db:"amount"`
 	Description     sql.NullString `db:"description"`
 	Image           sql.NullString `db:"image"`

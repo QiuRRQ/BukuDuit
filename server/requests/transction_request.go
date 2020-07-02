@@ -1,6 +1,7 @@
 package request
 
 type TransactionRequest struct {
+	ID              string `json:"id"`
 	ReferenceID     string `json:"reference_id" validate:"required"`
 	TransactionType string `json:"transaction_type" validate:"required"` //pay = customer bayar hutang, debt = customer minta hutang
 	ShopID          string `json:"shop_id" validate:"required"`

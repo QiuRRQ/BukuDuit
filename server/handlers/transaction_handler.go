@@ -56,7 +56,6 @@ func (handler TransactionHandler) Read(ctx echo.Context) error {
 }
 
 func (handler TransactionHandler) Edit(ctx echo.Context) error {
-	ID := ctx.Param("id")
 	input := new(request.TransactionRequest)
 
 	if err := ctx.Bind(input); err != nil {
@@ -68,7 +67,7 @@ func (handler TransactionHandler) Edit(ctx echo.Context) error {
 	}
 
 	uc := usecase.TransactionUseCase{UcContract: handler.UseCaseContract}
-	err := uc.Edit(input, ID)
+	err := uc.EditDebt(*input)
 
 	return handler.SendResponse(ctx, nil, nil, err)
 }

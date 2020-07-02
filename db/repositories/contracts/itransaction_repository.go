@@ -15,7 +15,7 @@ type ITransactionRepository interface {
 
 	Read(ID string) (data models.Transactions, err error)
 
-	Edit(body viewmodel.TransactionVm) (res string, err error)
+	Edit(body viewmodel.TransactionVm, tx *sql.Tx) (res string, err error)
 
 	Add(body viewmodel.TransactionVm, tx *sql.Tx) (res string, err error)
 
