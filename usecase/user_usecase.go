@@ -27,7 +27,7 @@ func (uc UserUseCase) ForgotMyPin(input request.UserRequest) (err error) {
 	}
 	if isMobilePhoneExist {
 		hasPin, _ := hashing.HashAndSalt(pin)
-		err = uc.EditPin(input.ID, hasPin)
+		err = uc.EditPin(input.MobilePhone, hasPin)
 		if err != nil {
 			return err
 		}
@@ -146,7 +146,7 @@ func (uc UserUseCase) Edit(input request.UserRequest) (err error) {
 		}
 
 		hasPin, _ := hashing.HashAndSalt(input.NewPin)
-		err = uc.EditPin(input.ID, hasPin)
+		err = uc.EditPin(input.MobilePhone, hasPin)
 		if err != nil {
 			return err
 		}
@@ -168,10 +168,10 @@ func (uc UserUseCase) Edit(input request.UserRequest) (err error) {
 	return nil
 }
 
-func (uc UserUseCase) EditPin(ID, pin string) (err error) {
+func (uc UserUseCase) EditPin(phone, pin string) (err error) {
 	model := actions.NewUserModel(uc.DB)
 	now := time.Now().UTC()
-	_, err = model.EditPin(ID, pin, now.Format(time.RFC3339))
+	_, err = model.EditPin(phone, pin, now.Format(time.RFC3339))
 	if err != nil {
 		return err
 	}

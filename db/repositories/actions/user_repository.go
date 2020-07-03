@@ -75,9 +75,9 @@ func (repository UserRepository) Edit(input viewmodel.UserVm) (res string, err e
 	return res, err
 }
 
-func (repository UserRepository) EditPin(ID, pin, updatedAt string) (res string, err error) {
-	statement := `update "users" set "pin"=$1, "updated_at"=$2 where "id"=$3 returning "id"`
-	err = repository.DB.QueryRow(statement, pin, datetime.StrParseToTime(updatedAt, time.RFC3339), ID).Scan(&res)
+func (repository UserRepository) EditPin(phone, pin, updatedAt string) (res string, err error) {
+	statement := `update "users" set "pin"=$1, "updated_at"=$2 where "mobile_phone"=$3 returning "id"`
+	err = repository.DB.QueryRow(statement, pin, datetime.StrParseToTime(updatedAt, time.RFC3339), phone).Scan(&res)
 	if err != nil {
 
 		return res, err
