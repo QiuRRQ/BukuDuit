@@ -46,7 +46,7 @@ func (uc BusinessCardUseCase) BrowseByUser(userID string) (res []viewmodel.Busin
 func (uc BusinessCardUseCase) Read(ID, lunas string) (res viewmodel.BusinessCardVm, err error) { //lunas = 1
 	model := actions.NewBusinessCardModel(uc.DB)
 	userCustomerUC := UserCustomerUseCase{UcContract: uc.UcContract}
-	bookDebtUc := BooksDebtUseCase{UcContract:uc.UcContract}
+	bookDebtUc := BooksDebtUseCase{UcContract: uc.UcContract}
 	var debtTotal int
 	var creditTotal int
 
@@ -61,34 +61,36 @@ func (uc BusinessCardUseCase) Read(ID, lunas string) (res viewmodel.BusinessCard
 	var dataUserCustomer = make([]viewmodel.UserCustomerDebetCreditVm, elems)
 	for _, data := range tempDataUserCustomer {
 		if lunas == "1" {
-			bookdebtsLunas, err := bookDebtUc.BrowseByUser(data.ID,enums.Lunas)
+			bookdebtsLunas, err := bookDebtUc.BrowseByUser(data.ID, enums.Lunas)
 			if err == nil {
-				if bookdebtsLunas.CreditTotal == 0{
+				if bookdebtsLunas.CreditTotal == 0 {
 					dataUserCustomer = append(dataUserCustomer, viewmodel.UserCustomerDebetCreditVm{
 						ID:          data.ID,
 						FullName:    data.FullName,
-						Amount: int32(bookdebtsLunas.CreditTotal),
-						Type: typeBook,
+						MobilePhone: data.MobilePhone,
+						Amount:      int32(bookdebtsLunas.CreditTotal),
+						Type:        typeBook,
 					})
 				}
 			}
 		} else {
-			bookdebtsNunggak, err := bookDebtUc.BrowseByUser(data.ID,"")
+			bookdebtsNunggak, err := bookDebtUc.BrowseByUser(data.ID, "")
 			if err == nil {
 				creditTotal = creditTotal + bookdebtsNunggak.CreditTotal
 				debtTotal = debtTotal + bookdebtsNunggak.DebtTotal
 				if bookdebtsNunggak.CreditTotal != 0 {
 					typeBook = enums.Credit
 					amount = int32(bookdebtsNunggak.CreditTotal)
-				}else{
+				} else {
 					typeBook = enums.Debet
 					amount = int32(bookdebtsNunggak.DebtTotal)
 				}
 				dataUserCustomer = append(dataUserCustomer, viewmodel.UserCustomerDebetCreditVm{
 					ID:          data.ID,
 					FullName:    data.FullName,
-					Amount: amount,
-					Type: typeBook,
+					MobilePhone: data.MobilePhone,
+					Amount:      amount,
+					Type:        typeBook,
 				})
 			}
 		}
