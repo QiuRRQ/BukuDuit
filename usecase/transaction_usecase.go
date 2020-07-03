@@ -142,90 +142,108 @@ func (uc TransactionUseCase) DebtReport(shopID, search, name, amount, transDate,
 	var debtDate []viewmodel.DebtReport
 	var debtDetails []viewmodel.DebtDetail
 
-	//variabel total di sini gk berubah selama filter gk diset
-	for i, book := range books {
-		debtTotal = debtTotal + book.DebtTotal
-		creditTotal = creditTotal + book.CreditTotal
-		if i != len(books)-1 {
-			customerID = customerID + "'" + book.CustomerID + "'" + ","
-			bookDebtID = bookDebtID + "'" + book.ID + "'" + ","
-		} else {
-			customerID = customerID + "'" + book.CustomerID + "'"
-			bookDebtID = bookDebtID + "'" + book.ID + "'"
-		}
-	}
-
-	fmt.Println(bookDebtID)
-
-	var filter string
-
-	if startDate != "" && endDate != "" {
-		filter = `and (t."transaction_date" BETWEEN '` + startDate + `' and '` + endDate + `')`
-	}
-	if search != "" { //input nama
-		filter = `and uc."full_name" ILIKE '%` + search + `%'` + filter
-	}
-	//sort hanya dipakai sekali
-	if name == "ASC" || name == "asc" {
-		filter = filter + ` order by uc."full_name" ` + name
-	}
-	if name == "DESC" || name == "desc" {
-		filter = filter + ` order by uc."full_name" ` + name
-	}
-	if amount == "ASC" || amount == "asc" {
-		filter = filter + ` order by t."amount" ` + amount
-	}
-	if amount == "DESC" || amount == "desc" {
-		filter = filter + ` order by t."amount" ` + amount
-	}
-	if transDate == "ASC" || transDate == "asc" {
-		filter = filter + ` order by t."transaction_date" ` + transDate
-	}
-	if transDate == "DESC" || transDate == "desc" {
-		filter = filter + ` order by t."transaction_date" ` + transDate
-	}
-
-	transactions, err := model.DebtReport(customerID, shopID, bookDebtID, filter)
-	if err != nil {
-		return res, err
-	}
-
-	if filter != "" {
-		debtTotal = 0
-		creditTotal = 0
-	}
-
-	for i := 0; i < len(transactions); i++ {
-
-		if filter != "" {
-			if transactions[i].Type == enums.Debet {
-				debtTotal = debtTotal + int(transactions[i].Amount.Int32)
+	if len(books)>0{
+		//variabel total di sini gk berubah selama filter gk diset
+		for i, book := range books {
+			debtTotal = debtTotal + book.DebtTotal
+			creditTotal = creditTotal + book.CreditTotal
+			if i != len(books)-1 {
+				customerID = customerID + "'" + book.CustomerID + "'" + ","
+				bookDebtID = bookDebtID + "'" + book.ID + "'" + ","
 			} else {
-				creditTotal = creditTotal + int(transactions[i].Amount.Int32)
+				customerID = customerID + "'" + book.CustomerID + "'"
+				bookDebtID = bookDebtID + "'" + book.ID + "'"
 			}
 		}
 
-		tempDate, err := time.Parse(time.RFC3339, transactions[i].TransactionDate.String)
-		if err != nil {
-			fmt.Println(err.Error())
+		fmt.Println(bookDebtID)
+
+		var filter string
+
+		if startDate != "" && endDate != "" {
+			filter = `and (t."transaction_date" BETWEEN '` + startDate + `' and '` + endDate + `')`
+		}
+		if search != "" { //input nama
+			filter = `and uc."full_name" ILIKE '%` + search + `%'` + filter
+		}
+		//sort hanya dipakai sekali
+		if name == "ASC" || name == "asc" {
+			filter = filter + ` order by uc."full_name" ` + name
+		}
+		if name == "DESC" || name == "desc" {
+			filter = filter + ` order by uc."full_name" ` + name
+		}
+		if amount == "ASC" || amount == "asc" {
+			filter = filter + ` order by t."amount" ` + amount
+		}
+		if amount == "DESC" || amount == "desc" {
+			filter = filter + ` order by t."amount" ` + amount
+		}
+		if transDate == "ASC" || transDate == "asc" {
+			filter = filter + ` order by t."transaction_date" ` + transDate
+		}
+		if transDate == "DESC" || transDate == "desc" {
+			filter = filter + ` order by t."transaction_date" ` + transDate
 		}
 
-		var nextDate time.Time
-		if i < len(transactions)-1 {
-			nextDate, err = time.Parse(time.RFC3339, transactions[i+1].TransactionDate.String)
+		transactions, err := model.DebtReport(customerID, shopID, bookDebtID, filter)
+		if err != nil {
+			return res, err
+		}
+
+		if filter != "" {
+			debtTotal = 0
+			creditTotal = 0
+		}
+
+		for i := 0; i < len(transactions); i++ {
+
+			if filter != "" {
+				if transactions[i].Type == enums.Debet {
+					debtTotal = debtTotal + int(transactions[i].Amount.Int32)
+				} else {
+					creditTotal = creditTotal + int(transactions[i].Amount.Int32)
+				}
+			}
+
+			tempDate, err := time.Parse(time.RFC3339, transactions[i].TransactionDate.String)
 			if err != nil {
 				fmt.Println(err.Error())
 			}
-			if tempDate == nextDate {
-				debtDetails = append(debtDetails, viewmodel.DebtDetail{
-					ID:          transactions[i].ID,
-					ReferenceID: transactions[i].ReferenceID,
-					Name:        transactions[i].Name,
-					Description: transactions[i].Description.String,
-					Amount:      transactions[i].Amount.Int32,
-					Type:        transactions[i].Type,
-				})
 
+			var nextDate time.Time
+			if i < len(transactions)-1 {
+				nextDate, err = time.Parse(time.RFC3339, transactions[i+1].TransactionDate.String)
+				if err != nil {
+					fmt.Println(err.Error())
+				}
+				if tempDate == nextDate {
+					debtDetails = append(debtDetails, viewmodel.DebtDetail{
+						ID:          transactions[i].ID,
+						ReferenceID: transactions[i].ReferenceID,
+						Name:        transactions[i].Name,
+						Description: transactions[i].Description.String,
+						Amount:      transactions[i].Amount.Int32,
+						Type:        transactions[i].Type,
+					})
+
+				} else {
+					debtDetails = append(debtDetails, viewmodel.DebtDetail{
+						ID:          transactions[i].ID,
+						ReferenceID: transactions[i].ReferenceID,
+						Name:        transactions[i].Name,
+						Description: transactions[i].Description.String,
+						Amount:      transactions[i].Amount.Int32,
+						Type:        transactions[i].Type,
+					})
+					debtDate = append(debtDate, viewmodel.DebtReport{
+						TransactionDate: tempDate.String(),
+						Details:         debtDetails,
+					})
+
+					debtDetails = nil
+					tempDate = nextDate
+				}
 			} else {
 				debtDetails = append(debtDetails, viewmodel.DebtDetail{
 					ID:          transactions[i].ID,
@@ -243,22 +261,6 @@ func (uc TransactionUseCase) DebtReport(shopID, search, name, amount, transDate,
 				debtDetails = nil
 				tempDate = nextDate
 			}
-		} else {
-			debtDetails = append(debtDetails, viewmodel.DebtDetail{
-				ID:          transactions[i].ID,
-				ReferenceID: transactions[i].ReferenceID,
-				Name:        transactions[i].Name,
-				Description: transactions[i].Description.String,
-				Amount:      transactions[i].Amount.Int32,
-				Type:        transactions[i].Type,
-			})
-			debtDate = append(debtDate, viewmodel.DebtReport{
-				TransactionDate: tempDate.String(),
-				Details:         debtDetails,
-			})
-
-			debtDetails = nil
-			tempDate = nextDate
 		}
 	}
 
