@@ -49,6 +49,7 @@ func (uc BusinessCardUseCase) Read(ID, lunas string) (res viewmodel.BusinessCard
 	var creditTotal int
 
 	tempDataUserCustomer, err := userCustomerUC.BrowseByShop(ID)
+	fmt.Println(tempDataUserCustomer)
 	if err != nil {
 		return res, err
 	}
@@ -57,18 +58,10 @@ func (uc BusinessCardUseCase) Read(ID, lunas string) (res viewmodel.BusinessCard
 	var dataUserCustomer = make([]viewmodel.UserCustomerVm, elems)
 	for _, data := range tempDataUserCustomer {
 		if lunas == "1" {
-			if int(data.Debt) == 0 {
-				dataUserCustomer = append(dataUserCustomer, data)
-			}
+			dataUserCustomer = append(dataUserCustomer, data)
 		} else {
-			if int(data.Debt) != 0 {
-				dataUserCustomer = append(dataUserCustomer, data)
-			}
+			dataUserCustomer = append(dataUserCustomer, data)
 		}
-	}
-
-	if err != nil {
-		return res, err
 	}
 
 	for _, k := range dataUserCustomer {

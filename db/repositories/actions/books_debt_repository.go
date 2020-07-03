@@ -21,9 +21,9 @@ func NewBooksDebtModel(DB *sql.DB) contracts.IBooksDebtRepository {
 
 func (repository BooksDebtRepository) Browse(status string) (data []models.BooksDebt, err error) {
 
-	statement := `select * from "books_debt" where "deleted_at" is null and "status" = '` + status + `'::debt_type_enums`
+	statement := `select * from "books_debt" where "deleted_at" is null and "status" = $1`
 
-	rows, err := repository.DB.Query(statement)
+	rows, err := repository.DB.Query(statement, status)
 	if err != nil {
 		return data, err
 	}

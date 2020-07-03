@@ -19,7 +19,7 @@ func NewPaymentAccountModel(DB *sql.DB) contracts.IPaymentAccountRepository {
 }
 
 func (repository PaymentAccountRepository) BrowseByShop(shopID string) (data []models.PaymentAccount, err error) {
-	statement := `select * from "payment_accounts" where "shop_id"=$1 and "deleted_at" is null`
+	statement := `select id, shop_id, account_name, payment_number, owner_name, created_at, updated_at, deleted_at from "payment_accounts" where "shop_id"=$1 and "deleted_at" is null`
 	rows, err := repository.DB.Query(statement, shopID)
 	if err != nil {
 		return data, err
@@ -32,8 +32,8 @@ func (repository PaymentAccountRepository) BrowseByShop(shopID string) (data []m
 			&dataTemp.ID,
 			&dataTemp.ShopID,
 			&dataTemp.Name,
-			&dataTemp.OwnerName,
 			&dataTemp.PaymentNumber,
+			&dataTemp.OwnerName,
 			&dataTemp.CreatedAt,
 			&dataTemp.UpdatedAt,
 			&dataTemp.DeletedAt,
