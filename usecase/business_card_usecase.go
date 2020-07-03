@@ -74,7 +74,8 @@ func (uc BusinessCardUseCase) Read(ID, lunas string) (res viewmodel.BusinessCard
 				}
 			}
 		} else {
-			bookdebtsNunggak, err := bookDebtUc.BrowseByUser(data.ID, "")
+			bookdebtsNunggak, err := bookDebtUc.BrowseByUser(data.ID, enums.Nunggak)
+			fmt.Println(bookdebtsNunggak)
 			if err == nil {
 				creditTotal = creditTotal + bookdebtsNunggak.CreditTotal
 				debtTotal = debtTotal + bookdebtsNunggak.DebtTotal
