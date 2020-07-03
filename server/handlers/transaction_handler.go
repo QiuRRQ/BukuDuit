@@ -33,11 +33,13 @@ func (handler TransactionHandler) BrowseByCustomer(ctx echo.Context) error {
 
 func (handler TransactionHandler) BrowseByShop(ctx echo.Context) error {
 	shopID := ctx.QueryParam("shopid")
-	_ = ctx.QueryParam("search")
-
+	searching := ctx.QueryParam("search")
+	name := ctx.QueryParam("name")
+	amount := ctx.QueryParam("amount")
+	date := ctx.QueryParam("date")
 	uc := usecase.TransactionUseCase{UcContract: handler.UseCaseContract}
 
-	res, err := uc.DebtReport(shopID)
+	res, err := uc.DebtReport(shopID, searching, name, amount, date)
 
 	return handler.SendResponse(ctx, res, nil, err)
 }

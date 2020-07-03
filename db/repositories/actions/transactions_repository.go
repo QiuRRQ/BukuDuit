@@ -19,13 +19,14 @@ func NewTransactionModel(DB *sql.DB) contracts.ITransactionRepository {
 	return TransactionRepository{DB: DB}
 }
 
-func (repository TransactionRepository) DebtReport(customerID []string, shopID string) (data []models.Transactions, err error) {
+func (repository TransactionRepository) DebtReport(customerID string, shopID string) (data []models.Transactions, err error) {
+
 	statement := `select t."id", uc."full_name", t."amount", t."reference_id", t."shop_id", t."description", t."image", t."transaction_date", t."type", t."created_at", t."updated_at", t."deleted_at" 
 	from "transactions" t  join "user_customers" uc 
-	on t."customer_id" = uc."id" 
-	where t."reference_id" IN($1) and t."shop_id"=$2 and t."deleted_at" is null and t."customer_id" is null order by t."transaction_date" desc `
+	on t."reference_id" = uc."id" 
+	where t."reference_id" IN(` + customerID + `) and t."shop_id"='` + shopID + `' and t."deleted_at" is null and t."customer_id" is null order by t."transaction_date" desc `
 
-	rows, err := repository.DB.Query(statement, customerID, shopID)
+	rows, err := repository.DB.Query(statement)
 	if err != nil {
 		return data, err
 	}
@@ -35,6 +36,7 @@ func (repository TransactionRepository) DebtReport(customerID []string, shopID s
 
 		err = rows.Scan(
 			&dataTemp.ID,
+			&dataTemp.Name,
 			&dataTemp.Amount,
 			&dataTemp.ReferenceID,
 			&dataTemp.IDShop,
