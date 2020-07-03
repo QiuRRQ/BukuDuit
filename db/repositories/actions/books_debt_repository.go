@@ -184,7 +184,6 @@ func (repository BooksDebtRepository) CountByCustomer(customerID, status string)
 	statement := `select count("id") from "books_debt" where "customer_id"=$1 and "deleted_at" is null and "status"=$2`
 	err = repository.DB.QueryRow(statement, customerID, status).Scan(&res)
 	if err != nil {
-		fmt.Println(12)
 		return res, err
 	}
 

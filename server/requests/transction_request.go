@@ -9,4 +9,5 @@ type TransactionRequest struct {
 	Description     string `json:"description"`
 	CustomerID      string `json:"customer_id"`
 	TransactionDate string `json:"transaction_date" validate:"required"`
+	BillDate        string `json:"bill_date"`
 }
