@@ -641,15 +641,17 @@ func (uc TransactionUseCase) AddDebt(input request.TransactionRequest) (err erro
 	if err != nil {
 		return err
 	}
+	fmt.Println(debtExist)
 
 	if debtExist {
-		fmt.Println("nunggak")
+
 		bookdebts, err := booksDebtUC.BrowseByUser(input.ReferenceID, enums.Nunggak)
 		if err != nil {
 			return err
 		}
 
 		if input.TransactionType == enums.Credit {
+			fmt.Println("credit")
 			if bookdebts.CreditTotal > 0 {
 				createNew = false
 				creditAmount = bookdebts.CreditTotal + int(input.Amount)
@@ -673,6 +675,7 @@ func (uc TransactionUseCase) AddDebt(input request.TransactionRequest) (err erro
 				}
 			}
 		} else {
+			fmt.Println("debet")
 			if bookdebts.DebtTotal > 0 {
 				createNew = false
 				debtAmount = bookdebts.DebtTotal + int(input.Amount)
@@ -745,7 +748,7 @@ func (uc TransactionUseCase) AddDebt(input request.TransactionRequest) (err erro
 	} else {
 		//for adding new debt so adding on books debt
 		if input.TransactionType == enums.Debet {
-			debtAmount = debtAmount - int(input.Amount)
+			debtAmount = debtAmount + int(input.Amount)
 		} else {
 			creditAmount = creditAmount + int(input.Amount)
 		}
