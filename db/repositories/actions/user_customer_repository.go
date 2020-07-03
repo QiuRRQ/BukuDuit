@@ -26,7 +26,7 @@ func (repository UserCustomerRepository) BrowseByBusiness(businessID string) (da
 
 	for rows.Next() {
 		dataTemp := models.UserCustomers{}
-		err = rows.Scan(&dataTemp.ID, &dataTemp.FullName, &dataTemp.MobilePhone, &dataTemp.BusinessID, &dataTemp.Debt, &dataTemp.PaymentDate, &dataTemp.CreatedAt, &dataTemp.UpdatedAt, &dataTemp.DeletedAt)
+		err = rows.Scan(&dataTemp.ID, &dataTemp.FullName, &dataTemp.MobilePhone, &dataTemp.BusinessID, &dataTemp.PaymentDate, &dataTemp.CreatedAt, &dataTemp.UpdatedAt, &dataTemp.DeletedAt)
 		if err != nil {
 			return data, err
 		}

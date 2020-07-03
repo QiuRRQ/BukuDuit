@@ -19,6 +19,41 @@ func NewTransactionModel(DB *sql.DB) contracts.ITransactionRepository {
 	return TransactionRepository{DB: DB}
 }
 
+func (repository TransactionRepository) DebtReport(customerID []string, shopID string) (data []models.Transactions, err error) {
+	statement := `select t."id", uc."full_name", t."amount", t."reference_id", t."shop_id", t."description", t."image", t."transaction_date", t."type", t."created_at", t."updated_at", t."deleted_at" 
+	from "transactions" t  join "user_customers" uc 
+	on t."customer_id" = uc."id" 
+	where t."reference_id" IN($1) and t."shop_id"=$2 and t."deleted_at" is null and t."customer_id" is null order by t."transaction_date" desc `
+
+	rows, err := repository.DB.Query(statement, customerID, shopID)
+	if err != nil {
+		return data, err
+	}
+
+	for rows.Next() {
+		dataTemp := models.Transactions{}
+
+		err = rows.Scan(
+			&dataTemp.ID,
+			&dataTemp.Amount,
+			&dataTemp.ReferenceID,
+			&dataTemp.IDShop,
+			&dataTemp.Description,
+			&dataTemp.Image,
+			&dataTemp.TransactionDate,
+			&dataTemp.Type,
+			&dataTemp.CreatedAt,
+			&dataTemp.UpdatedAt,
+			&dataTemp.DeletedAt,
+		)
+		if err != nil {
+			return data, err
+		}
+		data = append(data, dataTemp)
+	}
+	return data, err
+}
+
 //ini untuk list transaksi
 func (repository TransactionRepository) TransactionBrowsByShop(shopID string) (data []models.Transactions, err error) {
 	statement := `select t."id", uc."full_name", t."amount", t."reference_id", t."shop_id", t."description", t."image", t."transaction_date", t."type", t."created_at", t."updated_at", t."deleted_at" 
