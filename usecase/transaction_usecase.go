@@ -257,7 +257,6 @@ func (uc TransactionUseCase) DebtReport(shopID, search, name, amount, transDate,
 			debtDetails = nil
 			tempDate = nextDate
 		}
-
 	}
 
 	res = viewmodel.ReportHutangVm{
@@ -624,6 +623,7 @@ func (uc TransactionUseCase) EditDebt(input request.TransactionRequest) (err err
 func (uc TransactionUseCase) AddDebt(input request.TransactionRequest) (err error) {
 	model := actions.NewTransactionModel(uc.DB)
 	booksDebtUC := BooksDebtUseCase{UcContract: uc.UcContract}
+	userCustomerUc := UserCustomerUseCase{UcContract: uc.UcContract}
 	now := time.Now().UTC()
 	var debtAmount int
 	var creditAmount int
