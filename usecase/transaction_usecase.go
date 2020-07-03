@@ -587,6 +587,7 @@ func (uc TransactionUseCase) DebtPayment(input request.TransactionRequest) (err 
 
 	customerData, err := userCustomerUc.Read(input.ReferenceID)
 	if err != nil {
+		fmt.Println(1)
 		return err
 	}
 
@@ -603,6 +604,7 @@ func (uc TransactionUseCase) DebtPayment(input request.TransactionRequest) (err 
 	//check if fcustomer already exist in books debt
 	debtExist, err, data := booksDebtUC.IsDebtCustomerExist(customerData.ID, enums.Nunggak)
 	if err != nil {
+		fmt.Println(2)
 		return err
 	}
 
@@ -611,6 +613,7 @@ func (uc TransactionUseCase) DebtPayment(input request.TransactionRequest) (err 
 		books, err := booksDebtUC.Read(data[0].ID, status)
 
 		if err != nil {
+			fmt.Println("ini")
 			return err
 		}
 
@@ -683,7 +686,7 @@ func (uc TransactionUseCase) DebtPayment(input request.TransactionRequest) (err 
 
 	_, err = model.Add(TransactionBody, transaction)
 	if err != nil {
-		fmt.Println(1)
+		fmt.Println(6)
 		transaction.Rollback()
 		return err
 	}
