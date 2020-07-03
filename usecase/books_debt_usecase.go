@@ -17,6 +17,31 @@ type BooksDebtUseCase struct {
 	*UcContract
 }
 
+func (uc BooksDebtUseCase) Browse(status string) (res []viewmodel.BooksDebtVm, err error) {
+	model := actions.NewBooksDebtModel(uc.DB)
+	books, err := model.Browse(status)
+	if err != nil {
+		return res, err
+	}
+
+	for _, book := range books {
+		res = append(res, viewmodel.BooksDebtVm{
+			ID:             book.ID,
+			CustomerID:     book.CustomerID,
+			SubmissionDate: book.SubmissionDate,
+			BillDate:       book.BillDate.String,
+			DebtTotal:      book.DebtTotal,
+			CreditTotal:    book.CreditTotal,
+			Status:         book.Status.String,
+			CreatedAt:      book.CreatedAt,
+			UpdatedAt:      book.UpdatedAt.String,
+			DeletedAt:      book.DeletedAt.String,
+		})
+	}
+
+	return res, err
+}
+
 func (uc BooksDebtUseCase) BrowseByUser(customerID, status string) (res viewmodel.BooksDebtVm, err error) {
 	model := actions.NewBooksDebtModel(uc.DB)
 	books, err := model.BrowseByCustomer(customerID, status)
