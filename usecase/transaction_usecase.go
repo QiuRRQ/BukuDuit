@@ -160,7 +160,7 @@ func (uc TransactionUseCase) DebtReport(shopID, search, name, amount, transDate,
 		filter = `and (t."transaction_date" BETWEEN '` + startDate + `' and '` + endDate + `')`
 	}
 	if search != "" { //input nama
-		filter = `and uc."full_name" = '` + search + `'` + filter
+		filter = `and uc."full_name" ILIKE '%` + search + `%'` + filter
 	}
 	//sort hanya dipakai sekali
 	if name == "ASC" || name == "asc" {
