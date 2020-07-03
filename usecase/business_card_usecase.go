@@ -49,7 +49,6 @@ func (uc BusinessCardUseCase) Read(ID, lunas string) (res viewmodel.BusinessCard
 	var creditTotal int
 
 	tempDataUserCustomer, err := userCustomerUC.BrowseByShop(ID)
-
 	if err != nil {
 		return res, err
 	}
