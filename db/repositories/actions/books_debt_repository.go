@@ -51,32 +51,38 @@ func (repository BooksDebtRepository) Browse(status string) (data []models.Books
 
 	return data, err
 }
-func (repository BooksDebtRepository) BrowseByCustomer(customerID, status string) (data []models.BooksDebt, err error) {
-	statement := `select * from "books_debt" where "customer_id"=$1 and "deleted_at" is null and "status"=$2`
-	rows, err := repository.DB.Query(statement, customerID, status)
+func (repository BooksDebtRepository) BrowseByCustomer(customerID, status string) (data models.BooksDebt, err error) {
+	if status == ""{
+		statement := `select * from "books_debt" where "customer_id"=$1 and "deleted_at" is null`
+		err = repository.DB.QueryRow(statement, customerID).Scan(
+			&data.ID,
+			&data.CustomerID,
+			&data.SubmissionDate,
+			&data.BillDate,
+			&data.DebtTotal,
+			&data.CreditTotal,
+			&data.Status,
+			&data.CreatedAt,
+			&data.UpdatedAt,
+			&data.DeletedAt,
+		)
+	}else{
+		statement := `select * from "books_debt" where "customer_id"=$1 and "deleted_at" is null and "status"=$2`
+		err = repository.DB.QueryRow(statement, customerID, status).Scan(
+			&data.ID,
+			&data.CustomerID,
+			&data.SubmissionDate,
+			&data.BillDate,
+			&data.DebtTotal,
+			&data.CreditTotal,
+			&data.Status,
+			&data.CreatedAt,
+			&data.UpdatedAt,
+			&data.DeletedAt,
+		)
+	}
 	if err != nil {
 		return data, err
-	}
-
-	for rows.Next() {
-		dataTemp := models.BooksDebt{}
-
-		err = rows.Scan(
-			&dataTemp.ID,
-			&dataTemp.CustomerID,
-			&dataTemp.SubmissionDate,
-			&dataTemp.BillDate,
-			&dataTemp.DebtTotal,
-			&dataTemp.CreditTotal,
-			&dataTemp.Status,
-			&dataTemp.CreatedAt,
-			&dataTemp.UpdatedAt,
-			&dataTemp.DeletedAt,
-		)
-		if err != nil {
-			return data, err
-		}
-		data = append(data, dataTemp)
 	}
 
 	return data, err
