@@ -32,6 +32,7 @@ func (repository PaymentAccountRepository) BrowseByShop(shopID string) (data []m
 			&dataTemp.ID,
 			&dataTemp.ShopID,
 			&dataTemp.Name,
+			&dataTemp.OwnerName,
 			&dataTemp.PaymentNumber,
 			&dataTemp.CreatedAt,
 			&dataTemp.UpdatedAt,
@@ -52,6 +53,7 @@ func (repository PaymentAccountRepository) Read(ID string) (data models.PaymentA
 		&data.ID,
 		&data.ShopID,
 		&data.Name,
+		&data.OwnerName,
 		&data.PaymentNumber,
 		&data.CreatedAt,
 		&data.UpdatedAt,
@@ -65,11 +67,12 @@ func (repository PaymentAccountRepository) Read(ID string) (data models.PaymentA
 }
 
 func (repository PaymentAccountRepository) Edit(body viewmodel.PaymentAccountVm) (res string, err error) {
-	statement := `update "payment_accounts" set "shop_id"=$1, "name"=$2, "payment_number"=$3, "updated_at"=$4 where "id"=$5 returning "id"`
+	statement := `update "payment_accounts" set "shop_id"=$1, "account_name"=UPPER($2), "owner_name"=$3, "payment_number"=$4, "updated_at"=$5 where "id"=$6 returning "id"`
 	err = repository.DB.QueryRow(
 		statement,
 		body.ShopID,
-		str.EmptyString(body.Name),
+		str.EmptyString(body.AccountName),
+		str.EmptyString(body.OwnerName),
 		str.EmptyString(body.PaymentNumber),
 		datetime.StrParseToTime(body.UpdatedAt, time.RFC3339),
 		body.ID).Scan(&res)
@@ -81,11 +84,12 @@ func (repository PaymentAccountRepository) Edit(body viewmodel.PaymentAccountVm)
 }
 
 func (repository PaymentAccountRepository) Add(body viewmodel.PaymentAccountVm) (res string, err error) {
-	statement := `insert into "payment_accounts" ("shop_id","name","payment_number","created_at","updated_at") values($1,$2,$3,$4,$5) returning "id"`
+	statement := `insert into "payment_accounts" ("shop_id","account_name","owner_name","payment_number","created_at","updated_at") values($1,UPPER($2),$3,$4,$5,$6) returning "id"`
 	err = repository.DB.QueryRow(
 		statement,
 		body.ShopID,
-		str.EmptyString(body.Name),
+		str.EmptyString(body.AccountName),
+		str.EmptyString(body.OwnerName),
 		str.EmptyString(body.PaymentNumber),
 		datetime.StrParseToTime(body.CreatedAt, time.RFC3339),
 		datetime.StrParseToTime(body.UpdatedAt, time.RFC3339),
@@ -118,7 +122,7 @@ func (repository PaymentAccountRepository) DeleteByShop(shopID, updatedAt, delet
 }
 
 func (repository PaymentAccountRepository) CountByPk(ID string) (res int, err error) {
-	statement := `select count("id") from "business_cards" where "id"=$1 and "deleted_at" is null`
+	statement := `select count("id") from "payment_accounts" where "id"=$1 and "deleted_at" is null`
 	err = repository.DB.QueryRow(statement, ID).Scan(&res)
 	if err != nil {
 		return res, err
@@ -128,7 +132,7 @@ func (repository PaymentAccountRepository) CountByPk(ID string) (res int, err er
 }
 
 func (repository PaymentAccountRepository) CountBy(column, value string) (res int, err error) {
-	statement := `select count("id") from "business_cards" where ` + column + `=$1 and "deleted_at" is null`
+	statement := `select count("id") from "payment_accounts" where ` + column + `=$1 and "deleted_at" is null`
 	err = repository.DB.QueryRow(statement, value).Scan(&res)
 	if err != nil {
 		return res, err
