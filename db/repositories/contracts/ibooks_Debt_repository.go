@@ -9,6 +9,8 @@ import (
 type IBooksDebtRepository interface {
 	BrowseByCustomer(userID, status string) (data models.BooksDebt, err error)
 
+	BrowseByShop(shopID string,status string) (data [] models.BooksDebt,err error)
+
 	Browse(status string) (data []models.BooksDebt, err error)
 
 	Read(ID string) (data models.BooksDebt, err error)
@@ -17,7 +19,7 @@ type IBooksDebtRepository interface {
 
 	Add(body viewmodel.BooksDebtVm, tx *sql.Tx) (res string, err error)
 
-	Delete(ID, updatedAt, deletedAt string) (res string, err error)
+	Delete(ID, updatedAt, deletedAt string,tx *sql.Tx) (err error)
 
 	DeleteByCustomer(userID, updatedAt, deletedAt string, tx *sql.Tx) (err error)
 

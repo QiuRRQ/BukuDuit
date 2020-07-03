@@ -19,12 +19,12 @@ func NewTransactionModel(DB *sql.DB) contracts.ITransactionRepository {
 	return TransactionRepository{DB: DB}
 }
 
-func (repository TransactionRepository) DebtReport(customerID, shopID, filter string) (data []models.Transactions, err error) {
+func (repository TransactionRepository) DebtReport(customerID, shopID, bookDebtID, filter string) (data []models.Transactions, err error) {
 
 	statement := `select t."id", uc."full_name", t."amount", t."reference_id", t."shop_id", t."description", t."image", t."transaction_date", t."type", t."created_at", t."updated_at", t."deleted_at" 
 	from "transactions" t  join "user_customers" uc 
 	on t."reference_id" = uc."id" 
-	where t."reference_id" IN(` + customerID + `) and t."shop_id"='` + shopID + `' and t."deleted_at" is null and t."customer_id" is null ` + filter
+	where t."books_debt_id" in (`+bookDebtID+`) and t."deleted_at" is null and t."customer_id" is null ` + filter
 
 	rows, err := repository.DB.Query(statement)
 	if err != nil {
@@ -254,14 +254,14 @@ func (repository TransactionRepository) Add(body viewmodel.TransactionVm, tx *sq
 	return res, err
 }
 
-func (repository TransactionRepository) Delete(ID, updatedAt, deletedAt string) (res string, err error) {
+func (repository TransactionRepository) Delete(ID, updatedAt, deletedAt string,tx *sql.Tx) ( err error) {
 	statement := `update "transactions" set "updated_at"=$1, "deleted_at"=$2 where "id"=$3 returning  "id"`
-	err = repository.DB.QueryRow(statement, datetime.StrParseToTime(updatedAt, time.RFC3339), datetime.StrParseToTime(deletedAt, time.RFC3339), ID).Scan(&res)
+	_,err = tx.Exec(statement, datetime.StrParseToTime(updatedAt, time.RFC3339), datetime.StrParseToTime(deletedAt, time.RFC3339), ID)
 	if err != nil {
-		return res, err
+		return  err
 	}
 
-	return res, err
+	return nil
 }
 
 func (repository TransactionRepository) DeleteByCustomer(referenceID, updatedAt, deletedAt string, tx *sql.Tx) (err error) {

@@ -41,6 +41,31 @@ func (uc BooksDebtUseCase) Browse(status string) (res []viewmodel.BooksDebtVm, e
 	return res, err
 }
 
+func (uc BooksDebtUseCase) BrowseByShop(shopID,status string) (res []viewmodel.BooksDebtVm, err error) {
+	model := actions.NewBooksDebtModel(uc.DB)
+	books, err := model.BrowseByShop(shopID,status)
+	if err != nil {
+		return res, err
+	}
+
+	for _, book := range books {
+		res = append(res, viewmodel.BooksDebtVm{
+			ID:             book.ID,
+			CustomerID:     book.CustomerID,
+			SubmissionDate: book.SubmissionDate,
+			BillDate:       book.BillDate.String,
+			DebtTotal:      book.DebtTotal,
+			CreditTotal:    book.CreditTotal,
+			Status:         book.Status.String,
+			CreatedAt:      book.CreatedAt,
+			UpdatedAt:      book.UpdatedAt.String,
+			DeletedAt:      book.DeletedAt.String,
+		})
+	}
+
+	return res, err
+}
+
 func (uc BooksDebtUseCase) BrowseByUser(customerID, status string) (res viewmodel.BooksDebtVm, err error) {
 	model := actions.NewBooksDebtModel(uc.DB)
 	book, err := model.BrowseByCustomer(customerID, status)
@@ -159,7 +184,7 @@ func (uc BooksDebtUseCase) Register(userID, bookName, createdAt, updatedAt strin
 	return nil
 }
 
-func (uc BooksDebtUseCase) Delete(ID string) (err error) {
+func (uc BooksDebtUseCase) Delete(ID string,tx *sql.Tx) (err error) {
 	fmt.Println(ID)
 	model := actions.NewBooksDebtModel(uc.DB)
 	now := time.Now().UTC()
@@ -172,7 +197,7 @@ func (uc BooksDebtUseCase) Delete(ID string) (err error) {
 		return errors.New(messages.DataNotFound)
 	}
 
-	_, err = model.Delete(ID, now.Format(time.RFC3339), now.Format(time.RFC3339))
+	err = model.Delete(ID, now.Format(time.RFC3339), now.Format(time.RFC3339),tx)
 	if err != nil {
 		return err
 	}
