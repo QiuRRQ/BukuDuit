@@ -505,6 +505,7 @@ func (uc TransactionUseCase) EditDebt(input request.TransactionRequest) (err err
 
 		getTrans, err := model.Read(input.ID)
 		if err != nil {
+			fmt.Println(err)
 			return err
 		}
 
@@ -605,12 +606,12 @@ func (uc TransactionUseCase) DebtPayment(input request.TransactionRequest) (err 
 		fmt.Println(2)
 		return err
 	}
-	bookdebts,err :=booksDebtUC.BrowseByUser(customerData.ID,enums.Nunggak)
-	if err != nil{
-		return err
-	}
 
 	if debtExist {
+		bookdebts,err :=booksDebtUC.BrowseByUser(customerData.ID,enums.Nunggak)
+		if err != nil{
+			return err
+		}
 		//edit booksDebt, status akan terus nunggak baik itu user yang hutang atau customer yang hutang.
 		books, err := booksDebtUC.Read(bookdebts.ID, status)
 

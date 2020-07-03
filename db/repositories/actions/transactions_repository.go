@@ -170,12 +170,9 @@ func (repository TransactionRepository) Read(ID string) (data models.Transaction
 	statement := `select * from "transactions" where "id"=$1 and "deleted_at" is null`
 	err = repository.DB.QueryRow(statement, ID).Scan(
 		&data.ID,
-		&data.ReferenceID,
-		&data.CustomerID,
-		&data.Status,
 		&data.IDShop,
-		&data.BooksDeptID,
-		&data.BooksTransID,
+		&data.ReferenceID,
+		&data.CategoryID,
 		&data.Amount,
 		&data.Description,
 		&data.Image,
@@ -184,6 +181,10 @@ func (repository TransactionRepository) Read(ID string) (data models.Transaction
 		&data.CreatedAt,
 		&data.UpdatedAt,
 		&data.DeletedAt,
+		&data.Status,
+		&data.CustomerID,
+		&data.BooksDeptID,
+		&data.BooksTransID,
 	)
 	if err != nil {
 		return data, err
