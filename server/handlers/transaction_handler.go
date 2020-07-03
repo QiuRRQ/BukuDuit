@@ -96,7 +96,7 @@ func (handler TransactionHandler) DebtPayment(ctx echo.Context) error {
 	}
 
 	uc := usecase.TransactionUseCase{UcContract: handler.UseCaseContract}
-	err := uc.DebtPayment(*input)
+	err := uc.AddDebt(*input)
 
 	return handler.SendResponse(ctx, nil, nil, err)
 }
