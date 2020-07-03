@@ -5,8 +5,8 @@ import "database/sql"
 type PaymentAccount struct {
 	ID            string         `db:"id"`
 	ShopID        string         `db:"shop_id"`
-	Name          string         `db:"account_name"`
-	OwnerName     string         `db:"owner_name"`
+	Name          sql.NullString `db:"account_name"`
+	OwnerName     sql.NullString `db:"owner_name"`
 	PaymentNumber string         `db:"payment_number"`
 	CreatedAt     string         `db:"created_at"`
 	UpdatedAt     sql.NullString `db:"updated_at"`

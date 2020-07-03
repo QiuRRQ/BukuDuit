@@ -24,8 +24,8 @@ func (uc PaymentAccountUseCase) BrowseByShop(shopID string) (res []viewmodel.Pay
 	for _, paymentAccount := range paymentAccounts {
 		res = append(res, viewmodel.PaymentAccountVm{
 			ID:            paymentAccount.ID,
-			AccountName:   paymentAccount.Name,
-			OwnerName:     paymentAccount.OwnerName,
+			AccountName:   paymentAccount.Name.String,
+			OwnerName:     paymentAccount.OwnerName.String,
 			ShopID:        paymentAccount.ShopID,
 			PaymentNumber: paymentAccount.PaymentNumber,
 			CreatedAt:     paymentAccount.CreatedAt,
@@ -46,8 +46,8 @@ func (uc PaymentAccountUseCase) Read(ID, lunas string) (res viewmodel.PaymentAcc
 	res = viewmodel.PaymentAccountVm{
 		ID:            payment.ID,
 		ShopID:        payment.ShopID,
-		AccountName:   payment.Name,
-		OwnerName:     payment.OwnerName,
+		AccountName:   payment.Name.String,
+		OwnerName:     payment.OwnerName.String,
 		PaymentNumber: payment.PaymentNumber,
 		CreatedAt:     payment.CreatedAt,
 		UpdatedAt:     payment.UpdatedAt.String,
