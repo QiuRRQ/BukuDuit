@@ -7,7 +7,7 @@ import (
 )
 
 type IBooksDebtRepository interface {
-	BrowseByCustomer(userID, status string) (data []models.BooksDebt, err error)
+	BrowseByCustomer(userID, status string) (data models.BooksDebt, err error)
 
 	Browse(status string) (data []models.BooksDebt, err error)
 

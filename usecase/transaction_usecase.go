@@ -488,22 +488,20 @@ func (uc TransactionUseCase) EditDebt(input request.TransactionRequest) (err err
 
 	var debtAmount int
 	var creditAmount int
-	var status string
-	var books viewmodel.BooksDebtVm
 	var getTrans models.Transactions
-	status = enums.Nunggak
 	//check if fcustomer already exist in books debt
-	debtExist, err, data := booksDebtUC.IsDebtCustomerExist(customerData.ID, enums.Nunggak)
+	debtExist, err := booksDebtUC.IsDebtCustomerExist(customerData.ID, enums.Nunggak)
+	if err != nil {
+		return err
+	}
+
+	bookdebt, err := booksDebtUC.BrowseByUser(customerData.ID,enums.Nunggak)
 	if err != nil {
 		return err
 	}
 
 	if debtExist {
 		//edit booksDebt, status akan terus nunggak baik itu user yang hutang atau customer yang hutang.
-		books, err := booksDebtUC.Read(data[0].ID, status)
-		if err != nil {
-			return err
-		}
 
 		getTrans, err := model.Read(input.ID)
 		if err != nil {
@@ -512,24 +510,24 @@ func (uc TransactionUseCase) EditDebt(input request.TransactionRequest) (err err
 
 		if input.TransactionType == enums.Debet {
 			if int(input.Amount) > int(getTrans.Amount.Int32) {
-				debtAmount = int(books.DebtTotal) + (int(input.Amount) - int(getTrans.Amount.Int32))
-				creditAmount = books.CreditTotal
+				debtAmount = int(bookdebt.DebtTotal) + (int(input.Amount) - int(getTrans.Amount.Int32))
+				creditAmount = bookdebt.CreditTotal
 
 			} else {
-				debtAmount = int(books.DebtTotal) - (int(getTrans.Amount.Int32) - int(input.Amount))
-				creditAmount = books.CreditTotal
+				debtAmount = int(bookdebt.DebtTotal) - (int(getTrans.Amount.Int32) - int(input.Amount))
+				creditAmount = bookdebt.CreditTotal
 			}
 
 			fmt.Println(debtAmount)
 			fmt.Println(creditAmount)
 		} else {
 			if int(input.Amount) > int(getTrans.Amount.Int32) {
-				creditAmount = int(books.CreditTotal) + (int(input.Amount) - int(getTrans.Amount.Int32))
-				debtAmount = books.DebtTotal
+				creditAmount = int(bookdebt.CreditTotal) + (int(input.Amount) - int(getTrans.Amount.Int32))
+				debtAmount = bookdebt.DebtTotal
 
 			} else {
-				creditAmount = int(books.CreditTotal) - (int(getTrans.Amount.Int32) - int(input.Amount))
-				debtAmount = books.DebtTotal
+				creditAmount = int(bookdebt.CreditTotal) - (int(getTrans.Amount.Int32) - int(input.Amount))
+				debtAmount = bookdebt.DebtTotal
 			}
 
 			fmt.Println(debtAmount)
@@ -538,14 +536,14 @@ func (uc TransactionUseCase) EditDebt(input request.TransactionRequest) (err err
 
 		booksInput := request.BooksDebtRequest{
 			CustomerID:     customerData.ID,
-			SubmissionDate: books.SubmissionDate,
+			SubmissionDate: bookdebt.SubmissionDate,
 			DebtTotal:      debtAmount,
 			CreditTotal:    creditAmount,
-			Status:         books.Status,
-			CreatedAt:      books.CreatedAt,
+			Status:         bookdebt.Status,
+			CreatedAt:      bookdebt.CreatedAt,
 			UpdatedAt:      now.Format(time.RFC3339),
 		}
-		err = booksDebtUC.Edit(booksInput, books.ID, transaction)
+		err = booksDebtUC.Edit(booksInput, bookdebt.ID, transaction)
 		if err != nil {
 			transaction.Rollback()
 			return err
@@ -562,7 +560,7 @@ func (uc TransactionUseCase) EditDebt(input request.TransactionRequest) (err err
 		Type:            input.TransactionType,
 		CustomerID:      input.CustomerID,
 		TransactionDate: input.TransactionDate,
-		BooksDebtID:     books.ID,
+		BooksDebtID:     bookdebt.ID,
 		UpdatedAt:       now.Format(time.RFC3339),
 		CreatedAt:       getTrans.CreatedAt,
 	}
@@ -602,15 +600,19 @@ func (uc TransactionUseCase) DebtPayment(input request.TransactionRequest) (err 
 	var booksID string
 	status = enums.Nunggak
 	//check if fcustomer already exist in books debt
-	debtExist, err, data := booksDebtUC.IsDebtCustomerExist(customerData.ID, enums.Nunggak)
+	debtExist, err := booksDebtUC.IsDebtCustomerExist(customerData.ID, enums.Nunggak)
 	if err != nil {
 		fmt.Println(2)
+		return err
+	}
+	bookdebts,err :=booksDebtUC.BrowseByUser(customerData.ID,enums.Nunggak)
+	if err != nil{
 		return err
 	}
 
 	if debtExist {
 		//edit booksDebt, status akan terus nunggak baik itu user yang hutang atau customer yang hutang.
-		books, err := booksDebtUC.Read(data[0].ID, status)
+		books, err := booksDebtUC.Read(bookdebts.ID, status)
 
 		if err != nil {
 			fmt.Println("ini")

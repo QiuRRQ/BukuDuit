@@ -1,7 +1,6 @@
 package usecase
 
 import (
-	"bukuduit-go/db/models"
 	"bukuduit-go/db/repositories/actions"
 	"bukuduit-go/helpers/enums"
 	"bukuduit-go/helpers/messages"
@@ -44,24 +43,22 @@ func (uc BooksDebtUseCase) Browse(status string) (res []viewmodel.BooksDebtVm, e
 
 func (uc BooksDebtUseCase) BrowseByUser(customerID, status string) (res viewmodel.BooksDebtVm, err error) {
 	model := actions.NewBooksDebtModel(uc.DB)
-	books, err := model.BrowseByCustomer(customerID, status)
+	book, err := model.BrowseByCustomer(customerID, status)
 	if err != nil {
 		return res, err
 	}
 
-	for _, book := range books {
-		res = viewmodel.BooksDebtVm{
-			ID:             book.ID,
-			CustomerID:     book.CustomerID,
-			SubmissionDate: book.SubmissionDate,
-			BillDate:       book.BillDate.String,
-			DebtTotal:      book.DebtTotal,
-			CreditTotal:    book.CreditTotal,
-			Status:         book.Status.String,
-			CreatedAt:      book.CreatedAt,
-			UpdatedAt:      book.UpdatedAt.String,
-			DeletedAt:      book.DeletedAt.String,
-		}
+	res = viewmodel.BooksDebtVm{
+		ID:             book.ID,
+		CustomerID:     book.CustomerID,
+		SubmissionDate: book.SubmissionDate,
+		BillDate:       book.BillDate.String,
+		DebtTotal:      book.DebtTotal,
+		CreditTotal:    book.CreditTotal,
+		Status:         book.Status.String,
+		CreatedAt:      book.CreatedAt,
+		UpdatedAt:      book.UpdatedAt.String,
+		DeletedAt:      book.DeletedAt.String,
 	}
 
 	return res, err
@@ -209,17 +206,12 @@ func (uc BooksDebtUseCase) IsDebtExist(ID, status string) (res bool, err error) 
 	return count > 0, err
 }
 
-func (uc BooksDebtUseCase) IsDebtCustomerExist(customerID, status string) (res bool, err error, data []models.BooksDebt) {
+func (uc BooksDebtUseCase) IsDebtCustomerExist(customerID, status string) (res bool, err error) {
 	model := actions.NewBooksDebtModel(uc.DB)
 	count, err := model.CountByCustomer(customerID, status)
 	if err != nil {
-		return res, err, data
-	}
-	data, err = model.BrowseByCustomer(customerID, status)
-
-	if err != nil {
-		return res, err, data
+		return res, err
 	}
 
-	return count > 0, err, data
+	return count > 0, err
 }
