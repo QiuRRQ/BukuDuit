@@ -9,6 +9,8 @@ import (
 type IBooksDebtRepository interface {
 	BrowseByCustomer(userID, status string) (data []models.BooksDebt, err error)
 
+	Browse(status string) (data []models.BooksDebt, err error)
+
 	Read(ID string) (data models.BooksDebt, err error)
 
 	Edit(body viewmodel.BooksDebtVm, tx *sql.Tx) (res string, err error)

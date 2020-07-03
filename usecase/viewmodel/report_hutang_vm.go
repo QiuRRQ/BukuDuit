@@ -1,8 +1,6 @@
 package viewmodel
 
 type ReportHutangVm struct {
-	ID          string       `json:"id"`
-	ReferenceID string       `json:"reference_id"` //tak perlu tampilin ini.
 	ShopID      string       `json:"shop_id"`
 	TotalCredit int          `json:"total_credit"`
 	TotalDebit  int          `json:"total_debit"`
@@ -18,6 +16,8 @@ type DebtReport struct {
 }
 
 type DebtDetail struct {
+	ID          string `json:"id"`
+	ReferenceID string `json:"reference_id"` //tak perlu tampilin ini.
 	Name        string `json:"full_name"`
 	Description string `json:"description"`
 	Amount      int32  `json:"amount"`

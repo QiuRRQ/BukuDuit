@@ -126,61 +126,64 @@ func (uc TransactionUseCase) TransactionList(shopID string) (res viewmodel.Trans
 	return res, err
 }
 
-//laporan hutang
-func (uc TransactionUseCase) BrowseByShop(shopID string) (res viewmodel.ReportHutangVm, err error) {
+func (uc TransactionUseCase) DebtReport(shopID string) (res viewmodel.ReportHutangVm, err error) {
 	model := actions.NewTransactionModel(uc.DB)
-	Transactions, err := model.BrowseByShop(shopID)
-	if err != nil {
-		fmt.Println(1)
-		return res, err
-	}
-
 	booksDebtUC := BooksDebtUseCase{UcContract: uc.UcContract}
 
-	var debtBooks viewmodel.BooksDebtVm
-	debtBooks, err = booksDebtUC.BrowseByUser(Transactions[0].ReferenceID, enums.Nunggak)
+	books, err := booksDebtUC.Browse(enums.Nunggak)
+
 	if err != nil {
 		return res, err
 	}
 
 	var debtTotal int
 	var creditTotal int
-
+	var customerID []string
 	var debtDate []viewmodel.DebtReport
 	var debtDetails []viewmodel.DebtDetail
+	for _, book := range books {
+		debtTotal = debtTotal + book.DebtTotal
+		creditTotal = creditTotal + book.CreditTotal
+		customerID = append(customerID, book.CustomerID)
+	}
 
-	for i := 0; i < len(Transactions); i++ {
+	transactions, err := model.DebtReport(customerID, shopID)
+	if err != nil {
+		fmt.Println(2)
+		return res, err
+	}
 
-		tempDate, err := time.Parse(time.RFC3339, Transactions[i].TransactionDate.String)
+	for i := 0; i < len(transactions); i++ {
+
+		tempDate, err := time.Parse(time.RFC3339, transactions[i].TransactionDate.String)
 		if err != nil {
 			fmt.Println(err.Error())
 		}
-		if Transactions[i].Type == enums.Debet {
-			debtTotal = debtTotal + int(Transactions[i].Amount.Int32)
-		} else {
-			creditTotal = creditTotal + int(Transactions[i].Amount.Int32)
-		}
 
 		var nextDate time.Time
-		if i < len(Transactions)-1 {
-			nextDate, err = time.Parse(time.RFC3339, Transactions[i+1].TransactionDate.String)
+		if i < len(transactions)-1 {
+			nextDate, err = time.Parse(time.RFC3339, transactions[i+1].TransactionDate.String)
 			if err != nil {
 				fmt.Println(err.Error())
 			}
 			if tempDate == nextDate {
 				debtDetails = append(debtDetails, viewmodel.DebtDetail{
-					Name:        Transactions[i].Name,
-					Description: Transactions[i].Description.String,
-					Amount:      Transactions[i].Amount.Int32,
-					Type:        Transactions[i].Type,
+					ID:          transactions[i].ID,
+					ReferenceID: transactions[i].ReferenceID,
+					Name:        transactions[i].Name,
+					Description: transactions[i].Description.String,
+					Amount:      transactions[i].Amount.Int32,
+					Type:        transactions[i].Type,
 				})
 
 			} else {
 				debtDetails = append(debtDetails, viewmodel.DebtDetail{
-					Name:        Transactions[i].Name,
-					Description: Transactions[i].Description.String,
-					Amount:      Transactions[i].Amount.Int32,
-					Type:        Transactions[i].Type,
+					ID:          transactions[i].ID,
+					ReferenceID: transactions[i].ReferenceID,
+					Name:        transactions[i].Name,
+					Description: transactions[i].Description.String,
+					Amount:      transactions[i].Amount.Int32,
+					Type:        transactions[i].Type,
 				})
 				debtDate = append(debtDate, viewmodel.DebtReport{
 					TransactionDate: tempDate.String(),
@@ -192,10 +195,12 @@ func (uc TransactionUseCase) BrowseByShop(shopID string) (res viewmodel.ReportHu
 			}
 		} else {
 			debtDetails = append(debtDetails, viewmodel.DebtDetail{
-				Name:        Transactions[i].Name,
-				Description: Transactions[i].Description.String,
-				Amount:      Transactions[i].Amount.Int32,
-				Type:        Transactions[i].Type,
+				ID:          transactions[i].ID,
+				ReferenceID: transactions[i].ReferenceID,
+				Name:        transactions[i].Name,
+				Description: transactions[i].Description.String,
+				Amount:      transactions[i].Amount.Int32,
+				Type:        transactions[i].Type,
 			})
 			debtDate = append(debtDate, viewmodel.DebtReport{
 				TransactionDate: tempDate.String(),
@@ -209,19 +214,113 @@ func (uc TransactionUseCase) BrowseByShop(shopID string) (res viewmodel.ReportHu
 	}
 
 	res = viewmodel.ReportHutangVm{
-		ID:          Transactions[0].ID,
-		ReferenceID: Transactions[0].ReferenceID,
-		TotalCredit: debtBooks.CreditTotal,
-		TotalDebit:  debtBooks.DebtTotal,
+		TotalCredit: creditTotal,
+		TotalDebit:  debtTotal,
 		ListData:    debtDate,
-		CreatedAt:   Transactions[0].CreatedAt,
-		UpdatedAt:   Transactions[0].UpdatedAt.String,
-		DeletedAt:   Transactions[0].DeletedAt.String,
+		CreatedAt:   transactions[0].CreatedAt,
+		UpdatedAt:   transactions[0].UpdatedAt.String,
+		DeletedAt:   transactions[0].DeletedAt.String,
 	}
 
 	return res, err
-
 }
+
+// //laporan hutang
+// func (uc TransactionUseCase) BrowseByShop(shopID string) (res viewmodel.ReportHutangVm, err error) {
+// 	model := actions.NewTransactionModel(uc.DB)
+// 	Transactions, err := model.BrowseByShop(shopID)
+// 	if err != nil {
+// 		fmt.Println(1)
+// 		return res, err
+// 	}
+
+// 	booksDebtUC := BooksDebtUseCase{UcContract: uc.UcContract}
+
+// 	var debtBooks viewmodel.BooksDebtVm
+// 	debtBooks, err = booksDebtUC.BrowseByUser(Transactions[0].ReferenceID, enums.Nunggak)
+// 	if err != nil {
+// 		return res, err
+// 	}
+
+// 	var debtTotal int
+// 	var creditTotal int
+
+// 	var debtDate []viewmodel.DebtReport
+// 	var debtDetails []viewmodel.DebtDetail
+
+// 	for i := 0; i < len(Transactions); i++ {
+
+// 		tempDate, err := time.Parse(time.RFC3339, Transactions[i].TransactionDate.String)
+// 		if err != nil {
+// 			fmt.Println(err.Error())
+// 		}
+// 		if Transactions[i].Type == enums.Debet {
+// 			debtTotal = debtTotal + int(Transactions[i].Amount.Int32)
+// 		} else {
+// 			creditTotal = creditTotal + int(Transactions[i].Amount.Int32)
+// 		}
+
+// 		var nextDate time.Time
+// 		if i < len(Transactions)-1 {
+// 			nextDate, err = time.Parse(time.RFC3339, Transactions[i+1].TransactionDate.String)
+// 			if err != nil {
+// 				fmt.Println(err.Error())
+// 			}
+// 			if tempDate == nextDate {
+// 				debtDetails = append(debtDetails, viewmodel.DebtDetail{
+// 					Name:        Transactions[i].Name,
+// 					Description: Transactions[i].Description.String,
+// 					Amount:      Transactions[i].Amount.Int32,
+// 					Type:        Transactions[i].Type,
+// 				})
+
+// 			} else {
+// 				debtDetails = append(debtDetails, viewmodel.DebtDetail{
+// 					Name:        Transactions[i].Name,
+// 					Description: Transactions[i].Description.String,
+// 					Amount:      Transactions[i].Amount.Int32,
+// 					Type:        Transactions[i].Type,
+// 				})
+// 				debtDate = append(debtDate, viewmodel.DebtReport{
+// 					TransactionDate: tempDate.String(),
+// 					Details:         debtDetails,
+// 				})
+
+// 				debtDetails = nil
+// 				tempDate = nextDate
+// 			}
+// 		} else {
+// 			debtDetails = append(debtDetails, viewmodel.DebtDetail{
+// 				Name:        Transactions[i].Name,
+// 				Description: Transactions[i].Description.String,
+// 				Amount:      Transactions[i].Amount.Int32,
+// 				Type:        Transactions[i].Type,
+// 			})
+// 			debtDate = append(debtDate, viewmodel.DebtReport{
+// 				TransactionDate: tempDate.String(),
+// 				Details:         debtDetails,
+// 			})
+
+// 			debtDetails = nil
+// 			tempDate = nextDate
+// 		}
+
+// 	}
+
+// 	res = viewmodel.ReportHutangVm{
+// 		ID:          Transactions[0].ID,
+// 		ReferenceID: Transactions[0].ReferenceID,
+// 		TotalCredit: debtBooks.CreditTotal,
+// 		TotalDebit:  debtBooks.DebtTotal,
+// 		ListData:    debtDate,
+// 		CreatedAt:   Transactions[0].CreatedAt,
+// 		UpdatedAt:   Transactions[0].UpdatedAt.String,
+// 		DeletedAt:   Transactions[0].DeletedAt.String,
+// 	}
+
+// 	return res, err
+
+// }
 
 func (uc TransactionUseCase) BrowseByCustomer(customerID string) (res viewmodel.DetailsHutangVm, err error) {
 	model := actions.NewTransactionModel(uc.DB)

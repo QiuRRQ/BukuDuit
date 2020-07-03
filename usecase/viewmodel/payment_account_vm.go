@@ -2,7 +2,8 @@ package viewmodel
 
 type PaymentAccountVm struct {
 	ID            string `json:"id"`
-	Name          string `json:"name"`
+	AccountName   string `json:"account_name"`
+	OwnerName     string `json:"owner_name"`
 	ShopID        string `json:"shop_id"`
 	PaymentNumber string `json:"payment_number"`
 	CreatedAt     string `json:"created_at"`

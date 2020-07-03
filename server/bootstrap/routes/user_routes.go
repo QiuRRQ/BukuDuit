@@ -2,7 +2,6 @@ package routes
 
 import (
 	api "bukuduit-go/server/handlers"
-	middleware "bukuduit-go/server/middlewares"
 
 	"github.com/labstack/echo"
 )
@@ -14,9 +13,7 @@ type UserRoute struct {
 
 func (route UserRoute) RegisterRoute() {
 	handler := api.UserHandler{Handler: route.Handler}
-	jwtMiddleware := middleware.JwtVerify{UcContract: route.Handler.UseCaseContract}
 
-	route.RouteGroup.Use(jwtMiddleware.JWTWithConfig)
 	route.RouteGroup.GET("/:id", handler.ReadAccountDetail)
 	route.RouteGroup.POST("/:id", handler.Edit)
 	route.RouteGroup.POST("/forgot", handler.ForgotPin)
