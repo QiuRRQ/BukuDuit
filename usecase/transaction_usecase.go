@@ -130,8 +130,7 @@ func (uc TransactionUseCase) DebtReport(shopID, search, name, amount, transDate,
 	model := actions.NewTransactionModel(uc.DB)
 	booksDebtUC := BooksDebtUseCase{UcContract: uc.UcContract}
 
-	books, err := booksDebtUC.Browse(enums.Nunggak)
-
+	books, err := booksDebtUC.BrowseByShop(shopID,enums.Nunggak)
 	if err != nil {
 		return res, err
 	}
@@ -139,6 +138,7 @@ func (uc TransactionUseCase) DebtReport(shopID, search, name, amount, transDate,
 	var debtTotal int
 	var creditTotal int
 	var customerID string
+	var bookDebtID string
 	var debtDate []viewmodel.DebtReport
 	var debtDetails []viewmodel.DebtDetail
 
@@ -148,11 +148,14 @@ func (uc TransactionUseCase) DebtReport(shopID, search, name, amount, transDate,
 		creditTotal = creditTotal + book.CreditTotal
 		if i != len(books)-1 {
 			customerID = customerID + "'" + book.CustomerID + "'" + ","
+			bookDebtID = bookDebtID + "'" + book.ID + "'" + ","
 		} else {
 			customerID = customerID + "'" + book.CustomerID + "'"
+			bookDebtID = bookDebtID + "'" + book.ID + "'"
 		}
-
 	}
+
+	fmt.Println(bookDebtID)
 
 	var filter string
 
@@ -182,7 +185,7 @@ func (uc TransactionUseCase) DebtReport(shopID, search, name, amount, transDate,
 		filter = filter + ` order by t."transaction_date" ` + transDate
 	}
 
-	transactions, err := model.DebtReport(customerID, shopID, filter)
+	transactions, err := model.DebtReport(customerID, shopID, bookDebtID, filter)
 	if err != nil {
 		return res, err
 	}
@@ -379,8 +382,8 @@ func (uc TransactionUseCase) Read(ID string) (res viewmodel.TransactionVm, err e
 }
 
 func (uc TransactionUseCase) Delete(ID string) (err error) {
-	fmt.Println(ID)
 	model := actions.NewTransactionModel(uc.DB)
+	bookDebtUc := BooksDebtUseCase{UcContract:uc.UcContract}
 	now := time.Now().UTC()
 
 	isExist, err := uc.IsTransactionExist(ID)
@@ -391,10 +394,30 @@ func (uc TransactionUseCase) Delete(ID string) (err error) {
 		return errors.New(messages.DataNotFound)
 	}
 
-	_, err = model.Delete(ID, now.Format(time.RFC3339), now.Format(time.RFC3339))
+	transactionData,err := uc.Read(ID)
 	if err != nil {
 		return err
 	}
+
+	transaction,err := uc.DB.Begin()
+	if err != nil {
+		return err
+	}
+
+	err = bookDebtUc.Delete(transactionData.BooksDebtID,transaction)
+	if err != nil {
+		transaction.Rollback()
+		return err
+	}
+
+	err = model.Delete(ID, now.Format(time.RFC3339), now.Format(time.RFC3339),transaction)
+	if err != nil {
+		transaction.Rollback()
+
+		return err
+	}
+
+	transaction.Commit()
 
 	return nil
 }
@@ -636,22 +659,17 @@ func (uc TransactionUseCase) AddDebt(input request.TransactionRequest) (err erro
 	}
 
 	//check if customer already exist in books debt
-
 	debtExist, err := booksDebtUC.IsDebtCustomerExist(input.ReferenceID, enums.Nunggak)
 	if err != nil {
 		return err
 	}
-	fmt.Println(debtExist)
 
 	if debtExist {
-
 		bookdebts, err := booksDebtUC.BrowseByUser(input.ReferenceID, enums.Nunggak)
 		if err != nil {
 			return err
 		}
-
 		if input.TransactionType == enums.Credit {
-			fmt.Println("credit")
 			if bookdebts.CreditTotal > 0 {
 				createNew = false
 				creditAmount = bookdebts.CreditTotal + int(input.Amount)

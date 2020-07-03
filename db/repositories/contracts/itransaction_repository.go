@@ -19,7 +19,7 @@ type ITransactionRepository interface {
 
 	Add(body viewmodel.TransactionVm, tx *sql.Tx) (res string, err error)
 
-	Delete(ID, updatedAt, deletedAt string) (res string, err error)
+	Delete(ID, updatedAt, deletedAt string,tx *sql.Tx) (err error)
 
 	DeleteByCustomer(customerID, updatedAt, deletedAt string, tx *sql.Tx) (err error)
 
@@ -29,5 +29,5 @@ type ITransactionRepository interface {
 
 	CountDistinctBy(column, ID string) (res int, err error)
 
-	DebtReport(customerID, shopID, filter string) (data []models.Transactions, err error)
+	DebtReport(customerID, shopID, bookDebtID, filter string) (data []models.Transactions, err error)
 }

@@ -51,6 +51,43 @@ func (repository BooksDebtRepository) Browse(status string) (data []models.Books
 
 	return data, err
 }
+
+func (repository BooksDebtRepository) BrowseByShop(shopID,status string) (data []models.BooksDebt, err error) {
+
+	statement := `select bd.* from "books_debt" bd 
+    inner join "user_customers" uc on uc."id"=bd."customer_id" 
+    inner join "business_cards" bc on bc."id" = uc."business_id"
+    where bd."deleted_at" is null and uc."business_id"=$1 and bd."status" = $2`
+
+	rows, err := repository.DB.Query(statement, shopID,status)
+	if err != nil {
+		return data, err
+	}
+
+	for rows.Next() {
+		dataTemp := models.BooksDebt{}
+
+		err = rows.Scan(
+			&dataTemp.ID,
+			&dataTemp.CustomerID,
+			&dataTemp.SubmissionDate,
+			&dataTemp.BillDate,
+			&dataTemp.DebtTotal,
+			&dataTemp.CreditTotal,
+			&dataTemp.Status,
+			&dataTemp.CreatedAt,
+			&dataTemp.UpdatedAt,
+			&dataTemp.DeletedAt,
+		)
+		if err != nil {
+			return data, err
+		}
+		data = append(data, dataTemp)
+	}
+
+	return data, err
+}
+
 func (repository BooksDebtRepository) BrowseByCustomer(customerID, status string) (data models.BooksDebt, err error) {
 	if status == ""{
 		statement := `select * from "books_debt" where "customer_id"=$1 and "deleted_at" is null`
@@ -160,14 +197,14 @@ func (repository BooksDebtRepository) Add(body viewmodel.BooksDebtVm, tx *sql.Tx
 	return res, err
 }
 
-func (repository BooksDebtRepository) Delete(ID, updatedAt, deletedAt string) (res string, err error) {
+func (repository BooksDebtRepository) Delete(ID, updatedAt, deletedAt string,tx *sql.Tx) (err error) {
 	statement := `update "books_debt" set "updated_at"=$1, "deleted_at"=$2 where "id"=$3 returning  "id"`
-	err = repository.DB.QueryRow(statement, datetime.StrParseToTime(updatedAt, time.RFC3339), datetime.StrParseToTime(deletedAt, time.RFC3339), ID).Scan(&res)
+	_,err = tx.Exec(statement, datetime.StrParseToTime(updatedAt, time.RFC3339), datetime.StrParseToTime(deletedAt, time.RFC3339), ID)
 	if err != nil {
-		return res, err
+		return err
 	}
 
-	return res, err
+	return nil
 }
 
 func (repository BooksDebtRepository) DeleteByCustomer(customerID, updatedAt, deletedAt string, tx *sql.Tx) (err error) {

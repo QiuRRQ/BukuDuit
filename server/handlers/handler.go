@@ -61,6 +61,7 @@ func (h Handler) ResponseBadRequest(error string) viewmodel.ResponseVm {
 		},
 		StatusCode: http.StatusBadRequest,
 	}
+
 	return responseVm
 }
 
