@@ -126,7 +126,7 @@ func (uc TransactionUseCase) TransactionList(shopID string) (res viewmodel.Trans
 	return res, err
 }
 
-func (uc TransactionUseCase) DebtReport(shopID, search, name, amount, createdDate string) (res viewmodel.ReportHutangVm, err error) {
+func (uc TransactionUseCase) DebtReport(shopID, search, name, amount, transDate, startDate, endDate string) (res viewmodel.ReportHutangVm, err error) {
 	model := actions.NewTransactionModel(uc.DB)
 	booksDebtUC := BooksDebtUseCase{UcContract: uc.UcContract}
 
@@ -141,6 +141,8 @@ func (uc TransactionUseCase) DebtReport(shopID, search, name, amount, createdDat
 	var customerID string
 	var debtDate []viewmodel.DebtReport
 	var debtDetails []viewmodel.DebtDetail
+
+	//variabel total di sini gk berubah selama filter gk diset
 	for i, book := range books {
 		debtTotal = debtTotal + book.DebtTotal
 		creditTotal = creditTotal + book.CreditTotal
@@ -152,12 +154,53 @@ func (uc TransactionUseCase) DebtReport(shopID, search, name, amount, createdDat
 
 	}
 
-	transactions, err := model.DebtReport(customerID, shopID)
+	var filter string
+
+	if startDate != "" && endDate != "" {
+		filter = `and (t."transaction_date" BETWEEN '` + startDate + `' and '` + endDate + `')`
+	}
+	if search != "" { //input nama
+		filter = `and uc."full_name" = '` + search + `'` + filter
+	}
+	//sort hanya dipakai sekali
+	if name == "ASC" || name == "asc" {
+		filter = filter + ` order by uc."full_name" ` + name
+	}
+	if name == "DESC" || name == "desc" {
+		filter = filter + ` order by uc."full_name" ` + name
+	}
+	if amount == "ASC" || amount == "asc" {
+		filter = filter + ` order by t."amount" ` + amount
+	}
+	if amount == "DESC" || amount == "desc" {
+		filter = filter + ` order by t."amount" ` + amount
+	}
+	if transDate == "ASC" || transDate == "asc" {
+		filter = filter + ` order by t."transaction_date" ` + transDate
+	}
+	if transDate == "DESC" || transDate == "desc" {
+		filter = filter + ` order by t."transaction_date" ` + transDate
+	}
+
+	transactions, err := model.DebtReport(customerID, shopID, filter)
 	if err != nil {
 		return res, err
 	}
 
+	if filter != "" {
+		debtTotal = 0
+		creditTotal = 0
+	}
+
 	for i := 0; i < len(transactions); i++ {
+
+		if filter != "" {
+			if transactions[i].Type == enums.Debet {
+				debtTotal = debtTotal + int(transactions[i].Amount.Int32)
+			} else {
+				creditTotal = creditTotal + int(transactions[i].Amount.Int32)
+			}
+		}
 
 		tempDate, err := time.Parse(time.RFC3339, transactions[i].TransactionDate.String)
 		if err != nil {
@@ -495,7 +538,7 @@ func (uc TransactionUseCase) EditDebt(input request.TransactionRequest) (err err
 		return err
 	}
 
-	bookdebt, err := booksDebtUC.BrowseByUser(customerData.ID,enums.Nunggak)
+	bookdebt, err := booksDebtUC.BrowseByUser(customerData.ID, enums.Nunggak)
 	if err != nil {
 		return err
 	}
@@ -608,8 +651,8 @@ func (uc TransactionUseCase) DebtPayment(input request.TransactionRequest) (err 
 	}
 
 	if debtExist {
-		bookdebts,err :=booksDebtUC.BrowseByUser(customerData.ID,enums.Nunggak)
-		if err != nil{
+		bookdebts, err := booksDebtUC.BrowseByUser(customerData.ID, enums.Nunggak)
+		if err != nil {
 			return err
 		}
 		//edit booksDebt, status akan terus nunggak baik itu user yang hutang atau customer yang hutang.

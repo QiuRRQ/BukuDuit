@@ -26,6 +26,8 @@ type ITransactionRepository interface {
 	CountByPk(ID string) (res int, err error)
 
 	CountBy(column, value string) (res int, err error)
+
 	CountDistinctBy(column, ID string) (res int, err error)
-	DebtReport(customerID string, shopID string) (data []models.Transactions, err error)
+
+	DebtReport(customerID, shopID, filter string) (data []models.Transactions, err error)
 }

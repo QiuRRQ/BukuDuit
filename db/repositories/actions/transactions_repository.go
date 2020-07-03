@@ -19,12 +19,12 @@ func NewTransactionModel(DB *sql.DB) contracts.ITransactionRepository {
 	return TransactionRepository{DB: DB}
 }
 
-func (repository TransactionRepository) DebtReport(customerID string, shopID string) (data []models.Transactions, err error) {
+func (repository TransactionRepository) DebtReport(customerID, shopID, filter string) (data []models.Transactions, err error) {
 
 	statement := `select t."id", uc."full_name", t."amount", t."reference_id", t."shop_id", t."description", t."image", t."transaction_date", t."type", t."created_at", t."updated_at", t."deleted_at" 
 	from "transactions" t  join "user_customers" uc 
 	on t."reference_id" = uc."id" 
-	where t."reference_id" IN(` + customerID + `) and t."shop_id"='` + shopID + `' and t."deleted_at" is null and t."customer_id" is null order by t."transaction_date" desc `
+	where t."reference_id" IN(` + customerID + `) and t."shop_id"='` + shopID + `' and t."deleted_at" is null and t."customer_id" is null ` + filter
 
 	rows, err := repository.DB.Query(statement)
 	if err != nil {
