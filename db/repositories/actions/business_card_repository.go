@@ -66,7 +66,7 @@ func (repository BusinessCardRepository) Read(ID string) (data models.BusinessCa
 		&data.UserID,
 		&data.CreatedAt,
 		&data.UpdatedAt,
-		&data.DelmantetedAt,
+		&data.DeletedAt,
 	)
 	if err != nil {
 		return data, err
