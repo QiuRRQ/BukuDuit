@@ -130,7 +130,7 @@ func (uc TransactionUseCase) DebtReport(shopID, search, name, amount, transDate,
 	model := actions.NewTransactionModel(uc.DB)
 	booksDebtUC := BooksDebtUseCase{UcContract: uc.UcContract}
 
-	books, err := booksDebtUC.BrowseByShop(shopID,enums.Nunggak)
+	books, err := booksDebtUC.BrowseByShop(shopID,"")
 	if err != nil {
 		return res, err
 	}
