@@ -866,6 +866,7 @@ func (uc TransactionUseCase) AddDebt(input request.TransactionRequest) (err erro
 		}
 
 		if createNew {
+			fmt.Println("ini satu")
 			booksInput := request.BooksDebtRequest{
 				CustomerID:     input.ReferenceID,
 				SubmissionDate: input.TransactionDate,
@@ -896,6 +897,7 @@ func (uc TransactionUseCase) AddDebt(input request.TransactionRequest) (err erro
 				return err
 			}
 		} else {
+			fmt.Println("ini dua")
 			bookEditInput := request.BooksDebtRequest{
 				CustomerID:     input.ReferenceID,
 				SubmissionDate: now.Format(time.RFC3339),
@@ -930,6 +932,7 @@ func (uc TransactionUseCase) AddDebt(input request.TransactionRequest) (err erro
 			}
 		}
 	} else {
+		fmt.Println("ini tiga")
 		//for adding new debt so adding on books debt
 		if input.TransactionType == enums.Debet {
 			debtAmount = debtAmount + int(input.Amount)
