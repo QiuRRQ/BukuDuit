@@ -1,0 +1,338 @@
+Tools environment: GOPATH=/root/go
+Installing 1 tool at /root/go/bin in module mode.
+  gopls
+
+Tools environment: GOPATH=/root/go
+Installing 1 tool at /root/go/bin in module mode.
+  gopls
+
+Installing golang.org/x/tools/gopls SUCCEEDED
+
+All tools successfully installed. You are ready to Go :).
+Installing golang.org/x/tools/gopls SUCCEEDED
+
+All tools successfully installed. You are ready to Go :).
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/server/bootstrap/routes
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/server/bootstrap/routes
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/server/bootstrap/routes and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/server/bootstrap/routes
+/home/aziz/works/newBukuduit/bukuduit-go/server/bootstrap/routes>Finished running tool: /usr/bin/go build -o /tmp/vscode-go9qPCjc/go-code-check .
+
+/home/aziz/works/newBukuduit/bukuduit-go/server/bootstrap/routes>Finished running tool: /usr/bin/go vet .
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/usecase and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/usecase
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go vet .
+
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go build -o /tmp/vscode-go9qPCjc/go-code-check .
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/db/repositories/actions
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/db/repositories/actions
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/db/repositories/actions and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/db/repositories/actions
+/home/aziz/works/newBukuduit/bukuduit-go/db/repositories/actions>Finished running tool: /usr/bin/go vet .
+
+/home/aziz/works/newBukuduit/bukuduit-go/db/repositories/actions>Finished running tool: /usr/bin/go build -o /tmp/vscode-go9qPCjc/go-code-check .
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/db/repositories/actions
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/db/repositories/actions
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/db/repositories/actions and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/db/repositories/actions
+/home/aziz/works/newBukuduit/bukuduit-go/db/repositories/actions>Finished running tool: /usr/bin/go vet .
+
+/home/aziz/works/newBukuduit/bukuduit-go/db/repositories/actions>Finished running tool: /usr/bin/go build -o /tmp/vscode-go9qPCjc/go-code-check .
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/db/repositories/actions
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/db/repositories/actions
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/db/repositories/actions and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/db/repositories/actions
+/home/aziz/works/newBukuduit/bukuduit-go/db/repositories/actions>Finished running tool: /usr/bin/go vet .
+
+/home/aziz/works/newBukuduit/bukuduit-go/db/repositories/actions>Finished running tool: /usr/bin/go build -o /tmp/vscode-go9qPCjc/go-code-check .
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/db/repositories/actions
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/db/repositories/actions
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/db/repositories/actions and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/db/repositories/actions
+/home/aziz/works/newBukuduit/bukuduit-go/db/repositories/actions>Finished running tool: /usr/bin/go vet .
+
+/home/aziz/works/newBukuduit/bukuduit-go/db/repositories/actions>Finished running tool: /usr/bin/go build -o /tmp/vscode-go9qPCjc/go-code-check .
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/usecase and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/usecase
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go vet .
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:427: books declared but not used
+
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go build -o /tmp/vscode-go9qPCjc/go-code-check .
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:427: books declared and not used
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/usecase and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/usecase
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go build -o /tmp/vscode-go9qPCjc/go-code-check .
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:431: syntax error: unexpected if, expecting expression
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:432: syntax error: unexpected newline, expecting comma or }
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:433: syntax error: unexpected ) at end of statement
+
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go vet .
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:431: expected operand, found 'if' (and 10 more errors)
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/usecase and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/usecase
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go build -o /tmp/vscode-go9qPCjc/go-code-check .
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:427: undefined: books
+
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go vet .
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:427: undeclared name: books
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/usecase and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/usecase
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go build -o /tmp/vscode-go9qPCjc/go-code-check .
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:427: undefined: books
+
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go vet .
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:427: undeclared name: books
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/usecase and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/usecase
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go vet .
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:427: books declared but not used
+
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go build -o /tmp/vscode-go9qPCjc/go-code-check .
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:427: books declared and not used
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/usecase and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/usecase
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go build -o /tmp/vscode-go9qPCjc/go-code-check .
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:436: not enough arguments in call to bookDebtUc.Edit
+
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go vet .
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:436: cannot use transactionData.BooksDebtID (variable of type string) as requests.BooksDebtRequest value in argument to bookDebtUc.Edit
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/server/requests
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/server/requests
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/server/requests and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/server/requests
+/home/aziz/works/newBukuduit/bukuduit-go/server/requests>Finished running tool: /usr/bin/go vet .
+
+/home/aziz/works/newBukuduit/bukuduit-go/server/requests>Finished running tool: /usr/bin/go build -o /tmp/vscode-go9qPCjc/go-code-check .
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/usecase and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/usecase
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go build -o /tmp/vscode-go9qPCjc/go-code-check .
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:436: not enough arguments in call to bookDebtUc.Edit
+
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go vet .
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:436: cannot use transactionData.BooksDebtID (variable of type string) as requests.BooksDebtRequest value in argument to bookDebtUc.Edit
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/usecase and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/usecase
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go build -o /tmp/vscode-go9qPCjc/go-code-check .
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:439: not enough arguments in call to bookDebtUc.Edit
+
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go vet .
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:439: cannot use transactionData.BooksDebtID (variable of type string) as requests.BooksDebtRequest value in argument to bookDebtUc.Edit
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/usecase and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/usecase
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go build -o /tmp/vscode-go9qPCjc/go-code-check .
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:443: not enough arguments in call to bookDebtUc.Edit
+
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go vet .
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:443: cannot use transactionData.BooksDebtID (variable of type string) as requests.BooksDebtRequest value in argument to bookDebtUc.Edit
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/usecase and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/usecase
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go build -o /tmp/vscode-go9qPCjc/go-code-check .
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:446: not enough arguments in call to bookDebtUc.Edit
+
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go vet .
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:446: cannot use transactionData.BooksDebtID (variable of type string) as requests.BooksDebtRequest value in argument to bookDebtUc.Edit
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/usecase and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/usecase
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go build -o /tmp/vscode-go9qPCjc/go-code-check .
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:452: not enough arguments in call to bookDebtUc.Edit
+
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go vet .
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:452: cannot use transactionData.BooksDebtID (variable of type string) as requests.BooksDebtRequest value in argument to bookDebtUc.Edit
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/usecase and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/usecase
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go build -o /tmp/vscode-go9qPCjc/go-code-check .
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:437: invalid operation: books.DebtTotal - transactionData.Amount (mismatched types int and int32)
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:439: invalid operation: books.CreditTotal - transactionData.Amount (mismatched types int and int32)
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:454: not enough arguments in call to bookDebtUc.Edit
+
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go vet .
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:437: invalid operation: mismatched types int and int32
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/usecase and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/usecase
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go build -o /tmp/vscode-go9qPCjc/go-code-check .
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:439: invalid operation: books.CreditTotal - transactionData.Amount (mismatched types int and int32)
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:454: not enough arguments in call to bookDebtUc.Edit
+
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go vet .
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:439: invalid operation: mismatched types int and int32
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/usecase and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/usecase
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go build -o /tmp/vscode-go9qPCjc/go-code-check .
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:454: not enough arguments in call to bookDebtUc.Edit
+
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go vet .
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:454: cannot use transactionData.BooksDebtID (variable of type string) as requests.BooksDebtRequest value in argument to bookDebtUc.Edit
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/usecase and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/usecase
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go build -o /tmp/vscode-go9qPCjc/go-code-check .
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:454: not enough arguments in call to bookDebtUc.Edit
+
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go vet .
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:454: cannot use transactionData.BooksDebtID (variable of type string) as requests.BooksDebtRequest value in argument to bookDebtUc.Edit
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/usecase and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/usecase
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go build -o /tmp/vscode-go9qPCjc/go-code-check .
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:456: not enough arguments in call to bookDebtUc.Edit
+
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go vet .
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:456: cannot use transactionData.BooksDebtID (variable of type string) as requests.BooksDebtRequest value in argument to bookDebtUc.Edit
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/usecase and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/usecase
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go build -o /tmp/vscode-go9qPCjc/go-code-check .
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:456: not enough arguments in call to bookDebtUc.Edit
+
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go vet .
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:456: cannot use transactionData.BooksDebtID (variable of type string) as requests.BooksDebtRequest value in argument to bookDebtUc.Edit
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/usecase and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/usecase
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go build -o /tmp/vscode-go9qPCjc/go-code-check .
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:456: not enough arguments in call to bookDebtUc.Edit
+
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go vet .
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:456: cannot use transaction (variable of type *sql.Tx) as string value in argument to bookDebtUc.Edit
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/usecase and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/usecase
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go vet .
+
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go build -o /tmp/vscode-go9qPCjc/go-code-check .
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/usecase and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/usecase
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go vet .
+
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go build -o /tmp/vscode-go9qPCjc/go-code-check .
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/db/repositories/actions
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/db/repositories/actions
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/db/repositories/actions and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/db/repositories/actions
+/home/aziz/works/newBukuduit/bukuduit-go/db/repositories/actions>Finished running tool: /usr/bin/go vet .
+
+/home/aziz/works/newBukuduit/bukuduit-go/db/repositories/actions>Finished running tool: /usr/bin/go build -o /tmp/vscode-go9qPCjc/go-code-check .
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/db/repositories/actions
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/db/repositories/actions
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/db/repositories/actions and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/db/repositories/actions
+/home/aziz/works/newBukuduit/bukuduit-go/db/repositories/actions>Finished running tool: /usr/bin/go vet .
+
+/home/aziz/works/newBukuduit/bukuduit-go/db/repositories/actions>Finished running tool: /usr/bin/go build -o /tmp/vscode-go9qPCjc/go-code-check .
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/usecase and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/usecase
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go vet .
+
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go build -o /tmp/vscode-go9qPCjc/go-code-check .
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/usecase and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/usecase
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go vet .
+
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go build -o /tmp/vscode-go9qPCjc/go-code-check .
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/usecase and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/usecase
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go build -o /tmp/vscode-go9qPCjc/go-code-check .
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:388: cannot use Transaction.BooksDeptID (type sql.NullString) as type string in field value
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:389: cannot use Transaction.BooksTransID (type sql.NullString) as type string in field value
+
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go vet .
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:388: cannot use Transaction.BooksDeptID (variable of type sql.NullString) as string value in struct literal
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/usecase and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/usecase
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go vet .
+
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go build -o /tmp/vscode-go9qPCjc/go-code-check .
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/usecase and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/usecase
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go vet .
+
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go build -o /tmp/vscode-go9qPCjc/go-code-check .
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/usecase and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/usecase
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go vet .
+
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go build -o /tmp/vscode-go9qPCjc/go-code-check .
+

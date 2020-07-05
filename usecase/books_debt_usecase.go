@@ -41,9 +41,9 @@ func (uc BooksDebtUseCase) Browse(status string) (res []viewmodel.BooksDebtVm, e
 	return res, err
 }
 
-func (uc BooksDebtUseCase) BrowseByShop(shopID,status string) (res []viewmodel.BooksDebtVm, err error) {
+func (uc BooksDebtUseCase) BrowseByShop(shopID, status string) (res []viewmodel.BooksDebtVm, err error) {
 	model := actions.NewBooksDebtModel(uc.DB)
-	books, err := model.BrowseByShop(shopID,status)
+	books, err := model.BrowseByShop(shopID, status)
 	if err != nil {
 		return res, err
 	}
@@ -94,10 +94,12 @@ func (uc BooksDebtUseCase) Read(ID, status string) (res viewmodel.BooksDebtVm, e
 	model := actions.NewBooksDebtModel(uc.DB)
 	userCustomerUC := BooksDebtUseCase{UcContract: uc.UcContract}
 
+	fmt.Println(ID)
 	fmt.Println(userCustomerUC)
 
 	books, err := model.Read(ID)
 	if err != nil {
+		fmt.Println(1, 5)
 		return res, err
 	}
 
@@ -184,7 +186,7 @@ func (uc BooksDebtUseCase) Register(userID, bookName, createdAt, updatedAt strin
 	return nil
 }
 
-func (uc BooksDebtUseCase) Delete(ID string,tx *sql.Tx) (err error) {
+func (uc BooksDebtUseCase) Delete(ID string, tx *sql.Tx) (err error) {
 	fmt.Println(ID)
 	model := actions.NewBooksDebtModel(uc.DB)
 	now := time.Now().UTC()
@@ -197,7 +199,7 @@ func (uc BooksDebtUseCase) Delete(ID string,tx *sql.Tx) (err error) {
 		return errors.New(messages.DataNotFound)
 	}
 
-	err = model.Delete(ID, now.Format(time.RFC3339), now.Format(time.RFC3339),tx)
+	err = model.Delete(ID, now.Format(time.RFC3339), now.Format(time.RFC3339), tx)
 	if err != nil {
 		return err
 	}
