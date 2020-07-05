@@ -1,6 +1,7 @@
 package request
 
 type BooksDebtRequest struct {
+	ID             string `json:"id"`
 	CustomerID     string `json:"customer_id"`
 	SubmissionDate string `json:"submission_date"`
 	BillDate       string `json:"bill_date"`
