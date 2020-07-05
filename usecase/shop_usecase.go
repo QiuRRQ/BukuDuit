@@ -52,6 +52,7 @@ func (uc ShopUseCase) Read(ID, lunas string) (res viewmodel.ShopVm, err error) {
 
 	tempDataUserCustomer, err := userCustomerUC.BrowseByShop(ID)
 	if err != nil {
+		fmt.Println(1)
 		return res, err
 	}
 
@@ -107,6 +108,7 @@ func (uc ShopUseCase) Read(ID, lunas string) (res viewmodel.ShopVm, err error) {
 
 	shop, err := model.Read(ID)
 	if err != nil {
+		fmt.Println(2)
 		return res, err
 	}
 
