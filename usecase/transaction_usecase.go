@@ -698,35 +698,35 @@ func (uc TransactionUseCase) EditDebt(input request.TransactionRequest) (err err
 
 		if createNew {
 			fmt.Println("new")
-			booksInput := request.BooksDebtRequest{
-				CustomerID:     input.ReferenceID,
-				SubmissionDate: input.TransactionDate,
-				DebtTotal:      debtAmount,
-				CreditTotal:    creditAmount,
-				BillDate:       input.BillDate,
-				Status:         enums.Nunggak,
-				CreatedAt:      now.Format(time.RFC3339),
-				UpdatedAt:      now.Format(time.RFC3339),
-			}
-			_, err = booksDebtUC.Add(booksInput, input.CustomerID, transaction)
-			if err != nil {
-				transaction.Rollback()
-				return err
-			}
-
-			bookEditInput := request.BooksDebtRequest{
-				CustomerID:     input.ReferenceID,
-				SubmissionDate: now.Format(time.RFC3339),
-				DebtTotal:      0,
-				CreditTotal:    0,
-				Status:         enums.Lunas,
-				UpdatedAt:      now.Format(time.RFC3339),
-			}
-			err = booksDebtUC.Edit(bookEditInput, bookdebt.ID, transaction)
-			if err != nil {
-				transaction.Rollback()
-				return err
-			}
+			//booksInput := request.BooksDebtRequest{
+			//	CustomerID:     input.ReferenceID,
+			//	SubmissionDate: input.TransactionDate,
+			//	DebtTotal:      debtAmount,
+			//	CreditTotal:    creditAmount,
+			//	BillDate:       input.BillDate,
+			//	Status:         enums.Nunggak,
+			//	CreatedAt:      now.Format(time.RFC3339),
+			//	UpdatedAt:      now.Format(time.RFC3339),
+			//}
+			//_, err = booksDebtUC.Add(booksInput, input.CustomerID, transaction)
+			//if err != nil {
+			//	transaction.Rollback()
+			//	return err
+			//}
+			//
+			//bookEditInput := request.BooksDebtRequest{
+			//	CustomerID:     input.ReferenceID,
+			//	SubmissionDate: now.Format(time.RFC3339),
+			//	DebtTotal:      0,
+			//	CreditTotal:    0,
+			//	Status:         enums.Lunas,
+			//	UpdatedAt:      now.Format(time.RFC3339),
+			//}
+			//err = booksDebtUC.Edit(bookEditInput, bookdebt.ID, transaction)
+			//if err != nil {
+			//	transaction.Rollback()
+			//	return err
+			//}
 
 			//TransactionBody := viewmodel.TransactionVm{
 			//	ReferenceID:     input.ReferenceID,
