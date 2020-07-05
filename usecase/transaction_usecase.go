@@ -646,6 +646,8 @@ func (uc TransactionUseCase) EditDebt(input request.TransactionRequest) (err err
 			if bookdebt.CreditTotal > 0 {
 				if int(input.Amount) > int(getTrans.Amount.Int32) {
 					debtAmount = int(bookdebt.DebtTotal) + (int(input.Amount) - int(getTrans.Amount.Int32))
+					fmt.Println(bookdebt.DebtTotal)
+					fmt.Println(debtAmount)
 					creditAmount = 0
 					status = enums.Nunggak
 				} else {
