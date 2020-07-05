@@ -57,8 +57,8 @@ func (repository BooksDebtRepository) BrowseByShop(shopID,status string) (data [
 	if status == ""{
 		statement := `select bd.* from "books_debt" bd 
     inner join "user_customers" uc on uc."id"=bd."customer_id" 
-    inner join "business_cards" bc on bc."id" = uc."business_id"
-    where bd."deleted_at" is null and uc."business_id"=$1`
+    inner join shops bc on bc."id" = uc."shop_id"
+    where bd."deleted_at" is null and uc."shop_id"=$1`
 		rows, err = repository.DB.Query(statement, shopID)
 		if err != nil {
 			return data, err
@@ -66,8 +66,8 @@ func (repository BooksDebtRepository) BrowseByShop(shopID,status string) (data [
 	}else{
 		statement := `select bd.* from "books_debt" bd 
     inner join "user_customers" uc on uc."id"=bd."customer_id" 
-    inner join "business_cards" bc on bc."id" = uc."business_id"
-    where bd."deleted_at" is null and uc."business_id"=$1 and bd."status" = $2`
+    inner join shops bc on bc."id" = uc."shop_id"
+    where bd."deleted_at" is null and uc."shop_id"=$1 and bd."status" = $2`
 		rows, err = repository.DB.Query(statement, shopID,status)
 		if err != nil {
 			return data, err

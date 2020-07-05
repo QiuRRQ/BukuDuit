@@ -6,14 +6,14 @@ import (
 	"database/sql"
 )
 
-type IBusinessCardRepository interface {
-	BrowseByUser(userID string) (data []models.BusinessCards, err error)
+type IShopRepository interface {
+	BrowseByUser(userID string) (data []models.Shop, err error)
 
-	Read(ID string) (data models.BusinessCards, err error)
+	Read(ID string) (data models.Shop, err error)
 
-	Edit(body viewmodel.BusinessCardVm) (res string, err error)
+	Edit(body viewmodel.ShopVm) (res string, err error)
 
-	Add(body viewmodel.BusinessCardVm, userID string, tx *sql.Tx) (res string, err error)
+	Add(body viewmodel.ShopVm, userID string, tx *sql.Tx) (res string, err error)
 
 	Delete(ID, updatedAt, deletedAt string) (res string, err error)
 

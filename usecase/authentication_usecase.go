@@ -66,7 +66,7 @@ func (uc AuthenticationUseCase) GenerateTokenByOtp(key, otp string) (res viewmod
 
 func (uc AuthenticationUseCase) Register(mobilePhone, pin, shopName string) (err error) {
 	userUc := UserUseCase{UcContract: uc.UcContract}
-	businessCardUc := BusinessCardUseCase{UcContract: uc.UcContract}
+	businessCardUc := ShopUseCase{UcContract: uc.UcContract}
 	now := time.Now().UTC()
 	transaction, err := uc.DB.Begin()
 	if err != nil {

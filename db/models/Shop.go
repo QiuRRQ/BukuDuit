@@ -2,7 +2,7 @@ package models
 
 import "database/sql"
 
-type BusinessCards struct {
+type Shop struct {
 	ID          string         `db:"id"`
 	FullName    sql.NullString `db:"full_name"`
 	BookName    string         `db:"book_name"`

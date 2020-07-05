@@ -13,7 +13,7 @@ type ShopRoute struct {
 }
 
 func (route ShopRoute) RegisterRoute() {
-	handler := api.BusinessCardHandler{Handler: route.Handler}
+	handler := api.ShopHandler{Handler: route.Handler}
 	jwtMiddleware := middleware.JwtVerify{UcContract: route.Handler.UseCaseContract}
 
 	route.RouteGroup.Use(jwtMiddleware.JWTWithConfig)

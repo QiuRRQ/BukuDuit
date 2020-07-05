@@ -52,14 +52,14 @@ func (uc UserUseCase) ForgotMyPin(input request.UserRequest) (err error) {
 
 func (uc UserUseCase) MyAccount(userID string) (res viewmodel.UserVm, err error) {
 
-	businessUsecase := BusinessCardUseCase{UcContract: uc.UcContract}
+	businessUsecase := ShopUseCase{UcContract: uc.UcContract}
 	paymentUC := PaymentAccountUseCase{UcContract: uc.UcContract}
 	user, err := uc.ReadByPk(userID)
 	if err != nil {
 		return res, err
 	}
 
-	var ownedShop []viewmodel.BusinessCardVm
+	var ownedShop []viewmodel.ShopVm
 	ownedShop, err = businessUsecase.BrowseByUser(userID)
 	fmt.Println(ownedShop)
 	if err != nil {

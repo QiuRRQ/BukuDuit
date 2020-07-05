@@ -1,6 +1,6 @@
 package viewmodel
 
-type BusinessCardVm struct {
+type ShopVm struct {
 	ID                  string                      `json:"id"`
 	FullName            string                      `json:"full_name"`
 	BookName            string                      `json:"book_name"`
