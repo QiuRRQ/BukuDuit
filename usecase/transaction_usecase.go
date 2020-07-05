@@ -606,6 +606,7 @@ func (uc TransactionUseCase) EditDebt(input request.TransactionRequest) (err err
 	var debtAmount int
 	var creditAmount int
 	var status string
+	var newAmount int
 	createNew := false
 	//check if fcustomer already exist in books debt
 	debtExist, err := booksDebtUC.IsDebtCustomerExist(customerData.ID, enums.Nunggak)
@@ -644,7 +645,8 @@ func (uc TransactionUseCase) EditDebt(input request.TransactionRequest) (err err
 
 			if bookdebt.CreditTotal > 0 {
 				if int(input.Amount) > int(getTrans.Amount.Int32) {
-					debtAmount = bookdebt.DebtTotal + ((int(input.Amount) - int(getTrans.Amount.Int32)) - int(bookdebt.CreditTotal))
+					newAmount = int(input.Amount) - (int(getTrans.Amount.Int32) - int(bookdebt.CreditTotal))
+					debtAmount = bookdebt.DebtTotal + newAmount
 					creditAmount = 0
 					status = enums.Nunggak
 					createNew = true
@@ -677,7 +679,8 @@ func (uc TransactionUseCase) EditDebt(input request.TransactionRequest) (err err
 
 			if bookdebt.DebtTotal > 0 {
 				if int(input.Amount) > int(getTrans.Amount.Int32) {
-					creditAmount = int(bookdebt.CreditTotal) + ((int(input.Amount) - int(getTrans.Amount.Int32))-bookdebt.DebtTotal)
+					newAmount = int(input.Amount) - (int(getTrans.Amount.Int32)-bookdebt.DebtTotal)
+					creditAmount = int(bookdebt.CreditTotal) + newAmount
 					debtAmount = 0
 					status = enums.Nunggak
 					createNew = true
@@ -726,20 +729,19 @@ func (uc TransactionUseCase) EditDebt(input request.TransactionRequest) (err err
 			}
 
 			TransactionBody := viewmodel.TransactionVm{
-				ID:              input.ID,
 				ReferenceID:     input.ReferenceID,
 				ShopID:          input.ShopID,
-				Amount:          input.Amount,
+				Amount:          int32(newAmount),
 				Description:     input.Description,
 				Type:            input.TransactionType,
 				CustomerID:      input.CustomerID,
 				TransactionDate: input.TransactionDate,
 				BooksDebtID:     booksID,
 				UpdatedAt:       now.Format(time.RFC3339),
-				CreatedAt:       getTrans.CreatedAt,
+				CreatedAt:       now.Format(time.RFC3339),
 			}
 
-			_, err = model.Edit(TransactionBody, transaction)
+			_, err = model.Add(TransactionBody, transaction)
 			if err != nil {
 				transaction.Rollback()
 				return err
