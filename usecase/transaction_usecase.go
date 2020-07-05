@@ -909,6 +909,25 @@ func (uc TransactionUseCase) AddDebt(input request.TransactionRequest) (err erro
 				transaction.Rollback()
 				return err
 			}
+
+			TransactionBody := viewmodel.TransactionVm{
+				ReferenceID:     input.ReferenceID,
+				ShopID:          input.ShopID,
+				Amount:          input.Amount,
+				Description:     input.Description,
+				Type:            input.TransactionType,
+				CustomerID:      input.CustomerID,
+				TransactionDate: input.TransactionDate,
+				BooksDebtID:     booksID,
+				UpdatedAt:       now.Format(time.RFC3339),
+				CreatedAt:       now.Format(time.RFC3339),
+			}
+
+			_, err = model.Add(TransactionBody, transaction)
+			if err != nil {
+				transaction.Rollback()
+				return err
+			}
 		}
 	} else {
 		//for adding new debt so adding on books debt
@@ -932,27 +951,25 @@ func (uc TransactionUseCase) AddDebt(input request.TransactionRequest) (err erro
 			transaction.Rollback()
 			return err
 		}
-	}
 
-	fmt.Println(booksID)
+		TransactionBody := viewmodel.TransactionVm{
+			ReferenceID:     input.ReferenceID,
+			ShopID:          input.ShopID,
+			Amount:          input.Amount,
+			Description:     input.Description,
+			Type:            input.TransactionType,
+			CustomerID:      input.CustomerID,
+			TransactionDate: input.TransactionDate,
+			BooksDebtID:     booksID,
+			UpdatedAt:       now.Format(time.RFC3339),
+			CreatedAt:       now.Format(time.RFC3339),
+		}
 
-	TransactionBody := viewmodel.TransactionVm{
-		ReferenceID:     input.ReferenceID,
-		ShopID:          input.ShopID,
-		Amount:          input.Amount,
-		Description:     input.Description,
-		Type:            input.TransactionType,
-		CustomerID:      input.CustomerID,
-		TransactionDate: input.TransactionDate,
-		BooksDebtID:     booksID,
-		UpdatedAt:       now.Format(time.RFC3339),
-		CreatedAt:       now.Format(time.RFC3339),
-	}
-
-	_, err = model.Add(TransactionBody, transaction)
-	if err != nil {
-		transaction.Rollback()
-		return err
+		_, err = model.Add(TransactionBody, transaction)
+		if err != nil {
+			transaction.Rollback()
+			return err
+		}
 	}
 
 	transaction.Commit()
