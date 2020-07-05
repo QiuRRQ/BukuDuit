@@ -607,6 +607,7 @@ func (uc TransactionUseCase) EditDebt(input request.TransactionRequest) (err err
 	var debtAmount int
 	var creditAmount int
 	var getTrans models.Transactions
+	var status string
 	//check if fcustomer already exist in books debt
 	debtExist, err := booksDebtUC.IsDebtCustomerExist(customerData.ID, enums.Nunggak)
 	if err != nil {
@@ -628,29 +629,66 @@ func (uc TransactionUseCase) EditDebt(input request.TransactionRequest) (err err
 		}
 
 		if input.TransactionType == enums.Debet {
-			if int(input.Amount) > int(getTrans.Amount.Int32) {
-				debtAmount = int(bookdebt.DebtTotal) + (int(input.Amount) - int(getTrans.Amount.Int32))
-				creditAmount = bookdebt.CreditTotal
-
-			} else {
-				debtAmount = int(bookdebt.DebtTotal) - (int(getTrans.Amount.Int32) - int(input.Amount))
-				creditAmount = bookdebt.CreditTotal
+			if bookdebt.DebtTotal > 0 {
+				if int(input.Amount) > int(getTrans.Amount.Int32) {
+					debtAmount = int(bookdebt.DebtTotal) + (int(input.Amount) - int(getTrans.Amount.Int32))
+					creditAmount = bookdebt.CreditTotal
+					status = enums.Nunggak
+				} else {
+					debtAmount = int(bookdebt.DebtTotal) - (int(getTrans.Amount.Int32) - int(input.Amount))
+					creditAmount = bookdebt.CreditTotal
+					if debtAmount == 0 {
+						status = enums.Nunggak
+					}
+				}
 			}
 
-			fmt.Println(debtAmount)
-			fmt.Println(creditAmount)
+			if bookdebt.CreditTotal > 0 {
+				if int(input.Amount) > int(getTrans.Amount.Int32) {
+					debtAmount = int(bookdebt.CreditTotal) + (int(input.Amount) - int(getTrans.Amount.Int32))
+					creditAmount = 0
+					status = enums.Nunggak
+				} else {
+					creditAmount = int(bookdebt.CreditTotal) - (int(getTrans.Amount.Int32) - int(input.Amount))
+					debtAmount = bookdebt.DebtTotal
+					if creditAmount == 0 {
+						status = enums.Lunas
+					} else {
+						status = enums.Nunggak
+					}
+				}
+			}
 		} else {
-			if int(input.Amount) > int(getTrans.Amount.Int32) {
-				creditAmount = int(bookdebt.CreditTotal) + (int(input.Amount) - int(getTrans.Amount.Int32))
-				debtAmount = bookdebt.DebtTotal
-
-			} else {
-				creditAmount = int(bookdebt.CreditTotal) - (int(getTrans.Amount.Int32) - int(input.Amount))
-				debtAmount = bookdebt.DebtTotal
+			if bookdebt.CreditTotal > 0 {
+				if int(input.Amount) > int(getTrans.Amount.Int32) {
+					creditAmount = int(bookdebt.CreditTotal) + (int(input.Amount) - int(getTrans.Amount.Int32))
+					debtAmount = bookdebt.DebtTotal
+					status = enums.Nunggak
+				} else {
+					creditAmount = int(bookdebt.CreditTotal) - (int(getTrans.Amount.Int32) - int(input.Amount))
+					debtAmount = bookdebt.DebtTotal
+					if creditAmount == 0 {
+						status = enums.Lunas
+					} else {
+						status = enums.Nunggak
+					}
+				}
 			}
 
-			fmt.Println(debtAmount)
-			fmt.Println(creditAmount)
+			if bookdebt.DebtTotal > 0 {
+				if int(input.Amount) > int(getTrans.Amount.Int32) {
+					creditAmount = int(bookdebt.DebtTotal) + (int(input.Amount) - int(getTrans.Amount.Int32))
+					debtAmount = 0
+				} else {
+					debtAmount = int(bookdebt.DebtTotal) - (int(getTrans.Amount.Int32) - int(input.Amount))
+					creditAmount = 0
+					if debtAmount == 0 {
+						status = enums.Lunas
+					}else{
+						status = enums.Nunggak
+					}
+				}
+			}
 		}
 
 		booksInput := request.BooksDebtRequest{
