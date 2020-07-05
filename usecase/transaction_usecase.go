@@ -696,7 +696,7 @@ func (uc TransactionUseCase) EditDebt(input request.TransactionRequest) (err err
 			SubmissionDate: bookdebt.SubmissionDate,
 			DebtTotal:      debtAmount,
 			CreditTotal:    creditAmount,
-			Status:         bookdebt.Status,
+			Status:         status,
 			CreatedAt:      bookdebt.CreatedAt,
 			UpdatedAt:      now.Format(time.RFC3339),
 		}
