@@ -10,30 +10,30 @@ import (
 	"github.com/labstack/echo"
 )
 
-type BusinessCardHandler struct {
+type ShopHandler struct {
 	Handler
 }
 
-func (handler BusinessCardHandler) BrowseByUser(ctx echo.Context) error {
+func (handler ShopHandler) BrowseByUser(ctx echo.Context) error {
 	claim := ctx.Get("user").(*jwt.CustomClaims)
-	uc := usecase.BusinessCardUseCase{UcContract: handler.UseCaseContract}
+	uc := usecase.ShopUseCase{UcContract: handler.UseCaseContract}
 	res, err := uc.BrowseByUser(claim.Id)
 
 	return handler.SendResponse(ctx, res, nil, err)
 }
 
-func (handler BusinessCardHandler) Read(ctx echo.Context) error {
+func (handler ShopHandler) Read(ctx echo.Context) error {
 	ID := ctx.Param("id")
 	status := ctx.QueryParam("lunas")
-	uc := usecase.BusinessCardUseCase{UcContract: handler.UseCaseContract}
+	uc := usecase.ShopUseCase{UcContract: handler.UseCaseContract}
 	res, err := uc.Read(ID, status)
 
 	return handler.SendResponse(ctx, res, nil, err)
 }
 
-func (handler BusinessCardHandler) Edit(ctx echo.Context) error {
+func (handler ShopHandler) Edit(ctx echo.Context) error {
 	ID := ctx.Param("id")
-	input := new(request.BusinessCardRequest)
+	input := new(request.ShopRequest)
 
 	if err := ctx.Bind(input); err != nil {
 		return handler.SendResponseBadRequest(ctx, http.StatusBadRequest, err.Error())
@@ -43,14 +43,14 @@ func (handler BusinessCardHandler) Edit(ctx echo.Context) error {
 		return handler.SendResponseErrorValidation(ctx, err.(validator.ValidationErrors))
 	}
 
-	uc := usecase.BusinessCardUseCase{UcContract: handler.UseCaseContract}
+	uc := usecase.ShopUseCase{UcContract: handler.UseCaseContract}
 	err := uc.Edit(input, ID)
 
 	return handler.SendResponse(ctx, nil, nil, err)
 }
 
-func (handler BusinessCardHandler) Add(ctx echo.Context) error {
-	input := new(request.BusinessCardRequest)
+func (handler ShopHandler) Add(ctx echo.Context) error {
+	input := new(request.ShopRequest)
 	claim := ctx.Get("user").(*jwt.CustomClaims)
 
 	if err := ctx.Bind(input); err != nil {
@@ -61,15 +61,15 @@ func (handler BusinessCardHandler) Add(ctx echo.Context) error {
 		return handler.SendResponseErrorValidation(ctx, err.(validator.ValidationErrors))
 	}
 
-	uc := usecase.BusinessCardUseCase{UcContract: handler.UseCaseContract}
+	uc := usecase.ShopUseCase{UcContract: handler.UseCaseContract}
 	err := uc.Add(input, claim.Id)
 
 	return handler.SendResponse(ctx, nil, nil, err)
 }
 
-func (handler BusinessCardHandler) Delete(ctx echo.Context) error {
+func (handler ShopHandler) Delete(ctx echo.Context) error {
 	ID := ctx.Param("id")
-	uc := usecase.BusinessCardUseCase{UcContract: handler.UseCaseContract}
+	uc := usecase.ShopUseCase{UcContract: handler.UseCaseContract}
 	err := uc.Delete(ID)
 
 	return handler.SendResponse(ctx, nil, nil, err)

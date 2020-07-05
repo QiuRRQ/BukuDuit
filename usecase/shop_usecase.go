@@ -12,30 +12,30 @@ import (
 	"time"
 )
 
-type BusinessCardUseCase struct {
+type ShopUseCase struct {
 	*UcContract
 }
 
-func (uc BusinessCardUseCase) BrowseByUser(userID string) (res []viewmodel.BusinessCardVm, err error) {
-	model := actions.NewBusinessCardModel(uc.DB)
-	businessCards, err := model.BrowseByUser(userID)
+func (uc ShopUseCase) BrowseByUser(userID string) (res []viewmodel.ShopVm, err error) {
+	model := actions.NewShopModel(uc.DB)
+	shops, err := model.BrowseByUser(userID)
 	if err != nil {
 		return res, err
 	}
 
-	for _, businessCard := range businessCards {
-		res = append(res, viewmodel.BusinessCardVm{
-			ID:          businessCard.ID,
-			FullName:    businessCard.FullName.String,
-			BookName:    businessCard.BookName,
-			MobilePhone: businessCard.MobilePhone.String,
-			TagLine:     businessCard.TagLine.String,
-			Address:     businessCard.Address.String,
-			Email:       businessCard.Email.String,
-			Avatar:      businessCard.Avatar.String,
-			CreatedAt:   businessCard.CreatedAt,
-			UpdatedAt:   businessCard.UpdatedAt.String,
-			DeletedAt:   businessCard.DeletedAt.String,
+	for _, shop := range shops {
+		res = append(res, viewmodel.ShopVm{
+			ID:          shop.ID,
+			FullName:    shop.FullName.String,
+			BookName:    shop.BookName,
+			MobilePhone: shop.MobilePhone.String,
+			TagLine:     shop.TagLine.String,
+			Address:     shop.Address.String,
+			Email:       shop.Email.String,
+			Avatar:      shop.Avatar.String,
+			CreatedAt:   shop.CreatedAt,
+			UpdatedAt:   shop.UpdatedAt.String,
+			DeletedAt:   shop.DeletedAt.String,
 		})
 	}
 
@@ -43,8 +43,8 @@ func (uc BusinessCardUseCase) BrowseByUser(userID string) (res []viewmodel.Busin
 }
 
 //fucntion for hutang list lunas
-func (uc BusinessCardUseCase) Read(ID, lunas string) (res viewmodel.BusinessCardVm, err error) { //lunas = 1
-	model := actions.NewBusinessCardModel(uc.DB)
+func (uc ShopUseCase) Read(ID, lunas string) (res viewmodel.ShopVm, err error) { //lunas = 1
+	model := actions.NewShopModel(uc.DB)
 	userCustomerUC := UserCustomerUseCase{UcContract: uc.UcContract}
 	bookDebtUc := BooksDebtUseCase{UcContract: uc.UcContract}
 	var debtTotal int
@@ -105,34 +105,34 @@ func (uc BusinessCardUseCase) Read(ID, lunas string) (res viewmodel.BusinessCard
 	//	}
 	//}
 
-	businessCard, err := model.Read(ID)
+	shop, err := model.Read(ID)
 	if err != nil {
 		return res, err
 	}
 
-	res = viewmodel.BusinessCardVm{
-		ID:                  businessCard.ID,
-		FullName:            businessCard.FullName.String,
-		BookName:            businessCard.BookName,
-		MobilePhone:         businessCard.MobilePhone.String,
-		TagLine:             businessCard.TagLine.String,
-		Address:             businessCard.Address.String,
-		Email:               businessCard.Email.String,
+	res = viewmodel.ShopVm{
+		ID:                  shop.ID,
+		FullName:            shop.FullName.String,
+		BookName:            shop.BookName,
+		MobilePhone:         shop.MobilePhone.String,
+		TagLine:             shop.TagLine.String,
+		Address:             shop.Address.String,
+		Email:               shop.Email.String,
 		UserCustomers:       dataUserCustomer,
 		TotalCustomerCredit: int32(creditTotal),
 		TotalOwnerCredit:    int32(debtTotal),
-		CreatedAt:           businessCard.CreatedAt,
-		UpdatedAt:           businessCard.UpdatedAt.String,
-		DeletedAt:           businessCard.UpdatedAt.String,
+		CreatedAt:           shop.CreatedAt,
+		UpdatedAt:           shop.UpdatedAt.String,
+		DeletedAt:           shop.UpdatedAt.String,
 	}
 
 	return res, err
 }
 
-func (uc BusinessCardUseCase) Edit(input *request.BusinessCardRequest, ID string) (err error) {
-	model := actions.NewBusinessCardModel(uc.DB)
+func (uc ShopUseCase) Edit(input *request.ShopRequest, ID string) (err error) {
+	model := actions.NewShopModel(uc.DB)
 	now := time.Now().UTC()
-	isExist, err := uc.IsBusinessCardExist(ID)
+	isExist, err := uc.IsShopExist(ID)
 	if err != nil {
 		return err
 	}
@@ -140,7 +140,7 @@ func (uc BusinessCardUseCase) Edit(input *request.BusinessCardRequest, ID string
 		return errors.New(messages.DataNotFound)
 	}
 
-	body := viewmodel.BusinessCardVm{
+	body := viewmodel.ShopVm{
 		ID:          ID,
 		FullName:    input.FullName,
 		BookName:    input.BookName,
@@ -159,11 +159,11 @@ func (uc BusinessCardUseCase) Edit(input *request.BusinessCardRequest, ID string
 	return nil
 }
 
-func (uc BusinessCardUseCase) Add(input *request.BusinessCardRequest, userID string) (err error) {
-	model := actions.NewBusinessCardModel(uc.DB)
+func (uc ShopUseCase) Add(input *request.ShopRequest, userID string) (err error) {
+	model := actions.NewShopModel(uc.DB)
 	now := time.Now().UTC()
 
-	body := viewmodel.BusinessCardVm{
+	body := viewmodel.ShopVm{
 		BookName:  input.BookName,
 		CreatedAt: now.Format(time.RFC3339),
 		UpdatedAt: now.Format(time.RFC3339),
@@ -176,9 +176,9 @@ func (uc BusinessCardUseCase) Add(input *request.BusinessCardRequest, userID str
 	return nil
 }
 
-func (uc BusinessCardUseCase) Register(userID, bookName, createdAt, updatedAt string, tx *sql.Tx) (err error) {
-	model := actions.NewBusinessCardModel(uc.DB)
-	body := viewmodel.BusinessCardVm{
+func (uc ShopUseCase) Register(userID, bookName, createdAt, updatedAt string, tx *sql.Tx) (err error) {
+	model := actions.NewShopModel(uc.DB)
+	body := viewmodel.ShopVm{
 		BookName:  bookName,
 		CreatedAt: createdAt,
 		UpdatedAt: updatedAt,
@@ -191,12 +191,12 @@ func (uc BusinessCardUseCase) Register(userID, bookName, createdAt, updatedAt st
 	return nil
 }
 
-func (uc BusinessCardUseCase) Delete(ID string) (err error) {
+func (uc ShopUseCase) Delete(ID string) (err error) {
 	fmt.Println(ID)
-	model := actions.NewBusinessCardModel(uc.DB)
+	model := actions.NewShopModel(uc.DB)
 	now := time.Now().UTC()
 
-	isExist, err := uc.IsBusinessCardExist(ID)
+	isExist, err := uc.IsShopExist(ID)
 	if err != nil {
 		return err
 	}
@@ -212,8 +212,8 @@ func (uc BusinessCardUseCase) Delete(ID string) (err error) {
 	return nil
 }
 
-func (uc BusinessCardUseCase) DeleteByUser(userID string, tx *sql.Tx) (err error) {
-	model := actions.NewBusinessCardModel(uc.DB)
+func (uc ShopUseCase) DeleteByUser(userID string, tx *sql.Tx) (err error) {
+	model := actions.NewShopModel(uc.DB)
 	now := time.Now().UTC()
 
 	err = model.DeleteByUser(userID, now.Format(time.RFC3339), now.Format(time.RFC3339), tx)
@@ -224,8 +224,8 @@ func (uc BusinessCardUseCase) DeleteByUser(userID string, tx *sql.Tx) (err error
 	return nil
 }
 
-func (uc BusinessCardUseCase) IsBusinessCardExist(ID string) (res bool, err error) {
-	model := actions.NewBusinessCardModel(uc.DB)
+func (uc ShopUseCase) IsShopExist(ID string) (res bool, err error) {
+	model := actions.NewShopModel(uc.DB)
 	count, err := model.CountByPk(ID)
 	if err != nil {
 		return res, err

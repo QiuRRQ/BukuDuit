@@ -1,6 +1,6 @@
 package request
 
-type BusinessCardRequest struct {
+type ShopRequest struct {
 	FullName    string         `json:"full_name"`
 	BookName    string         `json:"book_name"`
 	MobilePhone string         `json:"mobile_phone"`

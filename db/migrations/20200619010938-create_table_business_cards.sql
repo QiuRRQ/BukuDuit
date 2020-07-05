@@ -16,4 +16,4 @@ CREATE TABLE IF NOT EXISTS "business_cards" (
 );
 
 -- +migrate Down
-DROP TABLE IF EXISTS "business_cards";
+DROP TABLE IF EXISTS shops;
