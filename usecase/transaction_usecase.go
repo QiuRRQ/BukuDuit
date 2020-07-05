@@ -130,7 +130,7 @@ func (uc TransactionUseCase) DebtReport(shopID, search, name, amount, transDate,
 	model := actions.NewTransactionModel(uc.DB)
 	booksDebtUC := BooksDebtUseCase{UcContract: uc.UcContract}
 
-	books, err := booksDebtUC.BrowseByShop(shopID,"")
+	books, err := booksDebtUC.BrowseByShop(shopID, "")
 	if err != nil {
 		return res, err
 	}
@@ -142,7 +142,7 @@ func (uc TransactionUseCase) DebtReport(shopID, search, name, amount, transDate,
 	var debtDate []viewmodel.DebtReport
 	var debtDetails []viewmodel.DebtDetail
 
-	if len(books)>0{
+	if len(books) > 0 {
 		//variabel total di sini gk berubah selama filter gk diset
 		for i, book := range books {
 			debtTotal = debtTotal + book.DebtTotal
@@ -275,19 +275,19 @@ func (uc TransactionUseCase) DebtReport(shopID, search, name, amount, transDate,
 
 func (uc TransactionUseCase) BrowseByCustomer(customerID string) (res viewmodel.DetailsHutangVm, err error) {
 	model := actions.NewTransactionModel(uc.DB)
-	bookDebtUc := BooksDebtUseCase{UcContract:uc.UcContract}
+	bookDebtUc := BooksDebtUseCase{UcContract: uc.UcContract}
 	var transactionDate []viewmodel.DebtList
 	var transactionDetails []viewmodel.Detail
 	var debtBooks viewmodel.BooksDebtVm
 
-	isBookDebtExist,err := bookDebtUc.IsDebtCustomerExist(customerID,enums.Nunggak)
+	isBookDebtExist, err := bookDebtUc.IsDebtCustomerExist(customerID, enums.Nunggak)
 	if err != nil {
-		return res,err
+		return res, err
 	}
 
-	transactionCount,err := uc.CountBy("reference_id",customerID)
+	transactionCount, err := uc.CountBy("reference_id", customerID)
 	if err != nil {
-		return res,err
+		return res, err
 	}
 
 	if isBookDebtExist && transactionCount > 0 {
@@ -368,7 +368,7 @@ func (uc TransactionUseCase) BrowseByCustomer(customerID string) (res viewmodel.
 			DeletedAt:   Transactions[0].DeletedAt.String,
 		}
 
-		return res,err
+		return res, err
 	}
 
 	return res, err
@@ -384,6 +384,9 @@ func (uc TransactionUseCase) Read(ID string) (res viewmodel.TransactionVm, err e
 	res = viewmodel.TransactionVm{
 		ID:              Transaction.ID,
 		ReferenceID:     Transaction.ReferenceID,
+		ShopID:          Transaction.IDShop,
+		BooksDebtID:     Transaction.BooksDeptID.String,
+		BooksTransID:    Transaction.BooksTransID.String,
 		Amount:          Transaction.Amount.Int32,
 		Description:     Transaction.Description.String,
 		Image:           Transaction.Image.String,
@@ -399,35 +402,69 @@ func (uc TransactionUseCase) Read(ID string) (res viewmodel.TransactionVm, err e
 
 func (uc TransactionUseCase) Delete(ID string) (err error) {
 	model := actions.NewTransactionModel(uc.DB)
-	bookDebtUc := BooksDebtUseCase{UcContract:uc.UcContract}
+	bookDebtUc := BooksDebtUseCase{UcContract: uc.UcContract}
 	now := time.Now().UTC()
+	var debtTotal int
+	var creditTotal int
 
 	isExist, err := uc.IsTransactionExist(ID)
 	if err != nil {
+
 		return err
 	}
 	if !isExist {
+
 		return errors.New(messages.DataNotFound)
 	}
 
-	transactionData,err := uc.Read(ID)
+	transactionData, err := uc.Read(ID)
 	if err != nil {
+
 		return err
 	}
 
-	transaction,err := uc.DB.Begin()
+	transaction, err := uc.DB.Begin()
 	if err != nil {
+
 		return err
 	}
 
-	err = bookDebtUc.Delete(transactionData.BooksDebtID,transaction)
+	books, err := bookDebtUc.Read(transactionData.BooksDebtID, "")
 	if err != nil {
 		transaction.Rollback()
 		return err
 	}
 
-	err = model.Delete(ID, now.Format(time.RFC3339), now.Format(time.RFC3339),transaction)
+	if transactionData.Type == enums.Debet {
+		debtTotal = books.DebtTotal - int(transactionData.Amount)
+		creditTotal = books.CreditTotal
+	} else {
+		creditTotal = books.CreditTotal - int(transactionData.Amount)
+		debtTotal = books.DebtTotal
+	}
+
+	reqBooks := request.BooksDebtRequest{
+		ID:             books.ID,
+		CustomerID:     books.CustomerID,
+		SubmissionDate: books.SubmissionDate,
+		BillDate:       books.BillDate,
+		DebtTotal:      debtTotal,
+		CreditTotal:    creditTotal,
+		Status:         books.Status,
+		CreatedAt:      books.CreatedAt,
+		UpdatedAt:      now.Format(time.RFC3339),
+	}
+
+	err = bookDebtUc.Edit(reqBooks, transactionData.BooksDebtID, transaction)
 	if err != nil {
+		fmt.Println(5)
+		transaction.Rollback()
+		return err
+	}
+
+	err = model.Delete(ID, now.Format(time.RFC3339), now.Format(time.RFC3339), transaction)
+	if err != nil {
+		fmt.Println(6)
 		transaction.Rollback()
 
 		return err
@@ -570,6 +607,7 @@ func (uc TransactionUseCase) EditDebt(input request.TransactionRequest) (err err
 	var debtAmount int
 	var creditAmount int
 	var getTrans models.Transactions
+	var status string
 	//check if fcustomer already exist in books debt
 	debtExist, err := booksDebtUC.IsDebtCustomerExist(customerData.ID, enums.Nunggak)
 	if err != nil {
@@ -591,29 +629,66 @@ func (uc TransactionUseCase) EditDebt(input request.TransactionRequest) (err err
 		}
 
 		if input.TransactionType == enums.Debet {
-			if int(input.Amount) > int(getTrans.Amount.Int32) {
-				debtAmount = int(bookdebt.DebtTotal) + (int(input.Amount) - int(getTrans.Amount.Int32))
-				creditAmount = bookdebt.CreditTotal
-
-			} else {
-				debtAmount = int(bookdebt.DebtTotal) - (int(getTrans.Amount.Int32) - int(input.Amount))
-				creditAmount = bookdebt.CreditTotal
+			if bookdebt.DebtTotal > 0 {
+				if int(input.Amount) > int(getTrans.Amount.Int32) {
+					debtAmount = int(bookdebt.DebtTotal) + (int(input.Amount) - int(getTrans.Amount.Int32))
+					creditAmount = bookdebt.CreditTotal
+					status = enums.Nunggak
+				} else {
+					debtAmount = int(bookdebt.DebtTotal) - (int(getTrans.Amount.Int32) - int(input.Amount))
+					creditAmount = bookdebt.CreditTotal
+					if debtAmount == 0 {
+						status = enums.Nunggak
+					}
+				}
 			}
 
-			fmt.Println(debtAmount)
-			fmt.Println(creditAmount)
+			if bookdebt.CreditTotal > 0 {
+				if int(input.Amount) > int(getTrans.Amount.Int32) {
+					debtAmount = int(bookdebt.CreditTotal) + (int(input.Amount) - int(getTrans.Amount.Int32))
+					creditAmount = 0
+					status = enums.Nunggak
+				} else {
+					creditAmount = int(bookdebt.CreditTotal) - (int(getTrans.Amount.Int32) - int(input.Amount))
+					debtAmount = bookdebt.DebtTotal
+					if creditAmount == 0 {
+						status = enums.Lunas
+					} else {
+						status = enums.Nunggak
+					}
+				}
+			}
 		} else {
-			if int(input.Amount) > int(getTrans.Amount.Int32) {
-				creditAmount = int(bookdebt.CreditTotal) + (int(input.Amount) - int(getTrans.Amount.Int32))
-				debtAmount = bookdebt.DebtTotal
-
-			} else {
-				creditAmount = int(bookdebt.CreditTotal) - (int(getTrans.Amount.Int32) - int(input.Amount))
-				debtAmount = bookdebt.DebtTotal
+			if bookdebt.CreditTotal > 0 {
+				if int(input.Amount) > int(getTrans.Amount.Int32) {
+					creditAmount = int(bookdebt.CreditTotal) + (int(input.Amount) - int(getTrans.Amount.Int32))
+					debtAmount = bookdebt.DebtTotal
+					status = enums.Nunggak
+				} else {
+					creditAmount = int(bookdebt.CreditTotal) - (int(getTrans.Amount.Int32) - int(input.Amount))
+					debtAmount = bookdebt.DebtTotal
+					if creditAmount == 0 {
+						status = enums.Lunas
+					} else {
+						status = enums.Nunggak
+					}
+				}
 			}
 
-			fmt.Println(debtAmount)
-			fmt.Println(creditAmount)
+			if bookdebt.DebtTotal > 0 {
+				if int(input.Amount) > int(getTrans.Amount.Int32) {
+					creditAmount = int(bookdebt.DebtTotal) + (int(input.Amount) - int(getTrans.Amount.Int32))
+					debtAmount = 0
+				} else {
+					debtAmount = int(bookdebt.DebtTotal) - (int(getTrans.Amount.Int32) - int(input.Amount))
+					creditAmount = 0
+					if debtAmount == 0 {
+						status = enums.Lunas
+					}else{
+						status = enums.Nunggak
+					}
+				}
+			}
 		}
 
 		booksInput := request.BooksDebtRequest{
@@ -849,9 +924,9 @@ func (uc TransactionUseCase) IsTransactionExist(ID string) (res bool, err error)
 	return count > 0, err
 }
 
-func (uc TransactionUseCase) CountBy(column,value string) (res int,err error){
+func (uc TransactionUseCase) CountBy(column, value string) (res int, err error) {
 	model := actions.NewTransactionModel(uc.DB)
-	res,err = model.CountBy(column,value)
+	res, err = model.CountBy(column, value)
 
-	return res,err
+	return res, err
 }

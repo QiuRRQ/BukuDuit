@@ -24,7 +24,7 @@ func (repository TransactionRepository) DebtReport(customerID, shopID, bookDebtI
 	statement := `select t."id", uc."full_name", t."amount", t."reference_id", t."shop_id", t."description", t."image", t."transaction_date", t."type", t."created_at", t."updated_at", t."deleted_at" 
 	from "transactions" t  join "user_customers" uc 
 	on t."reference_id" = uc."id" 
-	where t."books_debt_id" in (`+bookDebtID+`) and t."deleted_at" is null and t."customer_id" is null ` + filter
+	where t."books_debt_id" in (` + bookDebtID + `) and t."deleted_at" is null and t."customer_id" is null ` + filter
 
 	rows, err := repository.DB.Query(statement)
 	if err != nil {
@@ -167,7 +167,8 @@ func (repository TransactionRepository) BrowseByCustomer(customerID string) (dat
 }
 
 func (repository TransactionRepository) Read(ID string) (data models.Transactions, err error) {
-	statement := `select * from "transactions" where "id"=$1 and "deleted_at" is null`
+	statement := `select id, shop_id, reference_id, category_id, amount, description, image, type, transaction_date, created_at, 
+	updated_at, deleted_at, status, customer_id, books_debt_id, books_transactions_id from "transactions" where "id"=$1 and "deleted_at" is null`
 	err = repository.DB.QueryRow(statement, ID).Scan(
 		&data.ID,
 		&data.IDShop,
@@ -254,11 +255,11 @@ func (repository TransactionRepository) Add(body viewmodel.TransactionVm, tx *sq
 	return res, err
 }
 
-func (repository TransactionRepository) Delete(ID, updatedAt, deletedAt string,tx *sql.Tx) ( err error) {
+func (repository TransactionRepository) Delete(ID, updatedAt, deletedAt string, tx *sql.Tx) (err error) {
 	statement := `update "transactions" set "updated_at"=$1, "deleted_at"=$2 where "id"=$3 returning  "id"`
-	_,err = tx.Exec(statement, datetime.StrParseToTime(updatedAt, time.RFC3339), datetime.StrParseToTime(deletedAt, time.RFC3339), ID)
+	_, err = tx.Exec(statement, datetime.StrParseToTime(updatedAt, time.RFC3339), datetime.StrParseToTime(deletedAt, time.RFC3339), ID)
 	if err != nil {
-		return  err
+		return err
 	}
 
 	return nil
