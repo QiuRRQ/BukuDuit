@@ -1,7 +1,6 @@
 package usecase
 
 import (
-	"bukuduit-go/db/models"
 	"bukuduit-go/db/repositories/actions"
 	"bukuduit-go/helpers/enums"
 	"bukuduit-go/helpers/messages"
@@ -606,7 +605,6 @@ func (uc TransactionUseCase) EditDebt(input request.TransactionRequest) (err err
 
 	var debtAmount int
 	var creditAmount int
-	var getTrans models.Transactions
 	var status string
 	createNew := false
 	//check if fcustomer already exist in books debt
