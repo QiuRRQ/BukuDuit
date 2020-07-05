@@ -196,7 +196,7 @@ func (repository TransactionRepository) Read(ID string) (data models.Transaction
 
 func (repository TransactionRepository) Edit(body viewmodel.TransactionVm, tx *sql.Tx) (res string, err error) {
 	fmt.Println(body.ID)
-	statement := `update "transactions" set "amount"=$1, "description"=$2, "image"=$3, "type"=$4, "transaction_date"=$5, "updated_at"=$6 where "id"=$7 returning "id"`
+	statement := `update "transactions" set "amount"=$1, "description"=$2, "image"=$3, "type"=$4, "transaction_date"=$5, "updated_at"=$6, "books_debt_id"=$7 where "id"=$8 returning "id"`
 	err = tx.QueryRow(
 		statement,
 		body.Amount,
@@ -205,6 +205,7 @@ func (repository TransactionRepository) Edit(body viewmodel.TransactionVm, tx *s
 		str.EmptyString(body.Type),
 		str.EmptyString(body.TransactionDate),
 		datetime.StrParseToTime(body.UpdatedAt, time.RFC3339),
+		str.EmptyString(body.BooksDebtID),
 		body.ID).Scan(&res)
 	if err != nil {
 		return res, err
