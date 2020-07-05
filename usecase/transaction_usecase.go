@@ -712,7 +712,6 @@ func (uc TransactionUseCase) EditDebt(input request.TransactionRequest) (err err
 				transaction.Rollback()
 				return err
 			}
-			fmt.Println(booksID)
 
 			bookEditInput := request.BooksDebtRequest{
 				CustomerID:     input.ReferenceID,
@@ -747,6 +746,7 @@ func (uc TransactionUseCase) EditDebt(input request.TransactionRequest) (err err
 				return err
 			}
 		}else{
+			fmt.Println("false")
 			booksInput := request.BooksDebtRequest{
 				CustomerID:     customerData.ID,
 				SubmissionDate: bookdebt.SubmissionDate,
