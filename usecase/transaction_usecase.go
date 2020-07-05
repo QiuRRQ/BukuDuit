@@ -709,13 +709,14 @@ func (uc TransactionUseCase) EditDebt(input request.TransactionRequest) (err err
 				transaction.Rollback()
 				return err
 			}
+			fmt.Println(booksID)
 
 			bookEditInput := request.BooksDebtRequest{
 				CustomerID:     input.ReferenceID,
 				SubmissionDate: now.Format(time.RFC3339),
 				DebtTotal:      0,
 				CreditTotal:    0,
-				Status:         status,
+				Status:         enums.Lunas,
 				UpdatedAt:      now.Format(time.RFC3339),
 			}
 			err = booksDebtUC.Edit(bookEditInput, bookdebt.ID, transaction)
