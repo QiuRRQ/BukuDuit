@@ -698,54 +698,54 @@ func (uc TransactionUseCase) EditDebt(input request.TransactionRequest) (err err
 
 		if createNew {
 			fmt.Println("new")
-			//booksInput := request.BooksDebtRequest{
-			//	CustomerID:     input.ReferenceID,
-			//	SubmissionDate: input.TransactionDate,
-			//	DebtTotal:      debtAmount,
-			//	CreditTotal:    creditAmount,
-			//	BillDate:       input.BillDate,
-			//	Status:         enums.Nunggak,
-			//	CreatedAt:      now.Format(time.RFC3339),
-			//	UpdatedAt:      now.Format(time.RFC3339),
-			//}
-			//_, err = booksDebtUC.Add(booksInput, input.CustomerID, transaction)
-			//if err != nil {
-			//	transaction.Rollback()
-			//	return err
-			//}
-			//
-			//bookEditInput := request.BooksDebtRequest{
-			//	CustomerID:     input.ReferenceID,
-			//	SubmissionDate: now.Format(time.RFC3339),
-			//	DebtTotal:      0,
-			//	CreditTotal:    0,
-			//	Status:         enums.Lunas,
-			//	UpdatedAt:      now.Format(time.RFC3339),
-			//}
-			//err = booksDebtUC.Edit(bookEditInput, bookdebt.ID, transaction)
-			//if err != nil {
-			//	transaction.Rollback()
-			//	return err
-			//}
+			booksInput := request.BooksDebtRequest{
+				CustomerID:     input.ReferenceID,
+				SubmissionDate: input.TransactionDate,
+				DebtTotal:      debtAmount,
+				CreditTotal:    creditAmount,
+				BillDate:       input.BillDate,
+				Status:         enums.Nunggak,
+				CreatedAt:      now.Format(time.RFC3339),
+				UpdatedAt:      now.Format(time.RFC3339),
+			}
+			booksID, err := booksDebtUC.Add(booksInput, input.CustomerID, transaction)
+			if err != nil {
+				transaction.Rollback()
+				return err
+			}
 
-			//TransactionBody := viewmodel.TransactionVm{
-			//	ReferenceID:     input.ReferenceID,
-			//	ShopID:          input.ShopID,
-			//	Amount:          int32(newAmount),
-			//	Description:     input.Description,
-			//	Type:            input.TransactionType,
-			//	CustomerID:      input.CustomerID,
-			//	TransactionDate: input.TransactionDate,
-			//	BooksDebtID:     booksID,
-			//	UpdatedAt:       now.Format(time.RFC3339),
-			//	CreatedAt:       now.Format(time.RFC3339),
-			//}
-			//
-			//_, err = model.Add(TransactionBody, transaction)
-			//if err != nil {
-			//	transaction.Rollback()
-			//	return err
-			//}
+			bookEditInput := request.BooksDebtRequest{
+				CustomerID:     input.ReferenceID,
+				SubmissionDate: now.Format(time.RFC3339),
+				DebtTotal:      0,
+				CreditTotal:    0,
+				Status:         enums.Lunas,
+				UpdatedAt:      now.Format(time.RFC3339),
+			}
+			err = booksDebtUC.Edit(bookEditInput, bookdebt.ID, transaction)
+			if err != nil {
+				transaction.Rollback()
+				return err
+			}
+
+			TransactionBody := viewmodel.TransactionVm{
+				ReferenceID:     input.ReferenceID,
+				ShopID:          input.ShopID,
+				Amount:          int32(newAmount),
+				Description:     input.Description,
+				Type:            input.TransactionType,
+				CustomerID:      input.CustomerID,
+				TransactionDate: input.TransactionDate,
+				BooksDebtID:     booksID,
+				UpdatedAt:       now.Format(time.RFC3339),
+				CreatedAt:       now.Format(time.RFC3339),
+			}
+
+			_, err = model.Add(TransactionBody, transaction)
+			if err != nil {
+				transaction.Rollback()
+				return err
+			}
 		}else{
 			booksInput := request.BooksDebtRequest{
 				CustomerID:     customerData.ID,
@@ -762,25 +762,25 @@ func (uc TransactionUseCase) EditDebt(input request.TransactionRequest) (err err
 				return err
 			}
 
-			//TransactionBody := viewmodel.TransactionVm{
-			//	ID:              input.ID,
-			//	ReferenceID:     input.ReferenceID,
-			//	ShopID:          input.ShopID,
-			//	Amount:          input.Amount,
-			//	Description:     input.Description,
-			//	Type:            input.TransactionType,
-			//	CustomerID:      input.CustomerID,
-			//	TransactionDate: input.TransactionDate,
-			//	BooksDebtID:     bookdebt.ID,
-			//	UpdatedAt:       now.Format(time.RFC3339),
-			//	CreatedAt:       getTrans.CreatedAt,
-			//}
-			//
-			//_, err = model.Edit(TransactionBody, transaction)
-			//if err != nil {
-			//	transaction.Rollback()
-			//	return err
-			//}
+			TransactionBody := viewmodel.TransactionVm{
+				ID:              input.ID,
+				ReferenceID:     input.ReferenceID,
+				ShopID:          input.ShopID,
+				Amount:          input.Amount,
+				Description:     input.Description,
+				Type:            input.TransactionType,
+				CustomerID:      input.CustomerID,
+				TransactionDate: input.TransactionDate,
+				BooksDebtID:     bookdebt.ID,
+				UpdatedAt:       now.Format(time.RFC3339),
+				CreatedAt:       getTrans.CreatedAt,
+			}
+
+			_, err = model.Edit(TransactionBody, transaction)
+			if err != nil {
+				transaction.Rollback()
+				return err
+			}
 		}
 	}
 
@@ -933,6 +933,8 @@ func (uc TransactionUseCase) AddDebt(input request.TransactionRequest) (err erro
 			return err
 		}
 	}
+
+	fmt.Println(booksID)
 
 	TransactionBody := viewmodel.TransactionVm{
 		ReferenceID:     input.ReferenceID,
