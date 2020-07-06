@@ -15,10 +15,12 @@ type TransactionHandler struct {
 
 func (handler TransactionHandler) TransactionList(ctx echo.Context) error {
 	shopID := ctx.QueryParam("shopid")
+	name := ctx.QueryParam("name")
+	time := ctx.QueryParam("time")
 
 	uc := usecase.TransactionUseCase{UcContract: handler.UseCaseContract}
 
-	res, err := uc.TransactionList(shopID)
+	res, err := uc.TransactionList(shopID, name, time)
 
 	return handler.SendResponse(ctx, res, nil, err)
 }
@@ -77,10 +79,10 @@ func (handler TransactionHandler) Edit(ctx echo.Context) error {
 	return handler.SendResponse(ctx, nil, nil, err)
 }
 
-func (handler TransactionHandler) Delete(ctx echo.Context) error {
+func (handler TransactionHandler) DeleteDebt(ctx echo.Context) error {
 	ID := ctx.Param("id")
 	uc := usecase.TransactionUseCase{UcContract: handler.UseCaseContract}
-	err := uc.Delete(ID)
+	err := uc.DeleteDebt(ID)
 
 	return handler.SendResponse(ctx, nil, nil, err)
 }
@@ -117,6 +119,31 @@ func (handler TransactionHandler) AddTransaction(ctx echo.Context) error {
 
 	uc := usecase.TransactionUseCase{UcContract: handler.UseCaseContract}
 	err := uc.AddTransaksi(*input)
+
+	return handler.SendResponse(ctx, nil, nil, err)
+}
+
+func (handler TransactionHandler) EditTransction(ctx echo.Context) error {
+	input := new(request.TransactionRequest)
+
+	if err := ctx.Bind(input); err != nil {
+		return handler.SendResponseBadRequest(ctx, http.StatusBadRequest, err.Error())
+	}
+
+	if err := handler.Validate.Struct(input); err != nil {
+		return handler.SendResponseErrorValidation(ctx, err.(validator.ValidationErrors))
+	}
+
+	uc := usecase.TransactionUseCase{UcContract: handler.UseCaseContract}
+	err := uc.EditTransaction(*input)
+
+	return handler.SendResponse(ctx, nil, nil, err)
+}
+
+func (handler TransactionHandler) DeleteTrans(ctx echo.Context) error {
+	ID := ctx.Param("id")
+	uc := usecase.TransactionUseCase{UcContract: handler.UseCaseContract}
+	err := uc.DeleteTransactions(ID)
 
 	return handler.SendResponse(ctx, nil, nil, err)
 }

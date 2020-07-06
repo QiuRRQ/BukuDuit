@@ -57,12 +57,14 @@ func (repository TransactionRepository) DebtReport(customerID, shopID, bookDebtI
 }
 
 //ini untuk list transaksi
-func (repository TransactionRepository) TransactionBrowsByShop(shopID string) (data []models.Transactions, err error) {
-	statement := `select t."id", uc."full_name", t."amount", t."reference_id", t."shop_id", t."description", t."image", t."transaction_date", t."type", t."created_at", t."updated_at", t."deleted_at" 
+func (repository TransactionRepository) TransactionBrowsByShop(shopID, name string) (data []models.Transactions, err error) {
+	statement := `select t."id", uc."full_name", t."amount", t."reference_id", t."shop_id", t."description", t."image", t."transaction_date", 
+	t."type", t."created_at", t."updated_at", t."deleted_at" 
 	from "transactions" t  join "user_customers" uc 
 	on t."customer_id" = uc."id" 
-	where t."shop_id" = $1 and t."deleted_at" is null and t."customer_id" is not null order by t."transaction_date" desc `
+	where t."shop_id" = $1 ` + name + ` and t."deleted_at" is null and t."customer_id" is not null order by t."transaction_date" desc `
 
+	fmt.Println(statement)
 	rows, err := repository.DB.Query(statement, shopID)
 	if err != nil {
 		return data, err
@@ -73,6 +75,7 @@ func (repository TransactionRepository) TransactionBrowsByShop(shopID string) (d
 
 		err = rows.Scan(
 			&dataTemp.ID,
+			&dataTemp.Name,
 			&dataTemp.Amount,
 			&dataTemp.ReferenceID,
 			&dataTemp.IDShop,
@@ -94,7 +97,8 @@ func (repository TransactionRepository) TransactionBrowsByShop(shopID string) (d
 
 //ini untuk laporan utang
 func (repository TransactionRepository) BrowseByShop(shopID string) (data []models.Transactions, err error) {
-	statement := `select t."id", uc."full_name", t."amount", t."reference_id", t."shop_id", t."description", t."image", t."transaction_date", t."type", t."created_at", t."updated_at", t."deleted_at" 
+	statement := `select t."id", uc."full_name", t."amount", t."reference_id", t."shop_id", t."description", t."image", t."transaction_date", 
+	t."type", t."created_at", t."updated_at", t."deleted_at" 
 	from "transactions" t  join "user_customers" uc 
 	on t."reference_id" = uc."id" 
 	where t."shop_id" = $1 and t."deleted_at" is null and t."customer_id" is null order by t."transaction_date" desc `

@@ -11,7 +11,7 @@ type ITransactionRepository interface {
 
 	BrowseByShop(shopID string) (data []models.Transactions, err error)
 
-	TransactionBrowsByShop(shopID string) (data []models.Transactions, err error)
+	TransactionBrowsByShop(shopID, name string) (data []models.Transactions, err error)
 
 	Read(ID string) (data models.Transactions, err error)
 
@@ -19,7 +19,7 @@ type ITransactionRepository interface {
 
 	Add(body viewmodel.TransactionVm, tx *sql.Tx) (res string, err error)
 
-	Delete(ID, updatedAt, deletedAt string,tx *sql.Tx) (err error)
+	Delete(ID, updatedAt, deletedAt string, tx *sql.Tx) (err error)
 
 	DeleteByCustomer(customerID, updatedAt, deletedAt string, tx *sql.Tx) (err error)
 
