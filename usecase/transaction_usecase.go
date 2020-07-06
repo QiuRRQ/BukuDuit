@@ -629,13 +629,17 @@ func (uc TransactionUseCase) EditDebt(input request.TransactionRequest) (err err
 		}
 
 		if input.TransactionType == enums.Debet {
+			fmt.Println("disini")
 			if bookdebt.DebtTotal > 0 {
 				if int(input.Amount) > int(getTrans.Amount.Int32) {
 					debtAmount = int(bookdebt.DebtTotal) + (int(input.Amount) - int(getTrans.Amount.Int32))
 					creditAmount = bookdebt.CreditTotal
 					status = enums.Nunggak
 				} else {
-					debtAmount = int(bookdebt.DebtTotal) - (int(getTrans.Amount.Int32) - int(input.Amount))
+					fmt.Println(bookdebt.DebtTotal)
+					fmt.Println(getTrans)
+					debtAmount = int(bookdebt.DebtTotal) + (int(getTrans.Amount.Int32) - int(input.Amount))
+					fmt.Println(debtAmount)
 					creditAmount = bookdebt.CreditTotal
 					if debtAmount == 0 {
 						status = enums.Nunggak
