@@ -22,11 +22,24 @@ func (handler ShopHandler) BrowseByUser(ctx echo.Context) error {
 	return handler.SendResponse(ctx, res, nil, err)
 }
 
+func (handler ShopHandler) ExportFile(ctx echo.Context) error {
+	uc := usecase.ShopUseCase{UcContract: handler.UseCaseContract}
+	ID := ctx.Param("id")
+	res, err := uc.ExportToFile(ID)
+
+	if err != nil {
+		return err
+	}
+
+	return ctx.File(res)
+}
+
 func (handler ShopHandler) Read(ctx echo.Context) error {
 	ID := ctx.Param("id")
 	status := ctx.QueryParam("lunas")
+	name := ctx.QueryParam("name")
 	uc := usecase.ShopUseCase{UcContract: handler.UseCaseContract}
-	res, err := uc.Read(ID, status)
+	res, err := uc.Read(ID, status, name)
 
 	return handler.SendResponse(ctx, res, nil, err)
 }

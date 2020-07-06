@@ -9,11 +9,54 @@ import (
 	"database/sql"
 	"errors"
 	"fmt"
+	"log"
+	"strings"
 	"time"
+
+	"github.com/360EntSecGroup-Skylar/excelize"
 )
 
 type ShopUseCase struct {
 	*UcContract
+}
+
+func (uc ShopUseCase) ExportToFile(ID string) (res string, err error) {
+	data, err := uc.Read(ID, "", "")
+	if err != nil {
+		return res, err
+	}
+
+	xlsx := excelize.NewFile()
+	sheet1Name := "data utang/piutang"
+	xlsx.SetSheetName(xlsx.GetSheetName(1), sheet1Name)
+
+	xlsx.SetCellValue(sheet1Name, "A1", "Nama")
+	xlsx.SetCellValue(sheet1Name, "B1", "Nominal")
+	xlsx.SetCellValue(sheet1Name, "C1", "Tipe")
+
+	err = xlsx.AutoFilter(sheet1Name, "A1", "B1", "")
+	if err != nil {
+		log.Fatal("ERROR", err.Error())
+	}
+
+	var tipe string
+	for i, each := range data.UserCustomers {
+		if data.UserCustomers[i].Type == enums.Credit {
+			tipe = "utang"
+		} else {
+			tipe = "piutang"
+		}
+		xlsx.SetCellValue(sheet1Name, fmt.Sprintf("A%d", i+2), each.FullName)
+		xlsx.SetCellValue(sheet1Name, fmt.Sprintf("B%d", i+2), each.Amount)
+		xlsx.SetCellValue(sheet1Name, fmt.Sprintf("C%d", i+2), tipe)
+	}
+
+	err = xlsx.SaveAs("./../file/data.xlsx")
+	if err != nil {
+		fmt.Println(err)
+	}
+
+	return "./../file/data.xlsx", err
 }
 
 func (uc ShopUseCase) BrowseByUser(userID string) (res []viewmodel.ShopVm, err error) {
@@ -43,7 +86,7 @@ func (uc ShopUseCase) BrowseByUser(userID string) (res []viewmodel.ShopVm, err e
 }
 
 //fucntion for hutang list lunas
-func (uc ShopUseCase) Read(ID, lunas string) (res viewmodel.ShopVm, err error) { //lunas = 1
+func (uc ShopUseCase) Read(ID, lunas, name string) (res viewmodel.ShopVm, err error) { //lunas = 1
 	model := actions.NewShopModel(uc.DB)
 	userCustomerUC := UserCustomerUseCase{UcContract: uc.UcContract}
 	bookDebtUc := BooksDebtUseCase{UcContract: uc.UcContract}
@@ -92,6 +135,21 @@ func (uc ShopUseCase) Read(ID, lunas string) (res viewmodel.ShopVm, err error) {
 					Amount:      amount,
 					Type:        typeBook,
 					MobilePhone: data.MobilePhone,
+				})
+			}
+		}
+	}
+
+	if name != "" {
+		for _, v := range dataUserCustomer {
+			if strings.Contains(strings.ToLower(v.FullName), strings.ToLower(name)) {
+				dataUserCustomer = nil
+				dataUserCustomer = append(dataUserCustomer, viewmodel.UserCustomerDebetCreditVm{
+					ID:          v.ID,
+					FullName:    v.FullName,
+					Amount:      v.Amount,
+					Type:        v.Type,
+					MobilePhone: v.MobilePhone,
 				})
 			}
 		}

@@ -18,6 +18,7 @@ func (route ShopRoute) RegisterRoute() {
 
 	route.RouteGroup.Use(jwtMiddleware.JWTWithConfig)
 	route.RouteGroup.GET("", handler.BrowseByUser)
+	route.RouteGroup.GET("/file/:id", handler.ExportFile)
 	route.RouteGroup.GET("/:id", handler.Read)
 	route.RouteGroup.POST("", handler.Add)
 	route.RouteGroup.PUT("/:id", handler.Edit)
