@@ -19,7 +19,7 @@ type UserUseCase struct {
 }
 
 func (uc UserUseCase) ForgotMyPin(input request.UserRequest) (err error) {
-	pin := str.RandomNumberString(6)
+	pin := str.RandomNumberString(4)
 
 	isMobilePhoneExist, err := uc.IsMobilePhoneExist(input.MobilePhone)
 	if err != nil {
@@ -37,7 +37,7 @@ func (uc UserUseCase) ForgotMyPin(input request.UserRequest) (err error) {
 		queueBody := map[string]interface{}{
 			"qid":     xRequestID,
 			"phone":   input.MobilePhone,
-			"message": `Hai sobat! OTP untuk BukuDuit.com anda adalah ` + pin,
+			"message": `Hai sobat! PIN Baru untuk BukuDuit.com anda adalah ` + pin,
 			"type":    "sms",
 			"id":      requestID,
 		}
