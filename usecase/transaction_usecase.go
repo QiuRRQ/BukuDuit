@@ -144,15 +144,17 @@ func (uc TransactionUseCase) TransactionReport(shopID, search, name, amount, tra
 
 	}
 
-	for i := 0; i < resultCount; i++ {
-		res = viewmodel.TransactionListVm{
-			ShopID:      Transactions[i].IDShop,
-			TotalCredit: creditTotal,
-			TotalDebit:  debtTotal,
-			ListData:    debtDate,
-			CreatedAt:   Transactions[i].CreatedAt,
-			UpdatedAt:   Transactions[i].UpdatedAt.String,
-			DeletedAt:   Transactions[i].DeletedAt.String,
+	if resultCount > 0 {
+		for i := 0; i < resultCount; i++ {
+			res = viewmodel.TransactionListVm{
+				ShopID:      Transactions[i].IDShop,
+				TotalCredit: creditTotal,
+				TotalDebit:  debtTotal,
+				ListData:    debtDate,
+				CreatedAt:   Transactions[i].CreatedAt,
+				UpdatedAt:   Transactions[i].UpdatedAt.String,
+				DeletedAt:   Transactions[i].DeletedAt.String,
+			}
 		}
 	}
 
@@ -266,15 +268,17 @@ func (uc TransactionUseCase) TransactionList(shopID, name, timeFilter string) (r
 
 	}
 
-	for i := 0; i < resultCount; i++ {
-		res = viewmodel.TransactionListVm{
-			ShopID:      Transactions[i].IDShop,
-			TotalCredit: creditTotal,
-			TotalDebit:  debtTotal,
-			ListData:    debtDate,
-			CreatedAt:   Transactions[i].CreatedAt,
-			UpdatedAt:   Transactions[i].UpdatedAt.String,
-			DeletedAt:   Transactions[i].DeletedAt.String,
+	if resultCount > 0 {
+		for i := 0; i < resultCount; i++ {
+			res = viewmodel.TransactionListVm{
+				ShopID:      Transactions[i].IDShop,
+				TotalCredit: creditTotal,
+				TotalDebit:  debtTotal,
+				ListData:    debtDate,
+				CreatedAt:   Transactions[i].CreatedAt,
+				UpdatedAt:   Transactions[i].UpdatedAt.String,
+				DeletedAt:   Transactions[i].DeletedAt.String,
+			}
 		}
 	}
 
