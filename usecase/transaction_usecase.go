@@ -16,6 +16,149 @@ type TransactionUseCase struct {
 	*UcContract
 }
 
+func (uc TransactionUseCase) TransactionReport(shopID, search, name, amount, transDate, startDate, endDate string) (res viewmodel.TransactionListVm, err error) {
+	model := actions.NewTransactionModel(uc.DB)
+	var filter string
+	if startDate != "" && endDate != "" {
+		filter = `and (t."transaction_date" BETWEEN '` + startDate + `' and '` + endDate + `')`
+	}
+	if search != "" { //input nama
+		filter = `and uc."full_name" ILIKE '%` + search + `%'` + filter
+	}
+	//sort hanya dipakai sekali
+	if name == "ASC" || name == "asc" {
+		filter = filter + ` order by uc."full_name" ` + name
+	}
+	if name == "DESC" || name == "desc" {
+		filter = filter + ` order by uc."full_name" ` + name
+	}
+	if amount == "ASC" || amount == "asc" {
+		filter = filter + ` order by t."amount" ` + amount
+	}
+	if amount == "DESC" || amount == "desc" {
+		filter = filter + ` order by t."amount" ` + amount
+	}
+	if transDate == "ASC" || transDate == "asc" {
+		filter = filter + ` order by t."transaction_date" ` + transDate
+	}
+	if transDate == "DESC" || transDate == "desc" {
+		filter = filter + ` order by t."transaction_date" ` + transDate
+	}
+	Transactions, err := model.TransactionReport(shopID, filter)
+	if err != nil {
+		fmt.Println(1)
+		return res, err
+	}
+	resultCount, err := model.CountDistinctBy("shop_id", shopID)
+	if err != nil {
+		fmt.Println(2)
+		return res, err
+	}
+
+	var debtTotal int
+	var creditTotal int
+
+	var dateCreditAmount int
+	var dateDebetAmount int
+
+	var debtDate []viewmodel.DataList
+	var debtDetails []viewmodel.DataDetails
+
+	for i := 0; i < len(Transactions); i++ {
+
+		tempDate, err := time.Parse(time.RFC3339, Transactions[i].TransactionDate.String)
+		if err != nil {
+			fmt.Println(err.Error())
+		}
+		if Transactions[i].Type == enums.Debet {
+			debtTotal = debtTotal + int(Transactions[i].Amount.Int32)
+		} else {
+			creditTotal = creditTotal + int(Transactions[i].Amount.Int32)
+		}
+
+		if Transactions[i].Type == enums.Debet {
+			dateDebetAmount = dateDebetAmount + int(Transactions[i].Amount.Int32)
+		} else {
+			dateCreditAmount = dateCreditAmount + int(Transactions[i].Amount.Int32)
+		}
+
+		var nextDate time.Time
+		if i < len(Transactions)-1 {
+			nextDate, err = time.Parse(time.RFC3339, Transactions[i+1].TransactionDate.String)
+			if err != nil {
+				fmt.Println(err.Error())
+			}
+			if tempDate == nextDate {
+
+				debtDetails = append(debtDetails, viewmodel.DataDetails{
+					ID:          Transactions[i].ID,
+					ReferenceID: Transactions[i].ReferenceID,
+					Name:        Transactions[i].Name,
+					Description: Transactions[i].Description.String,
+					Amount:      Transactions[i].Amount.Int32,
+					Type:        Transactions[i].Type,
+				})
+
+			} else {
+				debtDetails = append(debtDetails, viewmodel.DataDetails{
+					ID:          Transactions[i].ID,
+					ReferenceID: Transactions[i].ReferenceID,
+					Name:        Transactions[i].Name,
+					Description: Transactions[i].Description.String,
+					Amount:      Transactions[i].Amount.Int32,
+					Type:        Transactions[i].Type,
+				})
+				debtDate = append(debtDate, viewmodel.DataList{
+					TransactionDate:  tempDate.String(),
+					DateAmountCredit: dateCreditAmount,
+					DateAmountDebet:  dateDebetAmount,
+					Details:          debtDetails,
+				})
+
+				debtDetails = nil
+				dateDebetAmount = 0
+				dateCreditAmount = 0
+				tempDate = nextDate
+			}
+		} else {
+			debtDetails = append(debtDetails, viewmodel.DataDetails{
+				ID:          Transactions[i].ID,
+				ReferenceID: Transactions[i].ReferenceID,
+				Name:        Transactions[i].Name,
+				Description: Transactions[i].Description.String,
+				Amount:      Transactions[i].Amount.Int32,
+				Type:        Transactions[i].Type,
+			})
+			debtDate = append(debtDate, viewmodel.DataList{
+				TransactionDate:  tempDate.String(),
+				DateAmountCredit: dateCreditAmount,
+				DateAmountDebet:  dateDebetAmount,
+				Details:          debtDetails,
+			})
+
+			debtDetails = nil
+			dateDebetAmount = 0
+			dateCreditAmount = 0
+			tempDate = nextDate
+		}
+
+	}
+
+	for i := 0; i < resultCount; i++ {
+		res = viewmodel.TransactionListVm{
+			ShopID:      Transactions[i].IDShop,
+			TotalCredit: creditTotal,
+			TotalDebit:  debtTotal,
+			ListData:    debtDate,
+			CreatedAt:   Transactions[i].CreatedAt,
+			UpdatedAt:   Transactions[i].UpdatedAt.String,
+			DeletedAt:   Transactions[i].DeletedAt.String,
+		}
+	}
+
+	return res, err
+}
+
 //list transaksi
 func (uc TransactionUseCase) TransactionList(shopID, name, timeFilter string) (res viewmodel.TransactionListVm, err error) {
 	model := actions.NewTransactionModel(uc.DB)

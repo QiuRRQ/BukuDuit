@@ -18,6 +18,7 @@ func (route TransactionRoute) RegisterRoute() {
 
 	route.RouteGroup.Use(jwtMiddleware.JWTWithConfig)
 	route.RouteGroup.GET("/list", handler.TransactionList)
+	route.RouteGroup.GET("/transactionreport", handler.TransactionReport)
 	route.RouteGroup.DELETE("/:id", handler.DeleteDebt)
 	route.RouteGroup.DELETE("/deletetrans/:id", handler.DeleteTrans)
 	route.RouteGroup.POST("/transaction", handler.AddTransaction)     //done

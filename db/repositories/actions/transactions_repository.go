@@ -19,6 +19,44 @@ func NewTransactionModel(DB *sql.DB) contracts.ITransactionRepository {
 	return TransactionRepository{DB: DB}
 }
 
+func (repository TransactionRepository) TransactionReport(shopID, filter string) (data []models.Transactions, err error) {
+	statement := `select t."id", uc."full_name", t."amount", t."reference_id", t."shop_id", t."description", t."image", t."transaction_date", 
+	t."type", t."created_at", t."updated_at", t."deleted_at" 
+	from "transactions" t  join "user_customers" uc 
+	on t."customer_id" = uc."id" 
+	where t."shop_id" = '` + shopID + `' and t."deleted_at" is null and t."customer_id" is not null ` + filter
+
+	fmt.Println(statement)
+	rows, err := repository.DB.Query(statement)
+	if err != nil {
+		return data, err
+	}
+
+	for rows.Next() {
+		dataTemp := models.Transactions{}
+
+		err = rows.Scan(
+			&dataTemp.ID,
+			&dataTemp.Name,
+			&dataTemp.Amount,
+			&dataTemp.ReferenceID,
+			&dataTemp.IDShop,
+			&dataTemp.Description,
+			&dataTemp.Image,
+			&dataTemp.TransactionDate,
+			&dataTemp.Type,
+			&dataTemp.CreatedAt,
+			&dataTemp.UpdatedAt,
+			&dataTemp.DeletedAt,
+		)
+		if err != nil {
+			return data, err
+		}
+		data = append(data, dataTemp)
+	}
+	return data, err
+}
+
 func (repository TransactionRepository) DebtReport(customerID, shopID, bookDebtID, filter string) (data []models.Transactions, err error) {
 
 	statement := `select t."id", uc."full_name", t."amount", t."reference_id", t."shop_id", t."description", t."image", t."transaction_date", t."type", t."created_at", t."updated_at", t."deleted_at" 

@@ -30,4 +30,6 @@ type ITransactionRepository interface {
 	CountDistinctBy(column, ID string) (res int, err error)
 
 	DebtReport(customerID, shopID, bookDebtID, filter string) (data []models.Transactions, err error)
+
+	TransactionReport(shopID, filter string) (data []models.Transactions, err error)
 }

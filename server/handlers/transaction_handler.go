@@ -33,6 +33,21 @@ func (handler TransactionHandler) BrowseByCustomer(ctx echo.Context) error {
 	return handler.SendResponse(ctx, res, nil, err)
 }
 
+func (handler TransactionHandler) TransactionReport(ctx echo.Context) error {
+	shopID := ctx.QueryParam("shopid")
+	searching := ctx.QueryParam("search")
+	name := ctx.QueryParam("name")
+	amount := ctx.QueryParam("amount")
+	date := ctx.QueryParam("date")
+	startDate := ctx.QueryParam("start_date")
+	endDate := ctx.QueryParam("end_date")
+	uc := usecase.TransactionUseCase{UcContract: handler.UseCaseContract}
+
+	res, err := uc.TransactionReport(shopID, searching, name, amount, date, startDate, endDate)
+
+	return handler.SendResponse(ctx, res, nil, err)
+}
+
 func (handler TransactionHandler) BrowseByShop(ctx echo.Context) error {
 	shopID := ctx.QueryParam("shopid")
 	searching := ctx.QueryParam("search")
