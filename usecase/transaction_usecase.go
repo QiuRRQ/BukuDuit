@@ -856,6 +856,10 @@ func (uc TransactionUseCase) EditDebt(input request.TransactionRequest) (err err
 			return err
 		}
 
+		transaction.Commit()
+
+		transaction2,err := uc.DB.Begin()
+
 		transactions, err := uc.BrowseByBookDebtID(bookdebt.ID, 0)
 		if err != nil {
 			fmt.Println(5)
@@ -899,16 +903,15 @@ func (uc TransactionUseCase) EditDebt(input request.TransactionRequest) (err err
 			Status:         status,
 			UpdatedAt:      now.Format(time.RFC3339),
 		}
-		err = booksDebtUC.Edit(bookEditInput, bookdebt.ID, transaction)
+		err = booksDebtUC.Edit(bookEditInput, bookdebt.ID, transaction2)
 		if err != nil {
 			fmt.Println(6)
 			fmt.Println(err)
 			transaction.Rollback()
 			return err
 		}
+		transaction2.Commit()
 	}
-
-	transaction.Commit()
 
 	return nil
 }
