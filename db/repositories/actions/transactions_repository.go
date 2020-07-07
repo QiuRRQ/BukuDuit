@@ -208,14 +208,22 @@ func (repository TransactionRepository) BrowseByCustomer(customerID string) (dat
 	return data, err
 }
 
-func (repository TransactionRepository) BrowseByBookDebtID(bookDebtID, status string) (data []models.Transactions, err error) {
+func (repository TransactionRepository) BrowseByBookDebtID(bookDebtID string, status int) (data []models.Transactions, err error) {
 	var rows *sql.Rows
-	if status == "" {
+	var statusBool bool
+	if status == 2 {
 		statement := `select * from "transactions" where "books_debt_id"=$1 and "deleted_at" is null`
 		rows, err = repository.DB.Query(statement, bookDebtID)
 	} else {
+		if status == 1 {
+			statusBool = true
+		}
+
+		if status == 2 {
+			statusBool = false
+		}
 		statement := `select * from "transactions" where "books_debt_id"=$1 and "deleted_at" is null and "status"=$2`
-		rows, err = repository.DB.Query(statement, bookDebtID, status)
+		rows, err = repository.DB.Query(statement, bookDebtID, statusBool)
 	}
 
 	if err != nil {

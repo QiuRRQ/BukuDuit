@@ -307,7 +307,7 @@ func (uc TransactionUseCase) TransactionList(shopID, search, name, amount, trans
 	return res, err
 }
 
-func (uc TransactionUseCase) BrowseByBookDebtID(bookDebtID, status string) (res []viewmodel.TransactionVm, err error) {
+func (uc TransactionUseCase) BrowseByBookDebtID(bookDebtID string, status int) (res []viewmodel.TransactionVm, err error) {
 	model := actions.NewTransactionModel(uc.DB)
 	transactions, err := model.BrowseByBookDebtID(bookDebtID, status)
 	if err != nil {
@@ -856,7 +856,7 @@ func (uc TransactionUseCase) EditDebt(input request.TransactionRequest) (err err
 			return err
 		}
 
-		transactions, err := uc.BrowseByBookDebtID(bookdebt.ID, enums.Nunggak)
+		transactions, err := uc.BrowseByBookDebtID(bookdebt.ID, 0)
 		if err != nil {
 			fmt.Println(5)
 			fmt.Println(err)
