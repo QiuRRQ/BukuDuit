@@ -208,6 +208,51 @@ func (repository TransactionRepository) BrowseByCustomer(customerID string) (dat
 	return data, err
 }
 
+func (repository TransactionRepository) BrowseByBookDebtID(bookDebtID, status string) (data []models.Transactions, err error) {
+	var rows *sql.Rows
+	if status == "" {
+		statement := `select * from "transactions" where "books_debt_id"=$1 and "deleted_at" is null`
+		rows, err = repository.DB.Query(statement, bookDebtID)
+	} else {
+		statement := `select * from "transactions" where "books_debt_id"=$1 and "deleted_at" is null and "status"=$2`
+		rows, err = repository.DB.Query(statement, bookDebtID, status)
+	}
+
+	if err != nil {
+		return data, err
+	}
+
+	for rows.Next() {
+		dataTemp := models.Transactions{}
+
+		err = rows.Scan(
+			&dataTemp.ID,
+			&dataTemp.IDShop,
+			&dataTemp.ReferenceID,
+			&dataTemp.CategoryID,
+			&dataTemp.Amount,
+			&dataTemp.Description,
+			&dataTemp.Image,
+			&dataTemp.Type,
+			&dataTemp.TransactionDate,
+			&dataTemp.CreatedAt,
+			&dataTemp.UpdatedAt,
+			&dataTemp.DeletedAt,
+			&dataTemp.Status,
+			&dataTemp.CustomerID,
+			&dataTemp.BooksDeptID,
+			&dataTemp.BooksTransID,
+		)
+		if err != nil {
+			return data, err
+		}
+
+		data = append(data, dataTemp)
+	}
+
+	return data, nil
+}
+
 func (repository TransactionRepository) Read(ID string) (data models.Transactions, err error) {
 	statement := `select id, shop_id, reference_id, category_id, amount, description, image, type, transaction_date, created_at, 
 	updated_at, deleted_at, status, customer_id, books_debt_id, books_transactions_id from "transactions" where "id"=$1 and "deleted_at" is null`
