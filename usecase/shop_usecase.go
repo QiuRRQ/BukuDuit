@@ -93,7 +93,7 @@ func (uc ShopUseCase) Read(ID, lunas, name string) (res viewmodel.ShopVm, err er
 	var debtTotal int
 	var creditTotal int
 
-	tempDataUserCustomer, err := userCustomerUC.BrowseByShop(ID)
+	tempDataUserCustomer, err := userCustomerUC.BrowseByShop(ID, "")
 	if err != nil {
 		return res, err
 	}

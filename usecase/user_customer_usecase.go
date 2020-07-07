@@ -14,9 +14,13 @@ type UserCustomerUseCase struct {
 	*UcContract
 }
 
-func (uc UserCustomerUseCase) BrowseByShop(shopId string) (res []viewmodel.UserCustomerVm, err error) {
+func (uc UserCustomerUseCase) BrowseByShop(shopId, search string) (res []viewmodel.UserCustomerVm, err error) {
 	model := actions.NewUserCustomerModel(uc.DB)
-	userCustomers, err := model.BrowseByBusiness(shopId)
+	var filter string
+	if search != "" { //input nama
+		filter = ` and "full_name" ILIKE '%` + search + `%'` + filter
+	}
+	userCustomers, err := model.BrowseByBusiness(shopId, filter)
 	if err != nil {
 		return res, err
 	}
