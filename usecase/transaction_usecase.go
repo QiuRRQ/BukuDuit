@@ -310,13 +310,41 @@ func (uc TransactionUseCase) TransactionList(shopID, search, name, amount, trans
 	return res, err
 }
 
-//export file untuk list piutang per pelanggan
-func (uc TransactionUseCase) DebtDetailExportFile(customerID string) (res string, err error) {
-	data, err := uc.BrowseByCustomer(customerID)
+
+func (uc TransactionUseCase) BrowseByBookDebtID(bookDebtID string, status int) (res []viewmodel.TransactionVm, err error) {
+	model := actions.NewTransactionModel(uc.DB)
+	transactions, err := model.BrowseByBookDebtID(bookDebtID, status)
+
 	if err != nil {
 		return res, err
 	}
 
+	for _, transaction := range transactions {
+		res = append(res, viewmodel.TransactionVm{
+			ID:              transaction.ID,
+			ReferenceID:     transaction.ReferenceID,
+			Name:            transaction.Name,
+			ShopID:          transaction.IDShop,
+			CustomerID:      transaction.CustomerID.String,
+			Amount:          transaction.Amount.Int32,
+			Description:     transaction.Description.String,
+			Image:           transaction.Image.String,
+			Type:            transaction.Type,
+			BooksDebtID:     transaction.BooksDeptID.String,
+			BooksTransID:    transaction.BooksTransID.String,
+			TransactionDate: transaction.TransactionDate.String,
+			CreatedAt:       transaction.CreatedAt,
+			UpdatedAt:       transaction.UpdatedAt.String,
+			DeletedAt:       transaction.DeletedAt.String,
+		})
+	}
+
+	return res, err
+}
+
+//export file untuk list piutang per pelanggan
+func (uc TransactionUseCase) DebtDetailExportFile(customerID string) (res string, err error) {
+	data, err := uc.BrowseByCustomer(customerID)
 	xlsx := excelize.NewFile()
 	sheet1Name := "data Laporan Hutang Per Pelanggan"
 	xlsx.SetSheetName(xlsx.GetSheetName(1), sheet1Name)
@@ -899,9 +927,14 @@ func (uc TransactionUseCase) EditDebt(input request.TransactionRequest) (err err
 	userCustomerUc := UserCustomerUseCase{UcContract: uc.UcContract}
 	booksDebtUC := BooksDebtUseCase{UcContract: uc.UcContract}
 	now := time.Now().UTC()
+	var debitAmount int32
+	var creditAmount int32
+	var status string
 
 	customerData, err := userCustomerUc.Read(input.ReferenceID)
 	if err != nil {
+		fmt.Println(1)
+		fmt.Println(err)
 		return err
 	}
 
@@ -910,192 +943,99 @@ func (uc TransactionUseCase) EditDebt(input request.TransactionRequest) (err err
 		return err
 	}
 
-	var debtAmount int
-	var creditAmount int
-	var status string
-	var newAmount int
-	createNew := false
 	//check if fcustomer already exist in books debt
 	debtExist, err := booksDebtUC.IsDebtCustomerExist(customerData.ID, enums.Nunggak)
 	if err != nil {
-		return err
-	}
-
-	bookdebt, err := booksDebtUC.BrowseByUser(customerData.ID, enums.Nunggak)
-	if err != nil {
+		fmt.Println(2)
+		fmt.Println(err)
 		return err
 	}
 
 	if debtExist {
-		//edit booksDebt, status akan terus nunggak baik itu user yang hutang atau customer yang hutang.
-
-		getTrans, err := model.Read(input.ID)
+		bookdebt, err := booksDebtUC.BrowseByUser(customerData.ID, enums.Nunggak)
 		if err != nil {
+			fmt.Println(3)
 			fmt.Println(err)
 			return err
 		}
 
-		if input.TransactionType == enums.Debet {
-			fmt.Println("disini")
-			if bookdebt.DebtTotal > 0 {
-				if int(input.Amount) > int(getTrans.Amount.Int32) {
-					debtAmount = int(bookdebt.DebtTotal) + (int(input.Amount) - int(getTrans.Amount.Int32))
-					creditAmount = bookdebt.CreditTotal
-					status = enums.Nunggak
-				} else {
-					fmt.Println(bookdebt.DebtTotal)
-					fmt.Println(getTrans)
-					debtAmount = int(bookdebt.DebtTotal) + (int(getTrans.Amount.Int32) - int(input.Amount))
-					fmt.Println(debtAmount)
-					creditAmount = bookdebt.CreditTotal
-					if debtAmount == 0 {
-						status = enums.Nunggak
-					}
-				}
-			}
+		TransactionBody := viewmodel.TransactionVm{
+			ID:              input.ID,
+			ReferenceID:     input.ReferenceID,
+			ShopID:          input.ShopID,
+			Amount:          input.Amount,
+			Description:     input.Description,
+			Type:            input.TransactionType,
+			CustomerID:      input.CustomerID,
+			TransactionDate: input.TransactionDate,
+			BooksDebtID:     bookdebt.ID,
+			UpdatedAt:       now.Format(time.RFC3339),
+		}
 
-			if bookdebt.CreditTotal > 0 {
-				if int(input.Amount) > int(getTrans.Amount.Int32) {
-					newAmount = (int(input.Amount) - int(getTrans.Amount.Int32)) - int(bookdebt.CreditTotal)
-					debtAmount = bookdebt.DebtTotal + newAmount
-					creditAmount = 0
-					status = enums.Nunggak
-					createNew = true
-				} else {
-					creditAmount = int(bookdebt.CreditTotal) - (int(getTrans.Amount.Int32) - int(input.Amount))
-					debtAmount = bookdebt.DebtTotal
-					if creditAmount == 0 {
-						status = enums.Lunas
-					} else {
-						status = enums.Nunggak
-					}
-				}
-			}
-		} else {
-			if bookdebt.CreditTotal > 0 {
-				if int(input.Amount) > int(getTrans.Amount.Int32) {
-					creditAmount = int(bookdebt.CreditTotal) + (int(input.Amount) - int(getTrans.Amount.Int32))
-					debtAmount = bookdebt.DebtTotal
-					status = enums.Nunggak
-				} else {
-					creditAmount = int(bookdebt.CreditTotal) - (int(getTrans.Amount.Int32) - int(input.Amount))
-					debtAmount = bookdebt.DebtTotal
-					if creditAmount == 0 {
-						status = enums.Lunas
-					} else {
-						status = enums.Nunggak
-					}
-				}
-			}
+		_, err = model.Edit(TransactionBody, transaction)
+		if err != nil {
+			fmt.Println(4)
+			fmt.Println(err)
+			transaction.Rollback()
+			return err
+		}
 
-			if bookdebt.DebtTotal > 0 {
-				if int(input.Amount) > int(getTrans.Amount.Int32) {
-					newAmount = (int(input.Amount) - int(getTrans.Amount.Int32)) - bookdebt.DebtTotal
-					creditAmount = int(bookdebt.CreditTotal) + newAmount
-					debtAmount = 0
-					status = enums.Nunggak
-					createNew = true
-				} else {
-					debtAmount = int(bookdebt.DebtTotal) - (int(getTrans.Amount.Int32) - int(input.Amount))
-					creditAmount = 0
-					if debtAmount == 0 {
-						status = enums.Lunas
-					} else {
-						status = enums.Nunggak
-					}
-				}
+		transaction.Commit()
+
+		transaction2, err := uc.DB.Begin()
+
+		transactions, err := uc.BrowseByBookDebtID(bookdebt.ID, 0)
+		if err != nil {
+			fmt.Println(5)
+			fmt.Println(err)
+			return err
+		}
+
+		for _, transaction := range transactions {
+			if transaction.Type == enums.Debet {
+				debitAmount = debitAmount + transaction.Amount
+			} else {
+				creditAmount = creditAmount + transaction.Amount
 			}
 		}
 
-		if createNew {
-			fmt.Println("new")
-			booksInput := request.BooksDebtRequest{
-				CustomerID:     input.ReferenceID,
-				SubmissionDate: input.TransactionDate,
-				DebtTotal:      debtAmount,
-				CreditTotal:    creditAmount,
-				BillDate:       input.BillDate,
-				Status:         enums.Nunggak,
-				CreatedAt:      now.Format(time.RFC3339),
-				UpdatedAt:      now.Format(time.RFC3339),
-			}
-			booksID, err := booksDebtUC.Add(booksInput, input.CustomerID, transaction)
-			if err != nil {
-				transaction.Rollback()
-				return err
-			}
-
-			bookEditInput := request.BooksDebtRequest{
-				CustomerID:     input.ReferenceID,
-				SubmissionDate: now.Format(time.RFC3339),
-				DebtTotal:      0,
-				CreditTotal:    0,
-				Status:         enums.Lunas,
-				UpdatedAt:      now.Format(time.RFC3339),
-			}
-			err = booksDebtUC.Edit(bookEditInput, bookdebt.ID, transaction)
-			if err != nil {
-				transaction.Rollback()
-				return err
-			}
-
-			TransactionBody := viewmodel.TransactionVm{
-				ReferenceID:     input.ReferenceID,
-				ShopID:          input.ShopID,
-				Amount:          int32(newAmount),
-				Description:     input.Description,
-				Type:            input.TransactionType,
-				CustomerID:      input.CustomerID,
-				TransactionDate: input.TransactionDate,
-				BooksDebtID:     booksID,
-				UpdatedAt:       now.Format(time.RFC3339),
-				CreatedAt:       now.Format(time.RFC3339),
-			}
-
-			_, err = model.Add(TransactionBody, transaction)
-			if err != nil {
-				transaction.Rollback()
-				return err
-			}
-		} else {
-			booksInput := request.BooksDebtRequest{
-				CustomerID:     customerData.ID,
-				SubmissionDate: bookdebt.SubmissionDate,
-				DebtTotal:      debtAmount,
-				CreditTotal:    creditAmount,
-				Status:         status,
-				CreatedAt:      bookdebt.CreatedAt,
-				UpdatedAt:      now.Format(time.RFC3339),
-			}
-			err = booksDebtUC.Edit(booksInput, bookdebt.ID, transaction)
-			if err != nil {
-				transaction.Rollback()
-				return err
-			}
-
-			TransactionBody := viewmodel.TransactionVm{
-				ID:              input.ID,
-				ReferenceID:     input.ReferenceID,
-				ShopID:          input.ShopID,
-				Amount:          input.Amount,
-				Description:     input.Description,
-				Type:            input.TransactionType,
-				CustomerID:      input.CustomerID,
-				TransactionDate: input.TransactionDate,
-				BooksDebtID:     bookdebt.ID,
-				UpdatedAt:       now.Format(time.RFC3339),
-				CreatedAt:       getTrans.CreatedAt,
-			}
-
-			_, err = model.Edit(TransactionBody, transaction)
-			if err != nil {
-				transaction.Rollback()
-				return err
-			}
+		fmt.Println(debitAmount)
+		fmt.Println(creditAmount)
+		if debitAmount == creditAmount {
+			debitAmount = 0
+			creditAmount = 0
+			status = enums.Lunas
 		}
+
+		if debitAmount > creditAmount {
+			debitAmount = debitAmount - creditAmount
+			status = enums.Nunggak
+			creditAmount = 0
+		}
+
+		if creditAmount > debitAmount {
+			creditAmount = creditAmount - debitAmount
+			debitAmount = 0
+			status = enums.Nunggak
+		}
+
+		bookEditInput := request.BooksDebtRequest{
+			CustomerID:     input.ReferenceID,
+			SubmissionDate: now.Format(time.RFC3339),
+			DebtTotal:      int(debitAmount),
+			CreditTotal:    int(creditAmount),
+			Status:         status,
+			UpdatedAt:      now.Format(time.RFC3339),
+		}
+		err = booksDebtUC.Edit(bookEditInput, bookdebt.ID, transaction2)
+		if err != nil {
+			fmt.Println(6)
+			fmt.Println(err)
+			transaction.Rollback()
+			return err
+		}
+		transaction2.Commit()
 	}
-
-	transaction.Commit()
 
 	return nil
 }
