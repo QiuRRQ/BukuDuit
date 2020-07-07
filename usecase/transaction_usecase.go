@@ -809,6 +809,7 @@ func (uc TransactionUseCase) EditDebt(input request.TransactionRequest) (err err
 
 	customerData, err := userCustomerUc.Read(input.ReferenceID)
 	if err != nil {
+		fmt.Println(1)
 		fmt.Println(err)
 		return err
 	}
@@ -821,6 +822,7 @@ func (uc TransactionUseCase) EditDebt(input request.TransactionRequest) (err err
 	//check if fcustomer already exist in books debt
 	debtExist, err := booksDebtUC.IsDebtCustomerExist(customerData.ID, enums.Nunggak)
 	if err != nil {
+		fmt.Println(2)
 		fmt.Println(err)
 		return err
 	}
@@ -828,6 +830,7 @@ func (uc TransactionUseCase) EditDebt(input request.TransactionRequest) (err err
 	if debtExist {
 		bookdebt, err := booksDebtUC.BrowseByUser(customerData.ID, enums.Nunggak)
 		if err != nil {
+			fmt.Println(3)
 			fmt.Println(err)
 			return err
 		}
@@ -847,6 +850,7 @@ func (uc TransactionUseCase) EditDebt(input request.TransactionRequest) (err err
 
 		_, err = model.Edit(TransactionBody, transaction)
 		if err != nil {
+			fmt.Println(4)
 			fmt.Println(err)
 			transaction.Rollback()
 			return err
@@ -854,6 +858,7 @@ func (uc TransactionUseCase) EditDebt(input request.TransactionRequest) (err err
 
 		transactions, err := uc.BrowseByBookDebtID(bookdebt.ID, enums.Nunggak)
 		if err != nil {
+			fmt.Println(5)
 			fmt.Println(err)
 			return err
 		}
@@ -892,6 +897,7 @@ func (uc TransactionUseCase) EditDebt(input request.TransactionRequest) (err err
 		}
 		err = booksDebtUC.Edit(bookEditInput, bookdebt.ID, transaction)
 		if err != nil {
+			fmt.Println(6)
 			fmt.Println(err)
 			transaction.Rollback()
 			return err
