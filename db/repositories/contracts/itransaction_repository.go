@@ -11,7 +11,7 @@ type ITransactionRepository interface {
 
 	BrowseByShop(shopID string) (data []models.Transactions, err error)
 
-	TransactionBrowsByShop(shopID, name string) (data []models.Transactions, err error)
+	TransactionBrowsByShop(shopID, filter string) (data []models.Transactions, err error)
 
 	Read(ID string) (data models.Transactions, err error)
 

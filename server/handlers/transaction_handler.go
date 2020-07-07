@@ -15,12 +15,16 @@ type TransactionHandler struct {
 
 func (handler TransactionHandler) TransactionList(ctx echo.Context) error {
 	shopID := ctx.QueryParam("shopid")
+	searching := ctx.QueryParam("search")
 	name := ctx.QueryParam("name")
-	time := ctx.QueryParam("time")
+	amount := ctx.QueryParam("amount")
+	date := ctx.QueryParam("date")
+	startDate := ctx.QueryParam("start_date")
+	endDate := ctx.QueryParam("end_date")
 
 	uc := usecase.TransactionUseCase{UcContract: handler.UseCaseContract}
 
-	res, err := uc.TransactionList(shopID, name, time)
+	res, err := uc.TransactionList(shopID, searching, name, amount, date, startDate, endDate)
 
 	return handler.SendResponse(ctx, res, nil, err)
 }

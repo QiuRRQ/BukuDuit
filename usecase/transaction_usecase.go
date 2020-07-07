@@ -162,11 +162,33 @@ func (uc TransactionUseCase) TransactionReport(shopID, search, name, amount, tra
 }
 
 //list transaksi
-func (uc TransactionUseCase) TransactionList(shopID, name, timeFilter string) (res viewmodel.TransactionListVm, err error) {
+func (uc TransactionUseCase) TransactionList(shopID, search, name, amount, transDate, startDate, endDate string) (res viewmodel.TransactionListVm, err error) {
 	model := actions.NewTransactionModel(uc.DB)
 	var filter string
-	if name != "" {
-		filter = `and uc."full_name" ilike '%` + name + `%'`
+	if startDate != "" && endDate != "" {
+		filter = `and (t."transaction_date" BETWEEN '` + startDate + `' and '` + endDate + `')`
+	}
+	if search != "" { //input nama
+		filter = `and uc."full_name" ILIKE '%` + search + `%'` + filter
+	}
+	//sort hanya dipakai sekali
+	if name == "ASC" || name == "asc" {
+		filter = filter + ` order by uc."full_name" ` + name
+	}
+	if name == "DESC" || name == "desc" {
+		filter = filter + ` order by uc."full_name" ` + name
+	}
+	if amount == "ASC" || amount == "asc" {
+		filter = filter + ` order by t."amount" ` + amount
+	}
+	if amount == "DESC" || amount == "desc" {
+		filter = filter + ` order by t."amount" ` + amount
+	}
+	if transDate == "ASC" || transDate == "asc" {
+		filter = filter + ` order by t."transaction_date" ` + transDate
+	}
+	if transDate == "DESC" || transDate == "desc" {
+		filter = filter + ` order by t."transaction_date" ` + transDate
 	}
 	Transactions, err := model.TransactionBrowsByShop(shopID, filter)
 	if err != nil {
