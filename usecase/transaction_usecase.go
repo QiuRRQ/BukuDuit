@@ -9,7 +9,10 @@ import (
 	"database/sql"
 	"errors"
 	"fmt"
+	"log"
 	"time"
+
+	"github.com/360EntSecGroup-Skylar/excelize"
 )
 
 type TransactionUseCase struct {
@@ -307,6 +310,61 @@ func (uc TransactionUseCase) TransactionList(shopID, search, name, amount, trans
 	return res, err
 }
 
+func (uc TransactionUseCase) DebtReportExportFile(ID string) (res string, err error) {
+	data, err := uc.DebtReport(ID, "", "", "", "", "", "")
+	if err != nil {
+		return res, err
+	}
+
+	xlsx := excelize.NewFile()
+	sheet1Name := "data utang/piutang"
+	xlsx.SetSheetName(xlsx.GetSheetName(1), sheet1Name)
+
+	xlsx.SetCellValue(sheet1Name, "A1", "Tanggal Penagihan/Pembayaran")
+	xlsx.SetCellValue(sheet1Name, "B1", "Nama Pelanggan")
+	xlsx.SetCellValue(sheet1Name, "C1", "Deskripsi")
+	xlsx.SetCellValue(sheet1Name, "D1", "Uang Masuk")
+	xlsx.SetCellValue(sheet1Name, "E1", "Uang Keluar")
+
+	err = xlsx.AutoFilter(sheet1Name, "A1", "B1", "")
+	if err != nil {
+		log.Fatal("ERROR", err.Error())
+	}
+
+	var debtTotal int
+	var creditTotal int
+	for i, each := range data.ListData {
+		for j, row := range each.Details {
+			xlsx.SetCellValue(sheet1Name, fmt.Sprintf("A%d", j+2), each.TransactionDate)
+			xlsx.SetCellValue(sheet1Name, fmt.Sprintf("B%d", j+2), row.Name)
+			xlsx.SetCellValue(sheet1Name, fmt.Sprintf("C%d", j+2), row.Description)
+			if each.Details[i].Type == enums.Credit {
+				xlsx.SetCellValue(sheet1Name, fmt.Sprintf("E%d", j+2), row.Amount)
+				creditTotal = creditTotal + int(row.Amount)
+				xlsx.SetCellValue(sheet1Name, fmt.Sprintf("D%d", j+2), "-")
+			} else {
+				xlsx.SetCellValue(sheet1Name, fmt.Sprintf("E%d", j+2), "-")
+				xlsx.SetCellValue(sheet1Name, fmt.Sprintf("D%d", j+2), row.Amount)
+				debtTotal = debtTotal + int(debtTotal)
+			}
+
+			if i == len(data.ListData)-1 {
+				xlsx.SetCellValue(sheet1Name, fmt.Sprintf("C%d", j+2), "Total")
+				xlsx.SetCellValue(sheet1Name, fmt.Sprintf("E%d", j+2), creditTotal)
+				xlsx.SetCellValue(sheet1Name, fmt.Sprintf("D%d", j+2), debtTotal)
+			}
+		}
+	}
+
+	err = xlsx.SaveAs("./../file/laporanHutang.xlsx")
+	if err != nil {
+		fmt.Println(err)
+	}
+
+	return "./../file/laporanHutang.xlsx", err
+}
+
+//untuk laporan hutang
 func (uc TransactionUseCase) DebtReport(shopID, search, name, amount, transDate, startDate, endDate string) (res viewmodel.ReportHutangVm, err error) {
 	model := actions.NewTransactionModel(uc.DB)
 	booksDebtUC := BooksDebtUseCase{UcContract: uc.UcContract}
