@@ -882,10 +882,12 @@ func (uc TransactionUseCase) EditDebt(input request.TransactionRequest) (err err
 		if debitAmount > creditAmount {
 			debitAmount = debitAmount - creditAmount
 			status = enums.Nunggak
+			creditAmount = 0
 		}
 
 		if creditAmount > debitAmount {
 			creditAmount = creditAmount - debitAmount
+			debitAmount = 0
 			status = enums.Nunggak
 		}
 
