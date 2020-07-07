@@ -17,9 +17,9 @@ func NewUserCustomerModel(DB *sql.DB) contracts.IUserCustomerRepository {
 	return UserCustomerRepository{DB: DB}
 }
 
-func (repository UserCustomerRepository) BrowseByBusiness(businessID string) (data []models.UserCustomers, err error) {
-	statement := `select * from "user_customers" where "shop_id"=$1 and "deleted_at" is null`
-	rows, err := repository.DB.Query(statement, businessID)
+func (repository UserCustomerRepository) BrowseByBusiness(businessID, filter string) (data []models.UserCustomers, err error) {
+	statement := `select * from "user_customers" where "shop_id"='` + businessID + `' and "deleted_at" is null` + filter
+	rows, err := repository.DB.Query(statement)
 	if err != nil {
 		return data, err
 	}

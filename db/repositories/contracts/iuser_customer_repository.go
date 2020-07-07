@@ -7,7 +7,7 @@ import (
 )
 
 type IUserCustomerRepository interface {
-	BrowseByBusiness(businessID string) (data []models.UserCustomers, err error)
+	BrowseByBusiness(businessID, filter string) (data []models.UserCustomers, err error)
 
 	Read(ID string) (data models.UserCustomers, err error)
 
