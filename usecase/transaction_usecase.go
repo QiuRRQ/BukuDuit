@@ -854,6 +854,7 @@ func (uc TransactionUseCase) EditDebt(input request.TransactionRequest) (err err
 
 		transactions, err := uc.BrowseByBookDebtID(bookdebt.ID, enums.Nunggak)
 		if err != nil {
+			fmt.Println(err)
 			return err
 		}
 
