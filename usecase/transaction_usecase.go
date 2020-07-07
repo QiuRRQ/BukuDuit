@@ -310,6 +310,74 @@ func (uc TransactionUseCase) TransactionList(shopID, search, name, amount, trans
 	return res, err
 }
 
+//export file untuk list piutang per pelanggan
+func (uc TransactionUseCase) DebtDetailExportFile(customerID string) (res string, err error) {
+	data, err := uc.BrowseByCustomer(customerID)
+	if err != nil {
+		return res, err
+	}
+
+	xlsx := excelize.NewFile()
+	sheet1Name := "data Laporan Hutang Per Pelanggan"
+	xlsx.SetSheetName(xlsx.GetSheetName(1), sheet1Name)
+
+	xlsx.SetCellValue(sheet1Name, "A1", "Nama Pelanggan:")
+	xlsx.SetCellValue(sheet1Name, "B1", data.Name)
+
+	xlsx.SetCellValue(sheet1Name, "A4", "No")
+	xlsx.SetCellValue(sheet1Name, "B4", "Tanggal Transaksi")
+	xlsx.SetCellValue(sheet1Name, "C4", "Catatan")
+	xlsx.SetCellValue(sheet1Name, "D4", "Uang Masuk")
+	xlsx.SetCellValue(sheet1Name, "E4", "Uang Keluar")
+
+	err = xlsx.AutoFilter(sheet1Name, "A1", "B1", "")
+	if err != nil {
+		log.Fatal("ERROR", err.Error())
+	}
+
+	var debtTotal int
+	var creditTotal int
+	no := 1
+	for i, each := range data.ListData {
+		for j, row := range each.Details {
+			xlsx.SetCellValue(sheet1Name, fmt.Sprintf("A%d", j+6), no)
+			xlsx.SetCellValue(sheet1Name, fmt.Sprintf("B%d", j+6), each.TransactionDate)
+			xlsx.SetCellValue(sheet1Name, fmt.Sprintf("C%d", j+6), row.Description)
+			if each.Details[i].Type == enums.Credit {
+				xlsx.SetCellValue(sheet1Name, fmt.Sprintf("E%d", j+6), row.Amount)
+				creditTotal = creditTotal + int(row.Amount)
+				xlsx.SetCellValue(sheet1Name, fmt.Sprintf("D%d", j+6), "-")
+			} else {
+				xlsx.SetCellValue(sheet1Name, fmt.Sprintf("E%d", j+6), "-")
+				xlsx.SetCellValue(sheet1Name, fmt.Sprintf("D%d", j+6), row.Amount)
+				debtTotal = debtTotal + int(debtTotal)
+			}
+
+			if i == len(data.ListData)-1 {
+				xlsx.SetCellValue(sheet1Name, fmt.Sprintf("C%d", j+8), "Total")
+				xlsx.SetCellValue(sheet1Name, fmt.Sprintf("E%d", j+8), creditTotal)
+				xlsx.SetCellValue(sheet1Name, fmt.Sprintf("D%d", j+8), debtTotal)
+			}
+			no++
+		}
+	}
+	if debtTotal > creditTotal {
+		xlsx.SetCellValue(sheet1Name, "A2", "Jumlah Utang Piutang:")
+		xlsx.SetCellValue(sheet1Name, "B2", debtTotal-creditTotal)
+	} else {
+		xlsx.SetCellValue(sheet1Name, "A2", "Jumlah Utang Piutang:")
+		xlsx.SetCellValue(sheet1Name, "B2", creditTotal-debtTotal)
+	}
+
+	err = xlsx.SaveAs("./../file/HutangPerPelanggan.xlsx")
+	if err != nil {
+		fmt.Println(err)
+	}
+
+	return "./../file/HutangPerPelanggan.xlsx", err
+}
+
+//export file untuk laporan hutang
 func (uc TransactionUseCase) DebtReportExportFile(ID string) (res string, err error) {
 	data, err := uc.DebtReport(ID, "", "", "", "", "", "")
 	if err != nil {
@@ -317,7 +385,7 @@ func (uc TransactionUseCase) DebtReportExportFile(ID string) (res string, err er
 	}
 
 	xlsx := excelize.NewFile()
-	sheet1Name := "data utang/piutang"
+	sheet1Name := "data Laporan Hutang"
 	xlsx.SetSheetName(xlsx.GetSheetName(1), sheet1Name)
 
 	xlsx.SetCellValue(sheet1Name, "A1", "Tanggal Penagihan/Pembayaran")
@@ -349,9 +417,9 @@ func (uc TransactionUseCase) DebtReportExportFile(ID string) (res string, err er
 			}
 
 			if i == len(data.ListData)-1 {
-				xlsx.SetCellValue(sheet1Name, fmt.Sprintf("C%d", j+2), "Total")
-				xlsx.SetCellValue(sheet1Name, fmt.Sprintf("E%d", j+2), creditTotal)
-				xlsx.SetCellValue(sheet1Name, fmt.Sprintf("D%d", j+2), debtTotal)
+				xlsx.SetCellValue(sheet1Name, fmt.Sprintf("C%d", j+4), "Total")
+				xlsx.SetCellValue(sheet1Name, fmt.Sprintf("E%d", j+4), creditTotal)
+				xlsx.SetCellValue(sheet1Name, fmt.Sprintf("D%d", j+4), debtTotal)
 			}
 		}
 	}
