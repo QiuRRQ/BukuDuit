@@ -800,6 +800,48 @@ func (uc TransactionUseCase) EditDebt(input request.TransactionRequest) (err err
 		return err
 	}
 
+	getTrans, err := model.Read(input.ID)
+	if err != nil {
+		fmt.Println(err)
+		return err
+	}
+
+	bookEditInput := request.BooksDebtRequest{
+		CustomerID:     input.ReferenceID,
+		SubmissionDate: now.Format(time.RFC3339),
+		DebtTotal:      0,
+		CreditTotal:    0,
+		Status:         enums.Lunas,
+		UpdatedAt:      now.Format(time.RFC3339),
+	}
+	err = booksDebtUC.Edit(bookEditInput, bookdebt.ID, transaction)
+	if err != nil {
+		transaction.Rollback()
+		return err
+	}
+
+	TransactionBody := viewmodel.TransactionVm{
+		ID:              input.ID,
+		ReferenceID:     input.ReferenceID,
+		ShopID:          input.ShopID,
+		Amount:          input.Amount,
+		Description:     input.Description,
+		Type:            input.TransactionType,
+		CustomerID:      input.CustomerID,
+		TransactionDate: input.TransactionDate,
+		BooksDebtID:     bookdebt.ID,
+		UpdatedAt:       now.Format(time.RFC3339),
+		CreatedAt:       getTrans.CreatedAt,
+	}
+
+	_, err = model.Edit(TransactionBody, transaction)
+	if err != nil {
+		transaction.Rollback()
+		return err
+	}
+
+
+
 	if debtExist {
 		//edit booksDebt, status akan terus nunggak baik itu user yang hutang atau customer yang hutang.
 
