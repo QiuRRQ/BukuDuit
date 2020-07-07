@@ -30,33 +30,35 @@ func (uc ShopUseCase) ExportToFile(ID string) (res string, err error) {
 	sheet1Name := "data utang/piutang"
 	xlsx.SetSheetName(xlsx.GetSheetName(1), sheet1Name)
 
-	xlsx.SetCellValue(sheet1Name, "A1", "Nama")
-	xlsx.SetCellValue(sheet1Name, "B1", "Nominal")
-	xlsx.SetCellValue(sheet1Name, "C1", "Tipe")
+	xlsx.SetCellValue(sheet1Name, "A1", "Pelanggan")
+	xlsx.SetCellValue(sheet1Name, "B1", "Nominal Uang Keluar")
+	xlsx.SetCellValue(sheet1Name, "C1", "Nominal Uang Masuk")
 
 	err = xlsx.AutoFilter(sheet1Name, "A1", "B1", "")
 	if err != nil {
 		log.Fatal("ERROR", err.Error())
 	}
 
-	var tipe string
 	for i, each := range data.UserCustomers {
-		if data.UserCustomers[i].Type == enums.Credit {
-			tipe = "utang"
-		} else {
-			tipe = "piutang"
-		}
+
 		xlsx.SetCellValue(sheet1Name, fmt.Sprintf("A%d", i+2), each.FullName)
-		xlsx.SetCellValue(sheet1Name, fmt.Sprintf("B%d", i+2), each.Amount)
-		xlsx.SetCellValue(sheet1Name, fmt.Sprintf("C%d", i+2), tipe)
+
+		if data.UserCustomers[i].Type == enums.Credit {
+			xlsx.SetCellValue(sheet1Name, fmt.Sprintf("B%d", i+2), each.Amount)
+			xlsx.SetCellValue(sheet1Name, fmt.Sprintf("C%d", i+2), "-")
+		} else {
+			xlsx.SetCellValue(sheet1Name, fmt.Sprintf("B%d", i+2), "-")
+			xlsx.SetCellValue(sheet1Name, fmt.Sprintf("C%d", i+2), each.Amount)
+		}
+
 	}
 
-	err = xlsx.SaveAs("./../file/data.xlsx")
+	err = xlsx.SaveAs("./../file/ListDataPelanggan.xlsx")
 	if err != nil {
 		fmt.Println(err)
 	}
 
-	return "./../file/data.xlsx", err
+	return "./../file/ListDataPelanggan.xlsx", err
 }
 
 func (uc ShopUseCase) BrowseByUser(userID string) (res []viewmodel.ShopVm, err error) {
@@ -93,7 +95,7 @@ func (uc ShopUseCase) Read(ID, lunas, name string) (res viewmodel.ShopVm, err er
 	var debtTotal int
 	var creditTotal int
 
-	tempDataUserCustomer, err := userCustomerUC.BrowseByShop(ID)
+	tempDataUserCustomer, err := userCustomerUC.BrowseByShop(ID, "")
 	if err != nil {
 		return res, err
 	}
