@@ -858,7 +858,7 @@ func (uc TransactionUseCase) EditDebt(input request.TransactionRequest) (err err
 
 		transaction.Commit()
 
-		transaction2,err := uc.DB.Begin()
+		transaction2, err := uc.DB.Begin()
 
 		transactions, err := uc.BrowseByBookDebtID(bookdebt.ID, 0)
 		if err != nil {
