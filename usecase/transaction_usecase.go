@@ -871,6 +871,8 @@ func (uc TransactionUseCase) EditDebt(input request.TransactionRequest) (err err
 			}
 		}
 
+		fmt.Println(debitAmount)
+		fmt.Println(creditAmount)
 		if debitAmount == creditAmount {
 			debitAmount = 0
 			creditAmount = 0
