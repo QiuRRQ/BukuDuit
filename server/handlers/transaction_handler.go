@@ -19,12 +19,13 @@ func (handler TransactionHandler) TransactionList(ctx echo.Context) error {
 	name := ctx.QueryParam("name")
 	amount := ctx.QueryParam("amount")
 	date := ctx.QueryParam("date")
+	timeGroup := ctx.QueryParam("time")
 	startDate := ctx.QueryParam("start_date")
 	endDate := ctx.QueryParam("end_date")
 
 	uc := usecase.TransactionUseCase{UcContract: handler.UseCaseContract}
 
-	res, err := uc.TransactionList(shopID, searching, name, amount, date, startDate, endDate)
+	res, err := uc.TransactionList(shopID, searching, name, amount, date, timeGroup, startDate, endDate)
 
 	return handler.SendResponse(ctx, res, nil, err)
 }
