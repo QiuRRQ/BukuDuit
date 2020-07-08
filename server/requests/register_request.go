@@ -1,5 +1,6 @@
 package request
 
+//register request
 type RegisterRequest struct {
 	MobilePhone string `json:"mobile_phone" validate:"required"`
 	Pin         string `json:"pin" validate:"required"`
