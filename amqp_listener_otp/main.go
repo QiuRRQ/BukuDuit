@@ -89,6 +89,7 @@ func main() {
 		DB:       0,
 	})
 
+	//check redis
 	pong, err := redisClient.Ping().Result()
 	fmt.Println("Redis ping status: "+pong, err)
 
