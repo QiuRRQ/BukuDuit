@@ -20,8 +20,8 @@ type ShopUseCase struct {
 	*UcContract
 }
 
-func (uc ShopUseCase) ExportToFile(ID string) (res string, err error) {
-	data, err := uc.Read(ID, "", "")
+func (uc ShopUseCase) ExportToFile(ID, status, name string) (res string, err error) {
+	data, err := uc.Read(ID, status, name)
 	if err != nil {
 		return res, err
 	}
