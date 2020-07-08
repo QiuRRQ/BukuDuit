@@ -1516,3 +1516,180 @@ fatal: no upstream configured for branch 'featureExcel'
 > git for-each-ref --format %(refname) %(objectname) --sort -committerdate
 > git remote --verbose
 > git config --get commit.template
+> git status -z -u
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go
+> git symbolic-ref --short HEAD
+> git cat-file -s eb8d8d96bcbabe802fc008dcec792c1f2348f79b
+> git rev-parse featureExcel
+> git rev-parse --symbolic-full-name featureExcel@{u}
+> git show :usecase/transaction_usecase.go
+> git rev-list --left-right featureExcel...refs/remotes/origin/featureExcel
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse featureExcel
+> git rev-parse --symbolic-full-name featureExcel@{u}
+> git rev-list --left-right featureExcel...refs/remotes/origin/featureExcel
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go
+> git symbolic-ref --short HEAD
+> git cat-file -s eb8d8d96bcbabe802fc008dcec792c1f2348f79b
+> git rev-parse featureExcel
+> git rev-parse --symbolic-full-name featureExcel@{u}
+> git show :usecase/transaction_usecase.go
+> git rev-list --left-right featureExcel...refs/remotes/origin/featureExcel
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse featureExcel
+> git rev-parse --symbolic-full-name featureExcel@{u}
+> git rev-list --left-right featureExcel...refs/remotes/origin/featureExcel
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git show :server/handlers/transaction_handler.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/server/handlers/transaction_handler.go
+> git cat-file -s 6ee941fed3826971f80a422c6864ed1b055c5ce8
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse featureExcel
+> git rev-parse --symbolic-full-name featureExcel@{u}
+> git rev-list --left-right featureExcel...refs/remotes/origin/featureExcel
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse featureExcel
+> git rev-parse --symbolic-full-name featureExcel@{u}
+> git rev-list --left-right featureExcel...refs/remotes/origin/featureExcel
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git show :usecase/transaction_usecase.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go
+> git cat-file -s eb8d8d96bcbabe802fc008dcec792c1f2348f79b
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse featureExcel
+> git rev-parse --symbolic-full-name featureExcel@{u}
+> git rev-list --left-right featureExcel...refs/remotes/origin/featureExcel
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse featureExcel
+> git rev-parse --symbolic-full-name featureExcel@{u}
+> git rev-list --left-right featureExcel...refs/remotes/origin/featureExcel
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git show :server/handlers/transaction_handler.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/server/handlers/transaction_handler.go
+> git cat-file -s 6ee941fed3826971f80a422c6864ed1b055c5ce8
+> git show :server/bootstrap/routes/transaction_route.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/server/bootstrap/routes/transaction_route.go
+> git cat-file -s 22da8fbb703ad3ca6d2a6f2818b1b5fc0504bdfc
+> git show :server/handlers/transaction_handler.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/server/handlers/transaction_handler.go
+> git cat-file -s 6ee941fed3826971f80a422c6864ed1b055c5ce8
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse featureExcel
+> git rev-parse --symbolic-full-name featureExcel@{u}
+> git rev-list --left-right featureExcel...refs/remotes/origin/featureExcel
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse featureExcel
+> git rev-parse --symbolic-full-name featureExcel@{u}
+> git rev-list --left-right featureExcel...refs/remotes/origin/featureExcel
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git show :usecase/transaction_usecase.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go
+> git cat-file -s eb8d8d96bcbabe802fc008dcec792c1f2348f79b
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse featureExcel
+> git rev-parse --symbolic-full-name featureExcel@{u}
+> git rev-list --left-right featureExcel...refs/remotes/origin/featureExcel
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse featureExcel
+> git rev-parse --symbolic-full-name featureExcel@{u}
+> git rev-list --left-right featureExcel...refs/remotes/origin/featureExcel
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git show :server/handlers/transaction_handler.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/server/handlers/transaction_handler.go
+> git cat-file -s 6ee941fed3826971f80a422c6864ed1b055c5ce8
+> git show :server/bootstrap/routes/transaction_route.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/server/bootstrap/routes/transaction_route.go
+> git cat-file -s 22da8fbb703ad3ca6d2a6f2818b1b5fc0504bdfc
+> git show :server/handlers/transaction_handler.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/server/handlers/transaction_handler.go
+> git cat-file -s 6ee941fed3826971f80a422c6864ed1b055c5ce8
+> git show :server/bootstrap/routes/transaction_route.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/server/bootstrap/routes/transaction_route.go
+> git cat-file -s 22da8fbb703ad3ca6d2a6f2818b1b5fc0504bdfc
+> git show :server/bootstrap/routes/shop_route.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/server/bootstrap/routes/shop_route.go
+> git cat-file -s 7498a3abfde9cbe5402d5c1332e81903d26382eb
+> git show :server/handlers/shop_handler.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/server/handlers/shop_handler.go
+> git cat-file -s 39b26254e8871af11985bb83e20de59276639ecc
+> git show :server/bootstrap/routes/transaction_route.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/server/bootstrap/routes/transaction_route.go
+> git cat-file -s 22da8fbb703ad3ca6d2a6f2818b1b5fc0504bdfc
+> git show :server/handlers/shop_handler.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/server/handlers/shop_handler.go
+> git cat-file -s 39b26254e8871af11985bb83e20de59276639ecc
+> git show :server/bootstrap/routes/shop_route.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/server/bootstrap/routes/shop_route.go
+> git cat-file -s 7498a3abfde9cbe5402d5c1332e81903d26382eb
+> git show :server/handlers/shop_handler.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/server/handlers/shop_handler.go
+> git cat-file -s 39b26254e8871af11985bb83e20de59276639ecc
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse featureExcel
+> git rev-parse --symbolic-full-name featureExcel@{u}
+> git rev-list --left-right featureExcel...refs/remotes/origin/featureExcel
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse featureExcel
+> git rev-parse --symbolic-full-name featureExcel@{u}
+> git rev-list --left-right featureExcel...refs/remotes/origin/featureExcel
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git show :usecase/shop_usecase.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/usecase/shop_usecase.go
+> git cat-file -s 7a0987680436e665b15f459635102f644b98f467
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse featureExcel
+> git rev-parse --symbolic-full-name featureExcel@{u}
+> git rev-list --left-right featureExcel...refs/remotes/origin/featureExcel
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template

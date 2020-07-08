@@ -59,11 +59,15 @@ func (handler TransactionHandler) TransactionReport(ctx echo.Context) error {
 //export excel untuk laporan transaksi
 func (handler TransactionHandler) TransactionReportExportFile(ctx echo.Context) error {
 	shopID := ctx.QueryParam("shopid")
+	searching := ctx.QueryParam("search")
+	name := ctx.QueryParam("name")
+	amount := ctx.QueryParam("amount")
+	date := ctx.QueryParam("date")
 	startDate := ctx.QueryParam("start_date")
 	endDate := ctx.QueryParam("end_date")
 	uc := usecase.TransactionUseCase{UcContract: handler.UseCaseContract}
 
-	res, err := uc.TransactionReportExportFile(shopID, startDate, endDate)
+	res, err := uc.TransactionReportExportFile(shopID, searching, name, amount, date, startDate, endDate)
 	if err != nil {
 		return err
 	}
@@ -89,10 +93,15 @@ func (handler TransactionHandler) DebtDetailExportFile(ctx echo.Context) error {
 //export excel untuk laporan hutang
 func (handler TransactionHandler) DebtReportExportFile(ctx echo.Context) error {
 	shopID := ctx.QueryParam("shopid")
-
+	searching := ctx.QueryParam("search")
+	name := ctx.QueryParam("name")
+	amount := ctx.QueryParam("amount")
+	date := ctx.QueryParam("date")
+	startDate := ctx.QueryParam("start_date")
+	endDate := ctx.QueryParam("end_date")
 	uc := usecase.TransactionUseCase{UcContract: handler.UseCaseContract}
 
-	res, err := uc.DebtReportExportFile(shopID)
+	res, err := uc.DebtReportExportFile(shopID, searching, name, amount, date, startDate, endDate)
 
 	if err != nil {
 		return err
