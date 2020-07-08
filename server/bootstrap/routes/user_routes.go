@@ -11,6 +11,7 @@ type UserRoute struct {
 	Handler    api.Handler
 }
 
+//user routes
 func (route UserRoute) RegisterRoute() {
 	handler := api.UserHandler{Handler: route.Handler}
 
