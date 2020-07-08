@@ -13,6 +13,7 @@ type UserRepository struct {
 	DB *sql.DB
 }
 
+//...
 func NewUserModel(DB *sql.DB) contracts.IUserRepository {
 	return UserRepository{DB: DB}
 }
@@ -85,6 +86,7 @@ func (repository UserRepository) EditPin(phone, pin, updatedAt string) (res stri
 
 	return res, err
 }
+
 
 func (repository UserRepository) Add(input viewmodel.UserVm, pin string, tx *sql.Tx) (res string, err error) {
 	statement := `insert into "users" ("mobile_phone","pin","created_at") values($1,$2,$3) returning "id"`
