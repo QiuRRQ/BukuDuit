@@ -349,8 +349,8 @@ func (uc TransactionUseCase) BrowseByBookDebtID(bookDebtID string, status int) (
 }
 
 //export file untuk laporan transaksi
-func (uc TransactionUseCase) TransactionReportExportFile(shopID, startDate, endDate string) (res string, err error) {
-	data, err := uc.TransactionReport(shopID, "", "", "", "", startDate, endDate)
+func (uc TransactionUseCase) TransactionReportExportFile(shopID, searching, name, amount, date, startDate, endDate string) (res string, err error) {
+	data, err := uc.TransactionReport(shopID, searching, name, amount, date, startDate, endDate)
 	if err != nil {
 		return res, err
 	}
@@ -509,8 +509,8 @@ func (uc TransactionUseCase) DebtDetailExportFile(customerID string) (res string
 }
 
 //export file untuk laporan hutang
-func (uc TransactionUseCase) DebtReportExportFile(ID string) (res string, err error) {
-	data, err := uc.DebtReport(ID, "", "", "", "", "", "")
+func (uc TransactionUseCase) DebtReportExportFile(shopID, searching, name, amount, date, startDate, endDate string) (res string, err error) {
+	data, err := uc.DebtReport(shopID, searching, name, amount, date, startDate, endDate)
 	if err != nil {
 		return res, err
 	}

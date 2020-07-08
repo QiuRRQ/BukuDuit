@@ -1555,3 +1555,114 @@ Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/usec
 
 /home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go vet .
 
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/server/handlers
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/server/handlers
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/server/handlers and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/server/handlers
+/home/aziz/works/newBukuduit/bukuduit-go/server/handlers>Finished running tool: /usr/bin/go build -o /tmp/vscode-gotswpqM/go-code-check .
+/home/aziz/works/newBukuduit/bukuduit-go/server/handlers/transaction_handler.go:62: searching declared and not used
+/home/aziz/works/newBukuduit/bukuduit-go/server/handlers/transaction_handler.go:63: name declared and not used
+/home/aziz/works/newBukuduit/bukuduit-go/server/handlers/transaction_handler.go:64: amount declared and not used
+/home/aziz/works/newBukuduit/bukuduit-go/server/handlers/transaction_handler.go:65: date declared and not used
+
+/home/aziz/works/newBukuduit/bukuduit-go/server/handlers>Finished running tool: /usr/bin/go vet .
+/home/aziz/works/newBukuduit/bukuduit-go/server/handlers/transaction_handler.go:62: searching declared but not used
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/server/handlers
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/server/handlers
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/server/handlers and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/server/handlers
+/home/aziz/works/newBukuduit/bukuduit-go/server/handlers>Finished running tool: /usr/bin/go build -o /tmp/vscode-gotswpqM/go-code-check .
+/home/aziz/works/newBukuduit/bukuduit-go/server/handlers/transaction_handler.go:70: too many arguments in call to uc.TransactionReportExportFile
+
+/home/aziz/works/newBukuduit/bukuduit-go/server/handlers>Finished running tool: /usr/bin/go vet .
+/home/aziz/works/newBukuduit/bukuduit-go/server/handlers/transaction_handler.go:70: too many arguments
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/usecase and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/usecase
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go vet .
+
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go build -o /tmp/vscode-gotswpqM/go-code-check .
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/usecase and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/usecase
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go vet .
+
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go build -o /tmp/vscode-gotswpqM/go-code-check .
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/server/handlers
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/server/handlers
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/server/handlers and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/server/handlers
+/home/aziz/works/newBukuduit/bukuduit-go/server/handlers>Finished running tool: /usr/bin/go build -o /tmp/vscode-gotswpqM/go-code-check .
+/home/aziz/works/newBukuduit/bukuduit-go/server/handlers/transaction_handler.go:96: searching declared and not used
+/home/aziz/works/newBukuduit/bukuduit-go/server/handlers/transaction_handler.go:97: name declared and not used
+/home/aziz/works/newBukuduit/bukuduit-go/server/handlers/transaction_handler.go:98: amount declared and not used
+/home/aziz/works/newBukuduit/bukuduit-go/server/handlers/transaction_handler.go:99: date declared and not used
+/home/aziz/works/newBukuduit/bukuduit-go/server/handlers/transaction_handler.go:100: startDate declared and not used
+/home/aziz/works/newBukuduit/bukuduit-go/server/handlers/transaction_handler.go:101: endDate declared and not used
+
+/home/aziz/works/newBukuduit/bukuduit-go/server/handlers>Finished running tool: /usr/bin/go vet .
+/home/aziz/works/newBukuduit/bukuduit-go/server/handlers/transaction_handler.go:96: searching declared but not used
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/server/handlers
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/server/handlers
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/server/handlers and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/server/handlers
+/home/aziz/works/newBukuduit/bukuduit-go/server/handlers>Finished running tool: /usr/bin/go build -o /tmp/vscode-gotswpqM/go-code-check .
+/home/aziz/works/newBukuduit/bukuduit-go/server/handlers/transaction_handler.go:104: too many arguments in call to uc.DebtReportExportFile
+
+/home/aziz/works/newBukuduit/bukuduit-go/server/handlers>Finished running tool: /usr/bin/go vet .
+/home/aziz/works/newBukuduit/bukuduit-go/server/handlers/transaction_handler.go:104: too many arguments
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/usecase and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/usecase
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go build -o /tmp/vscode-gotswpqM/go-code-check .
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:513: undefined: ID
+
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go vet .
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:513: undeclared name: ID
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/usecase and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/usecase
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go vet .
+
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go build -o /tmp/vscode-gotswpqM/go-code-check .
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/server/handlers
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/server/handlers
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/server/handlers and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/server/handlers
+/home/aziz/works/newBukuduit/bukuduit-go/server/handlers>Finished running tool: /usr/bin/go build -o /tmp/vscode-gotswpqM/go-code-check .
+/home/aziz/works/newBukuduit/bukuduit-go/server/handlers/shop_handler.go:28: status declared and not used
+/home/aziz/works/newBukuduit/bukuduit-go/server/handlers/shop_handler.go:29: name declared and not used
+
+/home/aziz/works/newBukuduit/bukuduit-go/server/handlers>Finished running tool: /usr/bin/go vet .
+/home/aziz/works/newBukuduit/bukuduit-go/server/handlers/shop_handler.go:28: status declared but not used
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/server/handlers
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/server/handlers
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/server/handlers and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/server/handlers
+/home/aziz/works/newBukuduit/bukuduit-go/server/handlers>Finished running tool: /usr/bin/go build -o /tmp/vscode-gotswpqM/go-code-check .
+/home/aziz/works/newBukuduit/bukuduit-go/server/handlers/shop_handler.go:30: too many arguments in call to uc.ExportToFile
+
+/home/aziz/works/newBukuduit/bukuduit-go/server/handlers>Finished running tool: /usr/bin/go vet .
+/home/aziz/works/newBukuduit/bukuduit-go/server/handlers/shop_handler.go:30: too many arguments
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/usecase and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/usecase
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go vet .
+
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go build -o /tmp/vscode-gotswpqM/go-code-check .
+
