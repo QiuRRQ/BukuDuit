@@ -1,0 +1,1250 @@
+[Info  - 4:24:33 PM] 2020/06/25 16:24:33 Build info
+----------
+golang.org/x/tools/gopls 0.4.1
+    golang.org/x/tools/gopls@v0.4.1 h1:0e3BPxGV4B3cd0zdMuccwW72SgmHp92lAjOyxX/ScAw=
+    github.com/BurntSushi/toml@v0.3.1 h1:WXkYYl6Yr3qBf1K79EBnL4mak0OimBfB0XUf9Vl28OQ=
+    github.com/sergi/go-diff@v1.1.0 h1:we8PVUC3FE2uYfodKH/nBHMSetSfHDR6scGdBi+erh0=
+    golang.org/x/mod@v0.2.0 h1:KU7oHjnv3XNWfa5COkzUifxZmxp1TyI7ImMXqFxLwvQ=
+    golang.org/x/sync@v0.0.0-20190911185100-cd5d95a43a6e h1:vcxGaoTs7kV8m5Np9uUNQin4BrLOthgV7252N8V+FwY=
+    golang.org/x/tools@v0.0.0-20200513154647-78b527d18275 h1:e7nYe9s94RHunFJ7b+mmPxiQMOKMVSqYASToWb1EcHs=
+    golang.org/x/xerrors@v0.0.0-20191204190536-9bdfabe68543 h1:E7g+9GITq07hpfrRu66IVDexMakfv52eLZ2CXBWiKr4=
+    honnef.co/go/tools@v0.0.1-2020.1.3 h1:sXmLre5bzIR6ypkjXCDI3jHPssRhc8KD/Ome589sc3U=
+    mvdan.cc/xurls/v2@v2.1.0 h1:KaMb5GLhlcSX+e+qhbRJODnUUBvlw01jt4yrjFIHAuA=
+
+Go info
+-------
+go version go1.13.8 linux/amd64
+
+
+
+[Info  - 4:24:33 PM] 2020/06/25 16:24:33 go env for /home/aziz/works/dokterapp/dokterapps-backend
+(valid build configuration = true)
+(build flags: [])
+GO111MODULE=""
+GOARCH="amd64"
+GOBIN=""
+GOCACHE="/root/.cache/go-build"
+GOENV="/root/.config/go/env"
+GOEXE=""
+GOFLAGS=""
+GOHOSTARCH="amd64"
+GOHOSTOS="linux"
+GONOPROXY=""
+GONOSUMDB=""
+GOOS="linux"
+GOPATH="/root/go"
+GOPRIVATE=""
+GOPROXY="https://proxy.golang.org,direct"
+GOROOT="/usr/lib/go-1.13"
+GOSUMDB="sum.golang.org"
+GOTMPDIR=""
+GOTOOLDIR="/usr/lib/go-1.13/pkg/tool/linux_amd64"
+GCCGO="gccgo"
+AR="ar"
+CC="gcc"
+CXX="g++"
+CGO_ENABLED="1"
+GOMOD="/home/aziz/works/dokterapp/dokterapps-backend/go.mod"
+CGO_CFLAGS="-g -O2"
+CGO_CPPFLAGS=""
+CGO_CXXFLAGS="-g -O2"
+CGO_FFLAGS="-g -O2"
+CGO_LDFLAGS="-g -O2"
+PKG_CONFIG="pkg-config"
+GOGCCFLAGS="-fPIC -m64 -pthread -fmessage-length=0 -fdebug-prefix-map=/tmp/go-build714478977=/tmp/go-build -gno-record-gcc-switches"
+
+
+[Info  - 4:24:36 PM] 2020/06/25 16:24:36 go/packages.Load
+	snapshot=0
+	directory=/home/aziz/works/dokterapp/dokterapps-backend
+	query=[./... builtin]
+	packages=33
+
+[Info  - 4:25:11 PM] 2020/06/25 16:25:11 background imports cache refresh starting
+
+[Info  - 4:25:16 PM] 2020/06/25 16:25:16 background refresh finished after 5.261893082s
+
+[Info  - 4:30:01 PM] 2020/06/25 16:30:01 background imports cache refresh starting
+
+[Info  - 4:30:02 PM] 2020/06/25 16:30:02 background refresh finished after 39.604014ms
+
+[Error - 4:31:00 PM] 2020/06/25 16:31:00 no signature help: cannot find an enclosing function
+	position={17 6}
+
+[Error - 4:31:01 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/dokterapp/dokterapps-backend/server/bootstrap/routes/authentication_route.go:19:1: expected selector or type assertion, found '}' (and 2 more errors)
+  Code: 0 
+[Error - 4:31:05 PM] 2020/06/25 16:31:05 no signature help: cannot get type for Fun *ast.SelectorExpr (&{0xc002367660 GE})
+	position={17 20}
+
+[Error - 4:31:05 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/dokterapp/dokterapps-backend/server/bootstrap/routes/authentication_route.go:18:20: expected type, found ')'
+  Code: 0 
+[Info  - 4:31:08 PM] 2020/06/25 16:31:07 background imports cache refresh starting
+
+[Info  - 4:31:08 PM] 2020/06/25 16:31:08 background refresh finished after 36.840093ms
+
+[Error - 4:31:19 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/dokterapp/dokterapps-backend/server/bootstrap/routes/authentication_route.go:18:45: expected selector or type assertion, found ')' (and 7 more errors)
+  Code: 0 
+[Error - 4:31:22 PM] 2020/06/25 16:31:22 no signature help: cannot find an enclosing function
+	position={17 53}
+
+[Info  - 4:31:38 PM] 2020/06/25 16:31:38 background imports cache refresh starting
+
+[Info  - 4:31:38 PM] 2020/06/25 16:31:38 background refresh finished after 47.102805ms
+
+[Error - 4:32:03 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/dokterapp/dokterapps-backend/server/handlers/authentication_handler.go:44:6: expected '(', found 'EOF' (and 4 more errors)
+  Code: 0 
+[Error - 4:32:03 PM] 2020/06/25 16:32:03 DocumentSymbols failed: invalid pos
+	URI=file:///home/aziz/works/dokterapp/dokterapps-backend/server/handlers/authentication_handler.go
+
+[Error - 4:32:03 PM] 2020/06/25 16:32:03 no signature help: cannot find an enclosing function
+	position={43 4}
+
+[Error - 4:32:03 PM] 2020/06/25 16:32:03 DocumentSymbols failed: invalid pos
+	URI=file:///home/aziz/works/dokterapp/dokterapps-backend/server/handlers/authentication_handler.go
+
+[Error - 4:32:04 PM] 2020/06/25 16:32:04 DocumentSymbols failed: invalid pos
+	URI=file:///home/aziz/works/dokterapp/dokterapps-backend/server/handlers/authentication_handler.go
+
+[Error - 4:32:04 PM] 2020/06/25 16:32:04 no signature help: cannot find an enclosing function
+	position={43 6}
+
+[Error - 4:32:05 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/dokterapp/dokterapps-backend/server/handlers/authentication_handler.go:44:8: expected 'IDENT', found newline (and 4 more errors)
+  Code: 0 
+[Error - 4:32:05 PM] 2020/06/25 16:32:05 DocumentSymbols failed: invalid pos
+	URI=file:///home/aziz/works/dokterapp/dokterapps-backend/server/handlers/authentication_handler.go
+
+[Error - 4:32:05 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/dokterapp/dokterapps-backend/server/handlers/authentication_handler.go:44:8: expected 'IDENT', found newline (and 4 more errors)
+  Code: 0 
+[Error - 4:32:07 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/dokterapp/dokterapps-backend/server/handlers/authentication_handler.go:44:12: expected 'IDENT', found newline (and 4 more errors)
+  Code: 0 
+[Error - 4:32:07 PM] 2020/06/25 16:32:07 DocumentSymbols failed: invalid pos
+	URI=file:///home/aziz/works/dokterapp/dokterapps-backend/server/handlers/authentication_handler.go
+
+[Error - 4:32:08 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/dokterapp/dokterapps-backend/server/handlers/authentication_handler.go:44:15: expected 'IDENT', found newline (and 4 more errors)
+  Code: 0 
+[Error - 4:32:08 PM] 2020/06/25 16:32:08 DocumentSymbols failed: invalid pos
+	URI=file:///home/aziz/works/dokterapp/dokterapps-backend/server/handlers/authentication_handler.go
+
+[Error - 4:32:08 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/dokterapp/dokterapps-backend/server/handlers/authentication_handler.go:44:16: expected 'IDENT', found newline (and 4 more errors)
+  Code: 0 
+[Error - 4:32:08 PM] 2020/06/25 16:32:08 DocumentSymbols failed: invalid pos
+	URI=file:///home/aziz/works/dokterapp/dokterapps-backend/server/handlers/authentication_handler.go
+
+[Error - 4:32:10 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/dokterapp/dokterapps-backend/server/handlers/authentication_handler.go:44:13: expected 'IDENT', found newline (and 4 more errors)
+  Code: 0 
+[Error - 4:32:10 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/dokterapp/dokterapps-backend/server/handlers/authentication_handler.go:44:11: expected 'IDENT', found newline (and 4 more errors)
+  Code: 0 
+[Error - 4:32:10 PM] 2020/06/25 16:32:10 DocumentSymbols failed: invalid pos
+	URI=file:///home/aziz/works/dokterapp/dokterapps-backend/server/handlers/authentication_handler.go
+
+[Error - 4:32:10 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/dokterapp/dokterapps-backend/server/handlers/authentication_handler.go:44:10: expected 'IDENT', found newline (and 4 more errors)
+  Code: 0 
+[Error - 4:32:11 PM] 2020/06/25 16:32:11 DocumentSymbols failed: invalid pos
+	URI=file:///home/aziz/works/dokterapp/dokterapps-backend/server/handlers/authentication_handler.go
+
+[Error - 4:32:12 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/dokterapp/dokterapps-backend/server/handlers/authentication_handler.go:44:16: expected 'IDENT', found newline (and 4 more errors)
+  Code: 0 
+[Error - 4:32:12 PM] 2020/06/25 16:32:12 DocumentSymbols failed: invalid pos
+	URI=file:///home/aziz/works/dokterapp/dokterapps-backend/server/handlers/authentication_handler.go
+
+[Error - 4:32:14 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/dokterapp/dokterapps-backend/server/handlers/authentication_handler.go:44:17: expected 'IDENT', found newline (and 4 more errors)
+  Code: 0 
+[Error - 4:32:14 PM] 2020/06/25 16:32:14 DocumentSymbols failed: invalid pos
+	URI=file:///home/aziz/works/dokterapp/dokterapps-backend/server/handlers/authentication_handler.go
+
+[Error - 4:32:14 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/dokterapp/dokterapps-backend/server/handlers/authentication_handler.go:44:21: expected 'IDENT', found newline (and 4 more errors)
+  Code: 0 
+[Error - 4:32:14 PM] 2020/06/25 16:32:14 DocumentSymbols failed: invalid pos
+	URI=file:///home/aziz/works/dokterapp/dokterapps-backend/server/handlers/authentication_handler.go
+
+[Error - 4:32:15 PM] 2020/06/25 16:32:15 no signature help: cannot find an enclosing function
+	position={43 35}
+
+[Error - 4:32:15 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/dokterapp/dokterapps-backend/server/handlers/authentication_handler.go:44:37: expected 'IDENT', found newline (and 4 more errors)
+  Code: 0 
+[Error - 4:32:15 PM] 2020/06/25 16:32:15 DocumentSymbols failed: invalid pos
+	URI=file:///home/aziz/works/dokterapp/dokterapps-backend/server/handlers/authentication_handler.go
+
+[Error - 4:32:15 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/dokterapp/dokterapps-backend/server/handlers/authentication_handler.go:44:37: expected 'IDENT', found newline (and 4 more errors)
+  Code: 0 
+[Error - 4:32:16 PM] 2020/06/25 16:32:16 DocumentSymbols failed: invalid pos
+	URI=file:///home/aziz/works/dokterapp/dokterapps-backend/server/handlers/authentication_handler.go
+
+[Error - 4:32:16 PM] 2020/06/25 16:32:16 no completions found: this is a definition of func (AuthenticationHandler).R(invalid type)
+	position={43 38}
+
+[Error - 4:32:17 PM] 2020/06/25 16:32:17 no completions found: this is a definition of func (AuthenticationHandler).Reg(invalid type)
+	position={43 40}
+
+[Error - 4:32:17 PM] 2020/06/25 16:32:17 no completions found: this is a definition of func (AuthenticationHandler).Regi(invalid type)
+	position={43 41}
+
+[Error - 4:32:17 PM] 2020/06/25 16:32:17 no completions found: this is a definition of func (AuthenticationHandler).Regis(invalid type)
+	position={43 42}
+
+[Error - 4:32:17 PM] 2020/06/25 16:32:17 no completions found: this is a definition of func (AuthenticationHandler).Regist(invalid type)
+	position={43 43}
+
+[Error - 4:32:17 PM] 2020/06/25 16:32:17 no completions found: this is a definition of func (AuthenticationHandler).Registe(invalid type)
+	position={43 44}
+
+[Error - 4:32:18 PM] 2020/06/25 16:32:18 no completions found: this is a definition of func (AuthenticationHandler).Register(invalid type)
+	position={43 45}
+
+[Error - 4:32:18 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/dokterapp/dokterapps-backend/server/handlers/authentication_handler.go:44:46: expected '(', found newline (and 3 more errors)
+  Code: 0 
+[Error - 4:32:18 PM] 2020/06/25 16:32:18 DocumentSymbols failed: invalid pos
+	URI=file:///home/aziz/works/dokterapp/dokterapps-backend/server/handlers/authentication_handler.go
+
+[Error - 4:32:19 PM] 2020/06/25 16:32:19 no signature help: cannot find an enclosing function
+	position={43 46}
+
+[Error - 4:32:26 PM] 2020/06/25 16:32:26 no signature help: cannot find an enclosing function
+	position={43 54}
+
+[Error - 4:32:27 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/dokterapp/dokterapps-backend/server/handlers/authentication_handler.go:44:56: expected 'IDENT', found ')' (and 3 more errors)
+  Code: 0 
+[Error - 4:32:28 PM] 2020/06/25 16:32:28 no signature help: cannot find an enclosing function
+	position={43 62}
+
+[Error - 4:32:31 PM] 2020/06/25 16:32:31 no signature help: cannot find an enclosing function
+	position={43 69}
+
+[Info  - 4:32:33 PM] 2020/06/25 16:32:33 background imports cache refresh starting
+
+[Info  - 4:32:33 PM] 2020/06/25 16:32:33 background refresh finished after 16.095945ms
+
+[Error - 4:32:38 PM] 2020/06/25 16:32:38 DocumentSymbols failed: invalid pos
+	URI=file:///home/aziz/works/dokterapp/dokterapps-backend/server/handlers/authentication_handler.go
+
+[Error - 4:32:47 PM] 2020/06/25 16:32:47 no signature help: cannot find an enclosing function
+	position={44 13}
+
+[Error - 4:32:52 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/dokterapp/dokterapps-backend/server/handlers/authentication_handler.go:45:23: expected selector or type assertion, found ')' (and 7 more errors)
+  Code: 0 
+[Error - 4:32:53 PM] 2020/06/25 16:32:53 no signature help: cannot find an enclosing function
+	position={44 38}
+
+[Error - 4:32:57 PM] Request textDocument/foldingRange failed.
+  Message: invalid pos
+  Code: 0 
+[Error - 4:32:57 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/dokterapp/dokterapps-backend/server/handlers/authentication_handler.go:48:1: expected operand, found '}' (and 7 more errors)
+  Code: 0 
+[Error - 4:32:57 PM] 2020/06/25 16:32:57 DocumentSymbols failed: invalid pos
+	URI=file:///home/aziz/works/dokterapp/dokterapps-backend/server/handlers/authentication_handler.go
+
+[Error - 4:32:58 PM] Request textDocument/foldingRange failed.
+  Message: invalid pos
+  Code: 0 
+[Error - 4:32:58 PM] 2020/06/25 16:32:58 DocumentSymbols failed: invalid pos
+	URI=file:///home/aziz/works/dokterapp/dokterapps-backend/server/handlers/authentication_handler.go
+
+[Error - 4:33:00 PM] Request textDocument/foldingRange failed.
+  Message: invalid pos
+  Code: 0 
+[Error - 4:33:00 PM] Request textDocument/foldingRange failed.
+  Message: invalid pos
+  Code: 0 
+[Error - 4:33:00 PM] 2020/06/25 16:33:00 DocumentSymbols failed: invalid pos
+	URI=file:///home/aziz/works/dokterapp/dokterapps-backend/server/handlers/authentication_handler.go
+
+[Error - 4:33:02 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/dokterapp/dokterapps-backend/server/handlers/authentication_handler.go:48:1: expected operand, found '}' (and 5 more errors)
+  Code: 0 
+[Error - 4:33:02 PM] Request textDocument/foldingRange failed.
+  Message: invalid pos
+  Code: 0 
+[Error - 4:33:02 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/dokterapp/dokterapps-backend/server/handlers/authentication_handler.go:48:1: expected selector or type assertion, found '}' (and 6 more errors)
+  Code: 0 
+[Error - 4:33:02 PM] 2020/06/25 16:33:02 DocumentSymbols failed: invalid pos
+	URI=file:///home/aziz/works/dokterapp/dokterapps-backend/server/handlers/authentication_handler.go
+
+[Error - 4:33:03 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/dokterapp/dokterapps-backend/server/handlers/authentication_handler.go:48:1: expected operand, found '}' (and 5 more errors)
+  Code: 0 
+[Error - 4:33:04 PM] Request textDocument/foldingRange failed.
+  Message: invalid pos
+  Code: 0 
+[Error - 4:33:04 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/dokterapp/dokterapps-backend/server/handlers/authentication_handler.go:48:1: expected operand, found '}' (and 5 more errors)
+  Code: 0 
+[Error - 4:33:04 PM] 2020/06/25 16:33:04 DocumentSymbols failed: invalid pos
+	URI=file:///home/aziz/works/dokterapp/dokterapps-backend/server/handlers/authentication_handler.go
+
+[Info  - 4:33:05 PM] 2020/06/25 16:33:05 background imports cache refresh starting
+
+[Info  - 4:33:05 PM] 2020/06/25 16:33:05 background refresh finished after 28.376176ms
+
+[Error - 4:33:06 PM] Request textDocument/foldingRange failed.
+  Message: invalid pos
+  Code: 0 
+[Error - 4:33:06 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/dokterapp/dokterapps-backend/server/handlers/authentication_handler.go:48:1: expected operand, found '}' (and 5 more errors)
+  Code: 0 
+[Error - 4:33:06 PM] 2020/06/25 16:33:06 DocumentSymbols failed: invalid pos
+	URI=file:///home/aziz/works/dokterapp/dokterapps-backend/server/handlers/authentication_handler.go
+
+[Error - 4:33:06 PM] 2020/06/25 16:33:06 no signature help: cannot find an enclosing function
+	position={46 26}
+
+[Error - 4:33:06 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/dokterapp/dokterapps-backend/server/handlers/authentication_handler.go:48:1: expected operand, found '}' (and 5 more errors)
+  Code: 0 
+[Error - 4:33:07 PM] Request textDocument/foldingRange failed.
+  Message: invalid pos
+  Code: 0 
+[Error - 4:33:07 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/dokterapp/dokterapps-backend/server/handlers/authentication_handler.go:48:1: expected operand, found '}' (and 5 more errors)
+  Code: 0 
+[Error - 4:33:07 PM] Request textDocument/foldingRange failed.
+  Message: invalid pos
+  Code: 0 
+[Error - 4:33:08 PM] 2020/06/25 16:33:08 DocumentSymbols failed: invalid pos
+	URI=file:///home/aziz/works/dokterapp/dokterapps-backend/server/handlers/authentication_handler.go
+
+[Error - 4:33:09 PM] Request textDocument/foldingRange failed.
+  Message: invalid pos
+  Code: 0 
+[Error - 4:33:09 PM] Request textDocument/foldingRange failed.
+  Message: invalid pos
+  Code: 0 
+[Error - 4:33:09 PM] 2020/06/25 16:33:09 DocumentSymbols failed: invalid pos
+	URI=file:///home/aziz/works/dokterapp/dokterapps-backend/server/handlers/authentication_handler.go
+
+[Error - 4:33:11 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/dokterapp/dokterapps-backend/server/handlers/authentication_handler.go:47:29: expected boolean expression, found assignment (missing parentheses around composite literal?)
+  Code: 0 
+[Error - 4:33:16 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/dokterapp/dokterapps-backend/server/handlers/authentication_handler.go:47:29: expected boolean expression, found assignment (missing parentheses around composite literal?)
+  Code: 0 
+[Error - 4:33:16 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/dokterapp/dokterapps-backend/server/handlers/authentication_handler.go:47:29: expected boolean expression, found assignment (missing parentheses around composite literal?) (and 3 more errors)
+  Code: 0 
+[Error - 4:33:18 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/dokterapp/dokterapps-backend/server/handlers/authentication_handler.go:47:29: expected boolean expression, found assignment (missing parentheses around composite literal?)
+  Code: 0 
+[Error - 4:33:18 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/dokterapp/dokterapps-backend/server/handlers/authentication_handler.go:47:29: expected boolean expression, found assignment (missing parentheses around composite literal?)
+  Code: 0 
+[Error - 4:33:21 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/dokterapp/dokterapps-backend/server/handlers/authentication_handler.go:47:29: expected boolean expression, found assignment (missing parentheses around composite literal?)
+  Code: 0 
+[Error - 4:33:22 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/dokterapp/dokterapps-backend/server/handlers/authentication_handler.go:47:29: expected boolean expression, found assignment (missing parentheses around composite literal?)
+  Code: 0 
+[Error - 4:33:23 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/dokterapp/dokterapps-backend/server/handlers/authentication_handler.go:47:29: expected boolean expression, found assignment (missing parentheses around composite literal?)
+  Code: 0 
+[Error - 4:33:23 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/dokterapp/dokterapps-backend/server/handlers/authentication_handler.go:47:29: expected boolean expression, found assignment (missing parentheses around composite literal?)
+  Code: 0 
+[Error - 4:33:24 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/dokterapp/dokterapps-backend/server/handlers/authentication_handler.go:47:29: expected boolean expression, found assignment (missing parentheses around composite literal?)
+  Code: 0 
+[Error - 4:33:24 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/dokterapp/dokterapps-backend/server/handlers/authentication_handler.go:47:29: expected boolean expression, found assignment (missing parentheses around composite literal?)
+  Code: 0 
+[Error - 4:33:26 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/dokterapp/dokterapps-backend/server/handlers/authentication_handler.go:47:29: expected boolean expression, found assignment (missing parentheses around composite literal?) (and 10 more errors)
+  Code: 0 
+[Error - 4:33:27 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/dokterapp/dokterapps-backend/server/handlers/authentication_handler.go:47:29: expected boolean expression, found assignment (missing parentheses around composite literal?)
+  Code: 0 
+[Error - 4:33:32 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/dokterapp/dokterapps-backend/server/handlers/authentication_handler.go:47:29: expected boolean expression, found assignment (missing parentheses around composite literal?)
+  Code: 0 
+[Error - 4:33:34 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/dokterapp/dokterapps-backend/server/handlers/authentication_handler.go:47:29: expected boolean expression, found assignment (missing parentheses around composite literal?)
+  Code: 0 
+[Error - 4:33:35 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/dokterapp/dokterapps-backend/server/handlers/authentication_handler.go:47:29: expected boolean expression, found assignment (missing parentheses around composite literal?) (and 10 more errors)
+  Code: 0 
+[Error - 4:33:35 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/dokterapp/dokterapps-backend/server/handlers/authentication_handler.go:47:29: expected boolean expression, found assignment (missing parentheses around composite literal?)
+  Code: 0 
+[Error - 4:33:36 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/dokterapp/dokterapps-backend/server/handlers/authentication_handler.go:47:29: expected boolean expression, found assignment (missing parentheses around composite literal?) (and 10 more errors)
+  Code: 0 
+[Error - 4:33:37 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/dokterapp/dokterapps-backend/server/handlers/authentication_handler.go:47:29: expected boolean expression, found assignment (missing parentheses around composite literal?) (and 10 more errors)
+  Code: 0 
+[Error - 4:33:37 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/dokterapp/dokterapps-backend/server/handlers/authentication_handler.go:47:29: expected boolean expression, found assignment (missing parentheses around composite literal?)
+  Code: 0 
+[Error - 4:33:37 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/dokterapp/dokterapps-backend/server/handlers/authentication_handler.go:47:29: expected boolean expression, found assignment (missing parentheses around composite literal?)
+  Code: 0 
+[Info  - 4:33:38 PM] 2020/06/25 16:33:38 background imports cache refresh starting
+
+[Info  - 4:33:38 PM] 2020/06/25 16:33:38 background refresh finished after 15.054363ms
+
+[Error - 4:33:39 PM] 2020/06/25 16:33:39 no signature help: no file for pos in package dokterapps-backend/server/handlers
+	position={47 78}
+
+[Error - 4:33:39 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/dokterapp/dokterapps-backend/server/handlers/authentication_handler.go:47:29: expected boolean expression, found assignment (missing parentheses around composite literal?)
+  Code: 0 
+[Error - 4:33:40 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/dokterapp/dokterapps-backend/server/handlers/authentication_handler.go:47:29: expected boolean expression, found assignment (missing parentheses around composite literal?)
+  Code: 0 
+[Error - 4:33:40 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/dokterapp/dokterapps-backend/server/handlers/authentication_handler.go:47:29: expected boolean expression, found assignment (missing parentheses around composite literal?)
+  Code: 0 
+[Error - 4:33:41 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/dokterapp/dokterapps-backend/server/handlers/authentication_handler.go:47:29: expected boolean expression, found assignment (missing parentheses around composite literal?)
+  Code: 0 
+[Error - 4:33:41 PM] Request textDocument/formatting failed.
+  Message: 47:29: expected boolean expression, found assignment (missing parentheses around composite literal?)
+  Code: 0 
+[Error - 4:33:46 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/dokterapp/dokterapps-backend/server/handlers/authentication_handler.go:47:29: expected boolean expression, found assignment (missing parentheses around composite literal?)
+  Code: 0 
+[Error - 4:33:48 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/dokterapp/dokterapps-backend/server/handlers/authentication_handler.go:47:29: expected boolean expression, found assignment (missing parentheses around composite literal?)
+  Code: 0 
+[Error - 4:33:49 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/dokterapp/dokterapps-backend/server/handlers/authentication_handler.go:47:29: expected boolean expression, found assignment (missing parentheses around composite literal?)
+  Code: 0 
+[Error - 4:33:50 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/dokterapp/dokterapps-backend/server/handlers/authentication_handler.go:47:29: expected boolean expression, found assignment (missing parentheses around composite literal?)
+  Code: 0 
+[Error - 4:33:53 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/dokterapp/dokterapps-backend/server/handlers/authentication_handler.go:47:29: expected boolean expression, found assignment (missing parentheses around composite literal?)
+  Code: 0 
+[Error - 4:34:02 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/dokterapp/dokterapps-backend/server/handlers/authentication_handler.go:47:29: expected boolean expression, found assignment (missing parentheses around composite literal?)
+  Code: 0 
+[Error - 4:34:05 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/dokterapp/dokterapps-backend/server/handlers/authentication_handler.go:47:29: expected boolean expression, found assignment (missing parentheses around composite literal?)
+  Code: 0 
+[Error - 4:34:08 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/dokterapp/dokterapps-backend/server/handlers/authentication_handler.go:47:29: expected boolean expression, found assignment (missing parentheses around composite literal?)
+  Code: 0 
+[Error - 4:34:09 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/dokterapp/dokterapps-backend/server/handlers/authentication_handler.go:47:29: expected boolean expression, found assignment (missing parentheses around composite literal?)
+  Code: 0 
+[Error - 4:34:09 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/dokterapp/dokterapps-backend/server/handlers/authentication_handler.go:47:29: expected boolean expression, found assignment (missing parentheses around composite literal?)
+  Code: 0 
+[Error - 4:34:12 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/dokterapp/dokterapps-backend/server/handlers/authentication_handler.go:47:29: expected boolean expression, found assignment (missing parentheses around composite literal?)
+  Code: 0 
+[Error - 4:34:12 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/dokterapp/dokterapps-backend/server/handlers/authentication_handler.go:47:29: expected boolean expression, found assignment (missing parentheses around composite literal?)
+  Code: 0 
+[Error - 4:34:19 PM] Request textDocument/foldingRange failed.
+  Message: invalid pos
+  Code: 0 
+[Error - 4:34:19 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/dokterapp/dokterapps-backend/server/handlers/authentication_handler.go:52:1: expected operand, found '}' (and 7 more errors)
+  Code: 0 
+[Error - 4:34:19 PM] 2020/06/25 16:34:19 DocumentSymbols failed: invalid pos
+	URI=file:///home/aziz/works/dokterapp/dokterapps-backend/server/handlers/authentication_handler.go
+
+[Error - 4:34:20 PM] Request textDocument/foldingRange failed.
+  Message: invalid pos
+  Code: 0 
+[Error - 4:34:20 PM] Request textDocument/foldingRange failed.
+  Message: invalid pos
+  Code: 0 
+[Error - 4:34:20 PM] 2020/06/25 16:34:20 DocumentSymbols failed: invalid pos
+	URI=file:///home/aziz/works/dokterapp/dokterapps-backend/server/handlers/authentication_handler.go
+
+[Error - 4:34:20 PM] Request textDocument/foldingRange failed.
+  Message: invalid pos
+  Code: 0 
+[Error - 4:34:20 PM] 2020/06/25 16:34:20 DocumentSymbols failed: invalid pos
+	URI=file:///home/aziz/works/dokterapp/dokterapps-backend/server/handlers/authentication_handler.go
+
+[Error - 4:34:22 PM] Request textDocument/foldingRange failed.
+  Message: invalid pos
+  Code: 0 
+[Error - 4:34:22 PM] Request textDocument/foldingRange failed.
+  Message: invalid pos
+  Code: 0 
+[Error - 4:34:23 PM] 2020/06/25 16:34:23 DocumentSymbols failed: invalid pos
+	URI=file:///home/aziz/works/dokterapp/dokterapps-backend/server/handlers/authentication_handler.go
+
+[Error - 4:34:25 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/dokterapp/dokterapps-backend/server/handlers/authentication_handler.go:52:1: expected operand, found '}' (and 5 more errors)
+  Code: 0 
+[Error - 4:34:26 PM] 2020/06/25 16:34:26 no signature help: cannot find an enclosing function
+	position={50 18}
+
+[Error - 4:34:26 PM] Request textDocument/foldingRange failed.
+  Message: invalid pos
+  Code: 0 
+[Error - 4:34:26 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/dokterapp/dokterapps-backend/server/handlers/authentication_handler.go:52:1: expected selector or type assertion, found '}' (and 6 more errors)
+  Code: 0 
+[Error - 4:34:26 PM] 2020/06/25 16:34:26 DocumentSymbols failed: invalid pos
+	URI=file:///home/aziz/works/dokterapp/dokterapps-backend/server/handlers/authentication_handler.go
+
+[Error - 4:34:29 PM] 2020/06/25 16:34:29 no signature help: cannot find an enclosing function
+	position={50 27}
+
+[Error - 4:34:29 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/dokterapp/dokterapps-backend/server/handlers/authentication_handler.go:52:1: expected operand, found '}' (and 5 more errors)
+  Code: 0 
+[Error - 4:34:30 PM] Request textDocument/foldingRange failed.
+  Message: invalid pos
+  Code: 0 
+[Error - 4:34:30 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/dokterapp/dokterapps-backend/server/handlers/authentication_handler.go:52:1: expected selector or type assertion, found '}' (and 6 more errors)
+  Code: 0 
+[Error - 4:34:30 PM] 2020/06/25 16:34:30 DocumentSymbols failed: invalid pos
+	URI=file:///home/aziz/works/dokterapp/dokterapps-backend/server/handlers/authentication_handler.go
+
+[Error - 4:34:32 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/dokterapp/dokterapps-backend/server/handlers/authentication_handler.go:52:1: expected operand, found '}' (and 5 more errors)
+  Code: 0 
+[Error - 4:34:32 PM] Request textDocument/foldingRange failed.
+  Message: invalid pos
+  Code: 0 
+[Error - 4:34:32 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/dokterapp/dokterapps-backend/server/handlers/authentication_handler.go:51:29: expected selector or type assertion, found 'struct' (and 7 more errors)
+  Code: 0 
+[Error - 4:34:32 PM] 2020/06/25 16:34:32 DocumentSymbols failed: invalid pos
+	URI=file:///home/aziz/works/dokterapp/dokterapps-backend/server/handlers/authentication_handler.go
+
+[Error - 4:34:33 PM] Request textDocument/foldingRange failed.
+  Message: invalid pos
+  Code: 0 
+[Error - 4:34:33 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/dokterapp/dokterapps-backend/server/handlers/authentication_handler.go:52:1: expected operand, found '}' (and 5 more errors)
+  Code: 0 
+[Error - 4:34:33 PM] 2020/06/25 16:34:33 DocumentSymbols failed: invalid pos
+	URI=file:///home/aziz/works/dokterapp/dokterapps-backend/server/handlers/authentication_handler.go
+
+[Error - 4:34:35 PM] Request textDocument/foldingRange failed.
+  Message: invalid pos
+  Code: 0 
+[Error - 4:34:35 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/dokterapp/dokterapps-backend/server/handlers/authentication_handler.go:52:1: expected operand, found '}' (and 5 more errors)
+  Code: 0 
+[Error - 4:34:35 PM] 2020/06/25 16:34:35 DocumentSymbols failed: invalid pos
+	URI=file:///home/aziz/works/dokterapp/dokterapps-backend/server/handlers/authentication_handler.go
+
+[Error - 4:34:35 PM] 2020/06/25 16:34:35 no signature help: cannot find an enclosing function
+	position={50 41}
+
+[Error - 4:34:36 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/dokterapp/dokterapps-backend/server/handlers/authentication_handler.go:52:1: expected operand, found '}' (and 5 more errors)
+  Code: 0 
+[Error - 4:34:37 PM] Request textDocument/foldingRange failed.
+  Message: invalid pos
+  Code: 0 
+[Error - 4:34:37 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/dokterapp/dokterapps-backend/server/handlers/authentication_handler.go:52:1: expected operand, found '}' (and 5 more errors)
+  Code: 0 
+[Error - 4:34:37 PM] Request textDocument/foldingRange failed.
+  Message: invalid pos
+  Code: 0 
+[Error - 4:34:37 PM] 2020/06/25 16:34:37 DocumentSymbols failed: invalid pos
+	URI=file:///home/aziz/works/dokterapp/dokterapps-backend/server/handlers/authentication_handler.go
+
+[Error - 4:34:39 PM] Request textDocument/foldingRange failed.
+  Message: invalid pos
+  Code: 0 
+[Error - 4:34:40 PM] Request textDocument/foldingRange failed.
+  Message: invalid pos
+  Code: 0 
+[Error - 4:34:40 PM] 2020/06/25 16:34:40 DocumentSymbols failed: invalid pos
+	URI=file:///home/aziz/works/dokterapp/dokterapps-backend/server/handlers/authentication_handler.go
+
+[Error - 4:34:41 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/dokterapp/dokterapps-backend/server/handlers/authentication_handler.go:51:44: expected boolean expression, found assignment (missing parentheses around composite literal?) (and 3 more errors)
+  Code: 0 
+[Error - 4:34:42 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/dokterapp/dokterapps-backend/server/handlers/authentication_handler.go:51:44: expected boolean expression, found assignment (missing parentheses around composite literal?)
+  Code: 0 
+[Info  - 4:34:43 PM] 2020/06/25 16:34:43 background imports cache refresh starting
+
+[Info  - 4:34:43 PM] 2020/06/25 16:34:43 background refresh finished after 15.379265ms
+
+[Error - 4:34:45 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/dokterapp/dokterapps-backend/server/handlers/authentication_handler.go:51:44: expected boolean expression, found assignment (missing parentheses around composite literal?)
+  Code: 0 
+[Error - 4:34:47 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/dokterapp/dokterapps-backend/server/handlers/authentication_handler.go:51:44: expected boolean expression, found assignment (missing parentheses around composite literal?)
+  Code: 0 
+[Error - 4:34:48 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/dokterapp/dokterapps-backend/server/handlers/authentication_handler.go:51:44: expected boolean expression, found assignment (missing parentheses around composite literal?)
+  Code: 0 
+[Error - 4:34:48 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/dokterapp/dokterapps-backend/server/handlers/authentication_handler.go:51:44: expected boolean expression, found assignment (missing parentheses around composite literal?)
+  Code: 0 
+[Error - 4:34:58 PM] 2020/06/25 16:34:58 no signature help: cannot find an enclosing function
+	position={51 16}
+
+[Error - 4:34:59 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/dokterapp/dokterapps-backend/server/handlers/authentication_handler.go:53:2: expected selector or type assertion, found '}' (and 2 more errors)
+  Code: 0 
+[Error - 4:35:08 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/dokterapp/dokterapps-backend/server/handlers/authentication_handler.go:52:55: expected selector or type assertion, found ')' (and 9 more errors)
+  Code: 0 
+[Error - 4:35:10 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/dokterapp/dokterapps-backend/server/handlers/authentication_handler.go:52:56: expected type, found ')'
+  Code: 0 
+[Error - 4:35:13 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/dokterapp/dokterapps-backend/server/handlers/authentication_handler.go:52:66: expected 'IDENT', found ')' (and 9 more errors)
+  Code: 0 
+[Error - 4:35:16 PM] 2020/06/25 16:35:16 no signature help: cannot find an enclosing function
+	position={51 83}
+
+[Error - 4:35:19 PM] Request textDocument/foldingRange failed.
+  Message: invalid pos
+  Code: 0 
+[Error - 4:35:19 PM] 2020/06/25 16:35:19 DocumentSymbols failed: invalid pos
+	URI=file:///home/aziz/works/dokterapp/dokterapps-backend/server/handlers/authentication_handler.go
+
+[Info  - 4:35:19 PM] 2020/06/25 16:35:19 background imports cache refresh starting
+
+[Info  - 4:35:19 PM] 2020/06/25 16:35:19 background refresh finished after 15.613206ms
+
+[Error - 4:35:21 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/dokterapp/dokterapps-backend/server/handlers/authentication_handler.go:56:1: expected operand, found '}' (and 5 more errors)
+  Code: 0 
+[Error - 4:35:21 PM] 2020/06/25 16:35:21 no signature help: cannot find an enclosing function
+	position={54 9}
+
+[Error - 4:35:22 PM] Request textDocument/foldingRange failed.
+  Message: invalid pos
+  Code: 0 
+[Error - 4:35:22 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/dokterapp/dokterapps-backend/server/handlers/authentication_handler.go:56:1: expected selector or type assertion, found '}' (and 6 more errors)
+  Code: 0 
+[Error - 4:35:22 PM] 2020/06/25 16:35:22 DocumentSymbols failed: invalid pos
+	URI=file:///home/aziz/works/dokterapp/dokterapps-backend/server/handlers/authentication_handler.go
+
+[Error - 4:35:47 PM] 2020/06/25 16:35:47 DocumentSymbols failed: invalid pos
+	URI=file:///home/aziz/works/dokterapp/dokterapps-backend/server/handlers/authentication_handler.go
+
+[Error - 4:35:49 PM] 2020/06/25 16:35:49 no signature help: cannot find an enclosing function
+	position={54 14}
+
+[Info  - 4:35:50 PM] 2020/06/25 16:35:50 background imports cache refresh starting
+
+[Info  - 4:35:50 PM] 2020/06/25 16:35:50 background refresh finished after 15.834068ms
+
+[Error - 4:35:51 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/dokterapp/dokterapps-backend/server/handlers/authentication_handler.go:56:1: expected selector or type assertion, found '}' (and 2 more errors)
+  Code: 0 
+[Error - 4:35:53 PM] 2020/06/25 16:35:53 no signature help: cannot find an enclosing function
+	position={54 36}
+
+[Error - 4:35:58 PM] 2020/06/25 16:35:58 no signature help: cannot find an enclosing function
+	position={54 49}
+
+[Error - 4:35:58 PM] Request textDocument/foldingRange failed.
+  Message: invalid pos
+  Code: 0 
+[Error - 4:35:58 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/dokterapp/dokterapps-backend/server/handlers/authentication_handler.go:55:50: expected operand, found '}' (and 5 more errors)
+  Code: 0 
+[Error - 4:35:58 PM] 2020/06/25 16:35:58 DocumentSymbols failed: invalid pos
+	URI=file:///home/aziz/works/dokterapp/dokterapps-backend/server/handlers/authentication_handler.go
+
+[Error - 4:35:59 PM] Request textDocument/foldingRange failed.
+  Message: invalid pos
+  Code: 0 
+[Error - 4:35:59 PM] Request textDocument/foldingRange failed.
+  Message: invalid pos
+  Code: 0 
+[Error - 4:35:59 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/dokterapp/dokterapps-backend/server/handlers/authentication_handler.go:55:50: expected operand, found ':' (and 5 more errors)
+  Code: 0 
+[Error - 4:35:59 PM] 2020/06/25 16:35:59 DocumentSymbols failed: invalid pos
+	URI=file:///home/aziz/works/dokterapp/dokterapps-backend/server/handlers/authentication_handler.go
+
+[Error - 4:36:00 PM] Request textDocument/foldingRange failed.
+  Message: invalid pos
+  Code: 0 
+[Error - 4:36:00 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/dokterapp/dokterapps-backend/server/handlers/authentication_handler.go:55:49: expected operand, found '}' (and 5 more errors)
+  Code: 0 
+[Error - 4:36:00 PM] 2020/06/25 16:36:00 DocumentSymbols failed: invalid pos
+	URI=file:///home/aziz/works/dokterapp/dokterapps-backend/server/handlers/authentication_handler.go
+
+[Error - 4:36:01 PM] Request textDocument/foldingRange failed.
+  Message: invalid pos
+  Code: 0 
+[Error - 4:36:01 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/dokterapp/dokterapps-backend/server/handlers/authentication_handler.go:55:50: expected operand, found '}' (and 5 more errors)
+  Code: 0 
+[Error - 4:36:01 PM] 2020/06/25 16:36:01 DocumentSymbols failed: invalid pos
+	URI=file:///home/aziz/works/dokterapp/dokterapps-backend/server/handlers/authentication_handler.go
+
+[Error - 4:36:05 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/dokterapp/dokterapps-backend/server/handlers/authentication_handler.go:55:58: expected selector or type assertion, found '}' (and 3 more errors)
+  Code: 0 
+[Error - 4:36:06 PM] 2020/06/25 16:36:06 no signature help: cannot find an enclosing function
+	position={54 72}
+
+[Error - 4:36:10 PM] 2020/06/25 16:36:10 no signature help: cannot find an enclosing function
+	position={55 5}
+
+[Error - 4:36:11 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/dokterapp/dokterapps-backend/server/handlers/authentication_handler.go:56:2: expected 1 expression
+  Code: 0 
+[Error - 4:36:11 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/dokterapp/dokterapps-backend/server/handlers/authentication_handler.go:56:2: expected 1 expression
+  Code: 0 
+[Error - 4:36:13 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/dokterapp/dokterapps-backend/server/handlers/authentication_handler.go:56:2: expected 1 expression
+  Code: 0 
+[Error - 4:36:13 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/dokterapp/dokterapps-backend/server/handlers/authentication_handler.go:57:1: expected operand, found '}' (and 3 more errors)
+  Code: 0 
+[Error - 4:36:13 PM] 2020/06/25 16:36:13 DocumentSymbols failed: invalid pos
+	URI=file:///home/aziz/works/dokterapp/dokterapps-backend/server/handlers/authentication_handler.go
+
+[Error - 4:36:14 PM] 2020/06/25 16:36:14 DocumentSymbols failed: invalid pos
+	URI=file:///home/aziz/works/dokterapp/dokterapps-backend/server/handlers/authentication_handler.go
+
+[Error - 4:36:16 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/dokterapp/dokterapps-backend/server/handlers/authentication_handler.go:57:1: expected selector or type assertion, found '}' (and 2 more errors)
+  Code: 0 
+[Error - 4:36:22 PM] 2020/06/25 16:36:22 no signature help: cannot get type for Fun *ast.SelectorExpr (&{uc Register})
+	position={55 25}
+
+[Info  - 4:36:22 PM] 2020/06/25 16:36:22 background imports cache refresh starting
+
+[Info  - 4:36:22 PM] 2020/06/25 16:36:22 background refresh finished after 47.622987ms
+
+[Error - 4:36:27 PM] 2020/06/25 16:36:27 no signature help: cannot get type for Fun *ast.SelectorExpr (&{uc Register})
+	position={55 30}
+
+[Error - 4:36:32 PM] Request textDocument/foldingRange failed.
+  Message: invalid pos
+  Code: 0 
+[Error - 4:36:32 PM] 2020/06/25 16:36:32 DocumentSymbols failed: invalid pos
+	URI=file:///home/aziz/works/dokterapp/dokterapps-backend/server/handlers/authentication_handler.go
+
+[Error - 4:36:32 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/dokterapp/dokterapps-backend/server/handlers/authentication_handler.go:59:1: expected operand, found '}' (and 5 more errors)
+  Code: 0 
+[Error - 4:36:34 PM] Request textDocument/foldingRange failed.
+  Message: invalid pos
+  Code: 0 
+[Error - 4:36:34 PM] Request textDocument/foldingRange failed.
+  Message: invalid pos
+  Code: 0 
+[Error - 4:36:34 PM] 2020/06/25 16:36:34 DocumentSymbols failed: invalid pos
+	URI=file:///home/aziz/works/dokterapp/dokterapps-backend/server/handlers/authentication_handler.go
+
+[Error - 4:36:35 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/dokterapp/dokterapps-backend/server/handlers/authentication_handler.go:59:1: expected operand, found '}' (and 5 more errors)
+  Code: 0 
+[Error - 4:36:40 PM] 2020/06/25 16:36:40 no signature help: cannot find an enclosing function
+	position={58 8}
+
+[Error - 4:36:43 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/dokterapp/dokterapps-backend/server/handlers/authentication_handler.go:60:2: expected selector or type assertion, found '}' (and 2 more errors)
+  Code: 0 
+[Error - 4:36:48 PM] 2020/06/25 16:36:48 no signature help: cannot find an enclosing function
+	position={58 39}
+
+[Info  - 4:36:52 PM] 2020/06/25 16:36:52 background imports cache refresh starting
+
+[Info  - 4:36:52 PM] 2020/06/25 16:36:52 background refresh finished after 44.526633ms
+
+[Error - 4:36:56 PM] 2020/06/25 16:36:56 no signature help: cannot find an enclosing function
+	position={61 43}
+
+[Error - 4:37:11 PM] 2020/06/25 16:37:11 no signature help: cannot find an enclosing function
+	position={57 16}
+
+[Info  - 4:37:23 PM] 2020/06/25 16:37:23 background imports cache refresh starting
+
+[Info  - 4:37:23 PM] 2020/06/25 16:37:23 background refresh finished after 14.322681ms
+
+[Info  - 4:37:55 PM] 2020/06/25 16:37:55 background imports cache refresh starting
+
+[Info  - 4:37:55 PM] 2020/06/25 16:37:55 background refresh finished after 16.078041ms
+
+[Info  - 4:38:51 PM] 2020/06/25 16:38:51 background imports cache refresh starting
+
+[Info  - 4:38:51 PM] 2020/06/25 16:38:51 background refresh finished after 41.275325ms
+
+[Info  - 4:39:22 PM] 2020/06/25 16:39:22 background imports cache refresh starting
+
+[Info  - 4:39:22 PM] 2020/06/25 16:39:22 background refresh finished after 14.903896ms
+
+[Info  - 4:41:00 PM] 2020/06/25 16:41:00 background imports cache refresh starting
+
+[Info  - 4:41:00 PM] 2020/06/25 16:41:00 background refresh finished after 15.34723ms
+
+[Info  - 4:41:34 PM] 2020/06/25 16:41:34 background imports cache refresh starting
+
+[Info  - 4:41:34 PM] 2020/06/25 16:41:34 background refresh finished after 15.376521ms
+
+[Info  - 4:42:05 PM] 2020/06/25 16:42:05 background imports cache refresh starting
+
+[Info  - 4:42:05 PM] 2020/06/25 16:42:05 background refresh finished after 15.477297ms
+
+[Info  - 4:42:37 PM] 2020/06/25 16:42:37 background imports cache refresh starting
+
+[Info  - 4:42:37 PM] 2020/06/25 16:42:37 background refresh finished after 16.209548ms
+
+[Info  - 4:45:15 PM] 2020/06/25 16:45:15 background imports cache refresh starting
+
+[Info  - 4:45:15 PM] 2020/06/25 16:45:15 background refresh finished after 15.335336ms
+
+[Error - 4:45:33 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/dokterapp/dokterapps-backend/usecase/authentication_usecase.go:249:5: expected '(', found 'EOF' (and 4 more errors)
+  Code: 0 
+[Error - 4:45:33 PM] 2020/06/25 16:45:33 DocumentSymbols failed: invalid pos
+	URI=file:///home/aziz/works/dokterapp/dokterapps-backend/usecase/authentication_usecase.go
+
+[Error - 4:45:34 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/dokterapp/dokterapps-backend/usecase/authentication_usecase.go:249:10: expected 'IDENT', found '{' (and 4 more errors)
+  Code: 0 
+[Error - 4:45:34 PM] 2020/06/25 16:45:34 DocumentSymbols failed: invalid pos
+	URI=file:///home/aziz/works/dokterapp/dokterapps-backend/usecase/authentication_usecase.go
+
+[Error - 4:45:37 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/dokterapp/dokterapps-backend/usecase/authentication_usecase.go:249:10: expected 'IDENT', found '{' (and 4 more errors)
+  Code: 0 
+[Error - 4:45:38 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/dokterapp/dokterapps-backend/usecase/authentication_usecase.go:249:13: expected 'IDENT', found '{' (and 4 more errors)
+  Code: 0 
+[Error - 4:45:38 PM] 2020/06/25 16:45:38 DocumentSymbols failed: invalid pos
+	URI=file:///home/aziz/works/dokterapp/dokterapps-backend/usecase/authentication_usecase.go
+
+[Error - 4:45:40 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/dokterapp/dokterapps-backend/usecase/authentication_usecase.go:249:19: expected 'IDENT', found '{' (and 4 more errors)
+  Code: 0 
+[Error - 4:45:40 PM] 2020/06/25 16:45:40 DocumentSymbols failed: invalid pos
+	URI=file:///home/aziz/works/dokterapp/dokterapps-backend/usecase/authentication_usecase.go
+
+[Error - 4:45:42 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/dokterapp/dokterapps-backend/usecase/authentication_usecase.go:249:19: expected 'IDENT', found '{' (and 4 more errors)
+  Code: 0 
+[Error - 4:45:44 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/dokterapp/dokterapps-backend/usecase/authentication_usecase.go:249:14: expected 'IDENT', found '{' (and 4 more errors)
+  Code: 0 
+[Error - 4:45:44 PM] 2020/06/25 16:45:44 DocumentSymbols failed: invalid pos
+	URI=file:///home/aziz/works/dokterapp/dokterapps-backend/usecase/authentication_usecase.go
+
+[Error - 4:45:45 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/dokterapp/dokterapps-backend/usecase/authentication_usecase.go:249:16: expected 'IDENT', found '{' (and 4 more errors)
+  Code: 0 
+[Error - 4:45:45 PM] 2020/06/25 16:45:45 DocumentSymbols failed: invalid pos
+	URI=file:///home/aziz/works/dokterapp/dokterapps-backend/usecase/authentication_usecase.go
+
+[Error - 4:45:45 PM] 2020/06/25 16:45:45 no signature help: cannot find an enclosing function
+	position={248 30}
+
+[Error - 4:45:45 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/dokterapp/dokterapps-backend/usecase/authentication_usecase.go:249:34: expected 'IDENT', found '{' (and 4 more errors)
+  Code: 0 
+[Error - 4:45:45 PM] 2020/06/25 16:45:45 DocumentSymbols failed: invalid pos
+	URI=file:///home/aziz/works/dokterapp/dokterapps-backend/usecase/authentication_usecase.go
+
+[Error - 4:45:46 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/dokterapp/dokterapps-backend/usecase/authentication_usecase.go:249:34: expected 'IDENT', found '{' (and 4 more errors)
+  Code: 0 
+[Error - 4:45:47 PM] 2020/06/25 16:45:47 DocumentSymbols failed: invalid pos
+	URI=file:///home/aziz/works/dokterapp/dokterapps-backend/usecase/authentication_usecase.go
+
+[Error - 4:45:47 PM] 2020/06/25 16:45:47 no completions found: this is a definition of func (AuthenticationUseCase).R(invalid type)
+	position={248 33}
+
+[Error - 4:45:47 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/dokterapp/dokterapps-backend/usecase/authentication_usecase.go:249:36: expected '(', found '{' (and 3 more errors)
+  Code: 0 
+[Error - 4:45:48 PM] 2020/06/25 16:45:48 no completions found: this is a definition of func (AuthenticationUseCase).Reg(invalid type)
+	position={248 35}
+
+[Error - 4:45:49 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/dokterapp/dokterapps-backend/usecase/authentication_usecase.go:249:43: expected '(', found '{' (and 3 more errors)
+  Code: 0 
+[Error - 4:45:49 PM] 2020/06/25 16:45:49 DocumentSymbols failed: invalid pos
+	URI=file:///home/aziz/works/dokterapp/dokterapps-backend/usecase/authentication_usecase.go
+
+[Error - 4:45:50 PM] 2020/06/25 16:45:50 DocumentSymbols failed: invalid pos
+	URI=file:///home/aziz/works/dokterapp/dokterapps-backend/usecase/authentication_usecase.go
+
+[Error - 4:45:51 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/dokterapp/dokterapps-backend/usecase/authentication_usecase.go:249:43: expected '(', found '{' (and 3 more errors)
+  Code: 0 
+[Error - 4:45:51 PM] 2020/06/25 16:45:51 DocumentSymbols failed: invalid pos
+	URI=file:///home/aziz/works/dokterapp/dokterapps-backend/usecase/authentication_usecase.go
+
+[Error - 4:45:51 PM] 2020/06/25 16:45:51 no signature help: cannot find an enclosing function
+	position={248 41}
+
+[Info  - 4:46:14 PM] 2020/06/25 16:46:14 background imports cache refresh starting
+
+[Info  - 4:46:14 PM] 2020/06/25 16:46:14 background refresh finished after 15.42821ms
+
+[Error - 4:46:31 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/dokterapp/dokterapps-backend/server/handlers/authentication_handler.go:56:32: expected selector or type assertion, found ')' (and 16 more errors)
+  Code: 0 
+[Error - 4:46:36 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/dokterapp/dokterapps-backend/server/handlers/authentication_handler.go:56:45: expected selector or type assertion, found ')' (and 16 more errors)
+  Code: 0 
+[Error - 4:46:41 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/dokterapp/dokterapps-backend/server/handlers/authentication_handler.go:56:61: expected selector or type assertion, found ')' (and 16 more errors)
+  Code: 0 
+[Info  - 4:46:48 PM] 2020/06/25 16:46:48 background imports cache refresh starting
+
+[Info  - 4:46:48 PM] 2020/06/25 16:46:48 background refresh finished after 15.991531ms
+
+[Info  - 4:47:18 PM] 2020/06/25 16:47:18 background imports cache refresh starting
+
+[Info  - 4:47:18 PM] 2020/06/25 16:47:18 background refresh finished after 14.577383ms
+
+[Info  - 4:49:27 PM] 2020/06/25 16:49:27 background imports cache refresh starting
+
+[Info  - 4:49:27 PM] 2020/06/25 16:49:27 background refresh finished after 15.65071ms
+
+[Error - 4:49:55 PM] 2020/06/25 16:49:55 no signature help: cannot find an enclosing function
+	position={248 48}
+
+[Error - 4:49:56 PM] 2020/06/25 16:49:56 no signature help: cannot find an enclosing function
+	position={248 53}
+
+[Error - 4:50:00 PM] 2020/06/25 16:50:00 no signature help: cannot find an enclosing function
+	position={248 69}
+
+[Info  - 4:50:08 PM] 2020/06/25 16:50:08 background imports cache refresh starting
+
+[Info  - 4:50:08 PM] 2020/06/25 16:50:08 background refresh finished after 16.849299ms
+
+[Error - 4:50:14 PM] 2020/06/25 16:50:14 no signature help: cannot find an enclosing function
+	position={248 72}
+
+[Error - 4:50:18 PM] 2020/06/25 16:50:18 no signature help: cannot find an enclosing function
+	position={248 81}
+
+[Error - 4:50:37 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/dokterapp/dokterapps-backend/usecase/authentication_usecase.go:249:81: missing ',' in parameter list
+  Code: 0 
+[Error - 4:50:38 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/dokterapp/dokterapps-backend/usecase/authentication_usecase.go:249:82: missing ',' in parameter list
+  Code: 0 
+[Error - 4:50:39 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/dokterapp/dokterapps-backend/usecase/authentication_usecase.go:249:85: missing ',' in parameter list
+  Code: 0 
+[Error - 4:50:40 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/dokterapp/dokterapps-backend/usecase/authentication_usecase.go:249:81: missing ',' in parameter list
+  Code: 0 
+[Error - 4:50:41 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/dokterapp/dokterapps-backend/usecase/authentication_usecase.go:249:82: missing ',' in parameter list
+  Code: 0 
+[Error - 4:50:43 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/dokterapp/dokterapps-backend/usecase/authentication_usecase.go:249:79: missing ',' in parameter list (and 7 more errors)
+  Code: 0 
+[Error - 4:50:43 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/dokterapp/dokterapps-backend/usecase/authentication_usecase.go:249:82: missing ',' in parameter list (and 7 more errors)
+  Code: 0 
+[Error - 4:50:43 PM] 2020/06/25 16:50:43 DocumentSymbols failed: invalid pos
+	URI=file:///home/aziz/works/dokterapp/dokterapps-backend/usecase/authentication_usecase.go
+
+[Error - 4:50:44 PM] 2020/06/25 16:50:44 no signature help: cannot find an enclosing function
+	position={248 82}
+
+[Error - 4:50:44 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/dokterapp/dokterapps-backend/usecase/authentication_usecase.go:249:84: missing ',' in parameter list (and 7 more errors)
+  Code: 0 
+[Error - 4:50:44 PM] 2020/06/25 16:50:44 DocumentSymbols failed: invalid pos
+	URI=file:///home/aziz/works/dokterapp/dokterapps-backend/usecase/authentication_usecase.go
+
+[Info  - 4:50:44 PM] 2020/06/25 16:50:44 background imports cache refresh starting
+
+[Info  - 4:50:44 PM] 2020/06/25 16:50:44 background refresh finished after 14.220564ms
+
+[Error - 4:50:45 PM] 2020/06/25 16:50:45 no signature help: cannot find an enclosing function
+	position={248 83}
+
+[Info  - 4:51:15 PM] 2020/06/25 16:51:15 background imports cache refresh starting
+
+[Info  - 4:51:15 PM] 2020/06/25 16:51:15 background refresh finished after 14.831315ms
+
+[Error - 4:51:57 PM] 2020/06/25 16:51:57 no signature help: cannot find an enclosing function
+	position={58 16}
+
+[Info  - 4:51:57 PM] 2020/06/25 16:51:57 background imports cache refresh starting
+
+[Info  - 4:51:57 PM] 2020/06/25 16:51:57 background refresh finished after 15.363795ms
+
+[Error - 4:51:58 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/dokterapp/dokterapps-backend/server/handlers/authentication_handler.go:60:2: expected selector or type assertion, found '}' (and 2 more errors)
+  Code: 0 
+[Error - 4:52:00 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/dokterapp/dokterapps-backend/server/handlers/authentication_handler.go:60:2: expected selector or type assertion, found '}' (and 2 more errors)
+  Code: 0 
+[Error - 4:52:01 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/dokterapp/dokterapps-backend/server/handlers/authentication_handler.go:60:2: expected selector or type assertion, found '}' (and 2 more errors)
+  Code: 0 
+[Info  - 4:52:29 PM] 2020/06/25 16:52:29 background imports cache refresh starting
+
+[Info  - 4:52:29 PM] 2020/06/25 16:52:29 background refresh finished after 15.788265ms
+
+[Error - 4:52:53 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/dokterapp/dokterapps-backend/server/handlers/authentication_handler.go:59:51: expected selector or type assertion, found ')' (and 12 more errors)
+  Code: 0 
+[Error - 4:53:01 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/dokterapp/dokterapps-backend/server/handlers/authentication_handler.go:59:73: expected selector or type assertion, found ')' (and 12 more errors)
+  Code: 0 
+[Error - 4:53:03 PM] 2020/06/25 16:53:03 no signature help: no file for pos in package dokterapps-backend/server/handlers
+	position={58 78}
+
+[Info  - 4:53:05 PM] 2020/06/25 16:53:05 background imports cache refresh starting
+
+[Info  - 4:53:05 PM] 2020/06/25 16:53:05 background refresh finished after 21.139749ms
+
+[Error - 4:53:25 PM] 2020/06/25 16:53:25 DocumentSymbols failed: invalid pos
+	URI=file:///home/aziz/works/dokterapp/dokterapps-backend/usecase/authentication_usecase.go
+
+[Error - 4:53:27 PM] 2020/06/25 16:53:27 no signature help: cannot find an enclosing function
+	position={250 17}
+
+[Error - 4:53:28 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/dokterapp/dokterapps-backend/usecase/authentication_usecase.go:252:1: expected selector or type assertion, found '}' (and 2 more errors)
+  Code: 0 
+[Info  - 4:53:37 PM] 2020/06/25 16:53:37 background imports cache refresh starting
+
+[Info  - 4:53:37 PM] 2020/06/25 16:53:37 background refresh finished after 16.322213ms
+
+[Error - 4:53:46 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/dokterapp/dokterapps-backend/usecase/authentication_usecase.go:251:35: expected selector or type assertion, found ')' (and 7 more errors)
+  Code: 0 
+[Info  - 4:54:10 PM] 2020/06/25 16:54:10 background imports cache refresh starting
+
+[Info  - 4:54:10 PM] 2020/06/25 16:54:10 background refresh finished after 16.499643ms
+
+[Info  - 4:54:40 PM] 2020/06/25 16:54:40 background imports cache refresh starting
+
+[Info  - 4:54:40 PM] 2020/06/25 16:54:40 background refresh finished after 23.043785ms
+
+[Info  - 4:55:21 PM] 2020/06/25 16:55:21 background imports cache refresh starting
+
+[Info  - 4:55:21 PM] 2020/06/25 16:55:21 background refresh finished after 16.95596ms
+
+[Info  - 4:55:51 PM] 2020/06/25 16:55:51 background imports cache refresh starting
+
+[Info  - 4:55:51 PM] 2020/06/25 16:55:51 background refresh finished after 15.510528ms
+
+[Info  - 4:56:22 PM] 2020/06/25 16:56:22 background imports cache refresh starting
+
+[Info  - 4:56:22 PM] 2020/06/25 16:56:22 background refresh finished after 16.06599ms
+
+[Info  - 4:56:52 PM] 2020/06/25 16:56:52 background imports cache refresh starting
+
+[Info  - 4:56:52 PM] 2020/06/25 16:56:52 background refresh finished after 15.667313ms
+
+[Error - 4:57:04 PM] 2020/06/25 16:57:04 no signature help: cannot find an enclosing function
+	position={254 5}
+
+[Error - 4:57:05 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/dokterapp/dokterapps-backend/usecase/authentication_usecase.go:255:2: expected 1 expression
+  Code: 0 
+[Error - 4:57:06 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/dokterapp/dokterapps-backend/usecase/authentication_usecase.go:255:2: expected 1 expression
+  Code: 0 
+[Error - 4:57:09 PM] 2020/06/25 16:57:09 DocumentSymbols failed: invalid pos
+	URI=file:///home/aziz/works/dokterapp/dokterapps-backend/usecase/authentication_usecase.go
+
+[Error - 4:57:10 PM] 2020/06/25 16:57:10 no signature help: cannot find an enclosing function
+	position={254 17}
+
+[Error - 4:57:11 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/dokterapp/dokterapps-backend/usecase/authentication_usecase.go:256:1: expected selector or type assertion, found '}' (and 2 more errors)
+  Code: 0 
+[Info  - 4:57:27 PM] 2020/06/25 16:57:27 background imports cache refresh starting
+
+[Info  - 4:57:27 PM] 2020/06/25 16:57:27 background refresh finished after 15.613086ms
+
+[Error - 4:57:54 PM] 2020/06/25 16:57:54 no signature help: cannot find an enclosing function
+	position={254 18}
+
+[Error - 4:57:55 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/dokterapp/dokterapps-backend/usecase/authentication_usecase.go:256:11: expected '==', found '='
+  Code: 0 
+[Info  - 4:57:58 PM] 2020/06/25 16:57:58 background imports cache refresh starting
+
+[Info  - 4:57:58 PM] 2020/06/25 16:57:58 background refresh finished after 16.089017ms
+
+[Error - 4:57:59 PM] 2020/06/25 16:57:59 no signature help: cannot find an enclosing function
+	position={254 25}
+
+[Error - 4:58:05 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/dokterapp/dokterapps-backend/usecase/authentication_usecase.go:256:7: missing ',' before newline in composite literal
+  Code: 0 
+[Error - 4:58:05 PM] 2020/06/25 16:58:05 no signature help: cannot find an enclosing function
+	position={255 10}
+
+[Error - 4:58:06 PM] Request textDocument/foldingRange failed.
+  Message: invalid pos
+  Code: 0 
+[Error - 4:58:06 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/dokterapp/dokterapps-backend/usecase/authentication_usecase.go:256:11: expected operand, found ',' (and 5 more errors)
+  Code: 0 
+[Error - 4:58:06 PM] 2020/06/25 16:58:06 DocumentSymbols failed: invalid pos
+	URI=file:///home/aziz/works/dokterapp/dokterapps-backend/usecase/authentication_usecase.go
+
+[Error - 4:58:18 PM] Request textDocument/foldingRange failed.
+  Message: invalid pos
+  Code: 0 
+[Error - 4:58:18 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/dokterapp/dokterapps-backend/usecase/authentication_usecase.go:256:11: expected operand, found ',' (and 5 more errors)
+  Code: 0 
+[Error - 4:58:18 PM] 2020/06/25 16:58:18 DocumentSymbols failed: invalid pos
+	URI=file:///home/aziz/works/dokterapp/dokterapps-backend/usecase/authentication_usecase.go
+
+[Info  - 4:58:29 PM] 2020/06/25 16:58:29 background imports cache refresh starting
+
+[Info  - 4:58:29 PM] 2020/06/25 16:58:29 background refresh finished after 15.923257ms
+
+[Error - 4:58:38 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/dokterapp/dokterapps-backend/usecase/authentication_usecase.go:256:20: expected selector or type assertion, found ','
+  Code: 0 
+[Error - 4:58:42 PM] 2020/06/25 16:58:42 no signature help: cannot find an enclosing function
+	position={255 21}
+
+[Error - 4:58:50 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/dokterapp/dokterapps-backend/usecase/authentication_usecase.go:257:7: missing ',' before newline in composite literal
+  Code: 0 
+[Error - 4:58:50 PM] 2020/06/25 16:58:50 no signature help: cannot find an enclosing function
+	position={256 12}
+
+[Error - 4:58:51 PM] Request textDocument/foldingRange failed.
+  Message: invalid pos
+  Code: 0 
+[Error - 4:58:51 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/dokterapp/dokterapps-backend/usecase/authentication_usecase.go:257:13: expected operand, found ',' (and 5 more errors)
+  Code: 0 
+[Error - 4:58:51 PM] 2020/06/25 16:58:51 DocumentSymbols failed: invalid pos
+	URI=file:///home/aziz/works/dokterapp/dokterapps-backend/usecase/authentication_usecase.go
+
+[Error - 4:58:55 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/dokterapp/dokterapps-backend/usecase/authentication_usecase.go:258:8: missing ',' before newline in composite literal
+  Code: 0 
+[Error - 4:58:55 PM] 2020/06/25 16:58:55 no signature help: cannot find an enclosing function
+	position={257 9}
+
+[Error - 4:58:55 PM] Request textDocument/foldingRange failed.
+  Message: invalid pos
+  Code: 0 
+[Error - 4:58:55 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/dokterapp/dokterapps-backend/usecase/authentication_usecase.go:258:10: expected operand, found ',' (and 5 more errors)
+  Code: 0 
+[Error - 4:58:56 PM] 2020/06/25 16:58:56 DocumentSymbols failed: invalid pos
+	URI=file:///home/aziz/works/dokterapp/dokterapps-backend/usecase/authentication_usecase.go
+
+[Error - 4:58:59 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/dokterapp/dokterapps-backend/usecase/authentication_usecase.go:259:7: missing ',' before newline in composite literal
+  Code: 0 
+[Error - 4:58:59 PM] 2020/06/25 16:58:59 no signature help: cannot find an enclosing function
+	position={258 12}
+
+[Error - 4:59:00 PM] Request textDocument/foldingRange failed.
+  Message: invalid pos
+  Code: 0 
+[Error - 4:59:00 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/dokterapp/dokterapps-backend/usecase/authentication_usecase.go:259:13: expected operand, found ',' (and 5 more errors)
+  Code: 0 
+[Error - 4:59:00 PM] 2020/06/25 16:59:00 DocumentSymbols failed: invalid pos
+	URI=file:///home/aziz/works/dokterapp/dokterapps-backend/usecase/authentication_usecase.go
+
+[Info  - 4:59:03 PM] 2020/06/25 16:59:03 background imports cache refresh starting
+
+[Info  - 4:59:03 PM] 2020/06/25 16:59:03 background refresh finished after 15.879405ms
+
+[Info  - 4:59:34 PM] 2020/06/25 16:59:34 background imports cache refresh starting
+
+[Info  - 4:59:34 PM] 2020/06/25 16:59:34 background refresh finished after 26.939564ms
+
+[Info  - 5:00:09 PM] 2020/06/25 17:00:09 background imports cache refresh starting
+
+[Info  - 5:00:09 PM] 2020/06/25 17:00:09 background refresh finished after 43.486973ms
+
+[Error - 5:00:15 PM] Request textDocument/foldingRange failed.
+  Message: invalid pos
+  Code: 0 
+[Error - 5:00:15 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/dokterapp/dokterapps-backend/usecase/authentication_usecase.go:265:1: expected operand, found '}' (and 7 more errors)
+  Code: 0 
+[Error - 5:00:15 PM] 2020/06/25 17:00:15 DocumentSymbols failed: invalid pos
+	URI=file:///home/aziz/works/dokterapp/dokterapps-backend/usecase/authentication_usecase.go
+
+[Error - 5:00:15 PM] Request textDocument/foldingRange failed.
+  Message: invalid pos
+  Code: 0 
+[Error - 5:00:15 PM] 2020/06/25 17:00:15 DocumentSymbols failed: invalid pos
+	URI=file:///home/aziz/works/dokterapp/dokterapps-backend/usecase/authentication_usecase.go
+
+[Error - 5:00:18 PM] Request textDocument/foldingRange failed.
+  Message: invalid pos
+  Code: 0 
+[Error - 5:00:18 PM] Request textDocument/foldingRange failed.
+  Message: invalid pos
+  Code: 0 
+[Error - 5:00:18 PM] 2020/06/25 17:00:18 DocumentSymbols failed: invalid pos
+	URI=file:///home/aziz/works/dokterapp/dokterapps-backend/usecase/authentication_usecase.go
+
+[Error - 5:00:24 PM] 2020/06/25 17:00:24 no signature help: cannot find an enclosing function
+	position={264 13}
+
+[Error - 5:00:24 PM] Request textDocument/foldingRange failed.
+  Message: invalid pos
+  Code: 0 
+[Error - 5:00:24 PM] 2020/06/25 17:00:24 DocumentSymbols failed: invalid pos
+	URI=file:///home/aziz/works/dokterapp/dokterapps-backend/usecase/authentication_usecase.go
+
+[Error - 5:00:26 PM] 2020/06/25 17:00:26 no signature help: cannot find an enclosing function
+	position={264 17}
+
+[Error - 5:00:35 PM] 2020/06/25 17:00:35 no signature help: cannot find an enclosing function
+	position={267 13}
+
+[Info  - 5:00:39 PM] 2020/06/25 17:00:39 background imports cache refresh starting
+
+[Info  - 5:00:39 PM] 2020/06/25 17:00:39 background refresh finished after 47.679484ms
+
+[Error - 5:00:40 PM] Request textDocument/codeAction failed.
+  Message: computing fix edits: /home/aziz/works/dokterapp/dokterapps-backend/usecase/authentication_usecase.go:268:9: expected operand, found ',' (and 3 more errors)
+  Code: 0 
+[Error - 5:00:40 PM] 2020/06/25 17:00:40 DocumentSymbols failed: invalid pos
+	URI=file:///home/aziz/works/dokterapp/dokterapps-backend/usecase/authentication_usecase.go
+
+[Error - 5:00:41 PM] 2020/06/25 17:00:41 no signature help: cannot find an enclosing function
+	position={267 11}
+
+[Info  - 5:01:09 PM] 2020/06/25 17:01:09 background imports cache refresh starting
+
+[Info  - 5:01:09 PM] 2020/06/25 17:01:09 background refresh finished after 15.367261ms
+
+[Info  - 5:01:59 PM] 2020/06/25 17:01:59 background imports cache refresh starting
+
+[Info  - 5:01:59 PM] 2020/06/25 17:01:59 background refresh finished after 39.714878ms
+
+[Info  - 5:06:58 PM] 2020/06/25 17:06:58 background imports cache refresh starting
+
+[Info  - 5:06:58 PM] 2020/06/25 17:06:58 background refresh finished after 45.667337ms
+
