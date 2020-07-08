@@ -10,6 +10,7 @@ type AuthenticationRoute struct {
 	Handler    api.Handler
 }
 
+//register route
 func (route AuthenticationRoute) RegisterRoute() {
 	handler := api.AuthenticationHandler{Handler:route.Handler}
 

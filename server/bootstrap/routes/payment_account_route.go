@@ -12,6 +12,7 @@ type PaymentAccountRoute struct {
 	Handler    api.Handler
 }
 
+//payment account route
 func (route PaymentAccountRoute) RegisterRoute() {
 	handler := api.PaymentAccountHandler{Handler: route.Handler}
 	jwtMiddleware := middleware.JwtVerify{UcContract: route.Handler.UseCaseContract}

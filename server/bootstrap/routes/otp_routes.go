@@ -10,6 +10,7 @@ type OtpRoutes struct {
 	Handler    api.Handler
 }
 
+//otp route
 func (route OtpRoutes) RegisterRoute() {
 	handler := api.OtpHandler{Handler:route.Handler}
 
