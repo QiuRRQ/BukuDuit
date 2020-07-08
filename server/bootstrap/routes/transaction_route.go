@@ -12,6 +12,7 @@ type TransactionRoute struct {
 	Handler    api.Handler
 }
 
+//transaction route
 func (route TransactionRoute) RegisterRoute() {
 	handler := api.TransactionHandler{Handler: route.Handler}
 	jwtMiddleware := middleware.JwtVerify{UcContract: route.Handler.UseCaseContract}

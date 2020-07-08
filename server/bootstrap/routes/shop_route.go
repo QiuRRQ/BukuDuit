@@ -12,6 +12,8 @@ type ShopRoute struct {
 	Handler    api.Handler
 }
 
+
+//shop route
 func (route ShopRoute) RegisterRoute() {
 	handler := api.ShopHandler{Handler: route.Handler}
 	jwtMiddleware := middleware.JwtVerify{UcContract: route.Handler.UseCaseContract}
