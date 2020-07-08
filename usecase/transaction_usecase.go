@@ -48,10 +48,11 @@ func (uc TransactionUseCase) TransactionReport(shopID, search, name, amount, tra
 		filter = filter + ` order by t."transaction_date" ` + transDate
 	}
 	Transactions, err := model.TransactionReport(shopID, filter)
-	if err != nil {
+	if err != nil { //data not found
 		fmt.Println(1)
 		return res, err
 	}
+
 	resultCount, err := model.CountDistinctBy("shop_id", shopID)
 	if err != nil {
 		fmt.Println(2)
@@ -67,46 +68,68 @@ func (uc TransactionUseCase) TransactionReport(shopID, search, name, amount, tra
 	var debtDate []viewmodel.DataList
 	var debtDetails []viewmodel.DataDetails
 
-	for i := 0; i < len(Transactions); i++ {
+	if Transactions != nil {
+		for i := 0; i < len(Transactions); i++ {
 
-		tempDate, err := time.Parse(time.RFC3339, Transactions[i].TransactionDate.String)
-		if err != nil {
-			fmt.Println(err.Error())
-		}
-		if Transactions[i].Type == enums.Debet {
-			debtTotal = debtTotal + int(Transactions[i].Amount.Int32)
-		} else {
-			creditTotal = creditTotal + int(Transactions[i].Amount.Int32)
-		}
-
-		if Transactions[i].Type == enums.Debet {
-			dateDebetAmount = dateDebetAmount + int(Transactions[i].Amount.Int32)
-		} else {
-			dateCreditAmount = dateCreditAmount + int(Transactions[i].Amount.Int32)
-		}
-
-		var nextDate time.Time
-		if i < len(Transactions)-1 {
-			nextDate, err = time.Parse(time.RFC3339, Transactions[i+1].TransactionDate.String)
+			tempDate, err := time.Parse(time.RFC3339, Transactions[i].TransactionDate.String)
 			if err != nil {
 				fmt.Println(err.Error())
 			}
-			if tempDate == nextDate {
+			if Transactions[i].Type == enums.Debet {
+				debtTotal = debtTotal + int(Transactions[i].Amount.Int32)
+			} else {
+				creditTotal = creditTotal + int(Transactions[i].Amount.Int32)
+			}
 
-				debtDetails = append(debtDetails, viewmodel.DataDetails{
-					ID:          Transactions[i].ID,
-					ReferenceID: Transactions[i].ReferenceID,
-					Name:        Transactions[i].Name,
-					Description: Transactions[i].Description.String,
-					Amount:      Transactions[i].Amount.Int32,
-					Type:        Transactions[i].Type,
-				})
+			if Transactions[i].Type == enums.Debet {
+				dateDebetAmount = dateDebetAmount + int(Transactions[i].Amount.Int32)
+			} else {
+				dateCreditAmount = dateCreditAmount + int(Transactions[i].Amount.Int32)
+			}
 
+			var nextDate time.Time
+			if i < len(Transactions)-1 {
+				nextDate, err = time.Parse(time.RFC3339, Transactions[i+1].TransactionDate.String)
+				if err != nil {
+					fmt.Println(err.Error())
+				}
+				if tempDate == nextDate {
+
+					debtDetails = append(debtDetails, viewmodel.DataDetails{
+						ID:          Transactions[i].ID,
+						ReferenceID: Transactions[i].ReferenceID,
+						Name:        Transactions[i].Name.String,
+						Description: Transactions[i].Description.String,
+						Amount:      Transactions[i].Amount.Int32,
+						Type:        Transactions[i].Type,
+					})
+
+				} else {
+					debtDetails = append(debtDetails, viewmodel.DataDetails{
+						ID:          Transactions[i].ID,
+						ReferenceID: Transactions[i].ReferenceID,
+						Name:        Transactions[i].Name.String,
+						Description: Transactions[i].Description.String,
+						Amount:      Transactions[i].Amount.Int32,
+						Type:        Transactions[i].Type,
+					})
+					debtDate = append(debtDate, viewmodel.DataList{
+						TransactionDate:  tempDate.String(),
+						DateAmountCredit: dateCreditAmount,
+						DateAmountDebet:  dateDebetAmount,
+						Details:          debtDetails,
+					})
+
+					debtDetails = nil
+					dateDebetAmount = 0
+					dateCreditAmount = 0
+					tempDate = nextDate
+				}
 			} else {
 				debtDetails = append(debtDetails, viewmodel.DataDetails{
 					ID:          Transactions[i].ID,
 					ReferenceID: Transactions[i].ReferenceID,
-					Name:        Transactions[i].Name,
+					Name:        Transactions[i].Name.String,
 					Description: Transactions[i].Description.String,
 					Amount:      Transactions[i].Amount.Int32,
 					Type:        Transactions[i].Type,
@@ -123,31 +146,11 @@ func (uc TransactionUseCase) TransactionReport(shopID, search, name, amount, tra
 				dateCreditAmount = 0
 				tempDate = nextDate
 			}
-		} else {
-			debtDetails = append(debtDetails, viewmodel.DataDetails{
-				ID:          Transactions[i].ID,
-				ReferenceID: Transactions[i].ReferenceID,
-				Name:        Transactions[i].Name,
-				Description: Transactions[i].Description.String,
-				Amount:      Transactions[i].Amount.Int32,
-				Type:        Transactions[i].Type,
-			})
-			debtDate = append(debtDate, viewmodel.DataList{
-				TransactionDate:  tempDate.String(),
-				DateAmountCredit: dateCreditAmount,
-				DateAmountDebet:  dateDebetAmount,
-				Details:          debtDetails,
-			})
 
-			debtDetails = nil
-			dateDebetAmount = 0
-			dateCreditAmount = 0
-			tempDate = nextDate
 		}
-
 	}
 
-	if resultCount > 0 {
+	if resultCount > 0 && Transactions != nil {
 		for i := 0; i < resultCount; i++ {
 			res = viewmodel.TransactionListVm{
 				ShopID:      Transactions[i].IDShop,
@@ -164,7 +167,7 @@ func (uc TransactionUseCase) TransactionReport(shopID, search, name, amount, tra
 	return res, err
 }
 
-//list transaksi
+//list transaksi groub by week days and months
 func (uc TransactionUseCase) TransactionList(shopID, search, name, amount, transDate, startDate, endDate string) (res viewmodel.TransactionListVm, err error) {
 	model := actions.NewTransactionModel(uc.DB)
 	var filter string
@@ -213,46 +216,68 @@ func (uc TransactionUseCase) TransactionList(shopID, search, name, amount, trans
 	var debtDate []viewmodel.DataList
 	var debtDetails []viewmodel.DataDetails
 
-	for i := 0; i < len(Transactions); i++ {
+	if Transactions != nil {
+		for i := 0; i < len(Transactions); i++ {
 
-		tempDate, err := time.Parse(time.RFC3339, Transactions[i].TransactionDate.String)
-		if err != nil {
-			fmt.Println(err.Error())
-		}
-		if Transactions[i].Type == enums.Debet {
-			debtTotal = debtTotal + int(Transactions[i].Amount.Int32)
-		} else {
-			creditTotal = creditTotal + int(Transactions[i].Amount.Int32)
-		}
-
-		if Transactions[i].Type == enums.Debet {
-			dateDebetAmount = dateDebetAmount + int(Transactions[i].Amount.Int32)
-		} else {
-			dateCreditAmount = dateCreditAmount + int(Transactions[i].Amount.Int32)
-		}
-
-		var nextDate time.Time
-		if i < len(Transactions)-1 {
-			nextDate, err = time.Parse(time.RFC3339, Transactions[i+1].TransactionDate.String)
+			tempDate, err := time.Parse(time.RFC3339, Transactions[i].TransactionDate.String)
 			if err != nil {
 				fmt.Println(err.Error())
 			}
-			if tempDate == nextDate {
+			if Transactions[i].Type == enums.Debet {
+				debtTotal = debtTotal + int(Transactions[i].Amount.Int32)
+			} else {
+				creditTotal = creditTotal + int(Transactions[i].Amount.Int32)
+			}
 
-				debtDetails = append(debtDetails, viewmodel.DataDetails{
-					ID:          Transactions[i].ID,
-					ReferenceID: Transactions[i].ReferenceID,
-					Name:        Transactions[i].Name,
-					Description: Transactions[i].Description.String,
-					Amount:      Transactions[i].Amount.Int32,
-					Type:        Transactions[i].Type,
-				})
+			if Transactions[i].Type == enums.Debet {
+				dateDebetAmount = dateDebetAmount + int(Transactions[i].Amount.Int32)
+			} else {
+				dateCreditAmount = dateCreditAmount + int(Transactions[i].Amount.Int32)
+			}
 
+			var nextDate time.Time
+			if i < len(Transactions)-1 {
+				nextDate, err = time.Parse(time.RFC3339, Transactions[i+1].TransactionDate.String)
+				if err != nil {
+					fmt.Println(err.Error())
+				}
+				if tempDate == nextDate {
+
+					debtDetails = append(debtDetails, viewmodel.DataDetails{
+						ID:          Transactions[i].ID,
+						ReferenceID: Transactions[i].ReferenceID,
+						Name:        Transactions[i].Name.String,
+						Description: Transactions[i].Description.String,
+						Amount:      Transactions[i].Amount.Int32,
+						Type:        Transactions[i].Type,
+					})
+
+				} else {
+					debtDetails = append(debtDetails, viewmodel.DataDetails{
+						ID:          Transactions[i].ID,
+						ReferenceID: Transactions[i].ReferenceID,
+						Name:        Transactions[i].Name.String,
+						Description: Transactions[i].Description.String,
+						Amount:      Transactions[i].Amount.Int32,
+						Type:        Transactions[i].Type,
+					})
+					debtDate = append(debtDate, viewmodel.DataList{
+						TransactionDate:  tempDate.String(),
+						DateAmountCredit: dateCreditAmount,
+						DateAmountDebet:  dateDebetAmount,
+						Details:          debtDetails,
+					})
+
+					debtDetails = nil
+					dateDebetAmount = 0
+					dateCreditAmount = 0
+					tempDate = nextDate
+				}
 			} else {
 				debtDetails = append(debtDetails, viewmodel.DataDetails{
 					ID:          Transactions[i].ID,
 					ReferenceID: Transactions[i].ReferenceID,
-					Name:        Transactions[i].Name,
+					Name:        Transactions[i].Name.String,
 					Description: Transactions[i].Description.String,
 					Amount:      Transactions[i].Amount.Int32,
 					Type:        Transactions[i].Type,
@@ -269,31 +294,12 @@ func (uc TransactionUseCase) TransactionList(shopID, search, name, amount, trans
 				dateCreditAmount = 0
 				tempDate = nextDate
 			}
-		} else {
-			debtDetails = append(debtDetails, viewmodel.DataDetails{
-				ID:          Transactions[i].ID,
-				ReferenceID: Transactions[i].ReferenceID,
-				Name:        Transactions[i].Name,
-				Description: Transactions[i].Description.String,
-				Amount:      Transactions[i].Amount.Int32,
-				Type:        Transactions[i].Type,
-			})
-			debtDate = append(debtDate, viewmodel.DataList{
-				TransactionDate:  tempDate.String(),
-				DateAmountCredit: dateCreditAmount,
-				DateAmountDebet:  dateDebetAmount,
-				Details:          debtDetails,
-			})
 
-			debtDetails = nil
-			dateDebetAmount = 0
-			dateCreditAmount = 0
-			tempDate = nextDate
 		}
-
 	}
 
-	if resultCount > 0 {
+	if resultCount > 0 && Transactions != nil {
+
 		for i := 0; i < resultCount; i++ {
 			res = viewmodel.TransactionListVm{
 				ShopID:      Transactions[i].IDShop,
@@ -310,7 +316,6 @@ func (uc TransactionUseCase) TransactionList(shopID, search, name, amount, trans
 	return res, err
 }
 
-
 func (uc TransactionUseCase) BrowseByBookDebtID(bookDebtID string, status int) (res []viewmodel.TransactionVm, err error) {
 	model := actions.NewTransactionModel(uc.DB)
 	transactions, err := model.BrowseByBookDebtID(bookDebtID, status)
@@ -323,7 +328,7 @@ func (uc TransactionUseCase) BrowseByBookDebtID(bookDebtID string, status int) (
 		res = append(res, viewmodel.TransactionVm{
 			ID:              transaction.ID,
 			ReferenceID:     transaction.ReferenceID,
-			Name:            transaction.Name,
+			Name:            transaction.Name.String,
 			ShopID:          transaction.IDShop,
 			CustomerID:      transaction.CustomerID.String,
 			Amount:          transaction.Amount.Int32,
@@ -342,9 +347,95 @@ func (uc TransactionUseCase) BrowseByBookDebtID(bookDebtID string, status int) (
 	return res, err
 }
 
+//export file untuk laporan transaksi
+func (uc TransactionUseCase) TransactionReportExportFile(shopID, startDate, endDate string) (res string, err error) {
+	data, err := uc.TransactionReport(shopID, "", "", "", "", startDate, endDate)
+	if err != nil {
+		return res, err
+	}
+
+	xlsx := excelize.NewFile()
+	sheet1Name := "data Laporan Transaksi"
+	xlsx.SetSheetName(xlsx.GetSheetName(1), sheet1Name)
+
+	xlsx.SetCellValue(sheet1Name, "A1", "Range Tanggal :")
+	xlsx.SetCellValue(sheet1Name, "B1", startDate+" - "+endDate)
+
+	xlsx.SetCellValue(sheet1Name, "A4", "No")
+	xlsx.SetCellValue(sheet1Name, "B4", "Tanggal Transaksi")
+	xlsx.SetCellValue(sheet1Name, "C4", "Kategori")
+	xlsx.SetCellValue(sheet1Name, "D4", "Nama Pelanggan")
+	xlsx.SetCellValue(sheet1Name, "E4", "Deskripsi")
+	xlsx.SetCellValue(sheet1Name, "F4", "Uang Keluar")
+	xlsx.SetCellValue(sheet1Name, "G4", "Uang Masuk")
+
+	err = xlsx.AutoFilter(sheet1Name, "A1", "B1", "")
+	if err != nil {
+		log.Fatal("ERROR", err.Error())
+	}
+
+	var debtTotal int
+	var creditTotal int
+	no := 1
+	var displayData []viewmodel.DataDetails
+	for _, each := range data.ListData {
+		for _, row := range each.Details {
+			displayData = append(displayData, viewmodel.DataDetails{
+				ID:              row.ID,
+				TransactionDate: each.TransactionDate,
+				ReferenceID:     row.ReferenceID,
+				Name:            row.Name,
+				Description:     row.Description,
+				Amount:          row.Amount,
+				Type:            row.Type,
+			})
+		}
+	}
+
+	for i, each := range displayData {
+		xlsx.SetCellValue(sheet1Name, fmt.Sprintf("A%d", i+5), no)
+		xlsx.SetCellValue(sheet1Name, fmt.Sprintf("B%d", i+5), each.TransactionDate)
+		xlsx.SetCellValue(sheet1Name, fmt.Sprintf("D%d", i+5), each.Name)
+		xlsx.SetCellValue(sheet1Name, fmt.Sprintf("E%d", i+5), each.Description)
+		if each.Type == enums.Credit {
+			xlsx.SetCellValue(sheet1Name, fmt.Sprintf("F%d", i+5), each.Amount)
+			creditTotal = creditTotal + int(each.Amount)
+			xlsx.SetCellValue(sheet1Name, fmt.Sprintf("G%d", i+5), "-")
+		} else {
+			xlsx.SetCellValue(sheet1Name, fmt.Sprintf("F%d", i+5), "-")
+			xlsx.SetCellValue(sheet1Name, fmt.Sprintf("G%d", i+5), each.Amount)
+			debtTotal = debtTotal + int(debtTotal)
+		}
+
+		if i == len(data.ListData) {
+			xlsx.SetCellValue(sheet1Name, fmt.Sprintf("E%d", i+7), "Total")
+			xlsx.SetCellValue(sheet1Name, fmt.Sprintf("F%d", i+7), creditTotal)
+			xlsx.SetCellValue(sheet1Name, fmt.Sprintf("G%d", i+7), debtTotal)
+		}
+		no++
+	}
+	if debtTotal > creditTotal {
+		xlsx.SetCellValue(sheet1Name, "A2", "Jumlah Transaksi:")
+		xlsx.SetCellValue(sheet1Name, "B2", debtTotal-creditTotal)
+	} else {
+		xlsx.SetCellValue(sheet1Name, "A2", "Jumlah Transaksi:")
+		xlsx.SetCellValue(sheet1Name, "B2", creditTotal-debtTotal)
+	}
+
+	err = xlsx.SaveAs("./../file/LaporanTransaksi.xlsx")
+	if err != nil {
+		fmt.Println(err)
+	}
+
+	return "./../file/LaporanTransaksi.xlsx", err
+}
+
 //export file untuk list piutang per pelanggan
 func (uc TransactionUseCase) DebtDetailExportFile(customerID string) (res string, err error) {
 	data, err := uc.BrowseByCustomer(customerID)
+	if err != nil {
+		return res, err
+	}
 	xlsx := excelize.NewFile()
 	sheet1Name := "data Laporan Hutang Per Pelanggan"
 	xlsx.SetSheetName(xlsx.GetSheetName(1), sheet1Name)
@@ -366,28 +457,39 @@ func (uc TransactionUseCase) DebtDetailExportFile(customerID string) (res string
 	var debtTotal int
 	var creditTotal int
 	no := 1
-	for i, each := range data.ListData {
-		for j, row := range each.Details {
-			xlsx.SetCellValue(sheet1Name, fmt.Sprintf("A%d", j+6), no)
-			xlsx.SetCellValue(sheet1Name, fmt.Sprintf("B%d", j+6), each.TransactionDate)
-			xlsx.SetCellValue(sheet1Name, fmt.Sprintf("C%d", j+6), row.Description)
-			if each.Details[i].Type == enums.Credit {
-				xlsx.SetCellValue(sheet1Name, fmt.Sprintf("E%d", j+6), row.Amount)
-				creditTotal = creditTotal + int(row.Amount)
-				xlsx.SetCellValue(sheet1Name, fmt.Sprintf("D%d", j+6), "-")
-			} else {
-				xlsx.SetCellValue(sheet1Name, fmt.Sprintf("E%d", j+6), "-")
-				xlsx.SetCellValue(sheet1Name, fmt.Sprintf("D%d", j+6), row.Amount)
-				debtTotal = debtTotal + int(debtTotal)
-			}
-
-			if i == len(data.ListData)-1 {
-				xlsx.SetCellValue(sheet1Name, fmt.Sprintf("C%d", j+8), "Total")
-				xlsx.SetCellValue(sheet1Name, fmt.Sprintf("E%d", j+8), creditTotal)
-				xlsx.SetCellValue(sheet1Name, fmt.Sprintf("D%d", j+8), debtTotal)
-			}
-			no++
+	var displayData []viewmodel.DataDetails
+	for _, each := range data.ListData {
+		for _, row := range each.Details {
+			displayData = append(displayData, viewmodel.DataDetails{
+				ID:              row.ID,
+				TransactionDate: each.TransactionDate,
+				Description:     row.Description,
+				Amount:          row.Amount,
+				Type:            row.Type,
+			})
 		}
+	}
+
+	for i, each := range displayData {
+		xlsx.SetCellValue(sheet1Name, fmt.Sprintf("A%d", i+5), no)
+		xlsx.SetCellValue(sheet1Name, fmt.Sprintf("B%d", i+5), each.TransactionDate)
+		xlsx.SetCellValue(sheet1Name, fmt.Sprintf("C%d", i+5), each.Description)
+		if each.Type == enums.Credit {
+			xlsx.SetCellValue(sheet1Name, fmt.Sprintf("E%d", i+5), each.Amount)
+			creditTotal = creditTotal + int(each.Amount)
+			xlsx.SetCellValue(sheet1Name, fmt.Sprintf("D%d", i+5), "-")
+		} else {
+			xlsx.SetCellValue(sheet1Name, fmt.Sprintf("E%d", i+5), "-")
+			xlsx.SetCellValue(sheet1Name, fmt.Sprintf("D%d", i+5), each.Amount)
+			debtTotal = debtTotal + int(debtTotal)
+		}
+
+		if i == len(data.ListData) {
+			xlsx.SetCellValue(sheet1Name, fmt.Sprintf("C%d", i+7), "Total")
+			xlsx.SetCellValue(sheet1Name, fmt.Sprintf("E%d", i+7), creditTotal)
+			xlsx.SetCellValue(sheet1Name, fmt.Sprintf("D%d", i+7), debtTotal)
+		}
+		no++
 	}
 	if debtTotal > creditTotal {
 		xlsx.SetCellValue(sheet1Name, "A2", "Jumlah Utang Piutang:")
@@ -429,26 +531,38 @@ func (uc TransactionUseCase) DebtReportExportFile(ID string) (res string, err er
 
 	var debtTotal int
 	var creditTotal int
-	for i, each := range data.ListData {
-		for j, row := range each.Details {
-			xlsx.SetCellValue(sheet1Name, fmt.Sprintf("A%d", j+2), each.TransactionDate)
-			xlsx.SetCellValue(sheet1Name, fmt.Sprintf("B%d", j+2), row.Name)
-			xlsx.SetCellValue(sheet1Name, fmt.Sprintf("C%d", j+2), row.Description)
-			if each.Details[i].Type == enums.Credit {
-				xlsx.SetCellValue(sheet1Name, fmt.Sprintf("E%d", j+2), row.Amount)
-				creditTotal = creditTotal + int(row.Amount)
-				xlsx.SetCellValue(sheet1Name, fmt.Sprintf("D%d", j+2), "-")
-			} else {
-				xlsx.SetCellValue(sheet1Name, fmt.Sprintf("E%d", j+2), "-")
-				xlsx.SetCellValue(sheet1Name, fmt.Sprintf("D%d", j+2), row.Amount)
-				debtTotal = debtTotal + int(debtTotal)
-			}
+	var displayData []viewmodel.DataDetails
+	for _, each := range data.ListData {
+		for _, row := range each.Details {
+			displayData = append(displayData, viewmodel.DataDetails{
+				TransactionDate: each.TransactionDate,
+				Name:            row.Name,
+				Description:     row.Description,
+				Amount:          row.Amount,
+				Type:            row.Type,
+			})
 
-			if i == len(data.ListData)-1 {
-				xlsx.SetCellValue(sheet1Name, fmt.Sprintf("C%d", j+4), "Total")
-				xlsx.SetCellValue(sheet1Name, fmt.Sprintf("E%d", j+4), creditTotal)
-				xlsx.SetCellValue(sheet1Name, fmt.Sprintf("D%d", j+4), debtTotal)
-			}
+		}
+	}
+
+	for i, each := range displayData {
+		xlsx.SetCellValue(sheet1Name, fmt.Sprintf("A%d", i+2), each.TransactionDate)
+		xlsx.SetCellValue(sheet1Name, fmt.Sprintf("B%d", i+2), each.Name)
+		xlsx.SetCellValue(sheet1Name, fmt.Sprintf("C%d", i+2), each.Description)
+		if each.Type == enums.Credit {
+			xlsx.SetCellValue(sheet1Name, fmt.Sprintf("E%d", i+2), each.Amount)
+			creditTotal = creditTotal + int(each.Amount)
+			xlsx.SetCellValue(sheet1Name, fmt.Sprintf("D%d", i+2), "-")
+		} else {
+			xlsx.SetCellValue(sheet1Name, fmt.Sprintf("E%d", i+2), "-")
+			xlsx.SetCellValue(sheet1Name, fmt.Sprintf("D%d", i+2), each.Amount)
+			debtTotal = debtTotal + int(debtTotal)
+		}
+
+		if i == len(data.ListData) {
+			xlsx.SetCellValue(sheet1Name, fmt.Sprintf("C%d", i+4), "Total")
+			xlsx.SetCellValue(sheet1Name, fmt.Sprintf("E%d", i+4), creditTotal)
+			xlsx.SetCellValue(sheet1Name, fmt.Sprintf("D%d", i+4), debtTotal)
 		}
 	}
 
@@ -556,7 +670,7 @@ func (uc TransactionUseCase) DebtReport(shopID, search, name, amount, transDate,
 					debtDetails = append(debtDetails, viewmodel.DebtDetail{
 						ID:          transactions[i].ID,
 						ReferenceID: transactions[i].ReferenceID,
-						Name:        transactions[i].Name,
+						Name:        transactions[i].Name.String,
 						Description: transactions[i].Description.String,
 						Amount:      transactions[i].Amount.Int32,
 						Type:        transactions[i].Type,
@@ -566,7 +680,7 @@ func (uc TransactionUseCase) DebtReport(shopID, search, name, amount, transDate,
 					debtDetails = append(debtDetails, viewmodel.DebtDetail{
 						ID:          transactions[i].ID,
 						ReferenceID: transactions[i].ReferenceID,
-						Name:        transactions[i].Name,
+						Name:        transactions[i].Name.String,
 						Description: transactions[i].Description.String,
 						Amount:      transactions[i].Amount.Int32,
 						Type:        transactions[i].Type,
@@ -583,7 +697,7 @@ func (uc TransactionUseCase) DebtReport(shopID, search, name, amount, transDate,
 				debtDetails = append(debtDetails, viewmodel.DebtDetail{
 					ID:          transactions[i].ID,
 					ReferenceID: transactions[i].ReferenceID,
-					Name:        transactions[i].Name,
+					Name:        transactions[i].Name.String,
 					Description: transactions[i].Description.String,
 					Amount:      transactions[i].Amount.Int32,
 					Type:        transactions[i].Type,
@@ -694,7 +808,7 @@ func (uc TransactionUseCase) BrowseByCustomer(customerID string) (res viewmodel.
 
 		res = viewmodel.DetailsHutangVm{
 			ReferenceID: Transactions[0].ReferenceID,
-			Name:        Transactions[0].Name,
+			Name:        Transactions[0].Name.String,
 			TotalCredit: debtBooks.CreditTotal,
 			TotalDebit:  debtBooks.DebtTotal,
 			ListData:    transactionDate,

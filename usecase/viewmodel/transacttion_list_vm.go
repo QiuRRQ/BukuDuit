@@ -18,10 +18,11 @@ type DataList struct {
 }
 
 type DataDetails struct {
-	ID          string `json:"id"`
-	ReferenceID string `json:"reference_id"` //tak perlu tampilin ini.
-	Name        string `json:"full_name"`
-	Description string `json:"description"`
-	Amount      int32  `json:"amount"`
-	Type        string `json:"type"`
+	ID              string `json:"id"`
+	TransactionDate string `json:"transaction_date"`
+	ReferenceID     string `json:"reference_id"` //tak perlu tampilin ini.
+	Name            string `json:"full_name"`
+	Description     string `json:"description"`
+	Amount          int32  `json:"amount"`
+	Type            string `json:"type"`
 }

@@ -9,7 +9,7 @@ type Transactions struct {
 	ReferenceID     string         `db:"reference_id"`
 	CategoryID      sql.NullString `db:"category_id"`
 	IDShop          string         `db:"shop_id"`
-	Name            string         `db:"full_name"`
+	Name            sql.NullString `db:"full_name"`
 	BooksDeptID     sql.NullString `db:"books_debt_id"`
 	BooksTransID    sql.NullString `db:"books_transaction_id"`
 	Amount          sql.NullInt32  `db:"amount"`
