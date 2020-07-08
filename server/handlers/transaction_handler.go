@@ -48,8 +48,26 @@ func (handler TransactionHandler) TransactionReport(ctx echo.Context) error {
 	uc := usecase.TransactionUseCase{UcContract: handler.UseCaseContract}
 
 	res, err := uc.TransactionReport(shopID, searching, name, amount, date, startDate, endDate)
+	if err != nil {
+		return err
+	}
 
 	return handler.SendResponse(ctx, res, nil, err)
+}
+
+//export excel untuk laporan transaksi
+func (handler TransactionHandler) TransactionReportExportFile(ctx echo.Context) error {
+	shopID := ctx.QueryParam("shopid")
+	startDate := ctx.QueryParam("start_date")
+	endDate := ctx.QueryParam("end_date")
+	uc := usecase.TransactionUseCase{UcContract: handler.UseCaseContract}
+
+	res, err := uc.TransactionReportExportFile(shopID, startDate, endDate)
+	if err != nil {
+		return err
+	}
+
+	return ctx.File(res)
 }
 
 //export excel untuk utang detail
