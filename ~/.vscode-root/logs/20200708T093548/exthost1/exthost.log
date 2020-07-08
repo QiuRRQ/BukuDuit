@@ -2512,3 +2512,40 @@ godef: no file found at search pos 13568
 	at fulfilled (/root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:9:58)
 	at runMicrotasks (<anonymous>)
 	at processTicksAndRejections (internal/process/task_queues.js:85:5)
+[2020-07-08 14:13:55.769] [exthost] [error] [golang.go] provider FAILED
+[2020-07-08 14:13:55.769] [exthost] [error] Error: name must not be falsy
+	at Function.validate (/snap/code/35/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:447:808)
+	at new e (/snap/code/35/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:447:757)
+	at new e (/snap/code/35/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:434:44)
+	at /root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:119:28
+	at Array.forEach (<anonymous>)
+	at convertToCodeSymbols (/root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:97:19)
+	at /root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:31:16
+	at Generator.next (<anonymous>)
+	at fulfilled (/root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:9:58)
+	at runMicrotasks (<anonymous>)
+	at processTicksAndRejections (internal/process/task_queues.js:85:5)
+[2020-07-08 14:43:44.565] [exthost] [error] [golang.go] provider FAILED
+[2020-07-08 14:43:44.565] [exthost] [error] Error: name must not be falsy
+	at Function.validate (/snap/code/35/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:447:808)
+	at new e (/snap/code/35/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:447:757)
+	at new e (/snap/code/35/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:434:44)
+	at /root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:119:28
+	at Array.forEach (<anonymous>)
+	at convertToCodeSymbols (/root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:97:19)
+	at /root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:31:16
+	at Generator.next (<anonymous>)
+	at fulfilled (/root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:9:58)
+	at runMicrotasks (<anonymous>)
+	at processTicksAndRejections (internal/process/task_queues.js:85:5)
+[2020-07-08 14:45:42.660] [exthost] [error] [golang.go] provider FAILED
+[2020-07-08 14:45:42.660] [exthost] [error] Error: name must not be falsy
+	at Function.validate (/snap/code/35/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:447:808)
+	at new e (/snap/code/35/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:447:757)
+	at new e (/snap/code/35/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:434:44)
+	at /root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:119:28
+	at Array.forEach (<anonymous>)
+	at convertToCodeSymbols (/root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:97:19)
+	at /root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:31:16
+	at Generator.next (<anonymous>)
+	at fulfilled (/root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:9:58)
