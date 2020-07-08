@@ -1,0 +1,1397 @@
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/usecase and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/usecase
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go build -o /tmp/vscode-gotswpqM/go-code-check .
+
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go vet .
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/server/handlers
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/server/handlers
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/server/handlers and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/server/handlers
+/home/aziz/works/newBukuduit/bukuduit-go/server/handlers>Finished running tool: /usr/bin/go build -o /tmp/vscode-gotswpqM/go-code-check .
+
+/home/aziz/works/newBukuduit/bukuduit-go/server/handlers>Finished running tool: /usr/bin/go vet .
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/server/handlers
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/server/handlers
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/server/handlers and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/server/handlers
+/home/aziz/works/newBukuduit/bukuduit-go/server/handlers>Finished running tool: /usr/bin/go build -o /tmp/vscode-gotswpqM/go-code-check .
+
+/home/aziz/works/newBukuduit/bukuduit-go/server/handlers>Finished running tool: /usr/bin/go vet .
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/usecase and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/usecase
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go vet .
+
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go build -o /tmp/vscode-gotswpqM/go-code-check .
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/usecase and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/usecase
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go vet .
+
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go build -o /tmp/vscode-gotswpqM/go-code-check .
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/usecase and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/usecase
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go vet .
+
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go build -o /tmp/vscode-gotswpqM/go-code-check .
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/server/handlers
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/server/handlers
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/server/handlers and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/server/handlers
+/home/aziz/works/newBukuduit/bukuduit-go/server/handlers>Finished running tool: /usr/bin/go vet .
+
+/home/aziz/works/newBukuduit/bukuduit-go/server/handlers>Finished running tool: /usr/bin/go build -o /tmp/vscode-gotswpqM/go-code-check .
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/server/handlers
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/server/handlers
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/server/handlers and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/server/handlers
+/home/aziz/works/newBukuduit/bukuduit-go/server/handlers>Finished running tool: /usr/bin/go build -o /tmp/vscode-gotswpqM/go-code-check .
+
+/home/aziz/works/newBukuduit/bukuduit-go/server/handlers>Finished running tool: /usr/bin/go vet .
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/server/handlers
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/server/handlers
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/server/handlers and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/server/handlers
+/home/aziz/works/newBukuduit/bukuduit-go/server/handlers>Finished running tool: /usr/bin/go vet .
+
+/home/aziz/works/newBukuduit/bukuduit-go/server/handlers>Finished running tool: /usr/bin/go build -o /tmp/vscode-gotswpqM/go-code-check .
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/usecase and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/usecase
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go vet .
+
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go build -o /tmp/vscode-gotswpqM/go-code-check .
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/usecase and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/usecase
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go vet .
+
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go build -o /tmp/vscode-gotswpqM/go-code-check .
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/db/repositories/actions
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/db/repositories/actions
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/db/repositories/actions and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/db/repositories/actions
+/home/aziz/works/newBukuduit/bukuduit-go/db/repositories/actions>Finished running tool: /usr/bin/go vet .
+
+/home/aziz/works/newBukuduit/bukuduit-go/db/repositories/actions>Finished running tool: /usr/bin/go build -o /tmp/vscode-gotswpqM/go-code-check .
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/db/repositories/actions
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/db/repositories/actions
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/db/repositories/actions and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/db/repositories/actions
+/home/aziz/works/newBukuduit/bukuduit-go/db/repositories/actions>Finished running tool: /usr/bin/go vet .
+
+/home/aziz/works/newBukuduit/bukuduit-go/db/repositories/actions>Finished running tool: /usr/bin/go build -o /tmp/vscode-gotswpqM/go-code-check .
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/db/repositories/actions
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/db/repositories/actions
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/db/repositories/actions and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/db/repositories/actions
+/home/aziz/works/newBukuduit/bukuduit-go/db/repositories/actions>Finished running tool: /usr/bin/go vet .
+
+/home/aziz/works/newBukuduit/bukuduit-go/db/repositories/actions>Finished running tool: /usr/bin/go build -o /tmp/vscode-gotswpqM/go-code-check .
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/db/repositories/actions
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/db/repositories/actions
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/db/repositories/actions and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/db/repositories/actions
+/home/aziz/works/newBukuduit/bukuduit-go/db/repositories/actions>Finished running tool: /usr/bin/go vet .
+
+/home/aziz/works/newBukuduit/bukuduit-go/db/repositories/actions>Finished running tool: /usr/bin/go build -o /tmp/vscode-gotswpqM/go-code-check .
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/db/models
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/db/models
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/db/models and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/db/models
+/home/aziz/works/newBukuduit/bukuduit-go/db/models>Finished running tool: /usr/bin/go build -o /tmp/vscode-gotswpqM/go-code-check .
+
+/home/aziz/works/newBukuduit/bukuduit-go/db/models>Finished running tool: /usr/bin/go vet .
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/usecase and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/usecase
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go build -o /tmp/vscode-gotswpqM/go-code-check .
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:102: cannot use Transactions[i].Name (type sql.NullString) as type string in field value
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:112: cannot use Transactions[i].Name (type sql.NullString) as type string in field value
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:133: cannot use Transactions[i].Name (type sql.NullString) as type string in field value
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:250: cannot use Transactions[i].Name (type sql.NullString) as type string in field value
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:260: cannot use Transactions[i].Name (type sql.NullString) as type string in field value
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:281: cannot use Transactions[i].Name (type sql.NullString) as type string in field value
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:330: cannot use transaction.Name (type sql.NullString) as type string in field value
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:563: cannot use transactions[i].Name (type sql.NullString) as type string in field value
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:573: cannot use transactions[i].Name (type sql.NullString) as type string in field value
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:590: cannot use transactions[i].Name (type sql.NullString) as type string in field value
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:590: too many errors
+
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go vet .
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:701: cannot use Transactions[0].Name (variable of type sql.NullString) as string value in struct literal
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/usecase and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/usecase
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go build -o /tmp/vscode-gotswpqM/go-code-check .
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:330: cannot use transaction.Name (type sql.NullString) as type string in field value
+
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go vet .
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:330: cannot use transaction.Name (variable of type sql.NullString) as string value in struct literal
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/usecase and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/usecase
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go build -o /tmp/vscode-gotswpqM/go-code-check .
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:330: cannot use transaction.Name (type sql.NullString) as type string in field value
+
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go vet .
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:330: cannot use transaction.Name (variable of type sql.NullString) as string value in struct literal
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/usecase and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/usecase
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go vet .
+
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go build -o /tmp/vscode-gotswpqM/go-code-check .
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/usecase and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/usecase
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go vet .
+
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go build -o /tmp/vscode-gotswpqM/go-code-check .
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/usecase and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/usecase
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go vet .
+
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go build -o /tmp/vscode-gotswpqM/go-code-check .
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/usecase and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/usecase
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go vet .
+
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go build -o /tmp/vscode-gotswpqM/go-code-check .
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/usecase and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/usecase
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go vet .
+
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go build -o /tmp/vscode-gotswpqM/go-code-check .
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/usecase and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/usecase
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go vet .
+
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go build -o /tmp/vscode-gotswpqM/go-code-check .
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/usecase and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/usecase
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go vet .
+
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go build -o /tmp/vscode-gotswpqM/go-code-check .
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/usecase and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/usecase
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go vet .
+
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go build -o /tmp/vscode-gotswpqM/go-code-check .
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/usecase and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/usecase
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go vet .
+
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go build -o /tmp/vscode-gotswpqM/go-code-check .
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/server/bootstrap/routes
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/server/bootstrap/routes
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/server/bootstrap/routes and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/server/bootstrap/routes
+/home/aziz/works/newBukuduit/bukuduit-go/server/bootstrap/routes>Finished running tool: /usr/bin/go build -o /tmp/vscode-gotswpqM/go-code-check .
+/home/aziz/works/newBukuduit/bukuduit-go/server/bootstrap/routes/transaction_route.go:23: syntax error: unexpected ), expecting name or (
+
+/home/aziz/works/newBukuduit/bukuduit-go/server/bootstrap/routes>Finished running tool: /usr/bin/go vet .
+/home/aziz/works/newBukuduit/bukuduit-go/server/bootstrap/routes/transaction_route.go:23: expected selector or type assertion, found ')' (and 10 more errors)
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/server/handlers
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/server/handlers
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/server/handlers and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/server/handlers
+/home/aziz/works/newBukuduit/bukuduit-go/server/handlers>Finished running tool: /usr/bin/go build -o /tmp/vscode-gotswpqM/go-code-check .
+/home/aziz/works/newBukuduit/bukuduit-go/server/handlers/transaction_handler.go:65: uc.TransactionReportExportFIle undefined (type usecase.TransactionUseCase has no field or method TransactionReportExportFIle)
+/home/aziz/works/newBukuduit/bukuduit-go/server/handlers/transaction_handler.go:70: missing return at end of function
+
+/home/aziz/works/newBukuduit/bukuduit-go/server/handlers>Finished running tool: /usr/bin/go vet .
+/home/aziz/works/newBukuduit/bukuduit-go/server/handlers/transaction_handler.go:65: uc.TransactionReportExportFIle undefined (type usecase.TransactionUseCase has no field or method TransactionReportExportFIle)
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/server/handlers
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/server/handlers
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/server/handlers and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/server/handlers
+/home/aziz/works/newBukuduit/bukuduit-go/server/handlers>Finished running tool: /usr/bin/go build -o /tmp/vscode-gotswpqM/go-code-check .
+/home/aziz/works/newBukuduit/bukuduit-go/server/handlers/transaction_handler.go:64: uc.TransactionReportExportFIle undefined (type usecase.TransactionUseCase has no field or method TransactionReportExportFIle)
+/home/aziz/works/newBukuduit/bukuduit-go/server/handlers/transaction_handler.go:69: missing return at end of function
+
+/home/aziz/works/newBukuduit/bukuduit-go/server/handlers>Finished running tool: /usr/bin/go vet .
+/home/aziz/works/newBukuduit/bukuduit-go/server/handlers/transaction_handler.go:64: uc.TransactionReportExportFIle undefined (type usecase.TransactionUseCase has no field or method TransactionReportExportFIle)
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/server/handlers
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/server/handlers
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/server/handlers and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/server/handlers
+/home/aziz/works/newBukuduit/bukuduit-go/server/handlers>Finished running tool: /usr/bin/go build -o /tmp/vscode-gotswpqM/go-code-check .
+/home/aziz/works/newBukuduit/bukuduit-go/server/handlers/transaction_handler.go:63: uc.TransactionReportExportFIle undefined (type usecase.TransactionUseCase has no field or method TransactionReportExportFIle)
+/home/aziz/works/newBukuduit/bukuduit-go/server/handlers/transaction_handler.go:67: missing return at end of function
+
+/home/aziz/works/newBukuduit/bukuduit-go/server/handlers>Finished running tool: /usr/bin/go vet .
+/home/aziz/works/newBukuduit/bukuduit-go/server/handlers/transaction_handler.go:63: uc.TransactionReportExportFIle undefined (type usecase.TransactionUseCase has no field or method TransactionReportExportFIle)
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/usecase and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/usecase
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go build -o /tmp/vscode-gotswpqM/go-code-check .
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:353: missing return at end of function
+
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go vet .
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:353: missing return
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/usecase and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/usecase
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go build -o /tmp/vscode-gotswpqM/go-code-check .
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:352: not enough arguments in call to uc.TransactionReport
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:353: missing return at end of function
+
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go vet .
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:352: too few arguments in call to uc.TransactionReport
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/usecase and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/usecase
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go build -o /tmp/vscode-gotswpqM/go-code-check .
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:352: not enough arguments in call to uc.TransactionReport
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:353: missing return at end of function
+
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go vet .
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:352: too few arguments in call to uc.TransactionReport
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/usecase and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/usecase
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go build -o /tmp/vscode-gotswpqM/go-code-check .
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:353: missing return at end of function
+
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go vet .
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:353: missing return
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/usecase and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/usecase
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go build -o /tmp/vscode-gotswpqM/go-code-check .
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:356: missing return at end of function
+
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go vet .
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:356: missing return
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/usecase and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/usecase
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go build -o /tmp/vscode-gotswpqM/go-code-check .
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:360: missing return at end of function
+
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go vet .
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:360: missing return
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/usecase and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/usecase
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go build -o /tmp/vscode-gotswpqM/go-code-check .
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:361: undefined: xlsx
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:362: undefined: xlsx
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:362: data.Name undefined (type viewmodel.TransactionListVm has no field or method Name)
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:364: undefined: xlsx
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:365: undefined: xlsx
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:366: undefined: xlsx
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:367: undefined: xlsx
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:368: undefined: xlsx
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:369: missing return at end of function
+
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go vet .
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:361: undeclared name: xlsx
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/server/handlers
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/server/handlers
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/server/handlers and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/server/handlers
+/home/aziz/works/newBukuduit/bukuduit-go/server/handlers>Finished running tool: /usr/bin/go vet .
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:361: undefined: xlsx
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:362: undefined: xlsx
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:362: data.Name undefined (type viewmodel.TransactionListVm has no field or method Name)
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:364: undefined: xlsx
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:365: undefined: xlsx
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:366: undefined: xlsx
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:367: undefined: xlsx
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:368: undefined: xlsx
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:369: missing return at end of function
+
+/home/aziz/works/newBukuduit/bukuduit-go/server/handlers>Finished running tool: /usr/bin/go build -o /tmp/vscode-gotswpqM/go-code-check .
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:361: undefined: xlsx
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:362: undefined: xlsx
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:362: data.Name undefined (type viewmodel.TransactionListVm has no field or method Name)
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:364: undefined: xlsx
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:365: undefined: xlsx
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:366: undefined: xlsx
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:367: undefined: xlsx
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:368: undefined: xlsx
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:369: missing return at end of function
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/server/handlers
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/server/handlers
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/server/handlers and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/server/handlers
+/home/aziz/works/newBukuduit/bukuduit-go/server/handlers>Finished running tool: /usr/bin/go build -o /tmp/vscode-gotswpqM/go-code-check .
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:361: undefined: xlsx
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:362: undefined: xlsx
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:362: data.Name undefined (type viewmodel.TransactionListVm has no field or method Name)
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:364: undefined: xlsx
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:365: undefined: xlsx
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:366: undefined: xlsx
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:367: undefined: xlsx
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:368: undefined: xlsx
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:369: missing return at end of function
+
+/home/aziz/works/newBukuduit/bukuduit-go/server/handlers>Finished running tool: /usr/bin/go vet .
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:361: undefined: xlsx
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:362: undefined: xlsx
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:362: data.Name undefined (type viewmodel.TransactionListVm has no field or method Name)
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:364: undefined: xlsx
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:365: undefined: xlsx
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:366: undefined: xlsx
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:367: undefined: xlsx
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:368: undefined: xlsx
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:369: missing return at end of function
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/server/handlers
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/server/handlers
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/server/handlers and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/server/handlers
+/home/aziz/works/newBukuduit/bukuduit-go/server/handlers>Finished running tool: /usr/bin/go build -o /tmp/vscode-gotswpqM/go-code-check .
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:361: undefined: xlsx
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:362: undefined: xlsx
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:362: data.Name undefined (type viewmodel.TransactionListVm has no field or method Name)
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:364: undefined: xlsx
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:365: undefined: xlsx
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:366: undefined: xlsx
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:367: undefined: xlsx
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:368: undefined: xlsx
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:369: missing return at end of function
+
+/home/aziz/works/newBukuduit/bukuduit-go/server/handlers>Finished running tool: /usr/bin/go vet .
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:361: undefined: xlsx
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:362: undefined: xlsx
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:362: data.Name undefined (type viewmodel.TransactionListVm has no field or method Name)
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:364: undefined: xlsx
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:365: undefined: xlsx
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:366: undefined: xlsx
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:367: undefined: xlsx
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:368: undefined: xlsx
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:369: missing return at end of function
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/usecase and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/usecase
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go build -o /tmp/vscode-gotswpqM/go-code-check .
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:361: undefined: xlsx
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:362: undefined: xlsx
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:362: data.Name undefined (type viewmodel.TransactionListVm has no field or method Name)
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:364: undefined: xlsx
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:365: undefined: xlsx
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:366: undefined: xlsx
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:367: undefined: xlsx
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:368: undefined: xlsx
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:369: missing return at end of function
+
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go vet .
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:361: undeclared name: xlsx
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/usecase and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/usecase
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go build -o /tmp/vscode-gotswpqM/go-code-check .
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:361: undefined: xlsx
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:362: undefined: xlsx
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:362: data.Name undefined (type viewmodel.TransactionListVm has no field or method Name)
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:364: undefined: xlsx
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:365: undefined: xlsx
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:366: undefined: xlsx
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:367: undefined: xlsx
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:368: undefined: xlsx
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:369: missing return at end of function
+
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go vet .
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:361: undeclared name: xlsx
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/usecase and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/usecase
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go build -o /tmp/vscode-gotswpqM/go-code-check .
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:361: undefined: xlsx
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:362: undefined: xlsx
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:362: data.Name undefined (type viewmodel.TransactionListVm has no field or method Name)
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:364: undefined: xlsx
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:365: undefined: xlsx
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:366: undefined: xlsx
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:367: undefined: xlsx
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:368: undefined: xlsx
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:370: undefined: xlsx
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:380: undefined: xlsx
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:380: too many errors
+
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go vet .
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:361: undeclared name: xlsx
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/usecase and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/usecase
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go build -o /tmp/vscode-gotswpqM/go-code-check .
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:361: undefined: xlsx
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:362: undefined: xlsx
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:362: data.Name undefined (type viewmodel.TransactionListVm has no field or method Name)
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:364: undefined: xlsx
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:365: undefined: xlsx
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:366: undefined: xlsx
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:367: undefined: xlsx
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:368: undefined: xlsx
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:370: undefined: xlsx
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:380: undefined: xlsx
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:380: too many errors
+
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go vet .
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:361: undeclared name: xlsx
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/usecase and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/usecase
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go build -o /tmp/vscode-gotswpqM/go-code-check .
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:361: data.Name undefined (type viewmodel.TransactionListVm has no field or method Name)
+
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go vet .
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:361: data.Name undefined (type viewmodel.TransactionListVm has no field or method Name)
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/usecase and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/usecase
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go build -o /tmp/vscode-gotswpqM/go-code-check .
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:362: data.Name undefined (type viewmodel.TransactionListVm has no field or method Name)
+
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go vet .
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:362: data.Name undefined (type viewmodel.TransactionListVm has no field or method Name)
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/usecase and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/usecase
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go build -o /tmp/vscode-gotswpqM/go-code-check .
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:362: data.Name undefined (type viewmodel.TransactionListVm has no field or method Name)
+
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go vet .
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:362: data.Name undefined (type viewmodel.TransactionListVm has no field or method Name)
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/usecase and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/usecase
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go vet .
+
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go build -o /tmp/vscode-gotswpqM/go-code-check .
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/usecase and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/usecase
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go vet .
+
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go build -o /tmp/vscode-gotswpqM/go-code-check .
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/usecase and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/usecase
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go vet .
+
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go build -o /tmp/vscode-gotswpqM/go-code-check .
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/usecase and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/usecase
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go vet .
+
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go build -o /tmp/vscode-gotswpqM/go-code-check .
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/usecase and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/usecase
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go vet .
+
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go build -o /tmp/vscode-gotswpqM/go-code-check .
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/usecase and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/usecase
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go vet .
+
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go build -o /tmp/vscode-gotswpqM/go-code-check .
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/usecase and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/usecase
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go vet .
+
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go build -o /tmp/vscode-gotswpqM/go-code-check .
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/usecase and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/usecase
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go vet .
+
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go build -o /tmp/vscode-gotswpqM/go-code-check .
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/usecase and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/usecase
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go vet .
+
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go build -o /tmp/vscode-gotswpqM/go-code-check .
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/usecase and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/usecase
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go vet .
+
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go build -o /tmp/vscode-gotswpqM/go-code-check .
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/usecase and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/usecase
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go vet .
+
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go build -o /tmp/vscode-gotswpqM/go-code-check .
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/server/handlers
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/server/handlers
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/server/handlers and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/server/handlers
+/home/aziz/works/newBukuduit/bukuduit-go/server/handlers>Finished running tool: /usr/bin/go vet .
+
+/home/aziz/works/newBukuduit/bukuduit-go/server/handlers>Finished running tool: /usr/bin/go build -o /tmp/vscode-gotswpqM/go-code-check .
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/server/handlers
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/server/handlers
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/server/handlers and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/server/handlers
+/home/aziz/works/newBukuduit/bukuduit-go/server/handlers>Finished running tool: /usr/bin/go build -o /tmp/vscode-gotswpqM/go-code-check .
+
+/home/aziz/works/newBukuduit/bukuduit-go/server/handlers>Finished running tool: /usr/bin/go vet .
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/server/bootstrap/routes
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/server/bootstrap/routes
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/server/bootstrap/routes and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/server/bootstrap/routes
+/home/aziz/works/newBukuduit/bukuduit-go/server/bootstrap/routes>Finished running tool: /usr/bin/go build -o /tmp/vscode-gotswpqM/go-code-check .
+
+/home/aziz/works/newBukuduit/bukuduit-go/server/bootstrap/routes>Finished running tool: /usr/bin/go vet .
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/usecase and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/usecase
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go build -o /tmp/vscode-gotswpqM/go-code-check .
+
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go vet .
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/usecase and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/usecase
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go build -o /tmp/vscode-gotswpqM/go-code-check .
+
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go vet .
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/usecase and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/usecase
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go build -o /tmp/vscode-gotswpqM/go-code-check .
+
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go vet .
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/usecase and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/usecase
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go vet .
+
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go build -o /tmp/vscode-gotswpqM/go-code-check .
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/usecase and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/usecase
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go vet .
+
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go build -o /tmp/vscode-gotswpqM/go-code-check .
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/usecase and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/usecase
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go vet .
+
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go build -o /tmp/vscode-gotswpqM/go-code-check .
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/usecase and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/usecase
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go vet .
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:380: displayData declared but not used
+
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go build -o /tmp/vscode-gotswpqM/go-code-check .
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:380: displayData declared and not used
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/usecase and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/usecase
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go vet .
+
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go build -o /tmp/vscode-gotswpqM/go-code-check .
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/usecase and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/usecase
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go build -o /tmp/vscode-gotswpqM/go-code-check .
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:390: syntax error: unexpected newline, expecting comma or }
+
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go vet .
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:390: missing ',' before newline in composite literal
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/usecase and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/usecase
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go vet .
+
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go build -o /tmp/vscode-gotswpqM/go-code-check .
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/usecase and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/usecase
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go build -o /tmp/vscode-gotswpqM/go-code-check .
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:394: syntax error: unexpected displayData, expecting {
+
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go vet .
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:394: expected '{', found displayData (and 10 more errors)
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/usecase and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/usecase
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go build -o /tmp/vscode-gotswpqM/go-code-check .
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:394: syntax error: unexpected displayData, expecting {
+
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go vet .
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:394: expected '{', found displayData (and 10 more errors)
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/usecase and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/usecase
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go build -o /tmp/vscode-gotswpqM/go-code-check .
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:395: undefined: j
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:396: undefined: j
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:396: each.TransactionDate undefined (type viewmodel.DataDetails has no field or method TransactionDate)
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:397: undefined: j
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:397: undefined: row
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:398: each.Details undefined (type viewmodel.DataDetails has no field or method Details)
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:398: undefined: j
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:399: undefined: j
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:399: undefined: row
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:400: undefined: row
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:400: too many errors
+
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go vet .
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:395: undeclared name: j
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/usecase and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/usecase
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go build -o /tmp/vscode-gotswpqM/go-code-check .
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:395: undefined: j
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:396: undefined: j
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:396: each.TransactionDate undefined (type viewmodel.DataDetails has no field or method TransactionDate)
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:397: undefined: j
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:397: undefined: row
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:398: each.Details undefined (type viewmodel.DataDetails has no field or method Details)
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:398: undefined: j
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:399: undefined: j
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:399: undefined: row
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:400: undefined: row
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:400: too many errors
+
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go vet .
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:395: undeclared name: j
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/usecase and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/usecase
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go build -o /tmp/vscode-gotswpqM/go-code-check .
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:396: each.TransactionDate undefined (type viewmodel.DataDetails has no field or method TransactionDate)
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:397: undefined: row
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:398: each.Details undefined (type viewmodel.DataDetails has no field or method Details)
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:398: undefined: j
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:399: undefined: row
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:400: undefined: row
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:404: undefined: row
+
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go vet .
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:396: each.TransactionDate undefined (type viewmodel.DataDetails has no field or method TransactionDate)
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/usecase and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/usecase
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go build -o /tmp/vscode-gotswpqM/go-code-check .
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:396: not enough arguments in call to xlsx.SetCellValue
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:397: undefined: row
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:398: each.Details undefined (type viewmodel.DataDetails has no field or method Details)
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:398: undefined: j
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:399: undefined: row
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:400: undefined: row
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:404: undefined: row
+
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go vet .
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:396: too few arguments in call to xlsx.SetCellValue
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase/viewmodel
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase/viewmodel
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/usecase/viewmodel and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/usecase/viewmodel
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/viewmodel>Finished running tool: /usr/bin/go build -o /tmp/vscode-gotswpqM/go-code-check .
+
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/viewmodel>Finished running tool: /usr/bin/go vet .
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/usecase and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/usecase
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go build -o /tmp/vscode-gotswpqM/go-code-check .
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:397: not enough arguments in call to xlsx.SetCellValue
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:398: undefined: row
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:399: each.Details undefined (type viewmodel.DataDetails has no field or method Details)
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:399: undefined: j
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:400: undefined: row
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:401: undefined: row
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:405: undefined: row
+
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go vet .
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:397: too few arguments in call to xlsx.SetCellValue
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/usecase and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/usecase
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go build -o /tmp/vscode-gotswpqM/go-code-check .
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:398: undefined: row
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:399: each.Details undefined (type viewmodel.DataDetails has no field or method Details)
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:399: undefined: j
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:400: undefined: row
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:401: undefined: row
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:405: undefined: row
+
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go vet .
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:398: undeclared name: row
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/usecase and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/usecase
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go build -o /tmp/vscode-gotswpqM/go-code-check .
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:401: undefined: row
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:405: undefined: row
+
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go vet .
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:401: undeclared name: row
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/usecase and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/usecase
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go build -o /tmp/vscode-gotswpqM/go-code-check .
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:405: undefined: row
+
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go vet .
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:405: undeclared name: row
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/usecase and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/usecase
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go build -o /tmp/vscode-gotswpqM/go-code-check .
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:381: i declared and not used
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:382: j declared and not used
+
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go vet .
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:381: i declared but not used
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/usecase and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/usecase
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go vet .
+
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go build -o /tmp/vscode-gotswpqM/go-code-check .
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/usecase and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/usecase
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go vet .
+
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go build -o /tmp/vscode-gotswpqM/go-code-check .
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/usecase and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/usecase
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go vet .
+
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go build -o /tmp/vscode-gotswpqM/go-code-check .
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/usecase and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/usecase
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go vet .
+
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go build -o /tmp/vscode-gotswpqM/go-code-check .
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/usecase and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/usecase
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go vet .
+
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go build -o /tmp/vscode-gotswpqM/go-code-check .
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/usecase and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/usecase
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go vet .
+
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go build -o /tmp/vscode-gotswpqM/go-code-check .
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/usecase and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/usecase
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go vet .
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:460: displayData declared but not used
+
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go build -o /tmp/vscode-gotswpqM/go-code-check .
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:460: displayData declared and not used
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/usecase and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/usecase
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go vet .
+
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go build -o /tmp/vscode-gotswpqM/go-code-check .
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/usecase and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/usecase
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go build -o /tmp/vscode-gotswpqM/go-code-check .
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:466: syntax error: unexpected }, expecting name or (
+
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go vet .
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:466: expected selector or type assertion, found '}' (and 10 more errors)
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/usecase and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/usecase
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go vet .
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:466: expected selector or type assertion, found '}' (and 10 more errors)
+
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go build -o /tmp/vscode-gotswpqM/go-code-check .
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:466: syntax error: unexpected }, expecting name or (
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/usecase and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/usecase
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go build -o /tmp/vscode-gotswpqM/go-code-check .
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:466: syntax error: unexpected }, expecting name or (
+
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go vet .
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:466: expected selector or type assertion, found '}' (and 10 more errors)
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/usecase and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/usecase
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go vet .
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:466: expected selector or type assertion, found '}' (and 10 more errors)
+
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go build -o /tmp/vscode-gotswpqM/go-code-check .
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:466: syntax error: unexpected }, expecting name or (
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/usecase and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/usecase
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go build -o /tmp/vscode-gotswpqM/go-code-check .
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:466: syntax error: unexpected }, expecting name or (
+
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go vet .
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:466: expected selector or type assertion, found '}' (and 10 more errors)
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/usecase and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/usecase
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go vet .
+
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go build -o /tmp/vscode-gotswpqM/go-code-check .
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/usecase and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/usecase
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go build -o /tmp/vscode-gotswpqM/go-code-check .
+
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go vet .
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/usecase and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/usecase
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go vet .
+
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go build -o /tmp/vscode-gotswpqM/go-code-check .
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/usecase and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/usecase
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go vet .
+
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go build -o /tmp/vscode-gotswpqM/go-code-check .
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/usecase and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/usecase
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go build -o /tmp/vscode-gotswpqM/go-code-check .
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:467: syntax error: unexpected newline, expecting comma or }
+
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go vet .
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:467: missing ',' before newline in composite literal
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/usecase and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/usecase
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go build -o /tmp/vscode-gotswpqM/go-code-check .
+
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go vet .
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/usecase and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/usecase
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go vet .
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:459: no declared but not used
+
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go build -o /tmp/vscode-gotswpqM/go-code-check .
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:459: no declared and not used
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:461: i declared and not used
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:462: j declared and not used
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/usecase and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/usecase
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go build -o /tmp/vscode-gotswpqM/go-code-check .
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:474: undefined: j
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:475: undefined: j
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:476: undefined: j
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:476: undefined: row
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:477: each.Details undefined (type viewmodel.DataDetails has no field or method Details)
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:477: undefined: j
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:478: undefined: j
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:478: undefined: row
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:479: undefined: row
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:480: undefined: j
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:480: too many errors
+
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go vet .
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:474: undeclared name: j
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/usecase and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/usecase
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go build -o /tmp/vscode-gotswpqM/go-code-check .
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:474: undefined: j
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:475: undefined: j
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:476: undefined: j
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:476: undefined: row
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:477: each.Details undefined (type viewmodel.DataDetails has no field or method Details)
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:477: undefined: j
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:478: undefined: j
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:478: undefined: row
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:479: undefined: row
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:480: undefined: j
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:480: too many errors
+
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go vet .
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:474: undeclared name: j
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/usecase and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/usecase
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go build -o /tmp/vscode-gotswpqM/go-code-check .
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:475: undefined: j
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:476: undefined: j
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:476: undefined: row
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:477: each.Details undefined (type viewmodel.DataDetails has no field or method Details)
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:477: undefined: j
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:478: undefined: j
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:478: undefined: row
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:479: undefined: row
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:480: undefined: j
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:482: undefined: j
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:482: too many errors
+
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go vet .
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:475: undeclared name: j
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/usecase and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/usecase
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go build -o /tmp/vscode-gotswpqM/go-code-check .
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:476: undefined: row
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:477: each.Details undefined (type viewmodel.DataDetails has no field or method Details)
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:477: undefined: j
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:478: undefined: row
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:479: undefined: row
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:483: undefined: row
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:488: undefined: j
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:489: undefined: j
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:490: undefined: j
+
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go vet .
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:476: undeclared name: row
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/usecase and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/usecase
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go build -o /tmp/vscode-gotswpqM/go-code-check .
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:477: each.Details undefined (type viewmodel.DataDetails has no field or method Details)
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:477: undefined: j
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:488: undefined: j
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:489: undefined: j
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:490: undefined: j
+
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go vet .
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:477: each.Details undefined (type viewmodel.DataDetails has no field or method Details)
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/usecase and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/usecase
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go build -o /tmp/vscode-gotswpqM/go-code-check .
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:477: each.Details undefined (type viewmodel.DataDetails has no field or method Details)
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:477: undefined: j
+
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go vet .
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:477: each.Details undefined (type viewmodel.DataDetails has no field or method Details)
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/usecase and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/usecase
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go build -o /tmp/vscode-gotswpqM/go-code-check .
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:477: each.Details undefined (type viewmodel.DataDetails has no field or method Details)
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:477: undefined: j
+
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go vet .
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:477: each.Details undefined (type viewmodel.DataDetails has no field or method Details)
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/usecase and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/usecase
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go vet .
+
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go build -o /tmp/vscode-gotswpqM/go-code-check .
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/usecase and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/usecase
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go vet .
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:534: displayData declared but not used
+
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go build -o /tmp/vscode-gotswpqM/go-code-check .
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:534: displayData declared and not used
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/usecase and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/usecase
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go vet .
+
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go build -o /tmp/vscode-gotswpqM/go-code-check .
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/usecase and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/usecase
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go build -o /tmp/vscode-gotswpqM/go-code-check .
+
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go vet .
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/usecase and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/usecase
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go build -o /tmp/vscode-gotswpqM/go-code-check .
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:549: undefined: j
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:550: undefined: j
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:550: undefined: row
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:551: undefined: j
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:551: undefined: row
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:552: each.Details undefined (type viewmodel.DataDetails has no field or method Details)
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:552: undefined: j
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:553: undefined: j
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:553: undefined: row
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:554: undefined: row
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:554: too many errors
+
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go vet .
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:549: undeclared name: j
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/usecase and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/usecase
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go build -o /tmp/vscode-gotswpqM/go-code-check .
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:549: undefined: j
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:550: undefined: j
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:550: undefined: row
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:551: undefined: j
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:551: undefined: row
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:552: each.Details undefined (type viewmodel.DataDetails has no field or method Details)
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:552: undefined: j
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:553: undefined: j
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:553: undefined: row
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:554: undefined: row
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:554: too many errors
+
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go vet .
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:549: undeclared name: j
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/usecase and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/usecase
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go build -o /tmp/vscode-gotswpqM/go-code-check .
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:549: undefined: j
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:550: undefined: j
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:550: undefined: row
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:551: undefined: j
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:551: undefined: row
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:552: each.Details undefined (type viewmodel.DataDetails has no field or method Details)
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:552: undefined: j
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:553: undefined: j
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:553: undefined: row
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:554: undefined: row
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:554: too many errors
+
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go vet .
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:549: undeclared name: j
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/usecase and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/usecase
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go build -o /tmp/vscode-gotswpqM/go-code-check .
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:549: undefined: j
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:550: undefined: j
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:550: undefined: row
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:551: undefined: j
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:551: undefined: row
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:552: each.Details undefined (type viewmodel.DataDetails has no field or method Details)
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:552: undefined: j
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:553: undefined: j
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:553: undefined: row
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:554: undefined: row
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:554: too many errors
+
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go vet .
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:549: undeclared name: j
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/usecase and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/usecase
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go build -o /tmp/vscode-gotswpqM/go-code-check .
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:549: undefined: j
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:550: undefined: j
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:550: undefined: row
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:551: undefined: j
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:551: undefined: row
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:552: each.Details undefined (type viewmodel.DataDetails has no field or method Details)
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:552: undefined: j
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:553: undefined: j
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:553: undefined: row
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:554: undefined: row
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:554: too many errors
+
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go vet .
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:549: undeclared name: j
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/usecase and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/usecase
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go build -o /tmp/vscode-gotswpqM/go-code-check .
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:550: undefined: row
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:551: undefined: row
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:552: each.Details undefined (type viewmodel.DataDetails has no field or method Details)
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:552: undefined: j
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:553: undefined: row
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:554: undefined: row
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:558: undefined: row
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:563: undefined: j
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:564: undefined: j
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:565: undefined: j
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:565: too many errors
+
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go vet .
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:550: undeclared name: row
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/usecase and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/usecase
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go build -o /tmp/vscode-gotswpqM/go-code-check .
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:550: undefined: row
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:551: undefined: row
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:553: undefined: row
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:554: undefined: row
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:558: undefined: row
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:563: undefined: j
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:564: undefined: j
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:565: undefined: j
+
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go vet .
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:550: undeclared name: row
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/usecase and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/usecase
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go build -o /tmp/vscode-gotswpqM/go-code-check .
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:563: undefined: j
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:564: undefined: j
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:565: undefined: j
+
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go vet .
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go:563: undeclared name: j
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/usecase and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/usecase
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go vet .
+
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go build -o /tmp/vscode-gotswpqM/go-code-check .
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/usecase and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/usecase
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go vet .
+
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go build -o /tmp/vscode-gotswpqM/go-code-check .
+
