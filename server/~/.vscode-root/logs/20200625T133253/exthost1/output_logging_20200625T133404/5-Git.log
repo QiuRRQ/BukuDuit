@@ -1,0 +1,835 @@
+Looking for git in: git
+Using git 2.25.1 from git
+> git rev-parse --show-toplevel
+> git rev-parse --git-dir
+Open repository: /home/aziz/works/newBukuduit/bukuduit-go
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse debtpayrepair
+> git rev-parse --symbolic-full-name debtpayrepair@{u}
+> git rev-list --left-right debtpayrepair...refs/remotes/origin/debtpayrepair
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git show :usecase/transaction_usecase.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go
+> git cat-file -s a81fd661ed65b9eb6bf42f4ef660755de2f28742
+> git check-ignore -v -z --stdin
+> git show :usecase/utang_usecase.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/usecase/utang_usecase.go
+> git cat-file -s 4712a2df03424410da89050de55c68bb52436d8a
+> git check-ignore -v -z --stdin
+> git check-ignore -v -z --stdin
+> git show :server/main.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/server/main.go
+> git cat-file -s 421a71e0894fbeb58ecf025e28c06bc535cd999d
+> git show :server/requests/utang_request.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/server/requests/utang_request.go
+> git cat-file -s 4c85ef1adcbb9c609ff06734b508fdfbbfcd3fda
+> git show :usecase/transaction_usecase.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go
+> git cat-file -s a81fd661ed65b9eb6bf42f4ef660755de2f28742
+> git check-ignore -v -z --stdin
+> git check-ignore -v -z --stdin
+> git check-ignore -v -z --stdin
+> git status -z -u
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go
+> git symbolic-ref --short HEAD
+> git cat-file -s bcab3fa005fd197c016244951cc5d0d504edc850
+> git rev-parse dev
+> git rev-parse --symbolic-full-name dev@{u}
+> git show :usecase/transaction_usecase.go
+> git rev-list --left-right dev...refs/remotes/origin/dev
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse dev
+> git rev-parse --symbolic-full-name dev@{u}
+> git rev-list --left-right dev...refs/remotes/origin/dev
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse dev
+> git rev-parse --symbolic-full-name dev@{u}
+> git rev-list --left-right dev...refs/remotes/origin/dev
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse dev
+> git rev-parse --symbolic-full-name dev@{u}
+> git rev-list --left-right dev...refs/remotes/origin/dev
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse dev
+> git rev-parse --symbolic-full-name dev@{u}
+> git rev-list --left-right dev...refs/remotes/origin/dev
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go
+> git symbolic-ref --short HEAD
+> git cat-file -s bcab3fa005fd197c016244951cc5d0d504edc850
+> git rev-parse dev
+> git rev-parse --symbolic-full-name dev@{u}
+> git show :usecase/transaction_usecase.go
+> git rev-list --left-right dev...refs/remotes/origin/dev
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse dev
+> git rev-parse --symbolic-full-name dev@{u}
+> git rev-list --left-right dev...refs/remotes/origin/dev
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git show :server/requests/utang_request.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/server/requests/utang_request.go
+> git cat-file -s c9a0cf3938afa599f968a166aecd8fd2145f49a9
+> git status -z -u
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/server/requests/utang_request.go
+> git symbolic-ref --short HEAD
+> git cat-file -s c9a0cf3938afa599f968a166aecd8fd2145f49a9
+> git rev-parse dev
+> git rev-parse --symbolic-full-name dev@{u}
+> git show :server/requests/utang_request.go
+> git rev-list --left-right dev...refs/remotes/origin/dev
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse dev
+> git rev-parse --symbolic-full-name dev@{u}
+> git rev-list --left-right dev...refs/remotes/origin/dev
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git show :usecase/transaction_usecase.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go
+> git cat-file -s bcab3fa005fd197c016244951cc5d0d504edc850
+> git check-ignore -v -z --stdin
+> git status -z -u
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go
+> git symbolic-ref --short HEAD
+> git cat-file -s 24ce1fbd4fe6000f122e90d2b143e557d650a2be
+> git rev-parse dev
+> git show :usecase/transaction_usecase.go
+> git rev-parse --symbolic-full-name dev@{u}
+> git rev-list --left-right dev...refs/remotes/origin/dev
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse dev
+> git rev-parse --symbolic-full-name dev@{u}
+> git rev-list --left-right dev...refs/remotes/origin/dev
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go
+> git symbolic-ref --short HEAD
+> git cat-file -s 24ce1fbd4fe6000f122e90d2b143e557d650a2be
+> git rev-parse fiturbaru
+> git rev-parse --symbolic-full-name fiturbaru@{u}
+> git show :usecase/transaction_usecase.go
+fatal: no upstream configured for branch 'fiturbaru'
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse fiturbaru
+> git rev-parse --symbolic-full-name fiturbaru@{u}
+fatal: no upstream configured for branch 'fiturbaru'
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git check-ignore -v -z --stdin
+> git show :server/requests/transction_request.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/server/requests/transction_request.go
+> git cat-file -s 97bfc5b1d7d0d81b9a8b052e660dc56ac1516d3d
+> git check-ignore -v -z --stdin
+> git check-ignore -v -z --stdin
+> git check-ignore -v -z --stdin
+> git check-ignore -v -z --stdin
+> git check-ignore -v -z --stdin
+> git check-ignore -v -z --stdin
+> git show :db/repositories/actions/transactions_repository.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/db/repositories/actions/transactions_repository.go
+> git cat-file -s 7a2dac915ada865086d59a15a33f093c4df41c07
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse fiturbaru
+> git rev-parse --symbolic-full-name fiturbaru@{u}
+fatal: no upstream configured for branch 'fiturbaru'
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git check-ignore -v -z --stdin
+> git check-ignore -v -z --stdin
+> git show :server/bootstrap/route.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/server/bootstrap/route.go
+> git cat-file -s 53e1fcadc1aba21efbbf7b7b2145c7da1458b541
+> git show :server/bootstrap/routes/transaction_route.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/server/bootstrap/routes/transaction_route.go
+> git cat-file -s 6a9d5ca9d5b209648eee26ec3a587f34105c1c53
+> git show :server/handlers/transaction_handler.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/server/handlers/transaction_handler.go
+> git cat-file -s 79bd77e3f3d66b5df43c26a07f488cc68c1cfb94
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse fiturbaru
+> git rev-parse --symbolic-full-name fiturbaru@{u}
+fatal: no upstream configured for branch 'fiturbaru'
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git show :server/handlers/user_customer_handler.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/server/handlers/user_customer_handler.go
+> git cat-file -s cf21097e1a92031ecd0d99e64b7dfcee3532c3d3
+> git show :server/handlers/transaction_handler.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/server/handlers/transaction_handler.go
+> git cat-file -s 79bd77e3f3d66b5df43c26a07f488cc68c1cfb94
+> git show :server/handlers/user_customer_handler.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/server/handlers/user_customer_handler.go
+> git cat-file -s cf21097e1a92031ecd0d99e64b7dfcee3532c3d3
+> git show :server/handlers/transaction_handler.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/server/handlers/transaction_handler.go
+> git cat-file -s 79bd77e3f3d66b5df43c26a07f488cc68c1cfb94
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse fiturbaru
+> git rev-parse --symbolic-full-name fiturbaru@{u}
+fatal: no upstream configured for branch 'fiturbaru'
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse fiturbaru
+> git rev-parse --symbolic-full-name fiturbaru@{u}
+fatal: no upstream configured for branch 'fiturbaru'
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse fiturbaru
+> git rev-parse --symbolic-full-name fiturbaru@{u}
+fatal: no upstream configured for branch 'fiturbaru'
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse fiturbaru
+> git rev-parse --symbolic-full-name fiturbaru@{u}
+fatal: no upstream configured for branch 'fiturbaru'
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse fiturbaru
+> git rev-parse --symbolic-full-name fiturbaru@{u}
+fatal: no upstream configured for branch 'fiturbaru'
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git show :usecase/transaction_usecase.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go
+> git cat-file -s 24ce1fbd4fe6000f122e90d2b143e557d650a2be
+> git show :db/repositories/contracts/itransaction_repository.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/db/repositories/contracts/itransaction_repository.go
+> git cat-file -s 8838b2641536c682e8690c5a8c4ab76f19d7cf6a
+> git show :server/handlers/transaction_handler.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/server/handlers/transaction_handler.go
+> git cat-file -s 79bd77e3f3d66b5df43c26a07f488cc68c1cfb94
+> git show :usecase/transaction_usecase.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go
+> git cat-file -s 24ce1fbd4fe6000f122e90d2b143e557d650a2be
+> git show :usecase/user_customer_usecase.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/usecase/user_customer_usecase.go
+> git cat-file -s a2fb2adae4d88709970eab7878c828f4170371c0
+> git show :server/handlers/transaction_handler.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/server/handlers/transaction_handler.go
+> git cat-file -s 79bd77e3f3d66b5df43c26a07f488cc68c1cfb94
+> git show :usecase/user_customer_usecase.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/usecase/user_customer_usecase.go
+> git cat-file -s a2fb2adae4d88709970eab7878c828f4170371c0
+> git show :server/handlers/transaction_handler.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/server/handlers/transaction_handler.go
+> git cat-file -s 79bd77e3f3d66b5df43c26a07f488cc68c1cfb94
+> git show :usecase/transaction_usecase.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go
+> git cat-file -s 24ce1fbd4fe6000f122e90d2b143e557d650a2be
+> git show :usecase/user_customer_usecase.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/usecase/user_customer_usecase.go
+> git cat-file -s a2fb2adae4d88709970eab7878c828f4170371c0
+> git show :db/repositories/contracts/iuser_customer_repository.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/db/repositories/contracts/iuser_customer_repository.go
+> git cat-file -s 1b8b15aabccfa10a580b4354e2a0871c700369e4
+> git show :usecase/user_customer_usecase.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/usecase/user_customer_usecase.go
+> git cat-file -s a2fb2adae4d88709970eab7878c828f4170371c0
+> git show :db/repositories/actions/transactions_repository.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/db/repositories/actions/transactions_repository.go
+> git cat-file -s 7a2dac915ada865086d59a15a33f093c4df41c07
+> git show :db/repositories/actions/user_customer_repository.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/db/repositories/actions/user_customer_repository.go
+> git cat-file -s 6e352c4f8fe80dbc5013bfe5b0cf2322d6aabe69
+> git show :db/repositories/actions/transactions_repository.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/db/repositories/actions/transactions_repository.go
+> git cat-file -s 7a2dac915ada865086d59a15a33f093c4df41c07
+> git show :db/repositories/actions/user_customer_repository.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/db/repositories/actions/user_customer_repository.go
+> git cat-file -s 6e352c4f8fe80dbc5013bfe5b0cf2322d6aabe69
+> git show :db/repositories/actions/transactions_repository.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/db/repositories/actions/transactions_repository.go
+> git cat-file -s 7a2dac915ada865086d59a15a33f093c4df41c07
+> git show :db/repositories/actions/user_customer_repository.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/db/repositories/actions/user_customer_repository.go
+> git cat-file -s 6e352c4f8fe80dbc5013bfe5b0cf2322d6aabe69
+> git show :db/repositories/actions/transactions_repository.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/db/repositories/actions/transactions_repository.go
+> git cat-file -s 7a2dac915ada865086d59a15a33f093c4df41c07
+> git show :db/repositories/actions/user_customer_repository.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/db/repositories/actions/user_customer_repository.go
+> git cat-file -s 6e352c4f8fe80dbc5013bfe5b0cf2322d6aabe69
+> git show :db/repositories/actions/transactions_repository.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/db/repositories/actions/transactions_repository.go
+> git cat-file -s 7a2dac915ada865086d59a15a33f093c4df41c07
+> git show :db/repositories/actions/user_customer_repository.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/db/repositories/actions/user_customer_repository.go
+> git cat-file -s 6e352c4f8fe80dbc5013bfe5b0cf2322d6aabe69
+> git show :db/repositories/actions/transactions_repository.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/db/repositories/actions/transactions_repository.go
+> git cat-file -s 7a2dac915ada865086d59a15a33f093c4df41c07
+> git show :db/repositories/actions/user_customer_repository.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/db/repositories/actions/user_customer_repository.go
+> git cat-file -s 6e352c4f8fe80dbc5013bfe5b0cf2322d6aabe69
+> git show :db/repositories/actions/transactions_repository.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/db/repositories/actions/transactions_repository.go
+> git cat-file -s 7a2dac915ada865086d59a15a33f093c4df41c07
+> git show :db/repositories/actions/user_customer_repository.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/db/repositories/actions/user_customer_repository.go
+> git cat-file -s 6e352c4f8fe80dbc5013bfe5b0cf2322d6aabe69
+> git show :db/repositories/actions/transactions_repository.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/db/repositories/actions/transactions_repository.go
+> git cat-file -s 7a2dac915ada865086d59a15a33f093c4df41c07
+> git show :db/repositories/actions/user_customer_repository.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/db/repositories/actions/user_customer_repository.go
+> git cat-file -s 6e352c4f8fe80dbc5013bfe5b0cf2322d6aabe69
+> git show :db/repositories/actions/transactions_repository.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/db/repositories/actions/transactions_repository.go
+> git cat-file -s 7a2dac915ada865086d59a15a33f093c4df41c07
+> git show :db/repositories/actions/user_customer_repository.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/db/repositories/actions/user_customer_repository.go
+> git cat-file -s 6e352c4f8fe80dbc5013bfe5b0cf2322d6aabe69
+> git show :db/repositories/actions/transactions_repository.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/db/repositories/actions/transactions_repository.go
+> git cat-file -s 7a2dac915ada865086d59a15a33f093c4df41c07
+> git show :server/bootstrap/routes/transaction_route.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/server/bootstrap/routes/transaction_route.go
+> git cat-file -s 6a9d5ca9d5b209648eee26ec3a587f34105c1c53
+> git show :db/repositories/actions/user_customer_repository.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/db/repositories/actions/user_customer_repository.go
+> git cat-file -s 6e352c4f8fe80dbc5013bfe5b0cf2322d6aabe69
+> git show :server/bootstrap/routes/transaction_route.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/server/bootstrap/routes/transaction_route.go
+> git cat-file -s 6a9d5ca9d5b209648eee26ec3a587f34105c1c53
+> git show :server/handlers/transaction_handler.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/server/handlers/transaction_handler.go
+> git cat-file -s 79bd77e3f3d66b5df43c26a07f488cc68c1cfb94
+> git show :usecase/transaction_usecase.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go
+> git cat-file -s 24ce1fbd4fe6000f122e90d2b143e557d650a2be
+> git show :server/handlers/transaction_handler.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/server/handlers/transaction_handler.go
+> git cat-file -s 79bd77e3f3d66b5df43c26a07f488cc68c1cfb94
+> git show :server/bootstrap/routes/transaction_route.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/server/bootstrap/routes/transaction_route.go
+> git cat-file -s 6a9d5ca9d5b209648eee26ec3a587f34105c1c53
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse fiturbaru
+> git rev-parse --symbolic-full-name fiturbaru@{u}
+fatal: no upstream configured for branch 'fiturbaru'
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse fiturbaru
+> git rev-parse --symbolic-full-name fiturbaru@{u}
+fatal: no upstream configured for branch 'fiturbaru'
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git show :db/repositories/actions/transactions_repository.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/db/repositories/actions/transactions_repository.go
+> git cat-file -s 7a2dac915ada865086d59a15a33f093c4df41c07
+> git show :usecase/viewmodel/transaction_vm.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/usecase/viewmodel/transaction_vm.go
+> git cat-file -s b95047d72708a7ac2cf71551ed544fb282f01ce0
+> git show :usecase/transaction_usecase.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go
+> git cat-file -s 24ce1fbd4fe6000f122e90d2b143e557d650a2be
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse fiturbaru
+> git rev-parse --symbolic-full-name fiturbaru@{u}
+fatal: no upstream configured for branch 'fiturbaru'
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse fiturbaru
+> git rev-parse --symbolic-full-name fiturbaru@{u}
+fatal: no upstream configured for branch 'fiturbaru'
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git show :db/repositories/actions/transactions_repository.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/db/repositories/actions/transactions_repository.go
+> git cat-file -s 7a2dac915ada865086d59a15a33f093c4df41c07
+> git show :server/bootstrap/routes/transaction_route.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/server/bootstrap/routes/transaction_route.go
+> git cat-file -s 6a9d5ca9d5b209648eee26ec3a587f34105c1c53
+> git show :server/bootstrap/route.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/server/bootstrap/route.go
+> git cat-file -s 53e1fcadc1aba21efbbf7b7b2145c7da1458b541
+> git show :server/bootstrap/routes/transaction_route.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/server/bootstrap/routes/transaction_route.go
+> git cat-file -s 6a9d5ca9d5b209648eee26ec3a587f34105c1c53
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse fiturbaru
+> git rev-parse --symbolic-full-name fiturbaru@{u}
+fatal: no upstream configured for branch 'fiturbaru'
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse fiturbaru
+> git rev-parse --symbolic-full-name fiturbaru@{u}
+fatal: no upstream configured for branch 'fiturbaru'
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse fiturbaru
+> git rev-parse --symbolic-full-name fiturbaru@{u}
+fatal: no upstream configured for branch 'fiturbaru'
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse fiturbaru
+> git rev-parse --symbolic-full-name fiturbaru@{u}
+fatal: no upstream configured for branch 'fiturbaru'
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git show :server/bootstrap/routes/user_customer_route.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/server/bootstrap/routes/user_customer_route.go
+> git cat-file -s 6997a152462e9f99ee92916d1052a90a51157755
+> git show :server/bootstrap/routes/transaction_route.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/server/bootstrap/routes/transaction_route.go
+> git cat-file -s 6a9d5ca9d5b209648eee26ec3a587f34105c1c53
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse fiturbaru
+> git rev-parse --symbolic-full-name fiturbaru@{u}
+fatal: no upstream configured for branch 'fiturbaru'
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git show :server/handlers/transaction_handler.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/server/handlers/transaction_handler.go
+> git cat-file -s 79bd77e3f3d66b5df43c26a07f488cc68c1cfb94
+> git show :server/bootstrap/routes/transaction_route.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/server/bootstrap/routes/transaction_route.go
+> git cat-file -s 6a9d5ca9d5b209648eee26ec3a587f34105c1c53
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse fiturbaru
+> git show :server/handlers/transaction_handler.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/server/handlers/transaction_handler.go
+> git rev-parse --symbolic-full-name fiturbaru@{u}
+> git cat-file -s 79bd77e3f3d66b5df43c26a07f488cc68c1cfb94
+fatal: no upstream configured for branch 'fiturbaru'
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse fiturbaru
+> git rev-parse --symbolic-full-name fiturbaru@{u}
+fatal: no upstream configured for branch 'fiturbaru'
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse fiturbaru
+> git rev-parse --symbolic-full-name fiturbaru@{u}
+fatal: no upstream configured for branch 'fiturbaru'
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse fiturbaru
+> git rev-parse --symbolic-full-name fiturbaru@{u}
+fatal: no upstream configured for branch 'fiturbaru'
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse fiturbaru
+> git rev-parse --symbolic-full-name fiturbaru@{u}
+fatal: no upstream configured for branch 'fiturbaru'
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse fiturbaru
+> git rev-parse --symbolic-full-name fiturbaru@{u}
+fatal: no upstream configured for branch 'fiturbaru'
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse fiturbaru
+> git rev-parse --symbolic-full-name fiturbaru@{u}
+fatal: no upstream configured for branch 'fiturbaru'
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git show :usecase/transaction_usecase.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go
+> git cat-file -s 24ce1fbd4fe6000f122e90d2b143e557d650a2be
+> git show :server/handlers/transaction_handler.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/server/handlers/transaction_handler.go
+> git cat-file -s 79bd77e3f3d66b5df43c26a07f488cc68c1cfb94
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse fiturbaru
+> git rev-parse --symbolic-full-name fiturbaru@{u}
+fatal: no upstream configured for branch 'fiturbaru'
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse fiturbaru
+> git rev-parse --symbolic-full-name fiturbaru@{u}
+fatal: no upstream configured for branch 'fiturbaru'
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git show :server/bootstrap/routes/transaction_route.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/server/bootstrap/routes/transaction_route.go
+> git cat-file -s 6a9d5ca9d5b209648eee26ec3a587f34105c1c53
+> git show :server/handlers/transaction_handler.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/server/handlers/transaction_handler.go
+> git cat-file -s 79bd77e3f3d66b5df43c26a07f488cc68c1cfb94
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse fiturbaru
+> git rev-parse --symbolic-full-name fiturbaru@{u}
+fatal: no upstream configured for branch 'fiturbaru'
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git show :server/bootstrap/routes/transaction_route.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/server/bootstrap/routes/transaction_route.go
+> git cat-file -s 6a9d5ca9d5b209648eee26ec3a587f34105c1c53
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse fiturbaru
+> git rev-parse --symbolic-full-name fiturbaru@{u}
+fatal: no upstream configured for branch 'fiturbaru'
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git show :server/handlers/transaction_handler.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/server/handlers/transaction_handler.go
+> git cat-file -s 79bd77e3f3d66b5df43c26a07f488cc68c1cfb94
+> git show :server/bootstrap/routes/transaction_route.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/server/bootstrap/routes/transaction_route.go
+> git cat-file -s 6a9d5ca9d5b209648eee26ec3a587f34105c1c53
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse fiturbaru
+> git rev-parse --symbolic-full-name fiturbaru@{u}
+fatal: no upstream configured for branch 'fiturbaru'
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git show :server/handlers/transaction_handler.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/server/handlers/transaction_handler.go
+> git status -z -u
+> git cat-file -s 79bd77e3f3d66b5df43c26a07f488cc68c1cfb94
+> git symbolic-ref --short HEAD
+> git rev-parse fiturbaru
+> git rev-parse --symbolic-full-name fiturbaru@{u}
+fatal: no upstream configured for branch 'fiturbaru'
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git show :usecase/transaction_usecase.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go
+> git cat-file -s 24ce1fbd4fe6000f122e90d2b143e557d650a2be
+> git show :server/handlers/transaction_handler.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/server/handlers/transaction_handler.go
+> git cat-file -s 79bd77e3f3d66b5df43c26a07f488cc68c1cfb94
+> git show :usecase/transaction_usecase.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go
+> git cat-file -s 24ce1fbd4fe6000f122e90d2b143e557d650a2be
+> git show :db/repositories/contracts/itransaction_repository.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/db/repositories/contracts/itransaction_repository.go
+> git cat-file -s 8838b2641536c682e8690c5a8c4ab76f19d7cf6a
+> git show :db/repositories/actions/transactions_repository.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/db/repositories/actions/transactions_repository.go
+> git cat-file -s 7a2dac915ada865086d59a15a33f093c4df41c07
+> git show :db/models/Transactions.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/db/models/Transactions.go
+> git cat-file -s e94c309cffc846d66adb68034f2c4356442e91b5
+> git show :db/repositories/actions/transactions_repository.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/db/repositories/actions/transactions_repository.go
+> git cat-file -s 7a2dac915ada865086d59a15a33f093c4df41c07
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse fiturbaru
+> git rev-parse --symbolic-full-name fiturbaru@{u}
+fatal: no upstream configured for branch 'fiturbaru'
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git show :db/models/Transactions.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/db/models/Transactions.go
+> git cat-file -s e94c309cffc846d66adb68034f2c4356442e91b5
+> git show :db/repositories/actions/transactions_repository.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/db/repositories/actions/transactions_repository.go
+> git cat-file -s 7a2dac915ada865086d59a15a33f093c4df41c07
+> git show :db/repositories/contracts/itransaction_repository.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/db/repositories/contracts/itransaction_repository.go
+> git cat-file -s 8838b2641536c682e8690c5a8c4ab76f19d7cf6a
+> git show :db/repositories/actions/transactions_repository.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/db/repositories/actions/transactions_repository.go
+> git cat-file -s 7a2dac915ada865086d59a15a33f093c4df41c07
+> git show :db/repositories/contracts/itransaction_repository.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/db/repositories/contracts/itransaction_repository.go
+> git cat-file -s 8838b2641536c682e8690c5a8c4ab76f19d7cf6a
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse fiturbaru
+> git rev-parse --symbolic-full-name fiturbaru@{u}
+fatal: no upstream configured for branch 'fiturbaru'
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git show :db/repositories/actions/transactions_repository.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/db/repositories/actions/transactions_repository.go
+> git cat-file -s 7a2dac915ada865086d59a15a33f093c4df41c07
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse fiturbaru
+> git rev-parse --symbolic-full-name fiturbaru@{u}
+fatal: no upstream configured for branch 'fiturbaru'
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git show :db/repositories/contracts/itransaction_repository.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/db/repositories/contracts/itransaction_repository.go
+> git cat-file -s 8838b2641536c682e8690c5a8c4ab76f19d7cf6a
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse fiturbaru
+> git rev-parse --symbolic-full-name fiturbaru@{u}
+fatal: no upstream configured for branch 'fiturbaru'
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git show :db/repositories/actions/transactions_repository.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/db/repositories/actions/transactions_repository.go
+> git cat-file -s 7a2dac915ada865086d59a15a33f093c4df41c07
+> git show :server/bootstrap/routes/transaction_route.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/server/bootstrap/routes/transaction_route.go
+> git cat-file -s 6a9d5ca9d5b209648eee26ec3a587f34105c1c53
+> git show :server/handlers/transaction_handler.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/server/handlers/transaction_handler.go
+> git cat-file -s 79bd77e3f3d66b5df43c26a07f488cc68c1cfb94
+> git show :server/bootstrap/routes/transaction_route.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/server/bootstrap/routes/transaction_route.go
+> git cat-file -s 6a9d5ca9d5b209648eee26ec3a587f34105c1c53
+> git show :server/handlers/transaction_handler.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/server/handlers/transaction_handler.go
+> git cat-file -s 79bd77e3f3d66b5df43c26a07f488cc68c1cfb94
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse fiturbaru
+> git rev-parse --symbolic-full-name fiturbaru@{u}
+fatal: no upstream configured for branch 'fiturbaru'
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git show :server/bootstrap/routes/transaction_route.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/server/bootstrap/routes/transaction_route.go
+> git cat-file -s 6a9d5ca9d5b209648eee26ec3a587f34105c1c53
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse fiturbaru
+> git rev-parse --symbolic-full-name fiturbaru@{u}
+fatal: no upstream configured for branch 'fiturbaru'
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git show :server/handlers/transaction_handler.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/server/handlers/transaction_handler.go
+> git cat-file -s 79bd77e3f3d66b5df43c26a07f488cc68c1cfb94
+> git show :server/bootstrap/routes/transaction_route.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/server/bootstrap/routes/transaction_route.go
+> git cat-file -s 6a9d5ca9d5b209648eee26ec3a587f34105c1c53
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse fiturbaru
+> git rev-parse --symbolic-full-name fiturbaru@{u}
+fatal: no upstream configured for branch 'fiturbaru'
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse fiturbaru
+> git rev-parse --symbolic-full-name fiturbaru@{u}
+fatal: no upstream configured for branch 'fiturbaru'
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse fiturbaru
+> git rev-parse --symbolic-full-name fiturbaru@{u}
+fatal: no upstream configured for branch 'fiturbaru'
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git show :server/handlers/transaction_handler.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/server/handlers/transaction_handler.go
+> git cat-file -s 79bd77e3f3d66b5df43c26a07f488cc68c1cfb94
+> git show :usecase/transaction_usecase.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go
+> git cat-file -s 24ce1fbd4fe6000f122e90d2b143e557d650a2be
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse fiturbaru
+> git rev-parse --symbolic-full-name fiturbaru@{u}
+fatal: no upstream configured for branch 'fiturbaru'
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse fiturbaru
+> git rev-parse --symbolic-full-name fiturbaru@{u}
+fatal: no upstream configured for branch 'fiturbaru'
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git show :server/bootstrap/routes/user_customer_route.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/server/bootstrap/routes/user_customer_route.go
+> git cat-file -s 6997a152462e9f99ee92916d1052a90a51157755
+> git show :server/bootstrap/routes/shop_route.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/server/bootstrap/routes/shop_route.go
+> git cat-file -s 462d1bf145f51728da60b08cf8e6cde5c190b5ae
+> git show :server/bootstrap/routes/transaction_route.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/server/bootstrap/routes/transaction_route.go
+> git cat-file -s 6a9d5ca9d5b209648eee26ec3a587f34105c1c53
+> git show :server/bootstrap/routes/shop_route.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/server/bootstrap/routes/shop_route.go
+> git cat-file -s 462d1bf145f51728da60b08cf8e6cde5c190b5ae
+> git show :server/bootstrap/routes/transaction_route.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/server/bootstrap/routes/transaction_route.go
+> git cat-file -s 6a9d5ca9d5b209648eee26ec3a587f34105c1c53
+> git show :usecase/transaction_usecase.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go
+> git cat-file -s 24ce1fbd4fe6000f122e90d2b143e557d650a2be
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse fiturbaru
+> git rev-parse --symbolic-full-name fiturbaru@{u}
+fatal: no upstream configured for branch 'fiturbaru'
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git show :server/handlers/transaction_handler.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/server/handlers/transaction_handler.go
+> git cat-file -s 79bd77e3f3d66b5df43c26a07f488cc68c1cfb94
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse fiturbaru
+> git rev-parse --symbolic-full-name fiturbaru@{u}
+fatal: no upstream configured for branch 'fiturbaru'
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git show :usecase/transaction_usecase.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go
+> git cat-file -s 24ce1fbd4fe6000f122e90d2b143e557d650a2be
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse fiturbaru
+> git rev-parse --symbolic-full-name fiturbaru@{u}
+fatal: no upstream configured for branch 'fiturbaru'
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse fiturbaru
+> git rev-parse --symbolic-full-name fiturbaru@{u}
+fatal: no upstream configured for branch 'fiturbaru'
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git show :db/repositories/contracts/itransaction_repository.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/db/repositories/contracts/itransaction_repository.go
+> git cat-file -s 8838b2641536c682e8690c5a8c4ab76f19d7cf6a
+> git show :db/repositories/actions/transactions_repository.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/db/repositories/actions/transactions_repository.go
+> git cat-file -s 7a2dac915ada865086d59a15a33f093c4df41c07
+> git show :server/bootstrap/routes/transaction_route.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/server/bootstrap/routes/transaction_route.go
+> git cat-file -s 6a9d5ca9d5b209648eee26ec3a587f34105c1c53
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse fiturbaru
+> git rev-parse --symbolic-full-name fiturbaru@{u}
+fatal: no upstream configured for branch 'fiturbaru'
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template

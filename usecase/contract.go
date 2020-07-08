@@ -135,7 +135,10 @@ func (uc UcContract) StoreToRedistWithExpired(key string, val interface{}, durat
 
 	b, err := json.Marshal(val)
 	if err != nil {
+<<<<<<< HEAD
 		fmt.Println(err.Error())
+=======
+>>>>>>> stage
 		return err
 	}
 

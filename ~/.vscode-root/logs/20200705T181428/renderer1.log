@@ -1,0 +1,596 @@
+[2020-07-05 18:36:59.572] [renderer1] [error] Error running guru: Command failed: /root/go/bin/guru -modified referrers /home/aziz/works/newBukuduit/bukuduit-go/server/handlers/transaction_handler.go:#531
+guru: query object not found during reloading
+
+[2020-07-05 19:04:27.251] [renderer1] [error] name must not be falsy: Error: name must not be falsy
+	at Function.validate (/snap/code/35/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:447:808)
+	at new e (/snap/code/35/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:447:757)
+	at new e (/snap/code/35/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:434:44)
+	at /root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:119:28
+	at Array.forEach (<anonymous>)
+	at convertToCodeSymbols (/root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:97:19)
+	at /root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:31:16
+	at Generator.next (<anonymous>)
+	at fulfilled (/root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:9:58)
+[2020-07-05 19:04:33.161] [renderer1] [error] name must not be falsy: Error: name must not be falsy
+	at Function.validate (/snap/code/35/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:447:808)
+	at new e (/snap/code/35/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:447:757)
+	at new e (/snap/code/35/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:434:44)
+	at /root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:119:28
+	at Array.forEach (<anonymous>)
+	at convertToCodeSymbols (/root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:97:19)
+	at /root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:31:16
+	at Generator.next (<anonymous>)
+	at fulfilled (/root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:9:58)
+	at runMicrotasks (<anonymous>)
+	at processTicksAndRejections (internal/process/task_queues.js:85:5)
+[2020-07-05 19:09:35.860] [renderer1] [error] name must not be falsy: Error: name must not be falsy
+	at Function.validate (/snap/code/35/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:447:808)
+	at new e (/snap/code/35/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:447:757)
+	at new e (/snap/code/35/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:434:44)
+	at /root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:119:28
+	at Array.forEach (<anonymous>)
+	at convertToCodeSymbols (/root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:97:19)
+	at /root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:31:16
+	at Generator.next (<anonymous>)
+	at fulfilled (/root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:9:58)
+[2020-07-05 19:18:31.943] [renderer1] [error] name must not be falsy: Error: name must not be falsy
+	at Function.validate (/snap/code/35/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:447:808)
+	at new e (/snap/code/35/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:447:757)
+	at new e (/snap/code/35/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:434:44)
+	at /root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:119:28
+	at Array.forEach (<anonymous>)
+	at convertToCodeSymbols (/root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:97:19)
+	at /root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:31:16
+	at Generator.next (<anonymous>)
+	at fulfilled (/root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:9:58)
+	at runMicrotasks (<anonymous>)
+	at processTicksAndRejections (internal/process/task_queues.js:85:5)
+[2020-07-05 19:19:02.129] [renderer1] [error] name must not be falsy: Error: name must not be falsy
+	at Function.validate (/snap/code/35/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:447:808)
+	at new e (/snap/code/35/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:447:757)
+	at new e (/snap/code/35/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:434:44)
+	at /root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:119:28
+	at Array.forEach (<anonymous>)
+	at convertToCodeSymbols (/root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:97:19)
+	at /root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:31:16
+	at Generator.next (<anonymous>)
+	at fulfilled (/root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:9:58)
+	at runMicrotasks (<anonymous>)
+	at processTicksAndRejections (internal/process/task_queues.js:85:5)
+[2020-07-05 19:19:03.164] [renderer1] [error] name must not be falsy: Error: name must not be falsy
+	at Function.validate (/snap/code/35/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:447:808)
+	at new e (/snap/code/35/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:447:757)
+	at new e (/snap/code/35/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:434:44)
+	at /root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:119:28
+	at Array.forEach (<anonymous>)
+	at convertToCodeSymbols (/root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:97:19)
+	at /root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:31:16
+	at Generator.next (<anonymous>)
+	at fulfilled (/root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:9:58)
+	at runMicrotasks (<anonymous>)
+	at processTicksAndRejections (internal/process/task_queues.js:85:5)
+[2020-07-05 19:19:04.437] [renderer1] [error] name must not be falsy: Error: name must not be falsy
+	at Function.validate (/snap/code/35/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:447:808)
+	at new e (/snap/code/35/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:447:757)
+	at new e (/snap/code/35/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:434:44)
+	at /root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:119:28
+	at Array.forEach (<anonymous>)
+	at convertToCodeSymbols (/root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:97:19)
+	at /root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:31:16
+	at Generator.next (<anonymous>)
+	at fulfilled (/root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:9:58)
+	at runMicrotasks (<anonymous>)
+	at processTicksAndRejections (internal/process/task_queues.js:85:5)
+[2020-07-05 19:19:09.578] [renderer1] [error] name must not be falsy: Error: name must not be falsy
+	at Function.validate (/snap/code/35/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:447:808)
+	at new e (/snap/code/35/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:447:757)
+	at new e (/snap/code/35/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:434:44)
+	at /root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:119:28
+	at Array.forEach (<anonymous>)
+	at convertToCodeSymbols (/root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:97:19)
+	at /root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:31:16
+	at Generator.next (<anonymous>)
+	at fulfilled (/root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:9:58)
+[2020-07-05 19:19:10.591] [renderer1] [warning] Check the console in dev tools to find errors when formatting.
+[2020-07-05 19:19:13.836] [renderer1] [error] name must not be falsy: Error: name must not be falsy
+	at Function.validate (/snap/code/35/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:447:808)
+	at new e (/snap/code/35/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:447:757)
+	at new e (/snap/code/35/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:434:44)
+	at /root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:119:28
+	at Array.forEach (<anonymous>)
+	at convertToCodeSymbols (/root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:97:19)
+	at /root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:31:16
+	at Generator.next (<anonymous>)
+	at fulfilled (/root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:9:58)
+	at runMicrotasks (<anonymous>)
+	at processTicksAndRejections (internal/process/task_queues.js:85:5)
+[2020-07-05 19:19:14.559] [renderer1] [error] name must not be falsy: Error: name must not be falsy
+	at Function.validate (/snap/code/35/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:447:808)
+	at new e (/snap/code/35/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:447:757)
+	at new e (/snap/code/35/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:434:44)
+	at /root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:119:28
+	at Array.forEach (<anonymous>)
+	at convertToCodeSymbols (/root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:97:19)
+	at /root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:31:16
+	at Generator.next (<anonymous>)
+	at fulfilled (/root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:9:58)
+[2020-07-05 19:19:29.517] [renderer1] [error] name must not be falsy: Error: name must not be falsy
+	at Function.validate (/snap/code/35/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:447:808)
+	at new e (/snap/code/35/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:447:757)
+	at new e (/snap/code/35/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:434:44)
+	at /root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:119:28
+	at Array.forEach (<anonymous>)
+	at convertToCodeSymbols (/root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:97:19)
+	at /root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:31:16
+	at Generator.next (<anonymous>)
+	at fulfilled (/root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:9:58)
+	at runMicrotasks (<anonymous>)
+	at processTicksAndRejections (internal/process/task_queues.js:85:5)
+[2020-07-05 19:20:10.221] [renderer1] [error] name must not be falsy: Error: name must not be falsy
+	at Function.validate (/snap/code/35/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:447:808)
+	at new e (/snap/code/35/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:447:757)
+	at new e (/snap/code/35/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:434:44)
+	at /root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:119:28
+	at Array.forEach (<anonymous>)
+	at convertToCodeSymbols (/root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:97:19)
+	at /root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:31:16
+	at Generator.next (<anonymous>)
+	at fulfilled (/root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:9:58)
+[2020-07-05 19:23:46.242] [renderer1] [error] name must not be falsy: Error: name must not be falsy
+	at Function.validate (/snap/code/35/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:447:808)
+	at new e (/snap/code/35/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:447:757)
+	at new e (/snap/code/35/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:434:44)
+	at /root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:119:28
+	at Array.forEach (<anonymous>)
+	at convertToCodeSymbols (/root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:97:19)
+	at /root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:31:16
+	at Generator.next (<anonymous>)
+	at fulfilled (/root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:9:58)
+	at runMicrotasks (<anonymous>)
+	at processTicksAndRejections (internal/process/task_queues.js:85:5)
+[2020-07-05 19:23:56.945] [renderer1] [error] name must not be falsy: Error: name must not be falsy
+	at Function.validate (/snap/code/35/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:447:808)
+	at new e (/snap/code/35/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:447:757)
+	at new e (/snap/code/35/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:434:44)
+	at /root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:119:28
+	at Array.forEach (<anonymous>)
+	at convertToCodeSymbols (/root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:97:19)
+	at /root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:31:16
+	at Generator.next (<anonymous>)
+	at fulfilled (/root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:9:58)
+	at runMicrotasks (<anonymous>)
+	at processTicksAndRejections (internal/process/task_queues.js:85:5)
+[2020-07-05 19:24:07.496] [renderer1] [error] name must not be falsy: Error: name must not be falsy
+	at Function.validate (/snap/code/35/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:447:808)
+	at new e (/snap/code/35/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:447:757)
+	at new e (/snap/code/35/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:434:44)
+	at /root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:119:28
+	at Array.forEach (<anonymous>)
+	at convertToCodeSymbols (/root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:97:19)
+	at /root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:31:16
+	at Generator.next (<anonymous>)
+	at fulfilled (/root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:9:58)
+	at runMicrotasks (<anonymous>)
+	at processTicksAndRejections (internal/process/task_queues.js:85:5)
+[2020-07-05 19:24:08.921] [renderer1] [error] name must not be falsy: Error: name must not be falsy
+	at Function.validate (/snap/code/35/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:447:808)
+	at new e (/snap/code/35/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:447:757)
+	at new e (/snap/code/35/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:434:44)
+	at /root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:119:28
+	at Array.forEach (<anonymous>)
+	at convertToCodeSymbols (/root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:97:19)
+	at /root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:31:16
+	at Generator.next (<anonymous>)
+	at fulfilled (/root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:9:58)
+	at runMicrotasks (<anonymous>)
+	at processTicksAndRejections (internal/process/task_queues.js:85:5)
+[2020-07-05 19:24:11.389] [renderer1] [error] name must not be falsy: Error: name must not be falsy
+	at Function.validate (/snap/code/35/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:447:808)
+	at new e (/snap/code/35/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:447:757)
+	at new e (/snap/code/35/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:434:44)
+	at /root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:119:28
+	at Array.forEach (<anonymous>)
+	at convertToCodeSymbols (/root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:97:19)
+	at /root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:31:16
+	at Generator.next (<anonymous>)
+	at fulfilled (/root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:9:58)
+[2020-07-05 19:24:26.459] [renderer1] [error] name must not be falsy: Error: name must not be falsy
+	at Function.validate (/snap/code/35/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:447:808)
+	at new e (/snap/code/35/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:447:757)
+	at new e (/snap/code/35/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:434:44)
+	at /root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:119:28
+	at Array.forEach (<anonymous>)
+	at convertToCodeSymbols (/root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:97:19)
+	at /root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:31:16
+	at Generator.next (<anonymous>)
+	at fulfilled (/root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:9:58)
+	at runMicrotasks (<anonymous>)
+	at processTicksAndRejections (internal/process/task_queues.js:85:5)
+[2020-07-05 19:24:34.742] [renderer1] [error] name must not be falsy: Error: name must not be falsy
+	at Function.validate (/snap/code/35/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:447:808)
+	at new e (/snap/code/35/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:447:757)
+	at new e (/snap/code/35/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:434:44)
+	at /root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:119:28
+	at Array.forEach (<anonymous>)
+	at convertToCodeSymbols (/root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:97:19)
+	at /root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:31:16
+	at Generator.next (<anonymous>)
+	at fulfilled (/root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:9:58)
+	at runMicrotasks (<anonymous>)
+	at processTicksAndRejections (internal/process/task_queues.js:85:5)
+[2020-07-05 19:24:37.405] [renderer1] [error] name must not be falsy: Error: name must not be falsy
+	at Function.validate (/snap/code/35/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:447:808)
+	at new e (/snap/code/35/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:447:757)
+	at new e (/snap/code/35/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:434:44)
+	at /root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:119:28
+	at Array.forEach (<anonymous>)
+	at convertToCodeSymbols (/root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:97:19)
+	at /root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:31:16
+	at Generator.next (<anonymous>)
+	at fulfilled (/root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:9:58)
+[2020-07-05 19:24:46.304] [renderer1] [error] name must not be falsy: Error: name must not be falsy
+	at Function.validate (/snap/code/35/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:447:808)
+	at new e (/snap/code/35/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:447:757)
+	at new e (/snap/code/35/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:434:44)
+	at /root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:119:28
+	at Array.forEach (<anonymous>)
+	at convertToCodeSymbols (/root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:97:19)
+	at /root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:31:16
+	at Generator.next (<anonymous>)
+	at fulfilled (/root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:9:58)
+	at runMicrotasks (<anonymous>)
+	at processTicksAndRejections (internal/process/task_queues.js:85:5)
+[2020-07-05 19:24:49.275] [renderer1] [error] name must not be falsy: Error: name must not be falsy
+	at Function.validate (/snap/code/35/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:447:808)
+	at new e (/snap/code/35/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:447:757)
+	at new e (/snap/code/35/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:434:44)
+	at /root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:119:28
+	at Array.forEach (<anonymous>)
+	at convertToCodeSymbols (/root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:97:19)
+	at /root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:31:16
+	at Generator.next (<anonymous>)
+	at fulfilled (/root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:9:58)
+	at runMicrotasks (<anonymous>)
+	at processTicksAndRejections (internal/process/task_queues.js:85:5)
+[2020-07-05 19:25:03.288] [renderer1] [error] name must not be falsy: Error: name must not be falsy
+	at Function.validate (/snap/code/35/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:447:808)
+	at new e (/snap/code/35/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:447:757)
+	at new e (/snap/code/35/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:434:44)
+	at /root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:119:28
+	at Array.forEach (<anonymous>)
+	at convertToCodeSymbols (/root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:97:19)
+	at /root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:31:16
+	at Generator.next (<anonymous>)
+	at fulfilled (/root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:9:58)
+	at runMicrotasks (<anonymous>)
+	at processTicksAndRejections (internal/process/task_queues.js:85:5)
+[2020-07-05 19:25:22.434] [renderer1] [error] name must not be falsy: Error: name must not be falsy
+	at Function.validate (/snap/code/35/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:447:808)
+	at new e (/snap/code/35/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:447:757)
+	at new e (/snap/code/35/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:434:44)
+	at /root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:119:28
+	at Array.forEach (<anonymous>)
+	at convertToCodeSymbols (/root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:97:19)
+	at /root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:31:16
+	at Generator.next (<anonymous>)
+	at fulfilled (/root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:9:58)
+	at runMicrotasks (<anonymous>)
+	at processTicksAndRejections (internal/process/task_queues.js:85:5)
+[2020-07-05 19:25:23.532] [renderer1] [error] name must not be falsy: Error: name must not be falsy
+	at Function.validate (/snap/code/35/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:447:808)
+	at new e (/snap/code/35/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:447:757)
+	at new e (/snap/code/35/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:434:44)
+	at /root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:119:28
+	at Array.forEach (<anonymous>)
+	at convertToCodeSymbols (/root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:97:19)
+	at /root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:31:16
+	at Generator.next (<anonymous>)
+	at fulfilled (/root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:9:58)
+	at runMicrotasks (<anonymous>)
+	at processTicksAndRejections (internal/process/task_queues.js:85:5)
+[2020-07-05 19:25:26.525] [renderer1] [error] name must not be falsy: Error: name must not be falsy
+	at Function.validate (/snap/code/35/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:447:808)
+	at new e (/snap/code/35/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:447:757)
+	at new e (/snap/code/35/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:434:44)
+	at /root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:119:28
+	at Array.forEach (<anonymous>)
+	at convertToCodeSymbols (/root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:97:19)
+	at /root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:31:16
+	at Generator.next (<anonymous>)
+	at fulfilled (/root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:9:58)
+	at runMicrotasks (<anonymous>)
+	at processTicksAndRejections (internal/process/task_queues.js:85:5)
+[2020-07-05 19:25:39.470] [renderer1] [error] name must not be falsy: Error: name must not be falsy
+	at Function.validate (/snap/code/35/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:447:808)
+	at new e (/snap/code/35/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:447:757)
+	at new e (/snap/code/35/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:434:44)
+	at /root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:119:28
+	at Array.forEach (<anonymous>)
+	at convertToCodeSymbols (/root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:97:19)
+	at /root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:31:16
+	at Generator.next (<anonymous>)
+	at fulfilled (/root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:9:58)
+	at runMicrotasks (<anonymous>)
+	at processTicksAndRejections (internal/process/task_queues.js:85:5)
+[2020-07-05 19:25:42.544] [renderer1] [error] name must not be falsy: Error: name must not be falsy
+	at Function.validate (/snap/code/35/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:447:808)
+	at new e (/snap/code/35/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:447:757)
+	at new e (/snap/code/35/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:434:44)
+	at /root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:119:28
+	at Array.forEach (<anonymous>)
+	at convertToCodeSymbols (/root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:97:19)
+	at /root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:31:16
+	at Generator.next (<anonymous>)
+	at fulfilled (/root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:9:58)
+	at runMicrotasks (<anonymous>)
+	at processTicksAndRejections (internal/process/task_queues.js:85:5)
+[2020-07-05 19:25:55.353] [renderer1] [error] name must not be falsy: Error: name must not be falsy
+	at Function.validate (/snap/code/35/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:447:808)
+	at new e (/snap/code/35/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:447:757)
+	at new e (/snap/code/35/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:434:44)
+	at /root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:119:28
+	at Array.forEach (<anonymous>)
+	at convertToCodeSymbols (/root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:97:19)
+	at /root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:31:16
+	at Generator.next (<anonymous>)
+	at fulfilled (/root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:9:58)
+	at runMicrotasks (<anonymous>)
+	at processTicksAndRejections (internal/process/task_queues.js:85:5)
+[2020-07-05 19:27:13.818] [renderer1] [error] name must not be falsy: Error: name must not be falsy
+	at Function.validate (/snap/code/35/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:447:808)
+	at new e (/snap/code/35/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:447:757)
+	at new e (/snap/code/35/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:434:44)
+	at /root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:119:28
+	at Array.forEach (<anonymous>)
+	at convertToCodeSymbols (/root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:97:19)
+	at /root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:31:16
+	at Generator.next (<anonymous>)
+	at fulfilled (/root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:9:58)
+	at runMicrotasks (<anonymous>)
+	at processTicksAndRejections (internal/process/task_queues.js:85:5)
+[2020-07-05 19:27:15.847] [renderer1] [error] name must not be falsy: Error: name must not be falsy
+	at Function.validate (/snap/code/35/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:447:808)
+	at new e (/snap/code/35/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:447:757)
+	at new e (/snap/code/35/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:434:44)
+	at /root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:119:28
+	at Array.forEach (<anonymous>)
+	at convertToCodeSymbols (/root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:97:19)
+	at /root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:31:16
+	at Generator.next (<anonymous>)
+	at fulfilled (/root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:9:58)
+	at runMicrotasks (<anonymous>)
+	at processTicksAndRejections (internal/process/task_queues.js:85:5)
+[2020-07-05 19:27:17.491] [renderer1] [error] name must not be falsy: Error: name must not be falsy
+	at Function.validate (/snap/code/35/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:447:808)
+	at new e (/snap/code/35/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:447:757)
+	at new e (/snap/code/35/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:434:44)
+	at /root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:119:28
+	at Array.forEach (<anonymous>)
+	at convertToCodeSymbols (/root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:97:19)
+	at /root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:31:16
+	at Generator.next (<anonymous>)
+	at fulfilled (/root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:9:58)
+	at runMicrotasks (<anonymous>)
+	at processTicksAndRejections (internal/process/task_queues.js:85:5)
+[2020-07-05 19:27:18.994] [renderer1] [error] name must not be falsy: Error: name must not be falsy
+	at Function.validate (/snap/code/35/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:447:808)
+	at new e (/snap/code/35/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:447:757)
+	at new e (/snap/code/35/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:434:44)
+	at /root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:119:28
+	at Array.forEach (<anonymous>)
+	at convertToCodeSymbols (/root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:97:19)
+	at /root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:31:16
+	at Generator.next (<anonymous>)
+	at fulfilled (/root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:9:58)
+	at runMicrotasks (<anonymous>)
+	at processTicksAndRejections (internal/process/task_queues.js:85:5)
+[2020-07-05 19:27:20.621] [renderer1] [error] name must not be falsy: Error: name must not be falsy
+	at Function.validate (/snap/code/35/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:447:808)
+	at new e (/snap/code/35/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:447:757)
+	at new e (/snap/code/35/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:434:44)
+	at /root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:119:28
+	at Array.forEach (<anonymous>)
+	at convertToCodeSymbols (/root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:97:19)
+	at /root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:31:16
+	at Generator.next (<anonymous>)
+	at fulfilled (/root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:9:58)
+	at runMicrotasks (<anonymous>)
+	at processTicksAndRejections (internal/process/task_queues.js:85:5)
+[2020-07-05 19:27:21.833] [renderer1] [error] name must not be falsy: Error: name must not be falsy
+	at Function.validate (/snap/code/35/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:447:808)
+	at new e (/snap/code/35/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:447:757)
+	at new e (/snap/code/35/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:434:44)
+	at /root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:119:28
+	at Array.forEach (<anonymous>)
+	at convertToCodeSymbols (/root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:97:19)
+	at /root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:31:16
+	at Generator.next (<anonymous>)
+	at fulfilled (/root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:9:58)
+	at runMicrotasks (<anonymous>)
+	at processTicksAndRejections (internal/process/task_queues.js:85:5)
+[2020-07-05 19:27:23.560] [renderer1] [error] name must not be falsy: Error: name must not be falsy
+	at Function.validate (/snap/code/35/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:447:808)
+	at new e (/snap/code/35/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:447:757)
+	at new e (/snap/code/35/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:434:44)
+	at /root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:119:28
+	at Array.forEach (<anonymous>)
+	at convertToCodeSymbols (/root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:97:19)
+	at /root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:31:16
+	at Generator.next (<anonymous>)
+	at fulfilled (/root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:9:58)
+	at runMicrotasks (<anonymous>)
+	at processTicksAndRejections (internal/process/task_queues.js:85:5)
+[2020-07-05 19:28:31.465] [renderer1] [error] name must not be falsy: Error: name must not be falsy
+	at Function.validate (/snap/code/35/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:447:808)
+	at new e (/snap/code/35/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:447:757)
+	at new e (/snap/code/35/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:434:44)
+	at /root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:119:28
+	at Array.forEach (<anonymous>)
+	at convertToCodeSymbols (/root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:97:19)
+	at /root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:31:16
+	at Generator.next (<anonymous>)
+	at fulfilled (/root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:9:58)
+	at runMicrotasks (<anonymous>)
+	at processTicksAndRejections (internal/process/task_queues.js:85:5)
+[2020-07-05 19:28:35.234] [renderer1] [error] name must not be falsy: Error: name must not be falsy
+	at Function.validate (/snap/code/35/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:447:808)
+	at new e (/snap/code/35/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:447:757)
+	at new e (/snap/code/35/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:434:44)
+	at /root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:119:28
+	at Array.forEach (<anonymous>)
+	at convertToCodeSymbols (/root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:97:19)
+	at /root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:31:16
+	at Generator.next (<anonymous>)
+	at fulfilled (/root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:9:58)
+[2020-07-05 19:28:41.258] [renderer1] [error] name must not be falsy: Error: name must not be falsy
+	at Function.validate (/snap/code/35/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:447:808)
+	at new e (/snap/code/35/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:447:757)
+	at new e (/snap/code/35/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:434:44)
+	at /root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:119:28
+	at Array.forEach (<anonymous>)
+	at convertToCodeSymbols (/root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:97:19)
+	at /root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:31:16
+	at Generator.next (<anonymous>)
+	at fulfilled (/root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:9:58)
+	at runMicrotasks (<anonymous>)
+	at processTicksAndRejections (internal/process/task_queues.js:85:5)
+[2020-07-05 19:28:48.544] [renderer1] [error] name must not be falsy: Error: name must not be falsy
+	at Function.validate (/snap/code/35/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:447:808)
+	at new e (/snap/code/35/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:447:757)
+	at new e (/snap/code/35/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:434:44)
+	at /root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:119:28
+	at Array.forEach (<anonymous>)
+	at convertToCodeSymbols (/root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:97:19)
+	at /root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:31:16
+	at Generator.next (<anonymous>)
+	at fulfilled (/root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:9:58)
+	at runMicrotasks (<anonymous>)
+	at processTicksAndRejections (internal/process/task_queues.js:85:5)
+[2020-07-05 19:28:59.076] [renderer1] [error] name must not be falsy: Error: name must not be falsy
+	at Function.validate (/snap/code/35/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:447:808)
+	at new e (/snap/code/35/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:447:757)
+	at new e (/snap/code/35/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:434:44)
+	at /root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:119:28
+	at Array.forEach (<anonymous>)
+	at convertToCodeSymbols (/root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:97:19)
+	at /root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:31:16
+	at Generator.next (<anonymous>)
+	at fulfilled (/root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:9:58)
+	at runMicrotasks (<anonymous>)
+	at processTicksAndRejections (internal/process/task_queues.js:85:5)
+[2020-07-05 19:29:05.241] [renderer1] [error] name must not be falsy: Error: name must not be falsy
+	at Function.validate (/snap/code/35/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:447:808)
+	at new e (/snap/code/35/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:447:757)
+	at new e (/snap/code/35/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:434:44)
+	at /root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:119:28
+	at Array.forEach (<anonymous>)
+	at convertToCodeSymbols (/root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:97:19)
+	at /root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:31:16
+	at Generator.next (<anonymous>)
+	at fulfilled (/root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:9:58)
+	at runMicrotasks (<anonymous>)
+	at processTicksAndRejections (internal/process/task_queues.js:85:5)
+[2020-07-05 19:29:09.454] [renderer1] [error] name must not be falsy: Error: name must not be falsy
+	at Function.validate (/snap/code/35/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:447:808)
+	at new e (/snap/code/35/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:447:757)
+	at new e (/snap/code/35/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:434:44)
+	at /root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:119:28
+	at Array.forEach (<anonymous>)
+	at convertToCodeSymbols (/root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:97:19)
+	at /root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:31:16
+	at Generator.next (<anonymous>)
+	at fulfilled (/root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:9:58)
+	at runMicrotasks (<anonymous>)
+	at processTicksAndRejections (internal/process/task_queues.js:85:5)
+[2020-07-05 19:29:50.866] [renderer1] [error] name must not be falsy: Error: name must not be falsy
+	at Function.validate (/snap/code/35/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:447:808)
+	at new e (/snap/code/35/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:447:757)
+	at new e (/snap/code/35/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:434:44)
+	at /root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:119:28
+	at Array.forEach (<anonymous>)
+	at convertToCodeSymbols (/root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:97:19)
+	at /root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:31:16
+	at Generator.next (<anonymous>)
+	at fulfilled (/root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:9:58)
+	at runMicrotasks (<anonymous>)
+	at processTicksAndRejections (internal/process/task_queues.js:85:5)
+[2020-07-05 19:30:26.346] [renderer1] [error] name must not be falsy: Error: name must not be falsy
+	at Function.validate (/snap/code/35/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:447:808)
+	at new e (/snap/code/35/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:447:757)
+	at new e (/snap/code/35/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:434:44)
+	at /root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:119:28
+	at Array.forEach (<anonymous>)
+	at convertToCodeSymbols (/root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:97:19)
+	at /root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:31:16
+	at Generator.next (<anonymous>)
+	at fulfilled (/root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:9:58)
+	at runMicrotasks (<anonymous>)
+	at processTicksAndRejections (internal/process/task_queues.js:85:5)
+[2020-07-05 19:30:30.099] [renderer1] [error] name must not be falsy: Error: name must not be falsy
+	at Function.validate (/snap/code/35/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:447:808)
+	at new e (/snap/code/35/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:447:757)
+	at new e (/snap/code/35/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:434:44)
+	at /root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:119:28
+	at Array.forEach (<anonymous>)
+	at convertToCodeSymbols (/root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:97:19)
+	at /root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:31:16
+	at Generator.next (<anonymous>)
+	at fulfilled (/root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:9:58)
+[2020-07-05 19:30:40.481] [renderer1] [error] name must not be falsy: Error: name must not be falsy
+	at Function.validate (/snap/code/35/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:447:808)
+	at new e (/snap/code/35/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:447:757)
+	at new e (/snap/code/35/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:434:44)
+	at /root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:119:28
+	at Array.forEach (<anonymous>)
+	at convertToCodeSymbols (/root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:97:19)
+	at /root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:31:16
+	at Generator.next (<anonymous>)
+	at fulfilled (/root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:9:58)
+	at runMicrotasks (<anonymous>)
+	at processTicksAndRejections (internal/process/task_queues.js:85:5)
+[2020-07-05 19:30:42.873] [renderer1] [error] name must not be falsy: Error: name must not be falsy
+	at Function.validate (/snap/code/35/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:447:808)
+	at new e (/snap/code/35/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:447:757)
+	at new e (/snap/code/35/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:434:44)
+	at /root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:119:28
+	at Array.forEach (<anonymous>)
+	at convertToCodeSymbols (/root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:97:19)
+	at /root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:31:16
+	at Generator.next (<anonymous>)
+	at fulfilled (/root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:9:58)
+	at runMicrotasks (<anonymous>)
+	at processTicksAndRejections (internal/process/task_queues.js:85:5)
+[2020-07-05 19:32:40.224] [renderer1] [error] name must not be falsy: Error: name must not be falsy
+	at Function.validate (/snap/code/35/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:447:808)
+	at new e (/snap/code/35/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:447:757)
+	at new e (/snap/code/35/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:434:44)
+	at /root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:119:28
+	at Array.forEach (<anonymous>)
+	at convertToCodeSymbols (/root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:97:19)
+	at /root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:31:16
+	at Generator.next (<anonymous>)
+	at fulfilled (/root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:9:58)
+[2020-07-05 19:50:07.881] [renderer1] [error] name must not be falsy: Error: name must not be falsy
+	at Function.validate (/snap/code/35/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:447:808)
+	at new e (/snap/code/35/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:447:757)
+	at new e (/snap/code/35/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:434:44)
+	at /root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:119:28
+	at Array.forEach (<anonymous>)
+	at convertToCodeSymbols (/root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:97:19)
+	at /root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:31:16
+	at Generator.next (<anonymous>)
+	at fulfilled (/root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:9:58)
+	at runMicrotasks (<anonymous>)
+	at processTicksAndRejections (internal/process/task_queues.js:85:5)
+[2020-07-05 19:52:17.591] [renderer1] [error] name must not be falsy: Error: name must not be falsy
+	at Function.validate (/snap/code/35/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:447:808)
+	at new e (/snap/code/35/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:447:757)
+	at new e (/snap/code/35/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:434:44)
+	at /root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:119:28
+	at Array.forEach (<anonymous>)
+	at convertToCodeSymbols (/root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:97:19)
+	at /root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:31:16
+	at Generator.next (<anonymous>)
+	at fulfilled (/root/.vscode/extensions/golang.go-0.15.0/out/src/goOutline.js:9:58)
+	at runMicrotasks (<anonymous>)
+	at processTicksAndRejections (internal/process/task_queues.js:85:5)

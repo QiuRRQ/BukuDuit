@@ -1,0 +1,22 @@
+Looking for git in: git
+Using git 2.25.1 from git
+> git rev-parse --show-toplevel
+> git rev-parse --git-dir
+Open repository: /home/aziz/works/newBukuduit/bukuduit-go
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse dev
+> git rev-parse --symbolic-full-name dev@{u}
+> git rev-list --left-right dev...refs/remotes/origin/dev
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git show :server/middlewares/verify_jwt.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/server/middlewares/verify_jwt.go
+> git cat-file -s a206e0771b418ae6ef971f98281ee520f3ec41b5
+> git check-ignore -v -z --stdin
+> git check-ignore -v -z --stdin
+> git check-ignore -v -z --stdin
+> git show :usecase/authentication_usecase.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/usecase/authentication_usecase.go
+> git cat-file -s bbad2c6b87fefb74d3b7e8e2d90e3e2b78d1931a
