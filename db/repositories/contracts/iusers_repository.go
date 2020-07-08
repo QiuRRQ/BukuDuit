@@ -6,6 +6,7 @@ import (
 	"database/sql"
 )
 
+//..
 type IUserRepository interface {
 	Browse(search, order, sort string, limit, offset int) (data []models.Users, count int, err error)
 
