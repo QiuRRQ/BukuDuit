@@ -52,6 +52,36 @@ func (handler TransactionHandler) TransactionReport(ctx echo.Context) error {
 	return handler.SendResponse(ctx, res, nil, err)
 }
 
+//export excel untuk utang detail
+func (handler TransactionHandler) DebtDetailExportFile(ctx echo.Context) error {
+	customerID := ctx.QueryParam("customerId")
+
+	uc := usecase.TransactionUseCase{UcContract: handler.UseCaseContract}
+
+	res, err := uc.DebtDetailExportFile(customerID)
+
+	if err != nil {
+		return err
+	}
+
+	return ctx.File(res)
+}
+
+//export excel untuk laporan hutang
+func (handler TransactionHandler) DebtReportExportFile(ctx echo.Context) error {
+	shopID := ctx.QueryParam("shopid")
+
+	uc := usecase.TransactionUseCase{UcContract: handler.UseCaseContract}
+
+	res, err := uc.DebtReportExportFile(shopID)
+
+	if err != nil {
+		return err
+	}
+
+	return ctx.File(res)
+}
+
 func (handler TransactionHandler) BrowseByShop(ctx echo.Context) error {
 	shopID := ctx.QueryParam("shopid")
 	searching := ctx.QueryParam("search")

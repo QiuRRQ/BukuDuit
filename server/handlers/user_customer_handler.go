@@ -15,9 +15,10 @@ type UserCustomerHandler struct {
 
 func (handler UserCustomerHandler) BrowseByShop(ctx echo.Context) error {
 	shopId := ctx.QueryParam("shopId")
+	search := ctx.QueryParam("search")
 
 	uc := usecase.UserCustomerUseCase{UcContract: handler.UseCaseContract}
-	res, err := uc.BrowseByShop(shopId)
+	res, err := uc.BrowseByShop(shopId, search)
 
 	return handler.SendResponse(ctx, res, nil, err)
 }
