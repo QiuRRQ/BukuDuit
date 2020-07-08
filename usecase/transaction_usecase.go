@@ -168,7 +168,7 @@ func (uc TransactionUseCase) TransactionReport(shopID, search, name, amount, tra
 }
 
 //list transaksi groub by week days and months
-func (uc TransactionUseCase) TransactionList(shopID, search, name, amount, transDate, startDate, endDate string) (res viewmodel.TransactionListVm, err error) {
+func (uc TransactionUseCase) TransactionList(shopID, search, name, amount, transDate, timeGroup, startDate, endDate string) (res viewmodel.TransactionListVm, err error) {
 	model := actions.NewTransactionModel(uc.DB)
 	var filter string
 	if startDate != "" && endDate != "" {
@@ -196,6 +196,7 @@ func (uc TransactionUseCase) TransactionList(shopID, search, name, amount, trans
 	if transDate == "DESC" || transDate == "desc" {
 		filter = filter + ` order by t."transaction_date" ` + transDate
 	}
+
 	Transactions, err := model.TransactionBrowsByShop(shopID, filter)
 	if err != nil {
 		fmt.Println(1)
@@ -404,10 +405,10 @@ func (uc TransactionUseCase) TransactionReportExportFile(shopID, startDate, endD
 		} else {
 			xlsx.SetCellValue(sheet1Name, fmt.Sprintf("F%d", i+5), "-")
 			xlsx.SetCellValue(sheet1Name, fmt.Sprintf("G%d", i+5), each.Amount)
-			debtTotal = debtTotal + int(debtTotal)
+			debtTotal = debtTotal + int(each.Amount)
 		}
 
-		if i == len(data.ListData) {
+		if i == len(data.ListData)-1 {
 			xlsx.SetCellValue(sheet1Name, fmt.Sprintf("E%d", i+7), "Total")
 			xlsx.SetCellValue(sheet1Name, fmt.Sprintf("F%d", i+7), creditTotal)
 			xlsx.SetCellValue(sheet1Name, fmt.Sprintf("G%d", i+7), debtTotal)
@@ -481,10 +482,10 @@ func (uc TransactionUseCase) DebtDetailExportFile(customerID string) (res string
 		} else {
 			xlsx.SetCellValue(sheet1Name, fmt.Sprintf("E%d", i+5), "-")
 			xlsx.SetCellValue(sheet1Name, fmt.Sprintf("D%d", i+5), each.Amount)
-			debtTotal = debtTotal + int(debtTotal)
+			debtTotal = debtTotal + int(each.Amount)
 		}
 
-		if i == len(data.ListData) {
+		if i == len(data.ListData)-1 {
 			xlsx.SetCellValue(sheet1Name, fmt.Sprintf("C%d", i+7), "Total")
 			xlsx.SetCellValue(sheet1Name, fmt.Sprintf("E%d", i+7), creditTotal)
 			xlsx.SetCellValue(sheet1Name, fmt.Sprintf("D%d", i+7), debtTotal)
@@ -556,10 +557,11 @@ func (uc TransactionUseCase) DebtReportExportFile(ID string) (res string, err er
 		} else {
 			xlsx.SetCellValue(sheet1Name, fmt.Sprintf("E%d", i+2), "-")
 			xlsx.SetCellValue(sheet1Name, fmt.Sprintf("D%d", i+2), each.Amount)
-			debtTotal = debtTotal + int(debtTotal)
+			debtTotal = debtTotal + int(each.Amount)
 		}
 
-		if i == len(data.ListData) {
+		if i == len(displayData)-1 {
+
 			xlsx.SetCellValue(sheet1Name, fmt.Sprintf("C%d", i+4), "Total")
 			xlsx.SetCellValue(sheet1Name, fmt.Sprintf("E%d", i+4), creditTotal)
 			xlsx.SetCellValue(sheet1Name, fmt.Sprintf("D%d", i+4), debtTotal)
