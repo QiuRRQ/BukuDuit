@@ -9,7 +9,10 @@ import (
 	"database/sql"
 	"errors"
 	"fmt"
+	"log"
 	"time"
+
+	"github.com/360EntSecGroup-Skylar/excelize"
 )
 
 type TransactionUseCase struct {
@@ -307,9 +310,11 @@ func (uc TransactionUseCase) TransactionList(shopID, search, name, amount, trans
 	return res, err
 }
 
+
 func (uc TransactionUseCase) BrowseByBookDebtID(bookDebtID string, status int) (res []viewmodel.TransactionVm, err error) {
 	model := actions.NewTransactionModel(uc.DB)
 	transactions, err := model.BrowseByBookDebtID(bookDebtID, status)
+
 	if err != nil {
 		return res, err
 	}
@@ -337,6 +342,125 @@ func (uc TransactionUseCase) BrowseByBookDebtID(bookDebtID string, status int) (
 	return res, err
 }
 
+//export file untuk list piutang per pelanggan
+func (uc TransactionUseCase) DebtDetailExportFile(customerID string) (res string, err error) {
+	data, err := uc.BrowseByCustomer(customerID)
+	xlsx := excelize.NewFile()
+	sheet1Name := "data Laporan Hutang Per Pelanggan"
+	xlsx.SetSheetName(xlsx.GetSheetName(1), sheet1Name)
+
+	xlsx.SetCellValue(sheet1Name, "A1", "Nama Pelanggan:")
+	xlsx.SetCellValue(sheet1Name, "B1", data.Name)
+
+	xlsx.SetCellValue(sheet1Name, "A4", "No")
+	xlsx.SetCellValue(sheet1Name, "B4", "Tanggal Transaksi")
+	xlsx.SetCellValue(sheet1Name, "C4", "Catatan")
+	xlsx.SetCellValue(sheet1Name, "D4", "Uang Masuk")
+	xlsx.SetCellValue(sheet1Name, "E4", "Uang Keluar")
+
+	err = xlsx.AutoFilter(sheet1Name, "A1", "B1", "")
+	if err != nil {
+		log.Fatal("ERROR", err.Error())
+	}
+
+	var debtTotal int
+	var creditTotal int
+	no := 1
+	for i, each := range data.ListData {
+		for j, row := range each.Details {
+			xlsx.SetCellValue(sheet1Name, fmt.Sprintf("A%d", j+6), no)
+			xlsx.SetCellValue(sheet1Name, fmt.Sprintf("B%d", j+6), each.TransactionDate)
+			xlsx.SetCellValue(sheet1Name, fmt.Sprintf("C%d", j+6), row.Description)
+			if each.Details[i].Type == enums.Credit {
+				xlsx.SetCellValue(sheet1Name, fmt.Sprintf("E%d", j+6), row.Amount)
+				creditTotal = creditTotal + int(row.Amount)
+				xlsx.SetCellValue(sheet1Name, fmt.Sprintf("D%d", j+6), "-")
+			} else {
+				xlsx.SetCellValue(sheet1Name, fmt.Sprintf("E%d", j+6), "-")
+				xlsx.SetCellValue(sheet1Name, fmt.Sprintf("D%d", j+6), row.Amount)
+				debtTotal = debtTotal + int(debtTotal)
+			}
+
+			if i == len(data.ListData)-1 {
+				xlsx.SetCellValue(sheet1Name, fmt.Sprintf("C%d", j+8), "Total")
+				xlsx.SetCellValue(sheet1Name, fmt.Sprintf("E%d", j+8), creditTotal)
+				xlsx.SetCellValue(sheet1Name, fmt.Sprintf("D%d", j+8), debtTotal)
+			}
+			no++
+		}
+	}
+	if debtTotal > creditTotal {
+		xlsx.SetCellValue(sheet1Name, "A2", "Jumlah Utang Piutang:")
+		xlsx.SetCellValue(sheet1Name, "B2", debtTotal-creditTotal)
+	} else {
+		xlsx.SetCellValue(sheet1Name, "A2", "Jumlah Utang Piutang:")
+		xlsx.SetCellValue(sheet1Name, "B2", creditTotal-debtTotal)
+	}
+
+	err = xlsx.SaveAs("./../file/HutangPerPelanggan.xlsx")
+	if err != nil {
+		fmt.Println(err)
+	}
+
+	return "./../file/HutangPerPelanggan.xlsx", err
+}
+
+//export file untuk laporan hutang
+func (uc TransactionUseCase) DebtReportExportFile(ID string) (res string, err error) {
+	data, err := uc.DebtReport(ID, "", "", "", "", "", "")
+	if err != nil {
+		return res, err
+	}
+
+	xlsx := excelize.NewFile()
+	sheet1Name := "data Laporan Hutang"
+	xlsx.SetSheetName(xlsx.GetSheetName(1), sheet1Name)
+
+	xlsx.SetCellValue(sheet1Name, "A1", "Tanggal Penagihan/Pembayaran")
+	xlsx.SetCellValue(sheet1Name, "B1", "Nama Pelanggan")
+	xlsx.SetCellValue(sheet1Name, "C1", "Deskripsi")
+	xlsx.SetCellValue(sheet1Name, "D1", "Uang Masuk")
+	xlsx.SetCellValue(sheet1Name, "E1", "Uang Keluar")
+
+	err = xlsx.AutoFilter(sheet1Name, "A1", "B1", "")
+	if err != nil {
+		log.Fatal("ERROR", err.Error())
+	}
+
+	var debtTotal int
+	var creditTotal int
+	for i, each := range data.ListData {
+		for j, row := range each.Details {
+			xlsx.SetCellValue(sheet1Name, fmt.Sprintf("A%d", j+2), each.TransactionDate)
+			xlsx.SetCellValue(sheet1Name, fmt.Sprintf("B%d", j+2), row.Name)
+			xlsx.SetCellValue(sheet1Name, fmt.Sprintf("C%d", j+2), row.Description)
+			if each.Details[i].Type == enums.Credit {
+				xlsx.SetCellValue(sheet1Name, fmt.Sprintf("E%d", j+2), row.Amount)
+				creditTotal = creditTotal + int(row.Amount)
+				xlsx.SetCellValue(sheet1Name, fmt.Sprintf("D%d", j+2), "-")
+			} else {
+				xlsx.SetCellValue(sheet1Name, fmt.Sprintf("E%d", j+2), "-")
+				xlsx.SetCellValue(sheet1Name, fmt.Sprintf("D%d", j+2), row.Amount)
+				debtTotal = debtTotal + int(debtTotal)
+			}
+
+			if i == len(data.ListData)-1 {
+				xlsx.SetCellValue(sheet1Name, fmt.Sprintf("C%d", j+4), "Total")
+				xlsx.SetCellValue(sheet1Name, fmt.Sprintf("E%d", j+4), creditTotal)
+				xlsx.SetCellValue(sheet1Name, fmt.Sprintf("D%d", j+4), debtTotal)
+			}
+		}
+	}
+
+	err = xlsx.SaveAs("./../file/laporanHutang.xlsx")
+	if err != nil {
+		fmt.Println(err)
+	}
+
+	return "./../file/laporanHutang.xlsx", err
+}
+
+//untuk laporan hutang
 func (uc TransactionUseCase) DebtReport(shopID, search, name, amount, transDate, startDate, endDate string) (res viewmodel.ReportHutangVm, err error) {
 	model := actions.NewTransactionModel(uc.DB)
 	booksDebtUC := BooksDebtUseCase{UcContract: uc.UcContract}
@@ -858,7 +982,7 @@ func (uc TransactionUseCase) EditDebt(input request.TransactionRequest) (err err
 
 		transaction.Commit()
 
-		transaction2,err := uc.DB.Begin()
+		transaction2, err := uc.DB.Begin()
 
 		transactions, err := uc.BrowseByBookDebtID(bookdebt.ID, 0)
 		if err != nil {
