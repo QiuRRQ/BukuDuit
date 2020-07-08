@@ -1,12 +1,13 @@
 package viewmodel
 
+//otp vm
 type OtpVm struct {
 	MobilePhone string `json:"phone"`
 	ExpiredDate string `json:"expired_date"`
 	Otp         string `json:"otp"`
 }
 
-// InvalidOtpCounterVM ....
+// InvalidOtpCounterVM
 type InvalidOtpCounterVM struct {
 	Counter int `json:"counter"`
 }
