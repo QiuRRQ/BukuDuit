@@ -13,7 +13,7 @@ type ITransactionRepository interface {
 
 	TransactionBrowsByShop(shopID, filter string) (data []models.Transactions, err error)
 
-	BrowseByBookDebtID(bookDebtID string, status int)(data []models.Transactions,err error)
+	BrowseByBookDebtID(bookDebtID string, status int) (data []models.Transactions, err error)
 
 	Read(ID string) (data models.Transactions, err error)
 
@@ -34,4 +34,6 @@ type ITransactionRepository interface {
 	DebtReport(customerID, shopID, bookDebtID, filter string) (data []models.Transactions, err error)
 
 	TransactionReport(shopID, filter string) (data []models.Transactions, err error)
+
+	GroubByWeeksMonth(timeBy string) (data []models.TransByMonth, err error)
 }

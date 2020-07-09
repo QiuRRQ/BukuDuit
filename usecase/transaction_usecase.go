@@ -167,7 +167,98 @@ func (uc TransactionUseCase) TransactionReport(shopID, search, name, amount, tra
 	return res, err
 }
 
-//list transaksi groub by week days and months
+//list transaksi by months
+func (uc TransactionUseCase) TransactionListMonth(shopID, searching, name, amount, transDate, timeGroup, startDate, endDate string) (res viewmodel.TransactionListVm, err error) {
+
+	model := actions.NewTransactionModel(uc.DB)
+	transDate = "asc"
+	data, err := uc.TransactionList(shopID, searching, name, amount, transDate, timeGroup, startDate, endDate)
+	if err != nil {
+		return res, err
+	}
+
+	monthly, err := model.GroubByWeeksMonth(enums.Month)
+	if err != nil {
+		return res, err
+	}
+
+	var monthlyIndex = 0
+	var debtDate []viewmodel.DataList
+	var debtDetails []viewmodel.DataDetails
+	var dateCreditAmount int
+	var dateDebetAmount int
+	var prefMonth time.Month
+	if data.ListData != nil {
+		for i := 0; i < len(data.ListData); i++ {
+			t, err := time.Parse("2006-01-02 00:00:00 +0000 UTC", data.ListData[i].TransactionDate)
+			if err != nil {
+				fmt.Println(err)
+			}
+
+			_, currentMonth, _ := t.Date()
+
+			if monthly[monthlyIndex].Monthly == int(currentMonth) {
+				for j := 0; j < len(data.ListData[i].Details); j++ {
+					fmt.Println(data.ListData[i].TransactionDate)
+					prefMonth = currentMonth
+					if data.ListData[i].Details[j].Type == enums.Debet {
+						dateDebetAmount = dateDebetAmount + int(data.ListData[i].Details[j].Amount)
+					} else {
+						dateCreditAmount = dateCreditAmount + int(data.ListData[i].Details[j].Amount)
+					}
+					debtDetails = append(debtDetails, data.ListData[i].Details[j])
+				}
+			} else {
+				monthlyIndex++
+				fmt.Println(currentMonth)
+				debtDate = append(debtDate, viewmodel.DataList{
+					TransactionDate:  prefMonth.String(),
+					DateAmountCredit: dateCreditAmount,
+					DateAmountDebet:  dateDebetAmount,
+					Details:          debtDetails,
+				})
+				debtDetails = nil
+				dateDebetAmount = 0
+				dateCreditAmount = 0
+				if monthly[monthlyIndex].Monthly == int(currentMonth) {
+					for j := 0; j < len(data.ListData[i].Details); j++ {
+						fmt.Println(data.ListData[i].TransactionDate)
+						if data.ListData[i].Details[j].Type == enums.Debet {
+							dateDebetAmount = dateDebetAmount + int(data.ListData[i].Details[j].Amount)
+						} else {
+							dateCreditAmount = dateCreditAmount + int(data.ListData[i].Details[j].Amount)
+						}
+						debtDetails = append(debtDetails, data.ListData[i].Details[j])
+					}
+				}
+
+				if i == len(data.ListData)-1 {
+					prefMonth = currentMonth
+				}
+			}
+		}
+		debtDate = append(debtDate, viewmodel.DataList{
+			TransactionDate:  prefMonth.String(),
+			DateAmountCredit: dateCreditAmount,
+			DateAmountDebet:  dateDebetAmount,
+			Details:          debtDetails,
+		})
+		res = viewmodel.TransactionListVm{
+			ShopID:      data.ShopID,
+			TotalCredit: data.TotalCredit,
+			TotalDebit:  data.TotalDebit,
+			ListData:    debtDate,
+			CreatedAt:   data.CreatedAt,
+			UpdatedAt:   data.UpdatedAt,
+			DeletedAt:   data.DeletedAt,
+		}
+
+	}
+	return res, err
+
+}
+
+//list transaksi
 func (uc TransactionUseCase) TransactionList(shopID, search, name, amount, transDate, timeGroup, startDate, endDate string) (res viewmodel.TransactionListVm, err error) {
 	model := actions.NewTransactionModel(uc.DB)
 	var filter string

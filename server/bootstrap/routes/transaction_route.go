@@ -18,7 +18,8 @@ func (route TransactionRoute) RegisterRoute() {
 	jwtMiddleware := middleware.JwtVerify{UcContract: route.Handler.UseCaseContract}
 
 	route.RouteGroup.Use(jwtMiddleware.JWTWithConfig)
-	route.RouteGroup.GET("/list", handler.TransactionList)
+	route.RouteGroup.GET("/list", handler.TransactionList)              //transaction list by days
+	route.RouteGroup.GET("/list/bymonth", handler.TransactionListMonth) //transaction list by month
 	route.RouteGroup.GET("/transactionreport", handler.TransactionReport)
 	route.RouteGroup.GET("/transaction/file", handler.TransactionReportExportFile)
 	route.RouteGroup.DELETE("/:id", handler.DeleteDebt)

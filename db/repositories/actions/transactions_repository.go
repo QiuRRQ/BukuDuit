@@ -4,6 +4,7 @@ import (
 	"bukuduit-go/db/models"
 	"bukuduit-go/db/repositories/contracts"
 	"bukuduit-go/helpers/datetime"
+	"bukuduit-go/helpers/enums"
 	"bukuduit-go/helpers/str"
 	"bukuduit-go/usecase/viewmodel"
 	"database/sql"
@@ -85,6 +86,39 @@ func (repository TransactionRepository) DebtReport(customerID, shopID, bookDebtI
 			&dataTemp.CreatedAt,
 			&dataTemp.UpdatedAt,
 			&dataTemp.DeletedAt,
+		)
+		if err != nil {
+			return data, err
+		}
+		data = append(data, dataTemp)
+	}
+	return data, err
+}
+
+//ini untuk groub by month di list transaksi
+func (repository TransactionRepository) GroubByWeeksMonth(timeBy string) (data []models.TransByMonth, err error) {
+
+	var statement string
+	if timeBy == enums.Month {
+		statement = `select sum(amount), date_part('month', transaction_date::date) as monthly  from transactions t 
+		GROUP BY monthly;`
+	} else {
+		statement = `select sum(amount), date_part('week', transaction_date::date) as weekly  from transactions t 
+		GROUP BY weekly;`
+	}
+
+	fmt.Println(statement)
+	rows, err := repository.DB.Query(statement)
+	if err != nil {
+		return data, err
+	}
+
+	for rows.Next() {
+		dataTemp := models.TransByMonth{}
+
+		err = rows.Scan(
+			&dataTemp.Sum,
+			&dataTemp.Monthly,
 		)
 		if err != nil {
 			return data, err
