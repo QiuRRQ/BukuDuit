@@ -7,6 +7,7 @@ import (
 type Transactions struct {
 	ID              string         `db:"id"`
 	ReferenceID     string         `db:"reference_id"`
+	Weekly          sql.NullString `db:"weekly"`
 	CategoryID      sql.NullString `db:"category_id"`
 	IDShop          string         `db:"shop_id"`
 	Name            sql.NullString `db:"full_name"`

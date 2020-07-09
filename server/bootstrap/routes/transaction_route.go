@@ -20,6 +20,7 @@ func (route TransactionRoute) RegisterRoute() {
 	route.RouteGroup.Use(jwtMiddleware.JWTWithConfig)
 	route.RouteGroup.GET("/list", handler.TransactionList)              //transaction list by days
 	route.RouteGroup.GET("/list/bymonth", handler.TransactionListMonth) //transaction list by month
+	route.RouteGroup.GET("/list/byweek", handler.TransactionListWeeks)  //transaction list by weeks
 	route.RouteGroup.GET("/transactionreport", handler.TransactionReport)
 	route.RouteGroup.GET("/transaction/file", handler.TransactionReportExportFile)
 	route.RouteGroup.DELETE("/:id", handler.DeleteDebt)
