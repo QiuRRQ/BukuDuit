@@ -151,7 +151,6 @@ func (repository TransactionRepository) TransactionBrowsByShop(shopID, filter st
 	on t."customer_id" = uc."id" 
 	where t."shop_id" = '` + shopID + `' and t."deleted_at" is null ` + filter
 
-	fmt.Println(statement)
 	rows, err := repository.DB.Query(statement)
 	if err != nil {
 		return data, err
@@ -450,5 +449,51 @@ func (repository TransactionRepository) CountBy(column, value string) (res int, 
 		return res, err
 	}
 
+	return res, err
+}
+
+func (repository TransactionRepository) FirstTransactionDate(shopId, filter string) (res string, err error) {
+	statement := `select transaction_date from "transactions" where shop_id = $1 and "deleted_at" is null `+ filter +` order by "transaction_date" asc limit 1`
+	err = repository.DB.QueryRow(statement, shopId).Scan(&res)
+	if err != nil {
+		return res, err
+	}
+
+	return res, err
+}
+
+func (repository TransactionRepository) LastTransactionDate(shopId, filter string) (res string, err error) {
+	statement := `select transaction_date from "transactions" where shop_id = $1 and "deleted_at" is null `+ filter +` order by "transaction_date" desc limit 1`
+	err = repository.DB.QueryRow(statement, shopId).Scan(&res)
+	if err != nil {
+		return res, err
+	}
+
+	return res, err
+}
+
+func (repository TransactionRepository) MakeWeeklySeries(startDate, endDate string) (res []models.Weekly, err error) {
+	statement := `select
+					greatest(date_trunc('week', dates.d), date_trunc('month',dates.d)) as start
+				from generate_series($1::date, $2, '1 day') as dates(d)
+				group by 1
+				order by 1 desc`
+	
+	rows, err := repository.DB.Query(statement, startDate, endDate)
+	if err != nil {
+		return res, err
+	}
+	for rows.Next() {
+		dataTemp := models.Weekly{}
+		
+		err = rows.Scan(
+			&dataTemp.Start,
+		)
+		if err != nil {
+			return res, err
+		}
+		
+		res = append(res, dataTemp)
+	}
 	return res, err
 }

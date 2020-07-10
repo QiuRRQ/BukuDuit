@@ -24,3 +24,10 @@ type Transactions struct {
 	DeletedAt       sql.NullString `db:"deleted_at"`
 	Status          bool           `db:"status"`
 }
+
+type Weekly struct {
+	Start			string			`db:"start"`
+	End				sql.NullString	`db:"end"`
+	Debit			sql.NullInt32	`db:"debit"`
+	Credit			sql.NullInt32	`db:"credit"`
+}

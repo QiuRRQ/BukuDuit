@@ -10,6 +10,14 @@ type TransactionListVm struct {
 	DeletedAt   string     `json:"deleted_at"`
 }
 
+type WeeklyListVM struct {
+	Start			string			`json:"start"`
+	End				string			`json:"end"`
+	Debit			int				`json:"debit"`
+	Credit			int				`json:"credit"`
+	Details			[]DataDetails 	`json:"details"`
+}
+
 type DataList struct {
 	TransactionDate  string        `json:"transaction_date"`
 	DateAmountCredit int           `json:"date_credit_amount"`
