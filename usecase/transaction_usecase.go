@@ -10,7 +10,6 @@ import (
 	"errors"
 	"fmt"
 	"log"
-	"strconv"
 	"time"
 
 	"github.com/360EntSecGroup-Skylar/excelize"
@@ -169,129 +168,70 @@ func (uc TransactionUseCase) TransactionReport(shopID, search, name, amount, tra
 }
 
 //list transaksi by week
-func (uc TransactionUseCase) TransactionListByWeeks(shopID, search, name, amount, transDate, timeGroup, startDate, endDate string) (res viewmodel.TransactionListVm, err error) {
+func (uc TransactionUseCase) TransactionListByWeeks(shopID, search, name, amount, transDate, timeGroup, startDate, endDate string) (res []viewmodel.WeeklyListVM, err error) {
 	model := actions.NewTransactionModel(uc.DB)
 
 	var filter string
-	var debtDate []viewmodel.DataList
-	var debtDetails []viewmodel.DataDetails
-	var dateCreditAmount int
-	var dateDebetAmount int
-	var debtTotal int
-	var creditTotal int
-	weekIndex := 0
-	if startDate != "" && endDate != "" {
-		filter = `and (t."transaction_date" BETWEEN '` + startDate + `' and '` + endDate + `')`
-	}
+	
 	if search != "" { //input nama
 		filter = `and uc."full_name" ILIKE '%` + search + `%'` + filter
 	}
-	//sort hanya dipakai sekali
-	if name == "ASC" || name == "asc" {
-		filter = filter + ` order by uc."full_name" ` + name
+
+	// get weeks start & end
+	if startDate == "" {
+		startDate, _ = model.FirstTransactionDate(shopID, filter)
 	}
-	if name == "DESC" || name == "desc" {
-		filter = filter + ` order by uc."full_name" ` + name
-	}
-	if amount == "ASC" || amount == "asc" {
-		filter = filter + ` order by t."amount" ` + amount
-	}
-	if amount == "DESC" || amount == "desc" {
-		filter = filter + ` order by t."amount" ` + amount
-	}
-	if transDate == "ASC" || transDate == "asc" {
-		filter = filter + ` order by t."transaction_date" ` + transDate
-	}
-	if transDate == "DESC" || transDate == "desc" {
-		filter = filter + ` order by t."transaction_date" ` + transDate
-	}
-	if timeGroup == enums.Week {
-		filter = filter + `order by weekly desc`
+	if endDate == "" {
+		endDate, _ = model.LastTransactionDate(shopID, filter)
 	}
 
-	Transactions, err := model.TransactionBrowsByShop(shopID, filter)
-	if err != nil {
-		return res, err
-	}
-	weekly, err := model.GroubByWeeksMonth(enums.Week)
-	if err != nil {
-		return res, err
-	}
+	// make list of weeks as array (start, end, debit, credit)
+	WeeklySeries, err := model.MakeWeeklySeries(startDate, endDate)
+	
+	var WeeklyData []viewmodel.WeeklyListVM
+	// get transactions based on weeks array and store debit, credit & transaction list
+	for indexWeekly, series := range WeeklySeries {
+		t, err := time.Parse(time.RFC3339, series.Start)
+		if err != nil {
+			fmt.Println(err)
+		}
+		currentYear, currentMonth, currentDay := t.Date()
+		
+		startDate := time.Date(currentYear, currentMonth, currentDay, 0, 0, 0, 0, time.UTC)
+		endDate := startDate.AddDate(0, 0, 6)
 
-	if Transactions != nil {
+		filter = `and (t."transaction_date" BETWEEN '` + startDate.String()[0:10] + `' and '` + endDate.String()[0:10] + `')`
+
+		// for each transactions basend on start - end
+		Transactions, err := model.TransactionBrowsByShop(shopID, filter)
+		var WeeklyDetails []viewmodel.DataDetails
 		for i := 0; i < len(Transactions); i++ {
-			weeks, err := strconv.Atoi(Transactions[i].Weekly.String)
-			if err != nil {
-				return res, err
-			}
 			if Transactions[i].Type == enums.Debet {
-				debtTotal = debtTotal + int(Transactions[i].Amount.Int32)
+				WeeklySeries[indexWeekly].Debit.Int32 += Transactions[i].Amount.Int32
 			} else {
-				creditTotal = creditTotal + int(Transactions[i].Amount.Int32)
+				WeeklySeries[indexWeekly].Credit.Int32 += Transactions[i].Amount.Int32
 			}
-			if weekly[weekIndex].Weekly.Int32 == int32(weeks) {
-				if Transactions[i].Type == enums.Debet {
-					dateDebetAmount = dateDebetAmount + int(Transactions[i].Amount.Int32)
-				} else {
-					dateCreditAmount = dateCreditAmount + int(Transactions[i].Amount.Int32)
-				}
-
-				debtDetails = append(debtDetails, viewmodel.DataDetails{
-					ID:          Transactions[i].ID,
-					ReferenceID: Transactions[i].ReferenceID,
-					Name:        Transactions[i].Name.String,
-					Description: Transactions[i].Description.String,
-					Amount:      Transactions[i].Amount.Int32,
-					Type:        Transactions[i].Type,
-				})
-			} else {
-				weekIndex++
-				debtDate = append(debtDate, viewmodel.DataList{
-					TransactionDate:  "minggu - sabtu",
-					DateAmountCredit: dateCreditAmount,
-					DateAmountDebet:  dateDebetAmount,
-					Details:          debtDetails,
-				})
-				debtDetails = nil
-				dateDebetAmount = 0
-				dateCreditAmount = 0
-				if weekly[weekIndex].Weekly.Int32 == int32(weeks) {
-					if Transactions[i].Type == enums.Debet {
-						dateDebetAmount = dateDebetAmount + int(Transactions[i].Amount.Int32)
-					} else {
-						dateCreditAmount = dateCreditAmount + int(Transactions[i].Amount.Int32)
-					}
-
-					debtDetails = append(debtDetails, viewmodel.DataDetails{
-						ID:          Transactions[i].ID,
-						ReferenceID: Transactions[i].ReferenceID,
-						Name:        Transactions[i].Name.String,
-						Description: Transactions[i].Description.String,
-						Amount:      Transactions[i].Amount.Int32,
-						Type:        Transactions[i].Type,
-					})
-				}
-
-			}
+			// Store detail
+			WeeklyDetails = append(WeeklyDetails, viewmodel.DataDetails{
+				ID:          Transactions[i].ID,
+				ReferenceID: Transactions[i].ReferenceID,
+				Name:        Transactions[i].Name.String,
+				Description: Transactions[i].Description.String,
+				Amount:      Transactions[i].Amount.Int32,
+				Type:        Transactions[i].Type,
+			})
 		}
-
-		debtDate = append(debtDate, viewmodel.DataList{
-			TransactionDate:  "minggu - sabtu",
-			DateAmountCredit: dateCreditAmount,
-			DateAmountDebet:  dateDebetAmount,
-			Details:          debtDetails,
-		})
-		res = viewmodel.TransactionListVm{
-			ShopID:      Transactions[0].IDShop,
-			TotalCredit: creditTotal,
-			TotalDebit:  debtTotal,
-			ListData:    debtDate,
-			CreatedAt:   Transactions[0].CreatedAt,
-			UpdatedAt:   Transactions[0].UpdatedAt.String,
-			DeletedAt:   Transactions[0].DeletedAt.String,
+		
+		WeekData := viewmodel.WeeklyListVM{
+			Start:		startDate.String(),
+			End:		endDate.String(),
+			Debit:		int(WeeklySeries[indexWeekly].Debit.Int32),
+			Credit:		int(WeeklySeries[indexWeekly].Credit.Int32),
+			Details:	WeeklyDetails,
 		}
-
+		WeeklyData = append(WeeklyData, WeekData)
 	}
+	res = WeeklyData
 	return res, err
 }
 
@@ -307,7 +247,7 @@ func (uc TransactionUseCase) TransactionListMonth(shopID, searching, name, amoun
 	}
 
 	monthly, err := model.GroubByWeeksMonth(enums.Month)
-	fmt.Println(monthly)
+	
 	if err != nil {
 		return res, err
 	}
@@ -326,10 +266,11 @@ func (uc TransactionUseCase) TransactionListMonth(shopID, searching, name, amoun
 			}
 
 			_, currentMonth, _ := t.Date()
+			fmt.Println(currentMonth)
 
 			if monthly[monthlyIndex].Monthly.Int32 == int32(currentMonth) {
 				for j := 0; j < len(data.ListData[i].Details); j++ {
-					fmt.Println(data.ListData[i].TransactionDate)
+					
 					prefMonth = currentMonth
 					if data.ListData[i].Details[j].Type == enums.Debet {
 						dateDebetAmount = dateDebetAmount + int(data.ListData[i].Details[j].Amount)
@@ -340,7 +281,6 @@ func (uc TransactionUseCase) TransactionListMonth(shopID, searching, name, amoun
 				}
 			} else {
 				monthlyIndex++
-				fmt.Println(currentMonth)
 				debtDate = append(debtDate, viewmodel.DataList{
 					TransactionDate:  prefMonth.String(),
 					DateAmountCredit: dateCreditAmount,
@@ -352,7 +292,7 @@ func (uc TransactionUseCase) TransactionListMonth(shopID, searching, name, amoun
 				dateCreditAmount = 0
 				if monthly[monthlyIndex].Monthly.Int32 == int32(currentMonth) {
 					for j := 0; j < len(data.ListData[i].Details); j++ {
-						fmt.Println(data.ListData[i].TransactionDate)
+						
 						if data.ListData[i].Details[j].Type == enums.Debet {
 							dateDebetAmount = dateDebetAmount + int(data.ListData[i].Details[j].Amount)
 						} else {
@@ -362,9 +302,7 @@ func (uc TransactionUseCase) TransactionListMonth(shopID, searching, name, amoun
 					}
 				}
 
-				if i == len(data.ListData)-1 {
-					prefMonth = currentMonth
-				}
+				prefMonth = currentMonth
 			}
 		}
 		debtDate = append(debtDate, viewmodel.DataList{

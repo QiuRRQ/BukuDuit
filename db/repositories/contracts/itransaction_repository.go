@@ -36,4 +36,10 @@ type ITransactionRepository interface {
 	TransactionReport(shopID, filter string) (data []models.Transactions, err error)
 
 	GroubByWeeksMonth(timeBy string) (data []models.TransByMonth, err error)
+
+	FirstTransactionDate(shopId, filter string) (res string, err error)
+
+	LastTransactionDate(shopId, filter string) (res string, err error)
+
+	MakeWeeklySeries(startDate, endDate string) (res []models.Weekly, err error)
 }
