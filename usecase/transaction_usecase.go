@@ -247,7 +247,7 @@ func (uc TransactionUseCase) TransactionListMonth(shopID, searching, name, amoun
 	}
 
 	monthly, err := model.GroubByWeeksMonth(enums.Month)
-	fmt.Println(monthly)
+	
 	if err != nil {
 		return res, err
 	}
@@ -266,10 +266,11 @@ func (uc TransactionUseCase) TransactionListMonth(shopID, searching, name, amoun
 			}
 
 			_, currentMonth, _ := t.Date()
+			fmt.Println(currentMonth)
 
 			if monthly[monthlyIndex].Monthly.Int32 == int32(currentMonth) {
 				for j := 0; j < len(data.ListData[i].Details); j++ {
-					fmt.Println(data.ListData[i].TransactionDate)
+					
 					prefMonth = currentMonth
 					if data.ListData[i].Details[j].Type == enums.Debet {
 						dateDebetAmount = dateDebetAmount + int(data.ListData[i].Details[j].Amount)
@@ -280,7 +281,6 @@ func (uc TransactionUseCase) TransactionListMonth(shopID, searching, name, amoun
 				}
 			} else {
 				monthlyIndex++
-				fmt.Println(currentMonth)
 				debtDate = append(debtDate, viewmodel.DataList{
 					TransactionDate:  prefMonth.String(),
 					DateAmountCredit: dateCreditAmount,
@@ -292,7 +292,7 @@ func (uc TransactionUseCase) TransactionListMonth(shopID, searching, name, amoun
 				dateCreditAmount = 0
 				if monthly[monthlyIndex].Monthly.Int32 == int32(currentMonth) {
 					for j := 0; j < len(data.ListData[i].Details); j++ {
-						fmt.Println(data.ListData[i].TransactionDate)
+						
 						if data.ListData[i].Details[j].Type == enums.Debet {
 							dateDebetAmount = dateDebetAmount + int(data.ListData[i].Details[j].Amount)
 						} else {
@@ -302,9 +302,7 @@ func (uc TransactionUseCase) TransactionListMonth(shopID, searching, name, amoun
 					}
 				}
 
-				if i == len(data.ListData)-1 {
-					prefMonth = currentMonth
-				}
+				prefMonth = currentMonth
 			}
 		}
 		debtDate = append(debtDate, viewmodel.DataList{
