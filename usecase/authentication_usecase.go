@@ -131,16 +131,16 @@ func (uc AuthenticationUseCase) Login(mobilePhone, PIN string) (res viewmodel.Us
 	return res, err
 }
 
-func (uc AuthenticationUseCase) PhoneCheck(mobilePhone string) (err error) {
+func (uc AuthenticationUseCase) PhoneCheck(mobilePhone string) (res string, err error) {
 	userUc := UserUseCase{UcContract: uc.UcContract}
 	isExist, err := userUc.IsMobilePhoneExist(mobilePhone)
 	if err != nil {
-		return err
+		return res, err
 	}
-
 	if isExist {
-		return errors.New(messages.PhoneAlreadyExist)
+		res := "phone exist"
+		return res, errors.New(messages.PhoneAlreadyExist)
 	}
 
-	return err
+	return res, err
 }

@@ -4,6 +4,7 @@ import (
 	"bukuduit-go/helpers/messages"
 	request "bukuduit-go/server/requests"
 	"bukuduit-go/usecase"
+	"errors"
 	"net/http"
 
 	"github.com/go-playground/validator/v10"
@@ -83,10 +84,10 @@ func (handler AuthenticationHandler) PhoneCheck(ctx echo.Context) error {
 
 	uc := usecase.AuthenticationUseCase{UcContract: handler.UseCaseContract}
 
-	err := uc.PhoneCheck(input.MobilePhone)
+	_, err := uc.PhoneCheck(input.MobilePhone)
 	if err != nil {
-		return handler.SendResponse(ctx, nil, nil, err)
+		return handler.SendResponse(ctx, nil, nil, nil)
 	}
 
-	return handler.SendResponse(ctx, nil, nil, nil)
+	return handler.SendResponse(ctx, nil, nil, errors.New(messages.CredentialDoNotMatch))
 }
