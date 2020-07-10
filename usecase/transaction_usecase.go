@@ -566,9 +566,9 @@ func (uc TransactionUseCase) TransactionReportExportFile(shopID, searching, name
 		}
 
 		if i == len(data.ListData)-1 {
-			xlsx.SetCellValue(sheet1Name, fmt.Sprintf("E%d", i+7), "Total")
-			xlsx.SetCellValue(sheet1Name, fmt.Sprintf("F%d", i+7), creditTotal)
-			xlsx.SetCellValue(sheet1Name, fmt.Sprintf("G%d", i+7), debtTotal)
+			xlsx.SetCellValue(sheet1Name, fmt.Sprintf("E%d", i+10), "Total")
+			xlsx.SetCellValue(sheet1Name, fmt.Sprintf("F%d", i+10), creditTotal)
+			xlsx.SetCellValue(sheet1Name, fmt.Sprintf("G%d", i+10), debtTotal)
 		}
 		no++
 	}
