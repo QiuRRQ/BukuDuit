@@ -168,7 +168,7 @@ func (uc TransactionUseCase) TransactionReport(shopID, search, name, amount, tra
 }
 
 //list transaksi by week
-func (uc TransactionUseCase) TransactionListByWeeks(shopID, search, name, amount, transDate, timeGroup, startDate, endDate string) (res []viewmodel.WeeklyListVM, err error) {
+func (uc TransactionUseCase) TransactionListByWeeks(shopID, search, name, amount, transDate, timeGroup, startDate, endDate string) (res viewmodel.TransactionListVm, err error) {
 	model := actions.NewTransactionModel(uc.DB)
 
 	var filter string
@@ -187,8 +187,10 @@ func (uc TransactionUseCase) TransactionListByWeeks(shopID, search, name, amount
 
 	// make list of weeks as array (start, end, debit, credit)
 	WeeklySeries, err := model.MakeWeeklySeries(startDate, endDate)
+	var totalDebet int
+	var totalCredit int
 	
-	var WeeklyData []viewmodel.WeeklyListVM
+	var WeeklyData []viewmodel.DataList
 	// get transactions based on weeks array and store debit, credit & transaction list
 	for indexWeekly, series := range WeeklySeries {
 		t, err := time.Parse(time.RFC3339, series.Start)
@@ -205,33 +207,44 @@ func (uc TransactionUseCase) TransactionListByWeeks(shopID, search, name, amount
 		// for each transactions basend on start - end
 		Transactions, err := model.TransactionBrowsByShop(shopID, filter)
 		var WeeklyDetails []viewmodel.DataDetails
-		for i := 0; i < len(Transactions); i++ {
-			if Transactions[i].Type == enums.Debet {
-				WeeklySeries[indexWeekly].Debit.Int32 += Transactions[i].Amount.Int32
-			} else {
-				WeeklySeries[indexWeekly].Credit.Int32 += Transactions[i].Amount.Int32
+		if Transactions == nil {
+			WeeklyDetails = make([]viewmodel.DataDetails, 0)
+		} else {
+			for i := 0; i < len(Transactions); i++ {
+				if Transactions[i].Type == enums.Debet {
+					WeeklySeries[indexWeekly].Debit.Int32 += Transactions[i].Amount.Int32
+					totalDebet += int(Transactions[i].Amount.Int32)
+				} else {
+					WeeklySeries[indexWeekly].Credit.Int32 += Transactions[i].Amount.Int32
+					totalCredit += int(Transactions[i].Amount.Int32)
+				}
+				// Store detail
+				WeeklyDetails = append(WeeklyDetails, viewmodel.DataDetails{
+					ID:          Transactions[i].ID,
+					ReferenceID: Transactions[i].ReferenceID,
+					Name:        Transactions[i].Name.String,
+					Description: Transactions[i].Description.String,
+					Amount:      Transactions[i].Amount.Int32,
+					Type:        Transactions[i].Type,
+				})
 			}
-			// Store detail
-			WeeklyDetails = append(WeeklyDetails, viewmodel.DataDetails{
-				ID:          Transactions[i].ID,
-				ReferenceID: Transactions[i].ReferenceID,
-				Name:        Transactions[i].Name.String,
-				Description: Transactions[i].Description.String,
-				Amount:      Transactions[i].Amount.Int32,
-				Type:        Transactions[i].Type,
-			})
 		}
 		
-		WeekData := viewmodel.WeeklyListVM{
-			Start:		startDate.String(),
-			End:		endDate.String(),
-			Debit:		int(WeeklySeries[indexWeekly].Debit.Int32),
-			Credit:		int(WeeklySeries[indexWeekly].Credit.Int32),
+		WeekData := viewmodel.DataList{
+			TransactionDate:		startDate.String()[0:10] + " - " + endDate.String()[0:10],
+			DateAmountCredit:		int(WeeklySeries[indexWeekly].Debit.Int32),
+			DateAmountDebet:		int(WeeklySeries[indexWeekly].Credit.Int32),
 			Details:	WeeklyDetails,
 		}
 		WeeklyData = append(WeeklyData, WeekData)
 	}
-	res = WeeklyData
+	
+	res = viewmodel.TransactionListVm{
+		ShopID:      shopID,
+		TotalCredit: totalCredit,
+		TotalDebit:  totalDebet,
+		ListData:    WeeklyData,
+	}
 	return res, err
 }
 

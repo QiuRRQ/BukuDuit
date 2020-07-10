@@ -11,10 +11,9 @@ type TransactionListVm struct {
 }
 
 type WeeklyListVM struct {
-	Start			string			`json:"start"`
-	End				string			`json:"end"`
-	Debit			int				`json:"debit"`
-	Credit			int				`json:"credit"`
+	TransactionDate  string        	`json:"transaction_date"`
+	DateAmountCredit int           	`json:"date_credit_amount"`
+	DateAmountDebet  int           	`json:"date_debet_amount"`
 	Details			[]DataDetails 	`json:"details"`
 }
 
