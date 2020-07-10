@@ -69,3 +69,24 @@ func (handler AuthenticationHandler) GenerateTokenByOtp(ctx echo.Context) error 
 
 	return handler.SendResponse(ctx, res, nil, err)
 }
+
+func (handler AuthenticationHandler) PhoneCheck(ctx echo.Context) error {
+	input := new(request.LoginRequest)
+
+	if err := ctx.Bind(input); err != nil {
+		return handler.SendResponseBadRequest(ctx, http.StatusBadRequest, err.Error())
+	}
+
+	if err := handler.Validate.Struct(input); err != nil {
+		return handler.SendResponseErrorValidation(ctx, err.(validator.ValidationErrors))
+	}
+
+	uc := usecase.AuthenticationUseCase{UcContract: handler.UseCaseContract}
+
+	err := uc.PhoneCheck(input.MobilePhone)
+	if err != nil {
+		return handler.SendResponse(ctx, nil, nil, err)
+	}
+
+	return handler.SendResponse(ctx, nil, nil, nil)
+}

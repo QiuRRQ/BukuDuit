@@ -2,6 +2,7 @@ package routes
 
 import (
 	api "bukuduit-go/server/handlers"
+
 	"github.com/labstack/echo"
 )
 
@@ -12,10 +13,11 @@ type AuthenticationRoute struct {
 
 //register route
 func (route AuthenticationRoute) RegisterRoute() {
-	handler := api.AuthenticationHandler{Handler:route.Handler}
+	handler := api.AuthenticationHandler{Handler: route.Handler}
 
-	route.RouteGroup.POST("/register",handler.Register)
-	route.RouteGroup.POST("/login",handler.Login)
-	route.RouteGroup.POST("/by-otp",handler.GenerateTokenByOtp)
+	route.RouteGroup.POST("/register", handler.Register)
+	route.RouteGroup.POST("/login", handler.Login)
+	route.RouteGroup.POST("/phone_number", handler.PhoneCheck)
+	route.RouteGroup.POST("/by-otp", handler.GenerateTokenByOtp)
 
 }

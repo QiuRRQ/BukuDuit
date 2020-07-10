@@ -1,0 +1,318 @@
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/usecase and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/usecase
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go build -o /tmp/vscode-goxvZ2L0/go-code-check .
+
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go vet .
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/usecase and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/usecase
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go vet .
+
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go build -o /tmp/vscode-goxvZ2L0/go-code-check .
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/usecase and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/usecase
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go build -o /tmp/vscode-goxvZ2L0/go-code-check .
+
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go vet .
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/server/handlers
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/server/handlers
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/server/handlers and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/server/handlers
+/home/aziz/works/newBukuduit/bukuduit-go/server/handlers>Finished running tool: /usr/bin/go build -o /tmp/vscode-goxvZ2L0/go-code-check .
+
+/home/aziz/works/newBukuduit/bukuduit-go/server/handlers>Finished running tool: /usr/bin/go vet .
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/server/bootstrap/routes
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/server/bootstrap/routes
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/server/bootstrap/routes and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/server/bootstrap/routes
+/home/aziz/works/newBukuduit/bukuduit-go/server/bootstrap/routes>Finished running tool: /usr/bin/go build -o /tmp/vscode-goxvZ2L0/go-code-check .
+/home/aziz/works/newBukuduit/bukuduit-go/server/bootstrap/routes/authentication_route.go:20: cannot use handler (type handlers.AuthenticationHandler) as type echo.HandlerFunc in argument to route.RouteGroup.POST
+
+/home/aziz/works/newBukuduit/bukuduit-go/server/bootstrap/routes>Finished running tool: /usr/bin/go vet .
+/home/aziz/works/newBukuduit/bukuduit-go/server/bootstrap/routes/authentication_route.go:20: cannot use handler (variable of type handlers.AuthenticationHandler) as echo.HandlerFunc value in argument to route.RouteGroup.POST
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/server/handlers
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/server/handlers
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/server/handlers and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/server/handlers
+/home/aziz/works/newBukuduit/bukuduit-go/server/handlers>Finished running tool: /usr/bin/go build -o /tmp/vscode-goxvZ2L0/go-code-check .
+/home/aziz/works/newBukuduit/bukuduit-go/server/handlers/authentication_handler.go:76: undefined: ctx
+/home/aziz/works/newBukuduit/bukuduit-go/server/handlers/authentication_handler.go:77: undefined: handler
+/home/aziz/works/newBukuduit/bukuduit-go/server/handlers/authentication_handler.go:77: undefined: ctx
+/home/aziz/works/newBukuduit/bukuduit-go/server/handlers/authentication_handler.go:80: undefined: handler
+/home/aziz/works/newBukuduit/bukuduit-go/server/handlers/authentication_handler.go:81: undefined: handler
+/home/aziz/works/newBukuduit/bukuduit-go/server/handlers/authentication_handler.go:81: undefined: ctx
+/home/aziz/works/newBukuduit/bukuduit-go/server/handlers/authentication_handler.go:84: undefined: handler
+/home/aziz/works/newBukuduit/bukuduit-go/server/handlers/authentication_handler.go:85: missing return at end of function
+
+/home/aziz/works/newBukuduit/bukuduit-go/server/handlers>Finished running tool: /usr/bin/go vet .
+/home/aziz/works/newBukuduit/bukuduit-go/server/handlers/authentication_handler.go:76: undeclared name: ctx
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/server/handlers
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/server/handlers
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/server/handlers and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/server/handlers
+/home/aziz/works/newBukuduit/bukuduit-go/server/handlers>Finished running tool: /usr/bin/go build -o /tmp/vscode-goxvZ2L0/go-code-check .
+/home/aziz/works/newBukuduit/bukuduit-go/server/handlers/authentication_handler.go:76: undefined: ctx
+/home/aziz/works/newBukuduit/bukuduit-go/server/handlers/authentication_handler.go:77: undefined: handler
+/home/aziz/works/newBukuduit/bukuduit-go/server/handlers/authentication_handler.go:77: undefined: ctx
+/home/aziz/works/newBukuduit/bukuduit-go/server/handlers/authentication_handler.go:80: undefined: handler
+/home/aziz/works/newBukuduit/bukuduit-go/server/handlers/authentication_handler.go:81: undefined: handler
+/home/aziz/works/newBukuduit/bukuduit-go/server/handlers/authentication_handler.go:81: undefined: ctx
+/home/aziz/works/newBukuduit/bukuduit-go/server/handlers/authentication_handler.go:84: undefined: handler
+/home/aziz/works/newBukuduit/bukuduit-go/server/handlers/authentication_handler.go:86: undefined: err
+/home/aziz/works/newBukuduit/bukuduit-go/server/handlers/authentication_handler.go:87: undefined: handler
+/home/aziz/works/newBukuduit/bukuduit-go/server/handlers/authentication_handler.go:87: undefined: ctx
+/home/aziz/works/newBukuduit/bukuduit-go/server/handlers/authentication_handler.go:87: too many errors
+
+/home/aziz/works/newBukuduit/bukuduit-go/server/handlers>Finished running tool: /usr/bin/go vet .
+/home/aziz/works/newBukuduit/bukuduit-go/server/handlers/authentication_handler.go:76: undeclared name: ctx
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/usecase and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/usecase
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go build -o /tmp/vscode-goxvZ2L0/go-code-check .
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/authentication_usecase.go:138: too many arguments to return
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/authentication_usecase.go:138: undefined: res
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/authentication_usecase.go:140: missing return at end of function
+
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go vet .
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/authentication_usecase.go:138: undeclared name: res
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/usecase and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/usecase
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go build -o /tmp/vscode-goxvZ2L0/go-code-check .
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/authentication_usecase.go:140: missing return at end of function
+
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go vet .
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/authentication_usecase.go:140: missing return
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/usecase and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/usecase
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go build -o /tmp/vscode-goxvZ2L0/go-code-check .
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/authentication_usecase.go:138: not enough arguments to return
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/authentication_usecase.go:141: missing return at end of function
+
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go vet .
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/authentication_usecase.go:138: wrong number of return values (want 2, got 1)
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/usecase and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/usecase
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go build -o /tmp/vscode-goxvZ2L0/go-code-check .
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/authentication_usecase.go:138: not enough arguments to return
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/authentication_usecase.go:144: missing return at end of function
+
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go vet .
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/authentication_usecase.go:138: wrong number of return values (want 2, got 1)
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/usecase and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/usecase
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go build -o /tmp/vscode-goxvZ2L0/go-code-check .
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/authentication_usecase.go:144: missing return at end of function
+
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go vet .
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/authentication_usecase.go:144: missing return
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/usecase and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/usecase
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go build -o /tmp/vscode-goxvZ2L0/go-code-check .
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/authentication_usecase.go:144: missing return at end of function
+
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go vet .
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/authentication_usecase.go:144: missing return
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/usecase and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/usecase
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go build -o /tmp/vscode-goxvZ2L0/go-code-check .
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/authentication_usecase.go:144: missing return at end of function
+
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go vet .
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/authentication_usecase.go:144: missing return
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/usecase and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/usecase
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go build -o /tmp/vscode-goxvZ2L0/go-code-check .
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/authentication_usecase.go:144: missing return at end of function
+
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go vet .
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/authentication_usecase.go:144: missing return
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/usecase and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/usecase
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go vet .
+
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go build -o /tmp/vscode-goxvZ2L0/go-code-check .
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/usecase and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/usecase
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go vet .
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/authentication_usecase.go:142: expected '==', found '='
+
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go build -o /tmp/vscode-goxvZ2L0/go-code-check .
+/home/aziz/works/newBukuduit/bukuduit-go/usecase/authentication_usecase.go:142: syntax error: unexpected = at end of statement
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/usecase
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/usecase and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/usecase
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go build -o /tmp/vscode-goxvZ2L0/go-code-check .
+
+/home/aziz/works/newBukuduit/bukuduit-go/usecase>Finished running tool: /usr/bin/go vet .
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/server/handlers
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/server/handlers
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/server/handlers and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/server/handlers
+/home/aziz/works/newBukuduit/bukuduit-go/server/handlers>Finished running tool: /usr/bin/go build -o /tmp/vscode-goxvZ2L0/go-code-check .
+/home/aziz/works/newBukuduit/bukuduit-go/server/handlers/authentication_handler.go:76: undefined: ctx
+/home/aziz/works/newBukuduit/bukuduit-go/server/handlers/authentication_handler.go:77: undefined: handler
+/home/aziz/works/newBukuduit/bukuduit-go/server/handlers/authentication_handler.go:77: undefined: ctx
+/home/aziz/works/newBukuduit/bukuduit-go/server/handlers/authentication_handler.go:80: undefined: handler
+/home/aziz/works/newBukuduit/bukuduit-go/server/handlers/authentication_handler.go:81: undefined: handler
+/home/aziz/works/newBukuduit/bukuduit-go/server/handlers/authentication_handler.go:81: undefined: ctx
+/home/aziz/works/newBukuduit/bukuduit-go/server/handlers/authentication_handler.go:84: undefined: handler
+/home/aziz/works/newBukuduit/bukuduit-go/server/handlers/authentication_handler.go:88: undefined: handler
+/home/aziz/works/newBukuduit/bukuduit-go/server/handlers/authentication_handler.go:88: undefined: ctx
+/home/aziz/works/newBukuduit/bukuduit-go/server/handlers/authentication_handler.go:91: undefined: handler
+/home/aziz/works/newBukuduit/bukuduit-go/server/handlers/authentication_handler.go:91: too many errors
+
+/home/aziz/works/newBukuduit/bukuduit-go/server/handlers>Finished running tool: /usr/bin/go vet .
+/home/aziz/works/newBukuduit/bukuduit-go/server/handlers/authentication_handler.go:76: undeclared name: ctx
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/server/handlers
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/server/handlers
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/server/handlers and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/server/handlers
+/home/aziz/works/newBukuduit/bukuduit-go/server/handlers>Finished running tool: /usr/bin/go build -o /tmp/vscode-goxvZ2L0/go-code-check .
+/home/aziz/works/newBukuduit/bukuduit-go/server/handlers/authentication_handler.go:76: undefined: ctx
+/home/aziz/works/newBukuduit/bukuduit-go/server/handlers/authentication_handler.go:77: undefined: ctx
+/home/aziz/works/newBukuduit/bukuduit-go/server/handlers/authentication_handler.go:81: undefined: ctx
+/home/aziz/works/newBukuduit/bukuduit-go/server/handlers/authentication_handler.go:88: undefined: ctx
+/home/aziz/works/newBukuduit/bukuduit-go/server/handlers/authentication_handler.go:91: undefined: ctx
+/home/aziz/works/newBukuduit/bukuduit-go/server/handlers/authentication_handler.go:91: undefined: res
+
+/home/aziz/works/newBukuduit/bukuduit-go/server/handlers>Finished running tool: /usr/bin/go vet .
+/home/aziz/works/newBukuduit/bukuduit-go/server/handlers/authentication_handler.go:76: undeclared name: ctx
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/server/handlers
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/server/handlers
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/server/handlers and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/server/handlers
+/home/aziz/works/newBukuduit/bukuduit-go/server/handlers>Finished running tool: /usr/bin/go build -o /tmp/vscode-goxvZ2L0/go-code-check .
+/home/aziz/works/newBukuduit/bukuduit-go/server/handlers/authentication_handler.go:91: undefined: res
+
+/home/aziz/works/newBukuduit/bukuduit-go/server/handlers>Finished running tool: /usr/bin/go vet .
+/home/aziz/works/newBukuduit/bukuduit-go/server/handlers/authentication_handler.go:91: undeclared name: res
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/server/handlers
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/server/handlers
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/server/handlers and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/server/handlers
+/home/aziz/works/newBukuduit/bukuduit-go/server/handlers>Finished running tool: /usr/bin/go build -o /tmp/vscode-goxvZ2L0/go-code-check .
+/home/aziz/works/newBukuduit/bukuduit-go/server/handlers/authentication_handler.go:91: undefined: res
+
+/home/aziz/works/newBukuduit/bukuduit-go/server/handlers>Finished running tool: /usr/bin/go vet .
+/home/aziz/works/newBukuduit/bukuduit-go/server/handlers/authentication_handler.go:91: undeclared name: res
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/server/handlers
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/server/handlers
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/server/handlers and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/server/handlers
+/home/aziz/works/newBukuduit/bukuduit-go/server/handlers>Finished running tool: /usr/bin/go vet .
+
+/home/aziz/works/newBukuduit/bukuduit-go/server/handlers>Finished running tool: /usr/bin/go build -o /tmp/vscode-goxvZ2L0/go-code-check .
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/server/bootstrap/routes
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/server/bootstrap/routes
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/server/bootstrap/routes and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/server/bootstrap/routes
+/home/aziz/works/newBukuduit/bukuduit-go/server/bootstrap/routes>Finished running tool: /usr/bin/go build -o /tmp/vscode-goxvZ2L0/go-code-check .
+
+/home/aziz/works/newBukuduit/bukuduit-go/server/bootstrap/routes>Finished running tool: /usr/bin/go vet .
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/server/handlers
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/server/handlers
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/server/handlers and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/server/handlers
+/home/aziz/works/newBukuduit/bukuduit-go/server/handlers>Finished running tool: /usr/bin/go build -o /tmp/vscode-goxvZ2L0/go-code-check .
+/home/aziz/works/newBukuduit/bukuduit-go/server/handlers/authentication_handler.go:88: not enough arguments in call to handler.Handler.SendResponse
+
+/home/aziz/works/newBukuduit/bukuduit-go/server/handlers>Finished running tool: /usr/bin/go vet .
+/home/aziz/works/newBukuduit/bukuduit-go/server/handlers/authentication_handler.go:88: too few arguments in call to handler.SendResponse
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/server/handlers
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/server/handlers
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/server/handlers and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/server/handlers
+/home/aziz/works/newBukuduit/bukuduit-go/server/handlers>Finished running tool: /usr/bin/go vet .
+
+/home/aziz/works/newBukuduit/bukuduit-go/server/handlers>Finished running tool: /usr/bin/go build -o /tmp/vscode-goxvZ2L0/go-code-check .
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/server/handlers
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/server/handlers
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/server/handlers and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/server/handlers
+/home/aziz/works/newBukuduit/bukuduit-go/server/handlers>Finished running tool: /usr/bin/go vet .
+
+/home/aziz/works/newBukuduit/bukuduit-go/server/handlers>Finished running tool: /usr/bin/go build -o /tmp/vscode-goxvZ2L0/go-code-check .
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/server/handlers
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/server/handlers
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/server/handlers and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/server/handlers
+/home/aziz/works/newBukuduit/bukuduit-go/server/handlers>Finished running tool: /usr/bin/go vet .
+
+/home/aziz/works/newBukuduit/bukuduit-go/server/handlers>Finished running tool: /usr/bin/go build -o /tmp/vscode-goxvZ2L0/go-code-check .
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/server/handlers
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/server/handlers
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/server/handlers and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/server/handlers
+/home/aziz/works/newBukuduit/bukuduit-go/server/handlers>Finished running tool: /usr/bin/go vet .
+
+/home/aziz/works/newBukuduit/bukuduit-go/server/handlers>Finished running tool: /usr/bin/go build -o /tmp/vscode-goxvZ2L0/go-code-check .
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/server/handlers
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/server/handlers
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/server/handlers and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/server/handlers
+/home/aziz/works/newBukuduit/bukuduit-go/server/handlers>Finished running tool: /usr/bin/go build -o /tmp/vscode-goxvZ2L0/go-code-check .
+
+/home/aziz/works/newBukuduit/bukuduit-go/server/handlers>Finished running tool: /usr/bin/go vet .
+
+Starting linting the current package at /home/aziz/works/newBukuduit/bukuduit-go/server/handlers
+Starting building the current package at /home/aziz/works/newBukuduit/bukuduit-go/server/handlers
+Not able to determine import path of current package by using cwd: /home/aziz/works/newBukuduit/bukuduit-go/server/handlers and Go workspace: 
+Starting "go vet" under the folder /home/aziz/works/newBukuduit/bukuduit-go/server/handlers
+/home/aziz/works/newBukuduit/bukuduit-go/server/handlers>Finished running tool: /usr/bin/go build -o /tmp/vscode-goxvZ2L0/go-code-check .
+
+/home/aziz/works/newBukuduit/bukuduit-go/server/handlers>Finished running tool: /usr/bin/go vet .
+

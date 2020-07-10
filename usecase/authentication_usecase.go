@@ -100,7 +100,6 @@ func (uc AuthenticationUseCase) Login(mobilePhone, PIN string) (res viewmodel.Us
 	}
 
 	user, err := userUc.ReadBy("mobile_phone", mobilePhone)
-	fmt.Println(mobilePhone)
 	if err != nil {
 		fmt.Println(err)
 		fmt.Println(mobilePhone)
@@ -130,4 +129,18 @@ func (uc AuthenticationUseCase) Login(mobilePhone, PIN string) (res viewmodel.Us
 	}
 
 	return res, err
+}
+
+func (uc AuthenticationUseCase) PhoneCheck(mobilePhone string) (err error) {
+	userUc := UserUseCase{UcContract: uc.UcContract}
+	isExist, err := userUc.IsMobilePhoneExist(mobilePhone)
+	if err != nil {
+		return err
+	}
+
+	if isExist {
+		return errors.New(messages.PhoneAlreadyExist)
+	}
+
+	return err
 }
