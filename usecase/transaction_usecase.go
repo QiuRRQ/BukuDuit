@@ -235,8 +235,8 @@ func (uc TransactionUseCase) TransactionListByWeeks(shopID, search, name, amount
 		}
 		WeekData := viewmodel.DataList{
 			TransactionDate:		startDate.String()[0:10] + " - " + endDate.String()[0:10],
-			DateAmountCredit:		int(WeeklySeries[indexWeekly].Debit.Int32),
-			DateAmountDebet:		int(WeeklySeries[indexWeekly].Credit.Int32),
+			DateAmountCredit:		int(WeeklySeries[indexWeekly].Credit.Int32),
+			DateAmountDebet:		int(WeeklySeries[indexWeekly].Debit.Int32),
 			Details:	WeeklyDetails,
 		}
 		WeeklyData = append(WeeklyData, WeekData)
