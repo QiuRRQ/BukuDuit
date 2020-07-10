@@ -98,6 +98,7 @@ func (uc TransactionUseCase) TransactionReport(shopID, search, name, amount, tra
 					debtDetails = append(debtDetails, viewmodel.DataDetails{
 						ID:          Transactions[i].ID,
 						ReferenceID: Transactions[i].ReferenceID,
+						TransactionDate: Transactions[i].TransactionDate.String,
 						Name:        Transactions[i].Name.String,
 						Description: Transactions[i].Description.String,
 						Amount:      Transactions[i].Amount.Int32,
@@ -108,6 +109,7 @@ func (uc TransactionUseCase) TransactionReport(shopID, search, name, amount, tra
 					debtDetails = append(debtDetails, viewmodel.DataDetails{
 						ID:          Transactions[i].ID,
 						ReferenceID: Transactions[i].ReferenceID,
+						TransactionDate: Transactions[i].TransactionDate.String,
 						Name:        Transactions[i].Name.String,
 						Description: Transactions[i].Description.String,
 						Amount:      Transactions[i].Amount.Int32,
@@ -129,6 +131,7 @@ func (uc TransactionUseCase) TransactionReport(shopID, search, name, amount, tra
 				debtDetails = append(debtDetails, viewmodel.DataDetails{
 					ID:          Transactions[i].ID,
 					ReferenceID: Transactions[i].ReferenceID,
+					TransactionDate: Transactions[i].TransactionDate.String,
 					Name:        Transactions[i].Name.String,
 					Description: Transactions[i].Description.String,
 					Amount:      Transactions[i].Amount.Int32,
@@ -215,6 +218,7 @@ func (uc TransactionUseCase) TransactionListByWeeks(shopID, search, name, amount
 			WeeklyDetails = append(WeeklyDetails, viewmodel.DataDetails{
 				ID:          Transactions[i].ID,
 				ReferenceID: Transactions[i].ReferenceID,
+				TransactionDate: Transactions[i].TransactionDate.String,
 				Name:        Transactions[i].Name.String,
 				Description: Transactions[i].Description.String,
 				Amount:      Transactions[i].Amount.Int32,
@@ -404,6 +408,7 @@ func (uc TransactionUseCase) TransactionList(shopID, search, name, amount, trans
 					debtDetails = append(debtDetails, viewmodel.DataDetails{
 						ID:          Transactions[i].ID,
 						ReferenceID: Transactions[i].ReferenceID,
+						TransactionDate: Transactions[i].TransactionDate.String,
 						Name:        Transactions[i].Name.String,
 						Description: Transactions[i].Description.String,
 						Amount:      Transactions[i].Amount.Int32,
@@ -414,6 +419,7 @@ func (uc TransactionUseCase) TransactionList(shopID, search, name, amount, trans
 					debtDetails = append(debtDetails, viewmodel.DataDetails{
 						ID:          Transactions[i].ID,
 						ReferenceID: Transactions[i].ReferenceID,
+						TransactionDate: Transactions[i].TransactionDate.String,
 						Name:        Transactions[i].Name.String,
 						Description: Transactions[i].Description.String,
 						Amount:      Transactions[i].Amount.Int32,
@@ -435,6 +441,7 @@ func (uc TransactionUseCase) TransactionList(shopID, search, name, amount, trans
 				debtDetails = append(debtDetails, viewmodel.DataDetails{
 					ID:          Transactions[i].ID,
 					ReferenceID: Transactions[i].ReferenceID,
+					TransactionDate: Transactions[i].TransactionDate.String,
 					Name:        Transactions[i].Name.String,
 					Description: Transactions[i].Description.String,
 					Amount:      Transactions[i].Amount.Int32,
