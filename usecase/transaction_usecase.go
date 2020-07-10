@@ -167,7 +167,166 @@ func (uc TransactionUseCase) TransactionReport(shopID, search, name, amount, tra
 	return res, err
 }
 
-//list transaksi groub by week days and months
+//list transaksi by week
+func (uc TransactionUseCase) TransactionListByWeeks(shopID, search, name, amount, transDate, timeGroup, startDate, endDate string) (res []viewmodel.WeeklyListVM, err error) {
+	model := actions.NewTransactionModel(uc.DB)
+
+	var filter string
+	
+	if search != "" { //input nama
+		filter = `and uc."full_name" ILIKE '%` + search + `%'` + filter
+	}
+
+	// get weeks start & end
+	if startDate == "" {
+		startDate, _ = model.FirstTransactionDate(shopID, filter)
+	}
+	if endDate == "" {
+		endDate, _ = model.LastTransactionDate(shopID, filter)
+	}
+
+	// make list of weeks as array (start, end, debit, credit)
+	WeeklySeries, err := model.MakeWeeklySeries(startDate, endDate)
+	
+	var WeeklyData []viewmodel.WeeklyListVM
+	// get transactions based on weeks array and store debit, credit & transaction list
+	for indexWeekly, series := range WeeklySeries {
+		t, err := time.Parse(time.RFC3339, series.Start)
+		if err != nil {
+			fmt.Println(err)
+		}
+		currentYear, currentMonth, currentDay := t.Date()
+		
+		startDate := time.Date(currentYear, currentMonth, currentDay, 0, 0, 0, 0, time.UTC)
+		endDate := startDate.AddDate(0, 0, 6)
+
+		filter = `and (t."transaction_date" BETWEEN '` + startDate.String()[0:10] + `' and '` + endDate.String()[0:10] + `')`
+
+		// for each transactions basend on start - end
+		Transactions, err := model.TransactionBrowsByShop(shopID, filter)
+		var WeeklyDetails []viewmodel.DataDetails
+		for i := 0; i < len(Transactions); i++ {
+			if Transactions[i].Type == enums.Debet {
+				WeeklySeries[indexWeekly].Debit.Int32 += Transactions[i].Amount.Int32
+			} else {
+				WeeklySeries[indexWeekly].Credit.Int32 += Transactions[i].Amount.Int32
+			}
+			// Store detail
+			WeeklyDetails = append(WeeklyDetails, viewmodel.DataDetails{
+				ID:          Transactions[i].ID,
+				ReferenceID: Transactions[i].ReferenceID,
+				Name:        Transactions[i].Name.String,
+				Description: Transactions[i].Description.String,
+				Amount:      Transactions[i].Amount.Int32,
+				Type:        Transactions[i].Type,
+			})
+		}
+		
+		WeekData := viewmodel.WeeklyListVM{
+			Start:		startDate.String(),
+			End:		endDate.String(),
+			Debit:		int(WeeklySeries[indexWeekly].Debit.Int32),
+			Credit:		int(WeeklySeries[indexWeekly].Credit.Int32),
+			Details:	WeeklyDetails,
+		}
+		WeeklyData = append(WeeklyData, WeekData)
+	}
+	res = WeeklyData
+	return res, err
+}
+
+//list transaksi by months
+func (uc TransactionUseCase) TransactionListMonth(shopID, searching, name, amount, transDate, startDate, endDate string) (res viewmodel.TransactionListVm, err error) {
+
+	model := actions.NewTransactionModel(uc.DB)
+	transDate = "asc"
+
+	data, err := uc.TransactionList(shopID, searching, name, amount, transDate, "", startDate, endDate)
+	if err != nil {
+		return res, err
+	}
+
+	monthly, err := model.GroubByWeeksMonth(enums.Month)
+	
+	if err != nil {
+		return res, err
+	}
+
+	var monthlyIndex = 0
+	var debtDate []viewmodel.DataList
+	var debtDetails []viewmodel.DataDetails
+	var dateCreditAmount int
+	var dateDebetAmount int
+	var prefMonth time.Month
+	if data.ListData != nil {
+		for i := 0; i < len(data.ListData); i++ {
+			t, err := time.Parse("2006-01-02 00:00:00 +0000 UTC", data.ListData[i].TransactionDate)
+			if err != nil {
+				fmt.Println(err)
+			}
+
+			_, currentMonth, _ := t.Date()
+			fmt.Println(currentMonth)
+
+			if monthly[monthlyIndex].Monthly.Int32 == int32(currentMonth) {
+				for j := 0; j < len(data.ListData[i].Details); j++ {
+					
+					prefMonth = currentMonth
+					if data.ListData[i].Details[j].Type == enums.Debet {
+						dateDebetAmount = dateDebetAmount + int(data.ListData[i].Details[j].Amount)
+					} else {
+						dateCreditAmount = dateCreditAmount + int(data.ListData[i].Details[j].Amount)
+					}
+					debtDetails = append(debtDetails, data.ListData[i].Details[j])
+				}
+			} else {
+				monthlyIndex++
+				debtDate = append(debtDate, viewmodel.DataList{
+					TransactionDate:  prefMonth.String(),
+					DateAmountCredit: dateCreditAmount,
+					DateAmountDebet:  dateDebetAmount,
+					Details:          debtDetails,
+				})
+				debtDetails = nil
+				dateDebetAmount = 0
+				dateCreditAmount = 0
+				if monthly[monthlyIndex].Monthly.Int32 == int32(currentMonth) {
+					for j := 0; j < len(data.ListData[i].Details); j++ {
+						
+						if data.ListData[i].Details[j].Type == enums.Debet {
+							dateDebetAmount = dateDebetAmount + int(data.ListData[i].Details[j].Amount)
+						} else {
+							dateCreditAmount = dateCreditAmount + int(data.ListData[i].Details[j].Amount)
+						}
+						debtDetails = append(debtDetails, data.ListData[i].Details[j])
+					}
+				}
+
+				prefMonth = currentMonth
+			}
+		}
+		debtDate = append(debtDate, viewmodel.DataList{
+			TransactionDate:  prefMonth.String(),
+			DateAmountCredit: dateCreditAmount,
+			DateAmountDebet:  dateDebetAmount,
+			Details:          debtDetails,
+		})
+		res = viewmodel.TransactionListVm{
+			ShopID:      data.ShopID,
+			TotalCredit: data.TotalCredit,
+			TotalDebit:  data.TotalDebit,
+			ListData:    debtDate,
+			CreatedAt:   data.CreatedAt,
+			UpdatedAt:   data.UpdatedAt,
+			DeletedAt:   data.DeletedAt,
+		}
+
+	}
+	return res, err
+
+}
+
+//list transaksi by days
 func (uc TransactionUseCase) TransactionList(shopID, search, name, amount, transDate, timeGroup, startDate, endDate string) (res viewmodel.TransactionListVm, err error) {
 	model := actions.NewTransactionModel(uc.DB)
 	var filter string
@@ -199,12 +358,10 @@ func (uc TransactionUseCase) TransactionList(shopID, search, name, amount, trans
 
 	Transactions, err := model.TransactionBrowsByShop(shopID, filter)
 	if err != nil {
-		fmt.Println(1)
 		return res, err
 	}
 	resultCount, err := model.CountDistinctBy("shop_id", shopID)
 	if err != nil {
-		fmt.Println(2)
 		return res, err
 	}
 
@@ -409,9 +566,9 @@ func (uc TransactionUseCase) TransactionReportExportFile(shopID, searching, name
 		}
 
 		if i == len(data.ListData)-1 {
-			xlsx.SetCellValue(sheet1Name, fmt.Sprintf("E%d", i+7), "Total")
-			xlsx.SetCellValue(sheet1Name, fmt.Sprintf("F%d", i+7), creditTotal)
-			xlsx.SetCellValue(sheet1Name, fmt.Sprintf("G%d", i+7), debtTotal)
+			xlsx.SetCellValue(sheet1Name, fmt.Sprintf("E%d", i+10), "Total")
+			xlsx.SetCellValue(sheet1Name, fmt.Sprintf("F%d", i+10), creditTotal)
+			xlsx.SetCellValue(sheet1Name, fmt.Sprintf("G%d", i+10), debtTotal)
 		}
 		no++
 	}

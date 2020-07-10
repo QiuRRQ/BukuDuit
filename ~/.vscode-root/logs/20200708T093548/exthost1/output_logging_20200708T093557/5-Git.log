@@ -1693,3 +1693,843 @@ fatal: no upstream configured for branch 'featureExcel'
 > git for-each-ref --format %(refname) %(objectname) --sort -committerdate
 > git remote --verbose
 > git config --get commit.template
+> git status -z -u
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/usecase/shop_usecase.go
+> git cat-file -s 2e816c3fe7d767fb4752adaa9604d638dde0205c
+> git symbolic-ref --short HEAD
+> git rev-parse featureExcel
+> git show :usecase/shop_usecase.go
+> git rev-parse --symbolic-full-name featureExcel@{u}
+> git rev-list --left-right featureExcel...refs/remotes/origin/featureExcel
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse featureExcel
+> git rev-parse --symbolic-full-name featureExcel@{u}
+> git rev-list --left-right featureExcel...refs/remotes/origin/featureExcel
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git show :usecase/transaction_usecase.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go
+> git cat-file -s 484d2eff2e2b3be27b129728c39aede7d3c1c14d
+> git show :db/repositories/contracts/itransaction_repository.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/db/repositories/contracts/itransaction_repository.go
+> git cat-file -s 63fd880418f9871ddd9813fb621a4197dfb5ee00
+> git show :db/repositories/actions/transactions_repository.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/db/repositories/actions/transactions_repository.go
+> git cat-file -s 6988dbe70cd0ecedea1c5469e04acce9c4502155
+> git show :usecase/transaction_usecase.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go
+> git cat-file -s 484d2eff2e2b3be27b129728c39aede7d3c1c14d
+> git show :server/bootstrap/routes/transaction_route.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/server/bootstrap/routes/transaction_route.go
+> git cat-file -s 22da8fbb703ad3ca6d2a6f2818b1b5fc0504bdfc
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse featureExcel
+> git rev-parse --symbolic-full-name featureExcel@{u}
+> git rev-list --left-right featureExcel...refs/remotes/origin/featureExcel
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse featureExcel
+> git rev-parse --symbolic-full-name featureExcel@{u}
+> git rev-list --left-right featureExcel...refs/remotes/origin/featureExcel
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git show :server/handlers/transaction_handler.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/server/handlers/transaction_handler.go
+> git cat-file -s 73d4fd2a6f057afe643c3322c46178c203f1e91d
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse featureExcel
+> git rev-parse --symbolic-full-name featureExcel@{u}
+> git rev-list --left-right featureExcel...refs/remotes/origin/featureExcel
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git show :server/bootstrap/routes/transaction_route.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/server/bootstrap/routes/transaction_route.go
+> git cat-file -s 22da8fbb703ad3ca6d2a6f2818b1b5fc0504bdfc
+> git show :server/handlers/transaction_handler.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/server/handlers/transaction_handler.go
+> git cat-file -s 73d4fd2a6f057afe643c3322c46178c203f1e91d
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse featureExcel
+> git rev-parse --symbolic-full-name featureExcel@{u}
+> git rev-list --left-right featureExcel...refs/remotes/origin/featureExcel
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse featureExcel
+> git rev-parse --symbolic-full-name featureExcel@{u}
+> git rev-list --left-right featureExcel...refs/remotes/origin/featureExcel
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse featureExcel
+> git rev-parse --symbolic-full-name featureExcel@{u}
+> git rev-list --left-right featureExcel...refs/remotes/origin/featureExcel
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git show :server/bootstrap/routes/transaction_route.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/server/bootstrap/routes/transaction_route.go
+> git cat-file -s 22da8fbb703ad3ca6d2a6f2818b1b5fc0504bdfc
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse featureExcel
+> git rev-parse --symbolic-full-name featureExcel@{u}
+> git rev-list --left-right featureExcel...refs/remotes/origin/featureExcel
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git show :server/handlers/transaction_handler.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/server/handlers/transaction_handler.go
+> git cat-file -s 73d4fd2a6f057afe643c3322c46178c203f1e91d
+> git show :usecase/transaction_usecase.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go
+> git cat-file -s 484d2eff2e2b3be27b129728c39aede7d3c1c14d
+> git show :server/handlers/transaction_handler.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/server/handlers/transaction_handler.go
+> git cat-file -s 73d4fd2a6f057afe643c3322c46178c203f1e91d
+> git show :usecase/transaction_usecase.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go
+> git cat-file -s 484d2eff2e2b3be27b129728c39aede7d3c1c14d
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse featureExcel
+> git rev-parse --symbolic-full-name featureExcel@{u}
+> git rev-list --left-right featureExcel...refs/remotes/origin/featureExcel
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse featureExcel
+> git rev-parse --symbolic-full-name featureExcel@{u}
+> git rev-list --left-right featureExcel...refs/remotes/origin/featureExcel
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git show :server/handlers/transaction_handler.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/server/handlers/transaction_handler.go
+> git cat-file -s 73d4fd2a6f057afe643c3322c46178c203f1e91d
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse featureExcel
+> git rev-parse --symbolic-full-name featureExcel@{u}
+> git rev-list --left-right featureExcel...refs/remotes/origin/featureExcel
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git show :usecase/transaction_usecase.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go
+> git cat-file -s 484d2eff2e2b3be27b129728c39aede7d3c1c14d
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse featureExcel
+> git rev-parse --symbolic-full-name featureExcel@{u}
+> git rev-list --left-right featureExcel...refs/remotes/origin/featureExcel
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse featureExcel
+> git rev-parse --symbolic-full-name featureExcel@{u}
+> git rev-list --left-right featureExcel...refs/remotes/origin/featureExcel
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git show :server/handlers/transaction_handler.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/server/handlers/transaction_handler.go
+> git cat-file -s 73d4fd2a6f057afe643c3322c46178c203f1e91d
+> git show :usecase/transaction_usecase.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go
+> git cat-file -s 484d2eff2e2b3be27b129728c39aede7d3c1c14d
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse featureExcel
+> git rev-parse --symbolic-full-name featureExcel@{u}
+> git rev-list --left-right featureExcel...refs/remotes/origin/featureExcel
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse featureExcel
+> git rev-parse --symbolic-full-name featureExcel@{u}
+> git rev-list --left-right featureExcel...refs/remotes/origin/featureExcel
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse featureExcel
+> git rev-parse --symbolic-full-name featureExcel@{u}
+> git rev-list --left-right featureExcel...refs/remotes/origin/featureExcel
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse featureExcel
+> git rev-parse --symbolic-full-name featureExcel@{u}
+> git rev-list --left-right featureExcel...refs/remotes/origin/featureExcel
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git show :server/handlers/transaction_handler.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/server/handlers/transaction_handler.go
+> git cat-file -s 73d4fd2a6f057afe643c3322c46178c203f1e91d
+> git show :usecase/transaction_usecase.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go
+> git cat-file -s 484d2eff2e2b3be27b129728c39aede7d3c1c14d
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse featureExcel
+> git rev-parse --symbolic-full-name featureExcel@{u}
+> git rev-list --left-right featureExcel...refs/remotes/origin/featureExcel
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git show :db/repositories/contracts/itransaction_repository.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/db/repositories/contracts/itransaction_repository.go
+> git cat-file -s 63fd880418f9871ddd9813fb621a4197dfb5ee00
+> git show :db/models/TransByMonth.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/db/models/TransByMonth.go
+> git check-ignore -v -z --stdin
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse featureExcel
+> git rev-parse --symbolic-full-name featureExcel@{u}
+> git rev-list --left-right featureExcel...refs/remotes/origin/featureExcel
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git show :db/models/Transactions.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/db/models/Transactions.go
+> git cat-file -s 1d2fb0c8ed6c983472e56a52a9c61dd75d29d984
+> git show :db/models/TransByMonth.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/db/models/TransByMonth.go
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse featureExcel
+> git rev-parse --symbolic-full-name featureExcel@{u}
+> git rev-list --left-right featureExcel...refs/remotes/origin/featureExcel
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse featureExcel
+> git rev-parse --symbolic-full-name featureExcel@{u}
+> git rev-list --left-right featureExcel...refs/remotes/origin/featureExcel
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git show :db/models/Transactions.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/db/models/Transactions.go
+> git cat-file -s 1d2fb0c8ed6c983472e56a52a9c61dd75d29d984
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse featureExcel
+> git rev-parse --symbolic-full-name featureExcel@{u}
+> git rev-list --left-right featureExcel...refs/remotes/origin/featureExcel
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git show :db/models/TransByMonth.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/db/models/TransByMonth.go
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse featureExcel
+> git rev-parse --symbolic-full-name featureExcel@{u}
+> git rev-list --left-right featureExcel...refs/remotes/origin/featureExcel
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git show :db/models/Transactions.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/db/models/Transactions.go
+> git cat-file -s 1d2fb0c8ed6c983472e56a52a9c61dd75d29d984
+> git show :db/models/TransByMonth.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/db/models/TransByMonth.go
+> git show :db/repositories/contracts/itransaction_repository.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/db/repositories/contracts/itransaction_repository.go
+> git cat-file -s 63fd880418f9871ddd9813fb621a4197dfb5ee00
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse featureExcel
+> git rev-parse --symbolic-full-name featureExcel@{u}
+> git rev-list --left-right featureExcel...refs/remotes/origin/featureExcel
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git show :usecase/transaction_usecase.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go
+> git cat-file -s 484d2eff2e2b3be27b129728c39aede7d3c1c14d
+> git show :db/repositories/contracts/itransaction_repository.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/db/repositories/contracts/itransaction_repository.go
+> git cat-file -s 63fd880418f9871ddd9813fb621a4197dfb5ee00
+> git show :db/repositories/actions/transactions_repository.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/db/repositories/actions/transactions_repository.go
+> git cat-file -s 6988dbe70cd0ecedea1c5469e04acce9c4502155
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse featureExcel
+> git rev-parse --symbolic-full-name featureExcel@{u}
+> git rev-list --left-right featureExcel...refs/remotes/origin/featureExcel
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse featureExcel
+> git rev-parse --symbolic-full-name featureExcel@{u}
+> git rev-list --left-right featureExcel...refs/remotes/origin/featureExcel
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse featureExcel
+> git rev-parse --symbolic-full-name featureExcel@{u}
+> git rev-list --left-right featureExcel...refs/remotes/origin/featureExcel
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git show :helpers/enums/enum.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/helpers/enums/enum.go
+> git cat-file -s 0ccfd26d921f4e45ab311e83b8acdff27e59de57
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse featureExcel
+> git rev-parse --symbolic-full-name featureExcel@{u}
+> git rev-list --left-right featureExcel...refs/remotes/origin/featureExcel
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git show :db/repositories/actions/transactions_repository.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/db/repositories/actions/transactions_repository.go
+> git cat-file -s 6988dbe70cd0ecedea1c5469e04acce9c4502155
+> git show :db/repositories/contracts/itransaction_repository.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/db/repositories/contracts/itransaction_repository.go
+> git cat-file -s 63fd880418f9871ddd9813fb621a4197dfb5ee00
+> git show :db/repositories/actions/transactions_repository.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/db/repositories/actions/transactions_repository.go
+> git cat-file -s 6988dbe70cd0ecedea1c5469e04acce9c4502155
+> git show :helpers/enums/enum.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/helpers/enums/enum.go
+> git cat-file -s 0ccfd26d921f4e45ab311e83b8acdff27e59de57
+> git show :db/repositories/actions/transactions_repository.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/db/repositories/actions/transactions_repository.go
+> git cat-file -s 6988dbe70cd0ecedea1c5469e04acce9c4502155
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse featureExcel
+> git rev-parse --symbolic-full-name featureExcel@{u}
+> git rev-list --left-right featureExcel...refs/remotes/origin/featureExcel
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse featureExcel
+> git rev-parse --symbolic-full-name featureExcel@{u}
+> git rev-list --left-right featureExcel...refs/remotes/origin/featureExcel
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse featureExcel
+> git rev-parse --symbolic-full-name featureExcel@{u}
+> git rev-list --left-right featureExcel...refs/remotes/origin/featureExcel
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse featureExcel
+> git rev-parse --symbolic-full-name featureExcel@{u}
+> git rev-list --left-right featureExcel...refs/remotes/origin/featureExcel
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse featureExcel
+> git rev-parse --symbolic-full-name featureExcel@{u}
+> git rev-list --left-right featureExcel...refs/remotes/origin/featureExcel
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse featureExcel
+> git rev-parse --symbolic-full-name featureExcel@{u}
+> git rev-list --left-right featureExcel...refs/remotes/origin/featureExcel
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git show :server/bootstrap/routes/transaction_route.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/server/bootstrap/routes/transaction_route.go
+> git cat-file -s 22da8fbb703ad3ca6d2a6f2818b1b5fc0504bdfc
+> git show :server/handlers/transaction_handler.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/server/handlers/transaction_handler.go
+> git cat-file -s 73d4fd2a6f057afe643c3322c46178c203f1e91d
+> git show :usecase/transaction_usecase.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go
+> git cat-file -s 484d2eff2e2b3be27b129728c39aede7d3c1c14d
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse featureExcel
+> git rev-parse --symbolic-full-name featureExcel@{u}
+> git rev-list --left-right featureExcel...refs/remotes/origin/featureExcel
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse featureExcel
+> git rev-parse --symbolic-full-name featureExcel@{u}
+> git rev-list --left-right featureExcel...refs/remotes/origin/featureExcel
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse featureExcel
+> git rev-parse --symbolic-full-name featureExcel@{u}
+> git rev-list --left-right featureExcel...refs/remotes/origin/featureExcel
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse featureExcel
+> git rev-parse --symbolic-full-name featureExcel@{u}
+> git rev-list --left-right featureExcel...refs/remotes/origin/featureExcel
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse featureExcel
+> git rev-parse --symbolic-full-name featureExcel@{u}
+> git rev-list --left-right featureExcel...refs/remotes/origin/featureExcel
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse featureExcel
+> git rev-parse --symbolic-full-name featureExcel@{u}
+> git rev-list --left-right featureExcel...refs/remotes/origin/featureExcel
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse featureExcel
+> git rev-parse --symbolic-full-name featureExcel@{u}
+> git rev-list --left-right featureExcel...refs/remotes/origin/featureExcel
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse featureExcel
+> git rev-parse --symbolic-full-name featureExcel@{u}
+> git rev-list --left-right featureExcel...refs/remotes/origin/featureExcel
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse featureExcel
+> git rev-parse --symbolic-full-name featureExcel@{u}
+> git rev-list --left-right featureExcel...refs/remotes/origin/featureExcel
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse featureExcel
+> git rev-parse --symbolic-full-name featureExcel@{u}
+> git rev-list --left-right featureExcel...refs/remotes/origin/featureExcel
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse featureExcel
+> git rev-parse --symbolic-full-name featureExcel@{u}
+> git rev-list --left-right featureExcel...refs/remotes/origin/featureExcel
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse featureExcel
+> git rev-parse --symbolic-full-name featureExcel@{u}
+> git rev-list --left-right featureExcel...refs/remotes/origin/featureExcel
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse featureExcel
+> git rev-parse --symbolic-full-name featureExcel@{u}
+> git rev-list --left-right featureExcel...refs/remotes/origin/featureExcel
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse featureExcel
+> git rev-parse --symbolic-full-name featureExcel@{u}
+> git rev-list --left-right featureExcel...refs/remotes/origin/featureExcel
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse featureExcel
+> git rev-parse --symbolic-full-name featureExcel@{u}
+> git rev-list --left-right featureExcel...refs/remotes/origin/featureExcel
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse featureExcel
+> git rev-parse --symbolic-full-name featureExcel@{u}
+> git rev-list --left-right featureExcel...refs/remotes/origin/featureExcel
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse featureExcel
+> git rev-parse --symbolic-full-name featureExcel@{u}
+> git rev-list --left-right featureExcel...refs/remotes/origin/featureExcel
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse featureExcel
+> git rev-parse --symbolic-full-name featureExcel@{u}
+> git rev-list --left-right featureExcel...refs/remotes/origin/featureExcel
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse featureExcel
+> git rev-parse --symbolic-full-name featureExcel@{u}
+> git rev-list --left-right featureExcel...refs/remotes/origin/featureExcel
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse featureExcel
+> git rev-parse --symbolic-full-name featureExcel@{u}
+> git rev-list --left-right featureExcel...refs/remotes/origin/featureExcel
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse featureExcel
+> git rev-parse --symbolic-full-name featureExcel@{u}
+> git rev-list --left-right featureExcel...refs/remotes/origin/featureExcel
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse featureExcel
+> git rev-parse --symbolic-full-name featureExcel@{u}
+> git rev-list --left-right featureExcel...refs/remotes/origin/featureExcel
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse featureExcel
+> git rev-parse --symbolic-full-name featureExcel@{u}
+> git rev-list --left-right featureExcel...refs/remotes/origin/featureExcel
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse featureExcel
+> git rev-parse --symbolic-full-name featureExcel@{u}
+> git rev-list --left-right featureExcel...refs/remotes/origin/featureExcel
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse featureExcel
+> git rev-parse --symbolic-full-name featureExcel@{u}
+> git rev-list --left-right featureExcel...refs/remotes/origin/featureExcel
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse featureExcel
+> git rev-parse --symbolic-full-name featureExcel@{u}
+> git rev-list --left-right featureExcel...refs/remotes/origin/featureExcel
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse featureExcel
+> git rev-parse --symbolic-full-name featureExcel@{u}
+> git rev-list --left-right featureExcel...refs/remotes/origin/featureExcel
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse featureExcel
+> git rev-parse --symbolic-full-name featureExcel@{u}
+> git rev-list --left-right featureExcel...refs/remotes/origin/featureExcel
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse featureExcel
+> git rev-parse --symbolic-full-name featureExcel@{u}
+> git rev-list --left-right featureExcel...refs/remotes/origin/featureExcel
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse featureExcel
+> git rev-parse --symbolic-full-name featureExcel@{u}
+> git rev-list --left-right featureExcel...refs/remotes/origin/featureExcel
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse featureExcel
+> git rev-parse --symbolic-full-name featureExcel@{u}
+> git rev-list --left-right featureExcel...refs/remotes/origin/featureExcel
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse featureExcel
+> git rev-parse --symbolic-full-name featureExcel@{u}
+> git rev-list --left-right featureExcel...refs/remotes/origin/featureExcel
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse featureExcel
+> git rev-parse --symbolic-full-name featureExcel@{u}
+> git rev-list --left-right featureExcel...refs/remotes/origin/featureExcel
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse featureExcel
+> git rev-parse --symbolic-full-name featureExcel@{u}
+> git rev-list --left-right featureExcel...refs/remotes/origin/featureExcel
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse featureExcel
+> git rev-parse --symbolic-full-name featureExcel@{u}
+> git rev-list --left-right featureExcel...refs/remotes/origin/featureExcel
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse featureExcel
+> git rev-parse --symbolic-full-name featureExcel@{u}
+> git rev-list --left-right featureExcel...refs/remotes/origin/featureExcel
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse featureExcel
+> git rev-parse --symbolic-full-name featureExcel@{u}
+> git rev-list --left-right featureExcel...refs/remotes/origin/featureExcel
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse featureExcel
+> git rev-parse --symbolic-full-name featureExcel@{u}
+> git rev-list --left-right featureExcel...refs/remotes/origin/featureExcel
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse featureExcel
+> git rev-parse --symbolic-full-name featureExcel@{u}
+> git rev-list --left-right featureExcel...refs/remotes/origin/featureExcel
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse featureExcel
+> git rev-parse --symbolic-full-name featureExcel@{u}
+> git rev-list --left-right featureExcel...refs/remotes/origin/featureExcel
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse featureExcel
+> git rev-parse --symbolic-full-name featureExcel@{u}
+> git rev-list --left-right featureExcel...refs/remotes/origin/featureExcel
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse featureExcel
+> git rev-parse --symbolic-full-name featureExcel@{u}
+> git rev-list --left-right featureExcel...refs/remotes/origin/featureExcel
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse featureExcel
+> git rev-parse --symbolic-full-name featureExcel@{u}
+> git rev-list --left-right featureExcel...refs/remotes/origin/featureExcel
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse featureExcel
+> git rev-parse --symbolic-full-name featureExcel@{u}
+> git rev-list --left-right featureExcel...refs/remotes/origin/featureExcel
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse featureExcel
+> git rev-parse --symbolic-full-name featureExcel@{u}
+> git rev-list --left-right featureExcel...refs/remotes/origin/featureExcel
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse featureExcel
+> git rev-parse --symbolic-full-name featureExcel@{u}
+> git rev-list --left-right featureExcel...refs/remotes/origin/featureExcel
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse featureExcel
+> git rev-parse --symbolic-full-name featureExcel@{u}
+> git rev-list --left-right featureExcel...refs/remotes/origin/featureExcel
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse featureExcel
+> git rev-parse --symbolic-full-name featureExcel@{u}
+> git rev-list --left-right featureExcel...refs/remotes/origin/featureExcel
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse featureExcel
+> git rev-parse --symbolic-full-name featureExcel@{u}
+> git rev-list --left-right featureExcel...refs/remotes/origin/featureExcel
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse featureExcel
+> git rev-parse --symbolic-full-name featureExcel@{u}
+> git rev-list --left-right featureExcel...refs/remotes/origin/featureExcel
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse featureExcel
+> git rev-parse --symbolic-full-name featureExcel@{u}
+> git rev-list --left-right featureExcel...refs/remotes/origin/featureExcel
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse featureExcel
+> git rev-parse --symbolic-full-name featureExcel@{u}
+> git rev-list --left-right featureExcel...refs/remotes/origin/featureExcel
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse featureExcel
+> git rev-parse --symbolic-full-name featureExcel@{u}
+> git rev-list --left-right featureExcel...refs/remotes/origin/featureExcel
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse featureExcel
+> git rev-parse --symbolic-full-name featureExcel@{u}
+> git rev-list --left-right featureExcel...refs/remotes/origin/featureExcel
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse featureExcel
+> git rev-parse --symbolic-full-name featureExcel@{u}
+> git rev-list --left-right featureExcel...refs/remotes/origin/featureExcel
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template

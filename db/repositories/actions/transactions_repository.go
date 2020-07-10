@@ -4,6 +4,7 @@ import (
 	"bukuduit-go/db/models"
 	"bukuduit-go/db/repositories/contracts"
 	"bukuduit-go/helpers/datetime"
+	"bukuduit-go/helpers/enums"
 	"bukuduit-go/helpers/str"
 	"bukuduit-go/usecase/viewmodel"
 	"database/sql"
@@ -94,15 +95,62 @@ func (repository TransactionRepository) DebtReport(customerID, shopID, bookDebtI
 	return data, err
 }
 
+//ini untuk groub by month di list transaksi
+func (repository TransactionRepository) GroubByWeeksMonth(timeBy string) (data []models.TransByMonth, err error) {
+
+	var statement string
+	if timeBy == enums.Month {
+		statement = `select sum(amount), date_part('month', transaction_date::date) as monthly  from transactions t 
+		GROUP BY monthly order by monthly asc;`
+	} else {
+		statement = `select sum(amount), date_part('week', transaction_date::date) as weekly  from transactions t 
+		GROUP BY weekly order by weekly desc;`
+	}
+
+	fmt.Println(statement)
+	rows, err := repository.DB.Query(statement)
+	if err != nil {
+		return data, err
+	}
+
+	if timeBy == enums.Month {
+		for rows.Next() {
+			dataTemp := models.TransByMonth{}
+
+			err = rows.Scan(
+				&dataTemp.Sum,
+				&dataTemp.Monthly,
+			)
+			if err != nil {
+				return data, err
+			}
+			data = append(data, dataTemp)
+		}
+	} else {
+		for rows.Next() {
+			dataTemp := models.TransByMonth{}
+
+			err = rows.Scan(
+				&dataTemp.Sum,
+				&dataTemp.Weekly,
+			)
+			if err != nil {
+				return data, err
+			}
+			data = append(data, dataTemp)
+		}
+	}
+	return data, err
+}
+
 //ini untuk list transaksi
 func (repository TransactionRepository) TransactionBrowsByShop(shopID, filter string) (data []models.Transactions, err error) {
-	statement := `select t."id", uc."full_name", t."amount", t."reference_id", t."shop_id", t."description", t."image", t."transaction_date", 
+	statement := `select t."id",date_part('week', t."transaction_date"::date) as weekly, uc."full_name", t."amount", t."reference_id", t."shop_id", t."description", t."image", t."transaction_date", 
 	t."type", t."created_at", t."updated_at", t."deleted_at" 
 	from "transactions" t  left join "user_customers" uc 
 	on t."customer_id" = uc."id" 
 	where t."shop_id" = '` + shopID + `' and t."deleted_at" is null ` + filter
 
-	fmt.Println(statement)
 	rows, err := repository.DB.Query(statement)
 	if err != nil {
 		return data, err
@@ -113,6 +161,7 @@ func (repository TransactionRepository) TransactionBrowsByShop(shopID, filter st
 
 		err = rows.Scan(
 			&dataTemp.ID,
+			&dataTemp.Weekly,
 			&dataTemp.Name,
 			&dataTemp.Amount,
 			&dataTemp.ReferenceID,
@@ -400,5 +449,51 @@ func (repository TransactionRepository) CountBy(column, value string) (res int, 
 		return res, err
 	}
 
+	return res, err
+}
+
+func (repository TransactionRepository) FirstTransactionDate(shopId, filter string) (res string, err error) {
+	statement := `select transaction_date from "transactions" where shop_id = $1 and "deleted_at" is null `+ filter +` order by "transaction_date" asc limit 1`
+	err = repository.DB.QueryRow(statement, shopId).Scan(&res)
+	if err != nil {
+		return res, err
+	}
+
+	return res, err
+}
+
+func (repository TransactionRepository) LastTransactionDate(shopId, filter string) (res string, err error) {
+	statement := `select transaction_date from "transactions" where shop_id = $1 and "deleted_at" is null `+ filter +` order by "transaction_date" desc limit 1`
+	err = repository.DB.QueryRow(statement, shopId).Scan(&res)
+	if err != nil {
+		return res, err
+	}
+
+	return res, err
+}
+
+func (repository TransactionRepository) MakeWeeklySeries(startDate, endDate string) (res []models.Weekly, err error) {
+	statement := `select
+					greatest(date_trunc('week', dates.d), date_trunc('month',dates.d)) as start
+				from generate_series($1::date, $2, '1 day') as dates(d)
+				group by 1
+				order by 1 desc`
+	
+	rows, err := repository.DB.Query(statement, startDate, endDate)
+	if err != nil {
+		return res, err
+	}
+	for rows.Next() {
+		dataTemp := models.Weekly{}
+		
+		err = rows.Scan(
+			&dataTemp.Start,
+		)
+		if err != nil {
+			return res, err
+		}
+		
+		res = append(res, dataTemp)
+	}
 	return res, err
 }
