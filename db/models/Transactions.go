@@ -7,9 +7,10 @@ import (
 type Transactions struct {
 	ID              string         `db:"id"`
 	ReferenceID     string         `db:"reference_id"`
+	Weekly          sql.NullString `db:"weekly"`
 	CategoryID      sql.NullString `db:"category_id"`
 	IDShop          string         `db:"shop_id"`
-	Name            string         `db:"full_name"`
+	Name            sql.NullString `db:"full_name"`
 	BooksDeptID     sql.NullString `db:"books_debt_id"`
 	BooksTransID    sql.NullString `db:"books_transaction_id"`
 	Amount          sql.NullInt32  `db:"amount"`
@@ -22,4 +23,11 @@ type Transactions struct {
 	UpdatedAt       sql.NullString `db:"update_at"`
 	DeletedAt       sql.NullString `db:"deleted_at"`
 	Status          bool           `db:"status"`
+}
+
+type Weekly struct {
+	Start			string			`db:"start"`
+	End				sql.NullString	`db:"end"`
+	Debit			sql.NullInt32	`db:"debit"`
+	Credit			sql.NullInt32	`db:"credit"`
 }

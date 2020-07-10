@@ -4,6 +4,7 @@ import (
 	"bukuduit-go/helpers/messages"
 	request "bukuduit-go/server/requests"
 	"bukuduit-go/usecase"
+	"errors"
 	"net/http"
 
 	"github.com/go-playground/validator/v10"
@@ -68,4 +69,25 @@ func (handler AuthenticationHandler) GenerateTokenByOtp(ctx echo.Context) error 
 	}
 
 	return handler.SendResponse(ctx, res, nil, err)
+}
+
+func (handler AuthenticationHandler) PhoneCheck(ctx echo.Context) error {
+	input := new(request.LoginRequest)
+
+	if err := ctx.Bind(input); err != nil {
+		return handler.SendResponseBadRequest(ctx, http.StatusBadRequest, err.Error())
+	}
+
+	if err := handler.Validate.Struct(input); err != nil {
+		return handler.SendResponseErrorValidation(ctx, err.(validator.ValidationErrors))
+	}
+
+	uc := usecase.AuthenticationUseCase{UcContract: handler.UseCaseContract}
+
+	_, err := uc.PhoneCheck(input.MobilePhone)
+	if err != nil {
+		return handler.SendResponse(ctx, nil, nil, nil)
+	}
+
+	return handler.SendResponse(ctx, nil, nil, errors.New(messages.CredentialDoNotMatch))
 }

@@ -25,7 +25,9 @@ func (handler ShopHandler) BrowseByUser(ctx echo.Context) error {
 func (handler ShopHandler) ExportFile(ctx echo.Context) error {
 	uc := usecase.ShopUseCase{UcContract: handler.UseCaseContract}
 	ID := ctx.Param("id")
-	res, err := uc.ExportToFile(ID)
+	status := ctx.QueryParam("lunas")
+	name := ctx.QueryParam("name")
+	res, err := uc.ExportToFile(ID, status, name)
 
 	if err != nil {
 		return err

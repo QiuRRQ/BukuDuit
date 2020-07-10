@@ -20,8 +20,8 @@ type ShopUseCase struct {
 	*UcContract
 }
 
-func (uc ShopUseCase) ExportToFile(ID string) (res string, err error) {
-	data, err := uc.Read(ID, "", "")
+func (uc ShopUseCase) ExportToFile(ID, status, name string) (res string, err error) {
+	data, err := uc.Read(ID, status, name)
 	if err != nil {
 		return res, err
 	}
@@ -108,7 +108,7 @@ func (uc ShopUseCase) Read(ID, lunas, name string) (res viewmodel.ShopVm, err er
 		if lunas == "1" {
 			bookdebtsLunas, err := bookDebtUc.BrowseByUser(data.ID, enums.Lunas)
 			if err == nil {
-				if bookdebtsLunas.CreditTotal == 0 {
+				if bookdebtsLunas.CreditTotal == 0 && bookdebtsLunas.DebtTotal == 0{
 					dataUserCustomer = append(dataUserCustomer, viewmodel.UserCustomerDebetCreditVm{
 						ID:          data.ID,
 						FullName:    data.FullName,

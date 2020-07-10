@@ -1,0 +1,406 @@
+Looking for git in: git
+Using git 2.25.1 from git
+> git rev-parse --show-toplevel
+> git rev-parse --git-dir
+Open repository: /home/aziz/works/newBukuduit/bukuduit-go
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse dev
+> git rev-parse --symbolic-full-name dev@{u}
+> git rev-list --left-right dev...refs/remotes/origin/dev
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git show :usecase/transaction_usecase.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go
+> git cat-file -s d89a9c954ea0fff10f6e6d958fdc5730c3f5eb8c
+> git check-ignore -v -z --stdin
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse dev
+> git rev-parse --symbolic-full-name dev@{u}
+> git rev-list --left-right dev...refs/remotes/origin/dev
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse dev
+> git rev-parse --symbolic-full-name dev@{u}
+> git rev-list --left-right dev...refs/remotes/origin/dev
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse dev
+> git rev-parse --symbolic-full-name dev@{u}
+> git rev-list --left-right dev...refs/remotes/origin/dev
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go
+> git cat-file -s d89a9c954ea0fff10f6e6d958fdc5730c3f5eb8c
+> git show :usecase/transaction_usecase.go
+> git symbolic-ref --short HEAD
+> git rev-parse hotfix-MobilePhoneCheck
+> git rev-parse --symbolic-full-name hotfix-MobilePhoneCheck@{u}
+fatal: no upstream configured for branch 'hotfix-MobilePhoneCheck'
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git check-ignore -v -z --stdin
+> git show :server/handlers/authentication_handler.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/server/handlers/authentication_handler.go
+> git cat-file -s e92b8d7ea20bcf8075a3864e7046b96d217470cd
+> git show :usecase/authentication_usecase.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/usecase/authentication_usecase.go
+> git cat-file -s 9770c51db131cdf3cb3f627bc47172e6ff3fd5b9
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse hotfix-MobilePhoneCheck
+> git rev-parse --symbolic-full-name hotfix-MobilePhoneCheck@{u}
+fatal: no upstream configured for branch 'hotfix-MobilePhoneCheck'
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git show :server/handlers/authentication_handler.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/server/handlers/authentication_handler.go
+> git cat-file -s e92b8d7ea20bcf8075a3864e7046b96d217470cd
+> git show :server/handlers/handler.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/server/handlers/handler.go
+> git cat-file -s e933559e231cf2d86a244803bbc67805d8354c52
+> git rev-parse --show-toplevel
+fatal: not a git repository (or any of the parent directories): .git
+> git show :usecase/authentication_usecase.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/usecase/authentication_usecase.go
+> git cat-file -s 9770c51db131cdf3cb3f627bc47172e6ff3fd5b9
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse hotfix-MobilePhoneCheck
+> git rev-parse --symbolic-full-name hotfix-MobilePhoneCheck@{u}
+fatal: no upstream configured for branch 'hotfix-MobilePhoneCheck'
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git show :usecase/user_customer_usecase.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/usecase/user_customer_usecase.go
+> git cat-file -s 30889c4e3e1c664d5b9a7c4c38c48df2660e1336
+> git show :usecase/transaction_usecase.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/usecase/transaction_usecase.go
+> git cat-file -s d89a9c954ea0fff10f6e6d958fdc5730c3f5eb8c
+> git show :server/bootstrap/routes/user_routes.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/server/bootstrap/routes/user_routes.go
+> git cat-file -s d0346da813d4ba10f16388bced6177d190582c9c
+> git show :server/bootstrap/routes/authentication_route.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/server/bootstrap/routes/authentication_route.go
+> git cat-file -s 51f37a2237b350c5abb32190a092089d66d63e77
+> git show :server/handlers/authentication_handler.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/server/handlers/authentication_handler.go
+> git cat-file -s e92b8d7ea20bcf8075a3864e7046b96d217470cd
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse hotfix-MobilePhoneCheck
+> git rev-parse --symbolic-full-name hotfix-MobilePhoneCheck@{u}
+fatal: no upstream configured for branch 'hotfix-MobilePhoneCheck'
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git show :server/bootstrap/routes/authentication_route.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/server/bootstrap/routes/authentication_route.go
+> git cat-file -s 51f37a2237b350c5abb32190a092089d66d63e77
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse hotfix-MobilePhoneCheck
+> git rev-parse --symbolic-full-name hotfix-MobilePhoneCheck@{u}
+fatal: no upstream configured for branch 'hotfix-MobilePhoneCheck'
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git show :server/handlers/authentication_handler.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/server/handlers/authentication_handler.go
+> git cat-file -s e92b8d7ea20bcf8075a3864e7046b96d217470cd
+> git show :server/requests/login_request.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/server/requests/login_request.go
+> git cat-file -s 1031ecef423d9a155d61507e697a925054ac1a74
+> git show :server/handlers/authentication_handler.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/server/handlers/authentication_handler.go
+> git cat-file -s e92b8d7ea20bcf8075a3864e7046b96d217470cd
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse hotfix-MobilePhoneCheck
+> git rev-parse --symbolic-full-name hotfix-MobilePhoneCheck@{u}
+fatal: no upstream configured for branch 'hotfix-MobilePhoneCheck'
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse hotfix-MobilePhoneCheck
+> git rev-parse --symbolic-full-name hotfix-MobilePhoneCheck@{u}
+fatal: no upstream configured for branch 'hotfix-MobilePhoneCheck'
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git show :usecase/authentication_usecase.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/usecase/authentication_usecase.go
+> git cat-file -s 9770c51db131cdf3cb3f627bc47172e6ff3fd5b9
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse hotfix-MobilePhoneCheck
+> git rev-parse --symbolic-full-name hotfix-MobilePhoneCheck@{u}
+fatal: no upstream configured for branch 'hotfix-MobilePhoneCheck'
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse hotfix-MobilePhoneCheck
+> git rev-parse --symbolic-full-name hotfix-MobilePhoneCheck@{u}
+fatal: no upstream configured for branch 'hotfix-MobilePhoneCheck'
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse hotfix-MobilePhoneCheck
+> git rev-parse --symbolic-full-name hotfix-MobilePhoneCheck@{u}
+fatal: no upstream configured for branch 'hotfix-MobilePhoneCheck'
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse hotfix-MobilePhoneCheck
+> git rev-parse --symbolic-full-name hotfix-MobilePhoneCheck@{u}
+fatal: no upstream configured for branch 'hotfix-MobilePhoneCheck'
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse hotfix-MobilePhoneCheck
+> git rev-parse --symbolic-full-name hotfix-MobilePhoneCheck@{u}
+fatal: no upstream configured for branch 'hotfix-MobilePhoneCheck'
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse hotfix-MobilePhoneCheck
+> git rev-parse --symbolic-full-name hotfix-MobilePhoneCheck@{u}
+fatal: no upstream configured for branch 'hotfix-MobilePhoneCheck'
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse hotfix-MobilePhoneCheck
+> git rev-parse --symbolic-full-name hotfix-MobilePhoneCheck@{u}
+fatal: no upstream configured for branch 'hotfix-MobilePhoneCheck'
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git show :helpers/messages/message.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/helpers/messages/message.go
+> git cat-file -s 86156e7cc154e7acd0341513111b5363831a1e99
+> git check-ignore -v -z --stdin
+> git show :usecase/authentication_usecase.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/usecase/authentication_usecase.go
+> git cat-file -s 9770c51db131cdf3cb3f627bc47172e6ff3fd5b9
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse hotfix-MobilePhoneCheck
+> git rev-parse --symbolic-full-name hotfix-MobilePhoneCheck@{u}
+fatal: no upstream configured for branch 'hotfix-MobilePhoneCheck'
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse hotfix-MobilePhoneCheck
+> git rev-parse --symbolic-full-name hotfix-MobilePhoneCheck@{u}
+fatal: no upstream configured for branch 'hotfix-MobilePhoneCheck'
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse hotfix-MobilePhoneCheck
+> git rev-parse --symbolic-full-name hotfix-MobilePhoneCheck@{u}
+fatal: no upstream configured for branch 'hotfix-MobilePhoneCheck'
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse hotfix-MobilePhoneCheck
+> git rev-parse --symbolic-full-name hotfix-MobilePhoneCheck@{u}
+fatal: no upstream configured for branch 'hotfix-MobilePhoneCheck'
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git show :server/handlers/authentication_handler.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/server/handlers/authentication_handler.go
+> git cat-file -s e92b8d7ea20bcf8075a3864e7046b96d217470cd
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse hotfix-MobilePhoneCheck
+> git rev-parse --symbolic-full-name hotfix-MobilePhoneCheck@{u}
+fatal: no upstream configured for branch 'hotfix-MobilePhoneCheck'
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse hotfix-MobilePhoneCheck
+> git rev-parse --symbolic-full-name hotfix-MobilePhoneCheck@{u}
+fatal: no upstream configured for branch 'hotfix-MobilePhoneCheck'
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse hotfix-MobilePhoneCheck
+> git rev-parse --symbolic-full-name hotfix-MobilePhoneCheck@{u}
+fatal: no upstream configured for branch 'hotfix-MobilePhoneCheck'
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse hotfix-MobilePhoneCheck
+> git rev-parse --symbolic-full-name hotfix-MobilePhoneCheck@{u}
+fatal: no upstream configured for branch 'hotfix-MobilePhoneCheck'
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse hotfix-MobilePhoneCheck
+> git rev-parse --symbolic-full-name hotfix-MobilePhoneCheck@{u}
+fatal: no upstream configured for branch 'hotfix-MobilePhoneCheck'
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git show :server/bootstrap/routes/authentication_route.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/server/bootstrap/routes/authentication_route.go
+> git cat-file -s 51f37a2237b350c5abb32190a092089d66d63e77
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse hotfix-MobilePhoneCheck
+> git rev-parse --symbolic-full-name hotfix-MobilePhoneCheck@{u}
+fatal: no upstream configured for branch 'hotfix-MobilePhoneCheck'
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git show :server/handlers/authentication_handler.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/server/handlers/authentication_handler.go
+> git cat-file -s e92b8d7ea20bcf8075a3864e7046b96d217470cd
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse hotfix-MobilePhoneCheck
+> git rev-parse --symbolic-full-name hotfix-MobilePhoneCheck@{u}
+fatal: no upstream configured for branch 'hotfix-MobilePhoneCheck'
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse hotfix-MobilePhoneCheck
+> git rev-parse --symbolic-full-name hotfix-MobilePhoneCheck@{u}
+fatal: no upstream configured for branch 'hotfix-MobilePhoneCheck'
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse hotfix-MobilePhoneCheck
+> git rev-parse --symbolic-full-name hotfix-MobilePhoneCheck@{u}
+fatal: no upstream configured for branch 'hotfix-MobilePhoneCheck'
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse hotfix-MobilePhoneCheck
+> git rev-parse --symbolic-full-name hotfix-MobilePhoneCheck@{u}
+fatal: no upstream configured for branch 'hotfix-MobilePhoneCheck'
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse hotfix-MobilePhoneCheck
+> git rev-parse --symbolic-full-name hotfix-MobilePhoneCheck@{u}
+fatal: no upstream configured for branch 'hotfix-MobilePhoneCheck'
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse hotfix-MobilePhoneCheck
+> git rev-parse --symbolic-full-name hotfix-MobilePhoneCheck@{u}
+fatal: no upstream configured for branch 'hotfix-MobilePhoneCheck'
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse hotfix-MobilePhoneCheck
+> git rev-parse --symbolic-full-name hotfix-MobilePhoneCheck@{u}
+fatal: no upstream configured for branch 'hotfix-MobilePhoneCheck'
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/server/handlers/authentication_handler.go
+> git cat-file -s e92b8d7ea20bcf8075a3864e7046b96d217470cd
+> git symbolic-ref --short HEAD
+> git rev-parse dev
+> git show :server/handlers/authentication_handler.go
+> git rev-parse --symbolic-full-name dev@{u}
+> git rev-list --left-right dev...refs/remotes/origin/dev
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git show :server/bootstrap/routes/authentication_route.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/server/bootstrap/routes/authentication_route.go
+> git cat-file -s 51f37a2237b350c5abb32190a092089d66d63e77
+> git status -z -u
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/server/bootstrap/routes/authentication_route.go
+> git cat-file -s 51f37a2237b350c5abb32190a092089d66d63e77
+> git symbolic-ref --short HEAD
+> git rev-parse dev
+> git show :server/bootstrap/routes/authentication_route.go
+> git rev-parse --symbolic-full-name dev@{u}
+> git rev-list --left-right dev...refs/remotes/origin/dev
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/server/bootstrap/routes/authentication_route.go
+> git cat-file -s 51f37a2237b350c5abb32190a092089d66d63e77
+> git symbolic-ref --short HEAD
+> git rev-parse dev
+> git show :server/bootstrap/routes/authentication_route.go
+> git rev-parse --symbolic-full-name dev@{u}
+> git rev-list --left-right dev...refs/remotes/origin/dev
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git show :server/handlers/authentication_handler.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/server/handlers/authentication_handler.go
+> git cat-file -s e92b8d7ea20bcf8075a3864e7046b96d217470cd
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse dev
+> git rev-parse --symbolic-full-name dev@{u}
+> git rev-list --left-right dev...refs/remotes/origin/dev
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git show :server/bootstrap/routes/authentication_route.go
+> git ls-files --stage -- /home/aziz/works/newBukuduit/bukuduit-go/server/bootstrap/routes/authentication_route.go
+> git cat-file -s 51f37a2237b350c5abb32190a092089d66d63e77

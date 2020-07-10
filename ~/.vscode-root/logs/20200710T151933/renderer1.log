@@ -1,0 +1,3 @@
+[2020-07-10 16:14:33.506] [renderer1] [warning] Check the console in dev tools to find errors when formatting.
+[2020-07-10 16:28:36.502] [renderer1] [error] [storage state.vscdb] prepare(): Error: SQLITE_READONLY_DBMOVED: attempt to write a readonly database (INSERT INTO ItemTable VALUES (?,?)). Details: Keys: memento/workbench.editors.files.textFileEditor Length: 11239
+[2020-07-10 16:29:36.504] [renderer1] [error] [storage state.vscdb] prepare(): Error: SQLITE_READONLY_DBMOVED: attempt to write a readonly database (INSERT INTO ItemTable VALUES (?,?)). Details: Keys: memento/workbench.editors.files.textFileEditor Length: 11239
