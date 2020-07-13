@@ -73,17 +73,19 @@ func (uc UserCustomerUseCase) EditDebt(ID string, debt int32, tx *sql.Tx) (err e
 func (uc UserCustomerUseCase) Add(input *request.UserCustomerRequest) (res string, err error) {
 	model := actions.NewUserCustomerModel(uc.DB)
 	now := time.Now().UTC()
-	isExist, err := uc.isExist("mobile_phone", input.MobilePhone)
-	if err != nil {
-		return res, err
-	}
-	if isExist {
-		cutomer, err := model.ReadByPhone(input.MobilePhone)
+	if input.MobilePhone != "" {
+		isExist, err := uc.isExist("mobile_phone", input.MobilePhone)
 		if err != nil {
 			return res, err
 		}
-
-		return cutomer.ID, errors.New(messages.PhoneAlreadyExist)
+		if isExist {
+			cutomer, err := model.ReadByPhone(input.MobilePhone)
+			if err != nil {
+				return res, err
+			}
+	
+			return cutomer.ID, errors.New(messages.PhoneAlreadyExist)
+		}
 	}
 
 	body := viewmodel.UserCustomerVm{
