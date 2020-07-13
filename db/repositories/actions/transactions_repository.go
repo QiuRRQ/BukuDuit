@@ -472,13 +472,13 @@ func (repository TransactionRepository) LastTransactionDate(shopId, filter strin
 	return res, err
 }
 
-func (repository TransactionRepository) MakeWeeklySeries(startDate, endDate string) (res []models.Weekly, err error) {
+func (repository TransactionRepository) MakeWeeklySeries(startDate, endDate, orderBy string) (res []models.Weekly, err error) {
 	statement := `select
 					greatest(date_trunc('week', dates.d), date_trunc('month',dates.d)) as start
 				from generate_series($1::date, $2, '1 day') as dates(d)
 				group by 1
-				order by 1 desc`
-	
+				order by 1 ` + orderBy
+	fmt.Println("order by", orderBy)
 	rows, err := repository.DB.Query(statement, startDate, endDate)
 	if err != nil {
 		return res, err
