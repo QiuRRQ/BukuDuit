@@ -187,9 +187,17 @@ func (uc TransactionUseCase) TransactionListByWeeks(shopID, search, name, amount
 	if endDate == "" {
 		endDate, _ = model.LastTransactionDate(shopID, filter)
 	}
+	var orderBy string
+	if transDate == "ASC" || transDate == "asc" {
+		orderBy = transDate
+	} else if transDate == "DESC" || transDate == "desc" {
+		orderBy = transDate
+	} else {
+		orderBy = "ASC"
+	}
 
 	// make list of weeks as array (start, end, debit, credit)
-	WeeklySeries, err := model.MakeWeeklySeries(startDate, endDate)
+	WeeklySeries, err := model.MakeWeeklySeries(startDate, endDate, orderBy)
 	var totalDebet int
 	var totalCredit int
 	

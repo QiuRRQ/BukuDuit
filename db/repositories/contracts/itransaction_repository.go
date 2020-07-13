@@ -41,5 +41,5 @@ type ITransactionRepository interface {
 
 	LastTransactionDate(shopId, filter string) (res string, err error)
 
-	MakeWeeklySeries(startDate, endDate string) (res []models.Weekly, err error)
+	MakeWeeklySeries(startDate, endDate, orderBy string) (res []models.Weekly, err error)
 }
