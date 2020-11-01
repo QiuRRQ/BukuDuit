@@ -1,3 +1,5 @@
+# github.com/360EntSecGroup-Skylar/excelize v1.4.1
+github.com/360EntSecGroup-Skylar/excelize
 # github.com/appleboy/go-fcm v0.1.5
 github.com/appleboy/go-fcm
 # github.com/aws/aws-sdk-go v1.32.2
@@ -81,7 +83,7 @@ github.com/gorilla/schema
 github.com/jmespath/go-jmespath
 # github.com/joho/godotenv v1.3.0
 github.com/joho/godotenv
-# github.com/konsorten/go-windows-terminal-sequences v1.0.2
+# github.com/konsorten/go-windows-terminal-sequences v1.0.3
 github.com/konsorten/go-windows-terminal-sequences
 # github.com/labstack/echo v3.3.10+incompatible
 github.com/labstack/echo
@@ -106,7 +108,7 @@ github.com/lestrrat/go-jwx/jwe/aescbc
 github.com/lestrrat/go-jwx/jwk
 # github.com/lestrrat/go-pdebug v0.0.0-20180220043741-569c97477ae8
 github.com/lestrrat/go-pdebug
-# github.com/lib/pq v1.7.0
+# github.com/lib/pq v1.8.0
 github.com/lib/pq
 github.com/lib/pq/oid
 github.com/lib/pq/scram
@@ -114,13 +116,15 @@ github.com/lib/pq/scram
 github.com/mattn/go-colorable
 # github.com/mattn/go-isatty v0.0.9
 github.com/mattn/go-isatty
+# github.com/mohae/deepcopy v0.0.0-20170929034955-c48cc78d4826
+github.com/mohae/deepcopy
 # github.com/pkg/errors v0.9.1
 github.com/pkg/errors
 # github.com/satori/go.uuid v1.2.0
 github.com/satori/go.uuid
 # github.com/sfreiberg/gotwilio v0.0.0-20200424172909-47a95c1c632a
 github.com/sfreiberg/gotwilio
-# github.com/sirupsen/logrus v1.4.2
+# github.com/sirupsen/logrus v1.6.0
 github.com/sirupsen/logrus
 # github.com/streadway/amqp v1.0.0
 github.com/streadway/amqp

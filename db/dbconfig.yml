@@ -1,0 +1,4 @@
+postgres:
+    dialect: postgres
+    datasource: dbname=mydb host=localhost user=postgres password=root sslmode=disable
+    dir: migrations
